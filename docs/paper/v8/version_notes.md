@@ -38,9 +38,22 @@
 | v8 + row count fix | `f08850fa7516a6e4fa4950a992bf6a56471de184` | #18 |
 | v8 figures bundle | `bc29bab...` | #19 |
 | v8 submission bundle | `d367f55...` | #20 |
-| **v8 cleanup (本 PR)** | (本 PR で確定) | **#21** |
+| v8 cleanup | `5726bab` | #21 |
+| **v8.1 段階 1.5 開始** — internal logic + framing fixes (audit Tier 1-3) | `5ad6550` | — |
+| v8.1 literature gap v1 (initial Related Work) | `8c3be53` | — |
+| v8.1 literature gap v2 (Bohdal Samsung critical) | `f3cf604` | — |
+| v8.1 backlog 項目 1-4 作成 | `782e3da` | — |
+| v8.1 backlog 項目 5 (verify-before-judge + meta-recursion) | `ae6fa27` | — |
+| v8.1 publication-prep-checklist + 項目 6 | `f537c6a` | — |
+| v8.1 problem-discovery-methodology (2 軸 background) | `1d0d77b` | — |
+| v8.1 form cleanup (Finding 2 + 3 from methodology) | `783f6fb` | — |
+| v8.1 Abstract framing fix (Finding 1) + 項目 7 = 段階 1.5 closure | `8601ac5` | — |
+| **v8.1 single submission PDF consolidation** (確認用 + 投稿用 PDF を 1 本化) | `d696901` | — |
+| post-1.5: public/private repo 分離 (LayerForge-dev = private working、LayerForge = new public) | (2026-05-13 同日 gh repo rename + create) | — |
 
 過去 paper 内容を取得する場合: `git show <commit>:docs/09_paper_draft.md`
+
+**Note**: PR 番号は段階 1.5 では使用せず (作業 repo `LayerForge-dev` 上に直接 commit、push 構成変更後)。各 commit は段階 1.5 内の sub-phase に対応、詳細は `docs/observations/2026-05-13_paper_v8_1_future_backlog.md` 履歴 section 参照。
 
 ## v9 を始めるとき
 

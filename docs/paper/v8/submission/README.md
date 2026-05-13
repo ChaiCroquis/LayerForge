@@ -6,9 +6,9 @@
 submission/
 ├── README.md              # 本ファイル (build + submit 手順)
 ├── paper_draft.md         # source Markdown (= v8 freeze copy, pandoc input)
-├── paper.tex              # LaTeX source (pandoc で生成、arxiv 投稿向け)
+├── paper.tex              # LaTeX source (pandoc で生成、TeX 系投稿用)
 ├── paper.pdf              # rendered PDF (preview / engineering note submission 向け)
-├── references.bib         # BibTeX (12 entries: Cowan, Newman, Fortunato-Barthélemy, Good, Traag×2, Eichin (SCA), Zachary, RAPTOR, GraphRAG + 2 reference impls)
+├── references.bib         # BibTeX (26 entries — v8.1 で literature gap fix 後: Foundational / CD theory + benchmarks / Topic modeling + graph clustering / Hierarchical RAG + GraphRAG / Context + memory compression / Reference implementations)
 ├── LICENSE                # MIT (paper text + code)
 └── figures/               # 9 vector PDF (fig_h_struct, fig_20ng_ari, fig_cpm_mechanism + 6 refined)
 ```
@@ -17,33 +17,37 @@ submission/
 
 ## venue 別の使い方
 
-### arXiv preprint (推奨) — **PDF-only upload path**
+### Zenodo preprint (推奨) — primary publication path
 
-本 paper は body prose が日本語、Abstract が英語、章タイトル + 技術用語が英語の bilingual prose 構成。arXiv server の TeX engine は CJK font (MS Gothic / Noto Sans CJK 等) を保証しないため、**arXiv 上での LaTeX 自動 compile は CJK glyph missing risk あり**。本 bundle は **`paper.pdf` を直接 PDF upload する path** を推奨:
+著者は独立研究者 (endorsement なし) のため、本 bundle の primary publication target は **Zenodo** (CERN 運営の汎用 research repository、preprint / dataset / software を 1 record にまとめ可能、DOI 自動発行)。先行 KDF preprint も同 platform で公開 (DOI: 10.5281/ZENODO.19651035)。
 
-1. arXiv submit page で **PDF submission** を選択 (一部 category では別 path 指定が必要)
-2. `paper.pdf` を upload
-3. `references.bib` と `figures/*.pdf` は **ancillary files** として別 upload (= reproducibility 補助、本文 PDF とは別 download 可能)
-4. category: `cs.IR` (Information Retrieval) / `cs.CL` (Computation and Language) / `cs.SI` (Social and Information Networks) のいずれか or cross-list
-5. comments field に「LayerForge skill 形態の deterministic layer 分解 pipeline + Newman vs CPM small-N text 比較」等を明示
+Zenodo workflow:
 
-```bash
-# (PDF-only upload なので tar.gz 不要)
-# 但し ancillary bundle を作るなら:
-cd docs/paper/v8/submission
-zip layerforge_paper_v8_ancillary.zip references.bib figures/*.pdf
-```
-
-### arXiv preprint (代替) — TeX source upload path
-
-CJK font dependency を解決する場合 (将来 English-only に翻訳 or arXiv server の Noto CJK を仮定):
+1. <https://zenodo.org/> にログイン (ORCID 経由 sign-in 推奨、ORCID linkage 自動化)
+2. **New upload** → drag-and-drop で `paper.pdf` + `references.bib` + `figures/*.pdf` を全部 1 record に upload (Zenodo は record 単位で複数 file を許容)
+3. Metadata 入力:
+   - **Resource type**: Publication → Preprint
+   - **Title**: paper の title をそのまま (Markdown 装飾は plain text 化)
+   - **Authors**: Yasuhiro Kuroki (ORCID 0009-0006-8943-9344)、Affiliation 任意 ("Independent Researcher" 可)
+   - **Description**: paper Abstract をそのまま貼付
+   - **License**: paper text = `Creative Commons Attribution 4.0 International (CC-BY-4.0)` 推奨、code / figure は MIT (`Other (open)` で MIT を明示)
+   - **Keywords**: community detection / topic modeling / Newman modularity / CPM / sentence embedding / passage clustering / Claude Code skill / 4±1 cognitive constraint / deterministic pipeline
+   - **Communities** (任意): 関連 community に submit (例: independent-researchers、ai-tools 等)
+4. **Publish** → DOI 自動発行 (例: 10.5281/ZENODO.NNNNNNNN)、ORCID profile に自動追加
 
 ```bash
+# Optional: archive bundle for upload preparation
 cd docs/paper/v8/submission
-tar -czf layerforge_paper_v8.tar.gz paper.tex references.bib figures/*.pdf
+zip layerforge_paper_v8_zenodo.zip paper.pdf references.bib figures/*.pdf
 ```
 
-注意: 現状の `paper.tex` は CJK font declaration を持たない。arXiv compile で body Japanese が render される保証なし。本 path を採用する場合は事前検証必要。
+### arXiv preprint (将来オプション、endorsement 取得後)
+
+arXiv は新規 author に endorsement が必要 (= 既存 arXiv author の推薦)。endorsement 取得後の path:
+
+- **PDF-only upload**: `paper.pdf` を直接、本 paper の body Japanese を CJK font 依存問題なく公開
+- **TeX source upload**: `paper.tex` + `references.bib` + `figures/*.pdf` を tar.gz、ただし現状の paper.tex は CJK font declaration なしで body Japanese render 不可、事前修正必要
+- category 候補: `cs.IR` (Information Retrieval) / `cs.CL` (Computation and Language) / `cs.SI` (Social and Information Networks)
 
 ### Engineering note (GitHub README extended)
 
@@ -88,7 +92,7 @@ pandoc docs/paper/v8/paper_draft.md \
   --variable=CJKmainfont:"MS Gothic"
 ```
 
-**注意 (PDF 生成時の既知 warning)**: 標準 Latin Modern フォントには Greek 文字 (θ) や mathematical 記号 (≤, ≥) が含まれない。pandoc/xelatex は fallback で代替するが、視覚的に substitute される。arxiv の TeX engine では自動 fallback がより robust。気になる場合は `--variable=mainfont:"TeX Gyre Pagella"` (要インストール) で改善可。
+**注意 (PDF 生成時の既知 warning)**: 標準 Latin Modern フォントには Greek 文字 (θ) や mathematical 記号 (≤, ≥) が含まれない。pandoc/xelatex は fallback で代替するが、視覚的に substitute される。Zenodo は PDF を直接 upload するため compile 環境依存はなし。気になる場合は `--variable=mainfont:"TeX Gyre Pagella"` (要インストール) で改善可。
 
 ### Figures 再生成
 
@@ -105,7 +109,7 @@ python -X utf8 scripts/k_sweep/generate_paper_figures.py
 - Figures (figures/*.pdf, refined/*.png, new/*.png): **MIT License**
 - BibTeX (references.bib): citations は public domain、本 .bib ファイル自体は MIT
 
-arxiv 投稿時に license が要求される場合: **CC-BY 4.0** が paper text に推奨 (許容範囲は MIT より広く、academic citation 慣行に合う)。本 bundle の text を CC-BY 4.0 で arxiv 投稿することは MIT との互換性あり (CC-BY は MIT の弱い superset)。
+Zenodo / arXiv 投稿時に paper text の license が要求される場合: **CC-BY 4.0** が paper text に推奨 (許容範囲は MIT より広く、academic citation 慣行に合う)。本 bundle の text を CC-BY 4.0 で投稿することは MIT との互換性あり (CC-BY は MIT の弱い superset)。
 
 ## 監査 trail
 
@@ -121,7 +125,15 @@ arxiv 投稿時に license が要求される場合: **CC-BY 4.0** が paper tex
 - 本 `submission/` は v8 の record として保持
 - 必要なら `docs/paper/v9/submission/` を同様に作成
 
-## 参考 (arxiv submit 時のテンプレ category 例)
+## 参考 (各 venue submit 時の分類例)
+
+### Zenodo (primary)
+
+- **Resource type**: Publication → Preprint
+- **Communities**: 関連 community があれば submit (例: `independent-researchers`、`ai-research` 等、自由設定)
+- **Keywords**: 上記 ZENODO submit 手順内の keyword list 参照
+
+### arXiv (将来オプション、endorsement 取得後)
 
 - **cs.IR** (Information Retrieval): RAG 系列の論文が主に投稿される、本 paper は適合
 - **cs.CL** (Computation and Language): NLP 系列、共有可能 (cross-list)
