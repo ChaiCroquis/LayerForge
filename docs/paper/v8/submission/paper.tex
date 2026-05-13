@@ -106,13 +106,13 @@ CPM in Small-N Text
 Domains}\label{layerforge-deterministic-layer-decomposition-for-ai-output-convergence--an-empirical-report-on-newman-modularity-outperforming-cpm-in-small-n-text-domains}
 
 \begin{quote}
-\textbf{Style}: 報告 framing
----「これを我々は主張する」ではなく「これが成立することが分かった」。reader
-time cost \textgreater{} return という publication 哲学に従い、過剰な
-claim を避け、再現可能な observations を中核に据える。 \textbf{License}:
-MIT (本リポジトリ全体と同じ) \textbf{Reproducibility}: 全測定の生 CSV /
-scripts / JSON は \texttt{scripts/k\_sweep/} 配下に同梱、commit hash
-で固定。
+\textbf{Style}: Report framing --- not "we claim this" but "we found
+this to hold". Following a publication philosophy of reader-time-cost
+\textgreater{} return, we avoid overclaiming and center the paper on
+reproducible observations. \textbf{License}: MIT (same as the rest of
+the repository). \textbf{Reproducibility}: All raw CSV / scripts / JSON
+outputs for the measurements are bundled under
+\texttt{scripts/k\_sweep/}, pinned by commit hash.
 \end{quote}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
@@ -159,459 +159,503 @@ reproducible end-to-end.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\subsection{§1. Motivation ---
-関心毎に収束したい}\label{1-motivation--ux95a2ux5fc3ux6bceux306bux53ceux675fux3057ux305fux3044}
+\subsection{§1. Motivation --- Converging by
+concern}\label{1-motivation--converging-by-concern}
 
-自然言語による AI との対話には、一見「便利」だが構造的に
-\textbf{不利益}を生む特性がある:
+Conversation with AI in natural language has a property that looks
+"convenient" at first glance but structurally creates a
+\textbf{disadvantage}:
 
 \begin{quote}
-\textbf{AI
-は問いに答えるとき、関連する情報を包括的に提示しようとする}。だがユーザーが知りたい「関心」はその対話の瞬間において
-\textbf{通常 1 つ}である(例: 「この PR の CI/CD
-だけ知りたい」、「実験設計の前提だけ確認したい」)。
+\textbf{When an AI answers a question, it tends to present related
+information comprehensively.} But the user\textquotesingle s "concern"
+at that moment in the dialogue is \textbf{usually just one} (e.g., "I
+only want to know about the CI/CD of this PR", "I only need to confirm
+the assumptions of the experimental design").
 \end{quote}
 
-包括的回答は次の三つの形でコストを生む:
+Comprehensive answers create cost in the following three forms:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  \textbf{読み手の認知負荷}
-  人が一度に保持できる意味単位は短期記憶の容量に縛られる。Cowan (2010)
-  は中心的な working memory capacity を 3-5 chunks と推定している。AI
-  出力がこれを超えて「関心外の話題」も含むと、読み手は
-  \textbf{関心に該当する部分の抽出に追加の認知コスト} を払う。
+  \textbf{Reader cognitive load} The semantic units a human can hold at
+  once are bound by short-term memory capacity. Cowan (2010) estimates
+  the central working-memory capacity at 3-5 chunks. When AI output
+  exceeds this and includes "out-of-concern topics", the reader pays an
+  \textbf{additional cognitive cost to extract the parts that match the
+  concern}.
 \item
-  \textbf{multi-agent 連携の帯域浪費} AI agent A の出力を AI agent B
-  が下流で処理する場合、A の出力が包括的だと \textbf{B は A
-  の出力全体から関心領域だけ拾う}コストを払うか、または
-  \textbf{関心外の情報に引きずられて drift する}かのどちらかになる。
+  \textbf{Bandwidth waste in multi-agent coordination} When AI agent
+  A\textquotesingle s output is consumed downstream by AI agent B,
+  comprehensive output from A forces B to either \textbf{pay the cost of
+  picking only the concern-relevant region from A\textquotesingle s
+  entire output}, or \textbf{drift due to being dragged by
+  out-of-concern information}.
 \item
-  \textbf{AI コストの線形浪費} full context
-  を毎ターン処理することで、token
-  単価ベースのコストが線形に上昇する。関心毎の本質情報量は full context
-  より小さいことが多いため、本来不要な計算が含まれる。
+  \textbf{Linear waste of AI cost} Processing the full context every
+  turn causes token-priced cost to grow linearly. The essential
+  information per concern is often smaller than the full context, so
+  unnecessary computation is included.
 \end{enumerate}
 
-これら 3 つは独立な現象だが、**AI
-出力が「関心毎に収束していない」**ことが \textbf{重なる原因} として 3
-者すべてに寄与する (token コストは context window
-全体の再処理にも依存するため source
-は完全一致ではないが、関心毎収束が部分的に解になる)。LayerForge
-は出力の収束を介して 3 者すべてに同時に影響を与えうる。
+The three are independent phenomena, but \textbf{"AI output not
+converging by concern"} is an \textbf{overlapping cause} contributing to
+all three (token cost also depends on full-context reprocessing, so the
+source is not perfectly identical, but concern-wise convergence is a
+partial solution). LayerForge can simultaneously affect all three
+through convergence of output.
 
 \subsubsection{1.1 Research question}\label{11-research-question}
 
 \begin{quote}
-AI の出力を \textbf{関心毎に対応する layer に収束させる}
-ことで、上記三つのコストを同時に削減できるか? また、その「layer 化」を
-\textbf{AI を再投入せずに} 決定論的に行えるか?
+Can we reduce the three costs above simultaneously by \textbf{converging
+the AI\textquotesingle s output into layers that correspond to each
+concern}? And can this "layering" be performed \textbf{deterministically
+without re-introducing AI}?
 \end{quote}
 
-第二の問いが重要である。\textbf{AI 出力を AI
-で絞ると、同じ入力に対し異なる出力が得られる}(LLM
-の確率的挙動)ため、関心毎収束の再現性が失われる。本研究は
-\textbf{入力境界での AI
-介在のみを許し、絞り込み層自体は決定論的に実装}する。
+The second question is the important one. \textbf{Filtering AI output
+with AI} produces different outputs for the same input (because of the
+LLM\textquotesingle s stochastic behavior), so the reproducibility of
+concern-wise convergence is lost. This study \textbf{allows AI
+involvement only at the input boundary, and implements the filtering
+layer itself deterministically}.
 
-なお本稿で「決定論」と呼ぶのは \textbf{解析コア (R3 で詳述) の性質}
-であり、入力境界 (Boundary 1: 自然言語 → 構造化)・出力境界 (Boundary 2:
-構造化 → 自然言語) で optional に介在する LLM は本性質に含まれない。LLM
-介在を含めた end-to-end の決定論性は、Boundary を mechanical fallback
-に切り替えた場合に成立する (§3.1 参照)。
+Note that "deterministic" in this paper refers to the \textbf{property
+of the analysis core (detailed in R3)}, and does not include the LLM
+that may optionally intervene at the input boundary (Boundary 1: natural
+language → structured) or the output boundary (Boundary 2: structured →
+natural language). End-to-end determinism including LLM involvement
+holds when the Boundaries are switched to mechanical fallback (see
+§3.1).
 
 \subsubsection{1.2 Related work and
 positioning}\label{12-related-work-and-positioning}
 
-LayerForge の design space (sentence embedding + community detection on
-similarity graph + per-cluster representation + clustering-driven
-context compression) は周辺研究と重なる部分が多く、prior art に対する
-position 整理が必要である。以下、隣接する 4 群の主要文献を整理し、最後に
-LayerForge の差別化点を明示する。
+LayerForge\textquotesingle s design space (sentence embedding +
+community detection on similarity graph + per-cluster representation +
+clustering-driven context compression) overlaps with several surrounding
+research lines, so its position relative to prior art needs to be
+stated. Below we organize the main literature in four adjacent groups,
+then state LayerForge\textquotesingle s differentiation.
 
 \paragraph{1.2.1 Clustering-based topic modeling and graph-based text
 clustering}\label{121-clustering-based-topic-modeling-and-graph-based-text-clustering}
 
-文書/passage embedding を clustering し topic / cluster
-構造を取り出す系列:
+A family that clusters document/passage embeddings to extract topic /
+cluster structure:
 
 \begin{itemize}
 \tightlist
 \item
   \textbf{BERTopic} (Grootendorst 2022, arXiv:2203.05794) ---
-  transformer-based document embedding + UMAP 次元圧縮 + HDBSCAN
-  clustering + class-based TF-IDF。Per-document \textbf{single topic}
-  assignment が default。
+  transformer-based document embedding + UMAP dimensionality reduction +
+  HDBSCAN clustering + class-based TF-IDF. Per-document
+  \textbf{single-topic} assignment is the default.
 \item
   \textbf{Top2Vec} (Angelov 2020, arXiv:2008.09470) --- Doc2Vec /
-  Sentence Transformer joint embedding + UMAP + HDBSCAN。topic
-  数は自動決定。
+  Sentence Transformer joint embedding + UMAP + HDBSCAN. Topic count is
+  determined automatically.
 \item
   \textbf{CETopic} (Zhang, Fang, Chen, Namazi-Rad, NAACL 2022, "Is
   Neural Topic Modelling Better than Clustering?") --- SimCSE embedding
-  + UMAP + K-means + TF-IDF×IDFi variant。Neural topic model
-  系列との直接比較を実施。
+  + UMAP + K-means + TF-IDF×IDFi variant, with direct comparison against
+  neural topic models.
 \item
   \textbf{Vec2GC} (Rao \& Chakraborty 2021, arXiv:2104.09439) ---
-  term/document の weighted similarity graph 上の community
-  detection、density-based + hierarchical clustering をサポート。
+  community detection on weighted similarity graphs over terms /
+  documents; supports density-based and hierarchical clustering.
 \item
   \textbf{G2T (Graph2Topic)} (Zhang, Liu, Yan 2023, arXiv:2304.06653)
-  --- pretrained LM embedding → semantic graph 構築 → community
-  detection で topic identification → TFIDF variant で word-topic
-  distribution。\textbf{本研究の design substrate に最も近い prior
-  art}。Automatic evaluation で BERTopic / CETopic に対し SOTA を主張。
+  --- pretrained LM embedding → semantic graph construction → community
+  detection for topic identification → TFIDF variant for word-topic
+  distribution. \textbf{The closest prior art to
+  LayerForge\textquotesingle s design substrate.} Claims SOTA against
+  BERTopic / CETopic in automatic evaluation.
 \item
-  \textbf{SCA} (Eichin et al. 2024, arXiv:2410.21054) --- clustering
-  の上で \textbf{per-document multi-topic distribution} を導入、単純
-  clustering の単一所属仮定を緩和。本研究の R3 (distillation) の元実装。
+  \textbf{SCA} (Eichin et al. 2024, arXiv:2410.21054) --- introduces
+  \textbf{per-document multi-topic distribution} on top of clustering,
+  relaxing the single-assignment assumption of plain clustering. The
+  reference implementation for R3 (distillation) in this study.
 \item
   \textbf{LLM-Assisted Topic Reduction for BERTopic} (Janssens, Bogaert,
-  Van den Poel 2025, arXiv:2509.19365) --- BERTopic の出力に LLM を
-  merge step として追加する hybrid 系列。本研究の決定論性 (R5)
-  と方向が異なる。
+  Van den Poel 2025, arXiv:2509.19365) --- a hybrid family that adds an
+  LLM merge step on top of BERTopic output. Differs from the determinism
+  principle (R5) of this study.
 \end{itemize}
 
-これらは「\textbf{document/passage を topic 群に分類する}」task
-formulation を取る。BERTopic / Top2Vec / CETopic は density-based
-(HDBSCAN) または K-means が主流で community detection は使わず、Vec2GC /
-G2T が graph-based community detection 系列。\textbf{G2T
-は本研究と最も近い substrate} だが、community detection algorithm 名
-(Louvain / CPM / Leiden) が abstract レベルで明示されておらず、Newman vs
-CPM の systematic 比較は内部で行われていない (本研究の §4-§5
-の独自性が残る差)。
+These works adopt the task formulation of "\textbf{classifying
+documents/passages into topic groups}". BERTopic / Top2Vec / CETopic
+dominantly use density-based (HDBSCAN) or K-means clustering and do not
+use community detection; Vec2GC / G2T are in the graph-based
+community-detection family. \textbf{G2T is the closest substrate to this
+work}, but the community-detection algorithm name (Louvain / CPM /
+Leiden) is not stated at the abstract level, and a systematic
+Newman-vs-CPM comparison is not performed inside G2T (leaving the
+originality of §4-§5 of this work intact).
 
 \paragraph{1.2.2 Hierarchical RAG and
 GraphRAG}\label{122-hierarchical-rag-and-graphrag}
 
-階層構造 + retrieval / summarization の組合せ系列:
+A family combining hierarchical structure with retrieval /
+summarization:
 
 \begin{itemize}
 \tightlist
 \item
   \textbf{RAPTOR} (Sarthi et al. 2024, ICLR) --- community detection +
-  LLM summarization で hierarchical RAG。
+  LLM summarization for hierarchical RAG.
 \item
   \textbf{GraphRAG} (Edge et al. 2024, arXiv:2404.16130) --- Leiden +
-  LLM summarization で knowledge graph 構造化、query-focused
-  summarization。
+  LLM summarization for knowledge-graph structuring and query-focused
+  summarization.
 \item
-  \textbf{HippoRAG} --- PageRank-based retrieval、graph 構造を index
-  側に使う。
+  \textbf{HippoRAG} --- PageRank-based retrieval, using graph structure
+  on the index side.
 \item
   \textbf{Core-based Hierarchies for Efficient GraphRAG} (Hossain \&
-  Sarıyüce 2026, arXiv:2603.05207) --- GraphRAG の Leiden clustering を
-  \textbf{k-core decomposition} に置換し deterministic な hierarchy
-  を得る。Leiden 批判の根拠が "modularity optimization admits
-  exponentially many near-optimal partitions on sparse graphs"
-  で、本研究が §5 で引用する Good (2010) Q degeneracy と
-  \textbf{同じ問題を別 angle (置換) で攻める} 関係。LayerForge は
-  modularity family 内に留まり failure mode を documents する方向。
+  Sarıyüce 2026, arXiv:2603.05207) --- replaces
+  GraphRAG\textquotesingle s Leiden clustering with \textbf{k-core
+  decomposition} to obtain a deterministic hierarchy. The Leiden
+  critique is grounded in "modularity optimization admits exponentially
+  many near-optimal partitions on sparse graphs", which is \textbf{the
+  same problem attacked from a different angle (replacement)} as the
+  Good (2010) Q-degeneracy we cite in §5. LayerForge stays inside the
+  modularity family and instead documents the failure modes.
 \item
   \textbf{RAG vs. GraphRAG: A Systematic Evaluation} (Han et al. 2026,
-  arXiv:2502.11371) --- RAG / RAPTOR / HippoRAG2 / GraphRAG
-  の統一評価フレームワーク提案。LayerForge は本 framework の「passage
-  graph + decoupled summarization」象限に位置する。
+  arXiv:2502.11371) --- proposes a unified evaluation framework for RAG
+  / RAPTOR / HippoRAG2 / GraphRAG. LayerForge sits in the "passage graph
+  + decoupled summarization" quadrant of this framework.
 \item
-  \textbf{GraphRAG-Bench} (Xiao et al. 2025, arXiv:2506.02404) ---
-  GraphRAG family の domain-specific reasoning benchmark。
+  \textbf{GraphRAG-Bench} (Xiao et al. 2025, arXiv:2506.02404) --- a
+  domain-specific reasoning benchmark for the GraphRAG family.
 \item
-  \textbf{HERCULES} (\texttt{bandeerun/pyhercules}、MIT 2025) ---
-  LLM-integrated hierarchical KMeans の reference
-  implementation。peer-reviewed publication
-  は本研究時点で未刊行、本稿は引用 base ではなく \textbf{設計 skeleton
-  として参照} する位置付け (§2.4)。
+  \textbf{HERCULES} (\texttt{bandeerun/pyhercules}, MIT 2025) --- a
+  reference implementation of LLM-integrated hierarchical KMeans. No
+  peer-reviewed publication exists at the time of this work; we use it
+  not as a citation base but as a \textbf{design skeleton reference}
+  (§2.4).
 \end{itemize}
 
-これらは大半が \textbf{解析 pipeline に LLM を組み込む}
-前提を持つ。LayerForge は決定論性 (R5) を理由に \textbf{解析コアから LLM
-を排除}、LLM 介在を Boundary 1/2 (optional) に限定する点が architectural
-な差。Core-based GraphRAG とは "Leiden の reproducibility 問題への対応"
-という problem 認識を共有しつつ、置換 (k-core) ではなく \textbf{failure
-mode の documentation + method-selection signal}
-という解決方向で分岐する。
+The bulk of these works assume \textbf{LLM integration in the analysis
+pipeline}. LayerForge, by the determinism principle (R5),
+\textbf{excludes LLM from the analysis core} and restricts LLM
+involvement to Boundary 1/2 (optional) --- an architectural difference.
+With Core-based GraphRAG we share the problem framing of "addressing
+Leiden\textquotesingle s reproducibility issue", but diverge in the
+solution direction: not replacement (k-core), but \textbf{failure-mode
+documentation + method-selection signal} inside the modularity family.
 
 \paragraph{1.2.3 Context and memory
 compression}\label{123-context-and-memory-compression}
 
-LLM の context budget 制約下で input を圧縮する系列 (近年の直近系研究):
+A family compressing input under the LLM\textquotesingle s
+context-budget constraint (recent works):
 
 \begin{itemize}
 \tightlist
 \item
   \textbf{Clustering-driven Memory Compression for On-device LLMs}
   (Bohdal, Saha, Michieli, Ozay, Ceritli 2026, arXiv:2601.17443) ---
-  \textbf{LayerForge と framing が最も近い同時期 prior art}。"groups
-  memories by similarity and merges them within clusters prior to
-  concatenation" という mechanism は本研究の Mode C (multi-agent
-  帯域削減) と同型。ただし対象は \textbf{user-specific memory tokens}
-  (personalization 用) であり、目的は context budget 制約下の
-  personalization 維持。LayerForge とは「対象 (memory vs corpus
-  passage)、目的 (personalization vs 関心毎収束)、cognitive constraint
-  (なし vs Cowan 4±1 明示)、method (similarity averaging-then-merge vs
-  community detection on similarity graph)」の 4 点で differentiate
-  される (§1.2.5 で詳述)。
+  \textbf{the closest concurrent prior art to LayerForge in framing.}
+  The mechanism "groups memories by similarity and merges them within
+  clusters prior to concatenation" is isomorphic to
+  LayerForge\textquotesingle s Mode C (multi-agent bandwidth reduction).
+  However, the target is \textbf{user-specific memory tokens} (for
+  personalization), and the goal is preserving personalization under a
+  context-budget constraint. LayerForge differs on four axes --- (i)
+  \textbf{target} (memory tokens vs. corpus passages), (ii)
+  \textbf{goal} (personalization vs. concern-wise convergence), (iii)
+  \textbf{method} (similarity averaging + merge vs. community detection
+  on similarity graph), (iv) \textbf{cognitive constraint} (none vs.
+  Cowan 4±1 explicit). Detailed in §1.2.5.
 \item
   \textbf{EDU-based Context Compressor} (Zhou et al. 2025,
-  arXiv:2512.14244) --- Elementary Discourse Unit decomposition による
-  structure-then-select 圧縮。compression mechanism が clustering
-  ではなく discourse 構造解析という点で本研究と直交。
+  arXiv:2512.14244) --- structure-then-select compression via Elementary
+  Discourse Unit decomposition. Orthogonal to this work in that the
+  compression mechanism is discourse-structural rather than
+  clustering-based.
 \end{itemize}
 
-本系列は本研究と「\textbf{clustering-driven context compression}」という
-framing を共有する。本研究の \textbf{§1 の動機 (認知負荷 / 帯域 / コスト
-3 軸)} と Bohdal et al. の "balances context efficiency and
-personalization quality" が独立に同じ problem space
-に到達している事実は、本研究が単独の design ではなく \textbf{2025-2026
-年に複数研究者が並行して取り組む problem space に位置する}
-ことを意味する。
+This family shares with our work the framing of
+"\textbf{clustering-driven context compression}". The fact that our
+\textbf{§1 motivation (the three axes of cognitive load / bandwidth /
+cost)} and Bohdal et al.\textquotesingle s "balances context efficiency
+and personalization quality" arrived at the same problem space
+independently means LayerForge is not an isolated design but \textbf{a
+position within a problem space that multiple research groups are
+working on in parallel in 2025-2026}.
 
 \paragraph{1.2.4 Community detection method
 comparisons}\label{124-community-detection-method-comparisons}
 
-複数の community detection 手法を benchmark で systematic 比較 /
-理論分析する系列:
+A family that systematically benchmarks / theoretically analyzes
+multiple community-detection methods:
 
 \begin{itemize}
 \tightlist
 \item
-  \textbf{Lancichinetti \& Fortunato (2009)} --- LFR synthetic benchmark
-  を提案、community detection algorithm の標準的評価基盤。
+  \textbf{Lancichinetti \& Fortunato (2009)} --- proposed the LFR
+  synthetic benchmark, the standard evaluation infrastructure for
+  community-detection algorithms.
 \item
-  \textbf{Aldecoa \& Marín (2013, Scientific Reports)} --- Newman
-  modularity / CPM / RB / RN / MCL / Infomap 等を closed benchmark
-  で系統評価、CPM が「benchmark
-  の両端の易しい領域でのみ精度が出る」「ある程度の不安定性を示す」と報告。本研究の
-  §4-§5 の small-N text 結果はこの synthetic
-  結果との対比軸として位置付け可能。
+  \textbf{Aldecoa \& Marín (2013, Scientific Reports)} ---
+  systematically evaluated Newman modularity / CPM / RB / RN / MCL /
+  Infomap, etc. on closed benchmarks, reporting that CPM "produces
+  accurate results only in the easy ends of the benchmark" and "shows
+  some instability". Our §4-§5 small-N text results can be positioned as
+  a contrast axis against these synthetic results.
 \item
-  \textbf{Traag et al. (2011, 2019)} --- CPM の resolution-limit-free 性
-  (2011)、Leiden refinement (2019) の理論基礎。
+  \textbf{Traag et al. (2011, 2019)} --- the theoretical basis of
+  CPM\textquotesingle s resolution-limit-free property (2011) and the
+  Leiden refinement (2019).
 \item
   \textbf{From Leiden to Pleasure Island: The Constant Potts Model as a
   Hedonic Game} (Felipe, Avrachenkov, Menasche 2025, arXiv:2509.03834)
-  --- CPM を hedonic game (potential game) として再定式化、local utility
-  最適化が pseudo-polynomial time で equilibrium
-  に収束することを証明、robust partition criteria
-  を導入。\textbf{本研究の §5 (CPM の failure mode 分析) と直近の関連}
-  だが、彼らは synthetic / random graph ベース、本研究は small-N text
-  similarity graph で empirical に観察を取る相補的関係。
+  --- recasts CPM as a hedonic game (potential game), proves that
+  local-utility optimization converges to equilibrium in
+  pseudo-polynomial time, and introduces robust partition criteria.
+  \textbf{Directly related to §5 of this work (CPM failure-mode
+  analysis)}, but on synthetic / random graphs; our small-N text
+  similarity graphs are complementary empirical observations.
 \end{itemize}
 
-これらは合成 graph / closed benchmark /
-理論分析が中心であり、\textbf{small-N text similarity graph (LayerForge
-の運用域 N=20-40) における Newman vs CPM systematic 比較}
-は本研究時点では我々が見つけられた範囲では他に存在しない。
+These works center on synthetic graphs / closed benchmarks / theoretical
+analysis. To the best of our search, \textbf{a systematic Newman-vs-CPM
+comparison on small-N text similarity graphs
+(LayerForge\textquotesingle s operational range N=20-40)} does not exist
+elsewhere at the time of this work.
 
 \paragraph{1.2.5 LayerForge
 positioning}\label{125-layerforge-positioning}
 
-上記 prior art に対し本研究の差別化点は以下 5 点:
+Against the above prior art, this study differentiates on the following
+five points:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  \textbf{vs G2T (Zhang et al. 2023)}: 共通 substrate (sentence
-  embedding + community detection on similarity graph)
-  を持つが、本研究は \textbf{Newman vs CPM の small-N text 領域での
-  systematic 比較 + 3 failure mode 分類 (§5)} に focus、加えて
-  \textbf{SCA distillation step (R3) と HERCULES skeleton (R4)、4±1
-  cognitive constraint (R2)、Mode A/B/C application layer} を組合せ。G2T
-  との直接 head-to-head 比較は本稿の scope 外 (future work)。
+  \textbf{vs G2T (Zhang et al. 2023)}: Shares the substrate (sentence
+  embedding + community detection on similarity graph), but this study
+  focuses on the \textbf{systematic Newman-vs-CPM comparison in the
+  small-N text regime + a three-failure-mode classification (§5)}, and
+  additionally combines \textbf{SCA distillation (R3), HERCULES skeleton
+  (R4), the 4±1 cognitive constraint (R2), and a Mode A/B/C application
+  layer}. A direct head-to-head comparison against G2T is out of scope
+  for this paper (future work).
 \item
   \textbf{vs Clustering-driven Memory Compression (Bohdal et al. 2026,
-  Samsung)}: clustering-driven context compression という最上位 framing
-  は完全に一致する同時期 prior art。差別化は以下 4 軸 --- (i)
-  \textbf{対象}: LayerForge は corpus passage、Bohdal は LLM 内部の
-  user-specific memory token、(ii) \textbf{目的}: LayerForge は AI
-  output の関心毎収束 (認知負荷 + 帯域 + コスト 3 軸削減)、Bohdal は
-  personalization 維持下の context budget 適合、(iii) \textbf{method}:
-  LayerForge は community detection on similarity graph (Newman / CPM
-  切替)、Bohdal は similarity averaging + merge、(iv) \textbf{cognitive
-  constraint}: LayerForge は Cowan (2010) 4±1 を ergonomic
-  上限として明示採用、Bohdal は context budget
-  による外部制約のみ。両研究は \textbf{同じ problem space
-  に独立に到達した近接研究} であり、本稿は corpus-passage 側で
-  community-detection 系の手法選択 (Newman vs CPM) を実証評価する
-  complementary な貢献を提供する。
+  Samsung)}: A concurrent prior art that fully matches the top-level
+  framing of clustering-driven context compression. We differentiate on
+  four axes --- (i) \textbf{target}: LayerForge operates on corpus
+  passages, Bohdal on user-specific memory tokens inside the LLM; (ii)
+  \textbf{goal}: LayerForge converges AI output by concern (reducing
+  cognitive load + bandwidth + cost on three axes), Bohdal fits the
+  context budget while preserving personalization; (iii)
+  \textbf{method}: LayerForge uses community detection on a similarity
+  graph (Newman / CPM switchable), Bohdal uses similarity averaging +
+  merge; (iv) \textbf{cognitive constraint}: LayerForge explicitly
+  adopts Cowan (2010) 4±1 as an ergonomic upper bound, while Bohdal only
+  uses the external context-budget constraint. The two studies are
+  \textbf{independent arrivals at the same problem space}, and this
+  paper offers a complementary contribution on the corpus-passage side
+  by empirically evaluating method choice (Newman vs CPM) inside the
+  community-detection family.
 \item
-  \textbf{vs BERTopic / Top2Vec / CETopic}: 本研究は \textbf{per-passage
-  hard partition} を一次成果物とし、layer 構造の上で
-  \textbf{deterministic Mode A/B/C} を提供する。BERTopic 系列は
-  per-document topic distribution を一次成果物とする task formulation
-  の違いから、direct baseline 比較対象には適さない (§2.1)。
+  \textbf{vs BERTopic / Top2Vec / CETopic}: This study takes
+  \textbf{per-passage hard partitions} as the primary output and
+  provides \textbf{deterministic Mode A/B/C} on top of the layer
+  structure. BERTopic-family works take per-document topic distributions
+  as the primary output, so the task formulation differs and they are
+  not suitable as direct baselines (§2.1).
 \item
-  \textbf{vs RAPTOR / GraphRAG / Core-based GraphRAG / HERCULES}:
-  本研究は \textbf{解析コアから LLM を意図的に decouple} し、Boundary
-  1/2 に限定する (R5)。これは関心毎収束の \textbf{再現性保証}
-  を目的とした design choice であり、LLM
-  統合系列とは正反対の方向。Core-based GraphRAG と "Leiden の
-  reproducibility 問題" の認識を共有しつつ、置換 (k-core) ではなく
-  \textbf{modularity family 内での failure mode documentation +
-  method-selection signal 構成} という方向で分岐。
+  \textbf{vs RAPTOR / GraphRAG / Core-based GraphRAG / HERCULES}: This
+  study \textbf{intentionally decouples LLM from the analysis core} and
+  restricts LLM involvement to Boundary 1/2 (R5). This is a design
+  choice aimed at \textbf{reproducibility of concern-wise convergence},
+  the opposite direction from the LLM-integrated family. With Core-based
+  GraphRAG we share the recognition of "Leiden\textquotesingle s
+  reproducibility problem", but we diverge by going for
+  \textbf{failure-mode documentation + method-selection signal inside
+  the modularity family} rather than replacement (k-core).
 \item
   \textbf{vs Aldecoa \& Marín / Traag / Felipe et al. (Pleasure
-  Island)}: 既存の community detection 比較は synthetic / random /
-  closed benchmark 中心で、small-N text domain
-  での「resolution-limit-free が機能するか」の empirical
-  検証は本稿で初めて (我々が確認できた範囲で)。本研究の §4 / §5
-  の貢献の核がここにある。
+  Island)}: Existing community-detection comparisons center on synthetic
+  / random / closed benchmarks. To our knowledge, this paper is the
+  first to empirically test "whether resolution-limit-free works" in the
+  small-N text domain. The core contribution of §4 / §5 lies here.
 \end{enumerate}
 
-つまり LayerForge は \textbf{G2T の design space に SCA + HERCULES + 4±1
-+ Mode A/B/C を載せた application} であり、core 貢献は \textbf{(i)
-その組合せの実装報告、(ii) Newman vs CPM の small-N text 領域での
-systematic comparison + 3 failure mode 分類 (§5)} の 2
-点に絞られる。「community detection method comparison そのものを新規
-contribution と主張する」のではなく、「\textbf{既知の method 群を本
-domain で実証評価して挙動を文書化した}」と読まれるべき report
-である。Bohdal et al. (Samsung 2026) との同時期 framing 重複は本研究の
-novelty を否定するものではなく、\textbf{両研究が独立に同じ problem space
-を identify した事実} として記録する。
+In other words, LayerForge is \textbf{an application that places SCA +
+HERCULES + 4±1 + Mode A/B/C on top of G2T\textquotesingle s design
+space}, and the core contribution narrows to \textbf{(i) the
+implementation report of that combination, and (ii) the systematic
+Newman-vs-CPM comparison in the small-N text regime + the
+three-failure-mode classification (§5)}. We do not claim
+"community-detection method comparison itself" as a novel contribution;
+the paper should be read as "\textbf{empirical evaluation and
+documentation of known methods within this domain}". The framing overlap
+with Bohdal et al. (Samsung 2026) does not negate this
+work\textquotesingle s novelty; we record it as the fact that
+\textbf{two studies independently identified the same problem space}.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\subsection{§2. Why these technologies --- 5
-つの技術選択の必然性}\label{2-why-these-technologies--5-ux3064ux306eux6280ux8853ux9078ux629eux306eux5fc5ux7136ux6027}
+\subsection{§2. Why these technologies --- Necessity of the
+five-component
+combination}\label{2-why-these-technologies--necessity-of-the-five-component-combination}
 
-§1 の動機から要件を取り出すと:
+Extracting requirements from the §1 motivation:
 
 {\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}lll@{}}
 \toprule\noalign{}
-要件 & 技術選択 & 関連文献 \\
+Requirement & Technology choice & Related literature \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-(R1) \textbf{「関心毎の単位」を corpus から抽出する} & Community
+(R1) \textbf{Extract "concern-wise units" from a corpus} & Community
 detection on similarity graph & Newman (2006), Fortunato \& Barthélemy
 (2007), Traag et al. (2011) \\
-(R2) \textbf{読み手の認知に易しい上限} & 4±1 layer (Cowan の working
-memory capacity) & Cowan (2010), Miller (1956) \\
-(R3) \textbf{各 layer の "中核情報" を取り出す} & Per-layer distillation
-(SCA-style) & Eichin et al. (2024) --- Semantic Component Analysis \\
-(R4) \textbf{大規模 corpus への拡張性} & Hierarchical KMeans foundation
-(HERCULES-style) & Reference impl \texttt{bandeerun/pyhercules} (MIT,
-2025) \\
-(R5) \textbf{「AI 出力を AI で絞らない」決定論性} & LLM-free analysis
-core, AI 介在は境界のみ & LayerForge design rationale \\
+(R2) \textbf{An ergonomic upper bound for the reader\textquotesingle s
+cognition} & 4±1 layers (Cowan\textquotesingle s working memory
+capacity) & Cowan (2010), Miller (1956) \\
+(R3) \textbf{Extract the "core information" of each layer} & Per-layer
+distillation (SCA-style) & Eichin et al. (2024) --- Semantic Component
+Analysis \\
+(R4) \textbf{Scalability to large corpora} & Hierarchical KMeans
+foundation (HERCULES-style) & Reference impl
+\texttt{bandeerun/pyhercules} (MIT, 2025) \\
+(R5) \textbf{Determinism that "does not filter AI output with AI"} &
+LLM-free analysis core, AI involvement only at boundaries & LayerForge
+design rationale \\
 \end{longtable}
 }
 
-\subsubsection{2.1 (R1) なぜ community detection
-か}\label{21-r1-ux306aux305c-community-detection-ux304b}
+\subsubsection{2.1 (R1) Why community
+detection}\label{21-r1-why-community-detection}
 
-「関連する文の集合」を \textbf{教師なしで}
-自動抽出する手法として確立済み。RAG 拡張 (RAPTOR, GraphRAG, HippoRAG)
-も同類の発想で passage clustering に Louvain/Leiden
-を使う。本研究はその一族だが、後述 (R5) の制約から \textbf{community
-detection を LLM summary と decouple} している点が異なる。
+An established method for \textbf{unsupervised} automatic extraction of
+"related sentence groups". RAG extensions (RAPTOR, GraphRAG, HippoRAG)
+use Louvain/Leiden for passage clustering under the same spirit. This
+work belongs to that family, but differs by \textbf{decoupling community
+detection from LLM summary} under the R5 constraint (discussed later).
 
-なお、document-level の topic 分布を出す手法 (LDA, BERTopic 等の topic
-modeling 系列) は \textbf{passage-level の hard partition
-を直接出すのが本来の目的でない} ため、本研究の「各 passage がどの layer
-に属するか」という task formulation と直接比較する baseline
-には適さない。本稿の比較対象は \textbf{community detection method
-内部の選択 (Newman vs CPM)} に限定する。
+Methods that output document-level topic distributions (the
+topic-modeling family, e.g. LDA, BERTopic) are \textbf{not primarily
+aimed at producing passage-level hard partitions}, so they are not
+appropriate as direct baselines for this work\textquotesingle s task
+formulation of "which layer does each passage belong to". The comparison
+target of this paper is restricted to \textbf{choice inside the
+community-detection method (Newman vs CPM)}.
 
-\subsubsection{2.2 (R2) なぜ 4±1 か}\label{22-r2-ux306aux305c-41-ux304b}
+\subsubsection{2.2 (R2) Why 4±1}\label{22-r2-why-41}
 
-Cowan (2010) は短期記憶の中心的容量を 3-5 chunks
-と推定。「関心毎収束した結果が読み手に易しい」と要求するなら、layer 数の
-\textbf{ergonomic な上限} をここに置くのが自然。これは「4±1 が universal
-な認知定数」と主張するのではなく、\textbf{設計の目標値として採用}するというデザイン判断。
+Cowan (2010) estimates the central short-term-memory capacity at 3-5
+chunks. If we require that "concern-wise convergence be easy for the
+reader", placing the \textbf{ergonomic upper bound} of layer count here
+is natural. This is a design decision to \textbf{adopt this as a target
+value}, not a claim that "4±1 is a universal cognitive constant".
 
-\subsubsection{2.3 (R3) なぜ SCA distillation
-か}\label{23-r3-ux306aux305c-sca-distillation-ux304b}
+\subsubsection{2.3 (R3) Why SCA
+distillation}\label{23-r3-why-sca-distillation}
 
-community detection は「どの文がどの layer に属するか」を出すが、layer
-の \textbf{代表表現} までは出さない。読み手 / 下流 agent が layer
-に渡すには「この layer は何の話題か」が短く分かる形が必要。Eichin et al.
-(2024) の Semantic Component Analysis は per-cluster の代表 component を
-distill する手法で、本要件と整合する。
+Community detection produces "which sentence belongs to which layer",
+but does not produce a \textbf{representative expression} for the layer.
+To hand a layer to a reader or downstream agent, a short form of "what
+topic this layer is about" is needed. Eichin et al.
+(2024)\textquotesingle s Semantic Component Analysis distills
+per-cluster representative components, matching this requirement.
 
-\subsubsection{2.4 (R4) なぜ HERCULES
-か}\label{24-r4-ux306aux305c-hercules-ux304b}
+\subsubsection{2.4 (R4) Why HERCULES}\label{24-r4-why-hercules}
 
-flat 1-level community detection
-で本研究の主要結果は十分得られるが、将来的に「N=10K の large corpus を
-4×4×4×4 = 256
-のような階層に再帰展開する」運用を想定し、\textbf{hierarchical KMeans の
-skeleton} を予め採用 (現実装は max\_depth=1 default、option で recursive
-化可能)。
+Flat 1-level community detection is sufficient for the main results of
+this work, but we adopt a \textbf{hierarchical KMeans skeleton} in
+advance, anticipating future operation such as "recursively expanding an
+N=10K large corpus into 4×4×4×4 = 256 levels" (the current
+implementation defaults to max\_depth=1 and is recursively expandable
+via an option).
 
-なお HERCULES は本研究時点では \textbf{GitHub の reference
-implementation (\texttt{bandeerun/pyhercules}、MIT) のみ存在し
-peer-reviewed publication なし}。本研究は HERCULES を「hierarchical
-KMeans を採用した先行 OSS implementation」として position
-参照しており、HERCULES 自体の理論的優位性を引用 base
-にしているわけではない。R4 の本質的根拠は「再帰的 KMeans が large corpus
-拡張に skeleton として機能する」という設計判断であり、HERCULES
-はその一実装例 (=参照先) という位置付け。
+Note that HERCULES, at the time of this work, exists \textbf{only as a
+GitHub reference implementation (\texttt{bandeerun/pyhercules}, MIT)
+with no peer-reviewed publication}. We reference HERCULES as a "prior
+OSS implementation that adopted hierarchical KMeans" for positioning,
+not as a citation base for its own theoretical superiority. The
+substantive basis for R4 is the design judgment that "recursive KMeans
+functions as a skeleton for large-corpus extension"; HERCULES is one
+implementation example (= reference target) of that.
 
-\subsubsection{2.5 (R5)
-なぜ決定論コアか}\label{25-r5-ux306aux305cux6c7aux5b9aux8ad6ux30b3ux30a2ux304b}
+\subsubsection{2.5 (R5) Why a deterministic
+core}\label{25-r5-why-a-deterministic-core}
 
-§1 で述べた通り、\textbf{LLM
-の確率的挙動は関心毎収束の再現性を破壊する}。同じ入力で異なる layer
-化が起きたら「収束後の出力」を信用できない。本研究は:
-
-\begin{itemize}
-\tightlist
-\item
-  \textbf{入力境界}: 自然言語 → 構造化 (Boundary 1) で LLM 介在可
-\item
-  \textbf{解析コア}: 決定論 (community detection + KMeans + SCA
-  は全て決定論アルゴリズム)
-\item
-  \textbf{出力境界}: 構造化 → 自然言語 (Boundary 2) で LLM 介在可
-  (optional、本研究では Mode A/C は AI 不要で動作)
-\end{itemize}
-
-この制約により、解析結果は \textbf{同じ input + 同じ hyperparameters →
-同じ output} を保証する。ここで hyperparameters には community-detection
-method の選択
-(\texttt{community\_method="newman"\ \textbar{}\ "cpm"})、random
-seed、target\_range、embedding model
-等を含む。これらを固定した上での再現性であり、method
-を切り替えれば異なる partition が得られうる (§4.3 で実証)。
-
-\subsubsection{2.6 まとめ ---
-組合せの必然性}\label{26-ux307eux3068ux3081--ux7d44ux5408ux305bux306eux5fc5ux7136ux6027}
-
-5 つの技術選択はそれぞれ独立の要件 (R1-R5)
-から導かれており、\textbf{逆に言えば各要件を満たす別の選択は本研究の課題に合わない}:
+As stated in §1, \textbf{the stochastic behavior of LLMs destroys the
+reproducibility of concern-wise convergence}. If different layerings
+emerge for the same input, the "converged output" cannot be trusted.
+This work uses:
 
 \begin{itemize}
 \tightlist
 \item
-  community detection を skip → 関心単位の自動抽出ができない
+  \textbf{Input boundary}: natural language → structured (Boundary 1),
+  LLM involvement allowed
 \item
-  4±1 を捨てる → 認知負荷削減の根拠を失う
+  \textbf{Analysis core}: deterministic (community detection + KMeans +
+  SCA are all deterministic algorithms)
 \item
-  SCA を skip → 各 layer の代表表現が出ない
-\item
-  HERCULES を捨てる → 大規模拡張の base がない
-\item
-  決定論を捨てる → §1 の問題を AI で AI を絞ろうとして自己矛盾
+  \textbf{Output boundary}: structured → natural language (Boundary 2),
+  LLM involvement allowed (optional; in this work Modes A and C operate
+  without AI)
 \end{itemize}
 
-この組合せが §1 の動機 (R1-R5) を実装上充足する \textbf{設計根拠}を §3
-で示す。組合せ内部の \textbf{最重要選択 (community detection method の
-Newman vs CPM)} の妥当性を §4 で empirical に検証する。\textbf{SCA
-distillation / HERCULES hierarchy / 4±1 制約 / 決定論性の個別 ablation
-は本稿の scope 外} であり、§7.5
-で明示する。本稿の主張は「組合せ内部の最重要選択について empirical に
-method 比較を行い、本 domain で Newman backend
-が適合することを示した」に限定される。
+Under this constraint, the analysis results guarantee \textbf{same input
++ same hyperparameters → same output}. Here, hyperparameters include the
+community-detection method choice
+(\texttt{community\_method="newman"\ \textbar{}\ "cpm"}), random seed,
+\texttt{target\_range}, embedding model, etc. Reproducibility holds with
+these fixed; switching methods can yield different partitions
+(demonstrated in §4.3).
+
+\subsubsection{2.6 Summary --- Necessity of the
+combination}\label{26-summary--necessity-of-the-combination}
+
+The five technology choices are each derived from independent
+requirements (R1-R5), and \textbf{conversely, alternative choices that
+satisfy each requirement do not fit this study\textquotesingle s task}:
+
+\begin{itemize}
+\tightlist
+\item
+  Skip community detection → cannot automatically extract concern-wise
+  units
+\item
+  Drop 4±1 → lose the basis for cognitive-load reduction
+\item
+  Skip SCA → no representative expression per layer
+\item
+  Drop HERCULES → no base for large-scale expansion
+\item
+  Drop determinism → self-contradiction by trying to filter AI with AI
+  for the §1 problem
+\end{itemize}
+
+§3 shows the \textbf{design rationale} for how this combination
+implements the §1 motivation (R1-R5). §4 empirically tests the validity
+of the \textbf{most important choice inside the combination (the
+community-detection method, Newman vs CPM)}. \textbf{Individual
+ablations of SCA distillation / HERCULES hierarchy / the 4±1 constraint
+/ determinism are out of scope} for this paper, and are stated in §7.5.
+The claim of this paper is restricted to "an empirical method comparison
+on the most important choice inside the combination, showing that the
+Newman backend fits this domain".
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \subsection{§3. Approach --- LayerForge
-実装}\label{3-approach--layerforge-ux5b9fux88c5}
+implementation}\label{3-approach--layerforge-implementation}
 
 \subsubsection{3.1 Pipeline}\label{31-pipeline}
 
@@ -619,20 +663,20 @@ method 比較を行い、本 domain で Newman backend
 [input: list of passages, optional query]
        │
        ▼
-(B1) parse_to_structure       — 自然言語 → FormulationInput (optional LLM, has mechanical fallback)
+(B1) parse_to_structure       — natural language → FormulationInput (optional LLM, has mechanical fallback)
        │
        ▼
 build_similarity_matrix       — sentence-transformers cosine similarity
        │
        ▼
 find_valid_scale / find_cpm_resolution
-                              — threshold θ (Newman) or γ (CPM) で 4±1 範囲の K を探す
+                              — find K in the 4±1 range via threshold θ (Newman) or γ (CPM)
        │
        ▼
 detect_communities            — Newman spectral + KMeans / CPM-Louvain (community_method option)
        │
        ▼
-compute_modularity            — Q (両 method) + cpm_h (CPM 時)
+compute_modularity            — Q (both methods) + cpm_h (when CPM)
        │
        ▼
 distill_layer                 — per-layer SCA (UMAP + HDBSCAN-style components)
@@ -641,7 +685,7 @@ distill_layer                 — per-layer SCA (UMAP + HDBSCAN-style components
 hierarchy_to_layer_summaries  — { layers: [...], inter_layer_relations: [...] }
        │
        ▼
-(B2) render_to_natural        — 構造化 → 自然言語 (optional LLM, optional)
+(B2) render_to_natural        — structured → natural language (optional LLM)
        │
        ▼
 [output: 4±1 layers + per-layer reps + optional natural-language rendering]
@@ -653,63 +697,65 @@ operation}\label{32-three-modes-of-operation}
 {\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}lll@{}}
 \toprule\noalign{}
-Mode & CLI & 目的 \\
+Mode & CLI & Purpose \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-\textbf{A (decompose)} & \texttt{layerforge-decompose} & corpus を 4±1
-layer に分解、UI から「興味のある layer のみ」を引ける \\
-\textbf{B (decide)} & \texttt{layerforge-decide} & 意思決定情報を layer
-化、\texttt{open}/\texttt{close}/\texttt{settle} で関心の遷移を追跡 \\
-\textbf{C (compress)} & \texttt{layerforge-compress} & AI の verbose
-出力を query に関連する layer subset に圧縮 (decision-less subset
-保証) \\
+\textbf{A (decompose)} & \texttt{layerforge-decompose} & Decompose a
+corpus into 4±1 layers; pull only the layer(s) of interest from the
+UI \\
+\textbf{B (decide)} & \texttt{layerforge-decide} & Layer-organize
+decision information; track concern transitions via
+\texttt{open}/\texttt{close}/\texttt{settle} \\
+\textbf{C (compress)} & \texttt{layerforge-compress} & Compress an
+AI\textquotesingle s verbose output into the layer subset relevant to
+the query (decision-less subset guarantee) \\
 \end{longtable}
 }
 
 \subsubsection{3.3 Claude Code skill
 form}\label{33-claude-code-skill-form}
 
-LayerForge は Python CLI として独立動作するが、運用上は \textbf{Claude
-Code skill} として配置する設計を採った:
+LayerForge runs standalone as a Python CLI, but is operationally placed
+as a \textbf{Claude Code skill}:
 
 \begin{itemize}
 \tightlist
 \item
-  \textbf{LayerForge 本体は API key を保持しない} (Boundary 1/2 で LLM
-  介在を行う場合は Claude Code 経由で実行、API key は Claude Code
-  側で管理)
+  \textbf{LayerForge itself holds no API key} (when LLM involvement is
+  needed at Boundary 1/2, it is executed via Claude Code, where API keys
+  are managed)
 \item
-  PostToolUse hook で出力 schema を自動検証
+  A PostToolUse hook automatically validates the output schema
 \item
-  \texttt{.claude/skills/layerforge/SKILL.md} が \textbf{使う側の Claude
-  への指示書} として機能
+  \texttt{.claude/skills/layerforge/SKILL.md} functions as \textbf{an
+  instruction sheet for the Claude using the skill}
 \end{itemize}
 
-この形態により、LayerForge を「\textbf{LLM の周辺ツール}」として既存 AI
-workflow に挿入可能で、\textbf{解析コアは LLM 不在の決定論を保つ}
-(Boundary 1/2 は §3.1 の通り optional に LLM 介在可、mechanical fallback
-あり)。
+In this form, LayerForge can be inserted into existing AI workflows as a
+"\textbf{peripheral tool of the LLM}", while \textbf{the analysis core
+preserves LLM-free determinism} (Boundary 1/2 allow optional LLM
+involvement as per §3.1, with mechanical fallback available).
 
 \subsubsection{3.4 Dual community-detection
 backend}\label{34-dual-community-detection-backend}
 
-本研究の中心的な engineering 選択は community detection
-method。実装は両方を提供:
+The central engineering choice of this work is the community-detection
+method. The implementation provides both:
 
 \begin{itemize}
 \tightlist
 \item
   \textbf{Newman (default)}: threshold θ + spectral algorithm + KMeans
-  on embeddings、modularity Q で品質測定
+  on embeddings; quality measured by modularity Q
 \item
-  \textbf{CPM (opt-in)}: Leiden-CPM (self-implemented,
-  MIT-pure)、\texttt{(n\_c\ choose\ 2)} quadratic penalty 付き H
-  関数を最大化
+  \textbf{CPM (opt-in)}: Leiden-CPM (self-implemented, MIT-pure);
+  maximizes the H function with the \texttt{(n\_c\ choose\ 2)} quadratic
+  penalty
 \end{itemize}
 
-切替は \texttt{community\_method} option で行う:
+Switching is done via the \texttt{community\_method} option:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -724,89 +770,95 @@ infrastructure}\label{35-reproducibility-infrastructure}
 {\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}ll@{}}
 \toprule\noalign{}
-アーティファクト & 用途 \\
+Artifact & Purpose \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-\texttt{scripts/k\_sweep/correlation\_data.py} (119 rows) & 5 configs ×
-12 K × 2 methods の sweep \\
+\texttt{scripts/k\_sweep/correlation\_data.py} (119 rows) & sweep over 5
+configs × 12 K × 2 methods \\
 \texttt{scripts/k\_sweep/heatmap\_N\_x\_K.py} (196 attempted cells = 7 N
-× 14 K × 2 methods, of which 167 succeeded --- 残り 29 は K ≥ N filter
-または CPM γ-bisection 失敗で skip) & 7 N × 14 K × 2 methods の
-matrix \\
-\texttt{scripts/k\_sweep/cpm\_compare.py} (95 rows + ARI/NMI) & Newman
-vs CPM 直接比較 \\
+× 14 K × 2 methods, of which 167 succeeded --- the remaining 29 were
+skipped by the K ≥ N filter or by CPM γ-bisection failure) & matrix over
+7 N × 14 K × 2 methods \\
+\texttt{scripts/k\_sweep/cpm\_compare.py} (95 rows + ARI/NMI) & direct
+Newman-vs-CPM comparison \\
 \texttt{scripts/k\_sweep/multi\_corpus\_verify\_v2.py} (8 conditions) &
-K\_optimal が N\_themes を tracking するか検証 \\
-\texttt{scripts/k\_sweep/k10\_multi\_corpus.py} & K=10 self-routing
-維持の検証 \\
+test whether K\_optimal tracks n\_themes \\
+\texttt{scripts/k\_sweep/k10\_multi\_corpus.py} & test whether K=10
+self-routing is preserved \\
 \texttt{scripts/k\_sweep/run\_robustness.py} (32 setting-method
 aggregates, each holding 8 K-range measurements; 256 K-range cells
-total) & 16 settings × 8 K ranges × 2 methods の robustness \\
+total) & robustness over 16 settings × 8 K ranges × 2 methods \\
 \texttt{tests/integration/test\_real\_data\_20ng.py} & 20 Newsgroups
-external benchmark (両 method) \\
+external benchmark (both methods) \\
 \texttt{tests/axioms/test\_cpm\_karate\_club.py} &
 Zachary\textquotesingle s Karate Club reference (CPM correctness
 gate) \\
 \end{longtable}
 }
 
-全 raw CSV / JSON / PNG が git に同梱。コミット hash で固定。
+All raw CSV / JSON / PNG are bundled in git, pinned by commit hash.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\subsection{§4. Empirical findings ---
-結果として成立した観察}\label{4-empirical-findings--ux7d50ux679cux3068ux3057ux3066ux6210ux7acbux3057ux305fux89b3ux5bdf}
+\subsection{§4. Empirical findings --- Observations that
+held}\label{4-empirical-findings--observations-that-held}
 
 \begin{quote}
-本節は「結果として成立することが分かった」報告として記述する。「優れている」「最良である」といった主張は避け、\textbf{測定された数値とその範囲}を中心に据える。
+This section is written as a report of "what was found to hold". We
+avoid claims such as "superior" or "best", and place \textbf{the
+measured numbers and their ranges} at the center.
 \end{quote}
 
-\subsubsection{4.0 K に関する用語整理
-(本節の前提)}\label{40-k-ux306bux95a2ux3059ux308bux7528ux8a9eux6574ux7406-ux672cux7bc0ux306eux524dux63d0}
+\subsubsection{4.0 Terminology for K (preliminaries for this
+section)}\label{40-terminology-for-k-preliminaries-for-this-section}
 
 {\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}lll@{}}
 \toprule\noalign{}
-用語 & 定義 & 使用箇所 \\
+Term & Definition & Used in \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-\texttt{target\_range} & 探索したい K の range (例: 4±1 = (3, 5)) & §3.1
-\texttt{find\_valid\_scale} / \texttt{find\_cpm\_resolution} の引数 \\
-\texttt{K\_actual} & 実行結果として得られた community 数 & 全 figures /
-tables \\
-\texttt{K\_optimal} & K sweep の中で Q が最大になる K (Newman) & §4.1,
-§4.4 \\
-\texttt{Q\ peak\ K} & \texttt{K\_optimal} と同義 & §4.1 \\
-\texttt{n\_themes} & corpus が持つ ground truth な theme 数 & §4.4
+\texttt{target\_range} & the range of K to search (e.g., 4±1 = (3, 5)) &
+argument of \texttt{find\_valid\_scale} / \texttt{find\_cpm\_resolution}
+in §3.1 \\
+\texttt{K\_actual} & the number of communities obtained as a run result
+& all figures / tables \\
+\texttt{K\_optimal} & the K that maximizes Q in a K sweep (Newman) &
+§4.1, §4.4 \\
+\texttt{Q\ peak\ K} & synonym for \texttt{K\_optimal} & §4.1 \\
+\texttt{n\_themes} & the ground-truth theme count of the corpus & §4.4
 (H\_struct), §4.6 (20NG) \\
-\texttt{K=10} & 特定の運用候補値 (AI input compression) & §4.5 \\
-\texttt{default\ K} & method-selection rule での probe 値 (本稿では K=4)
-& §5.7 \\
+\texttt{K=10} & a specific operational candidate value (AI input
+compression) & §4.5 \\
+\texttt{default\ K} & the probe value in the method-selection rule (K=4
+in this paper) & §5.7 \\
 \end{longtable}
 }
 
-§4.1 は \texttt{target\_range} を \texttt{4±1} に固定せず広めに sweep し
-Q peak を測定する。§4.4 では各 setting で \texttt{n\_themes} に対応する
-\texttt{K\_actual} の tracking を測定する。両者の corpus 設定の差は §4.4
-で明示。
+§4.1 sweeps Q peak without pinning \texttt{target\_range} to
+\texttt{4±1}. §4.4 measures, for each setting, whether
+\texttt{K\_actual} tracks the corresponding \texttt{n\_themes}. The
+difference in corpus setups between the two is stated explicitly in
+§4.4.
 
-\subsubsection{4.1 Q peak K の N-dependent 挙動
-(Newman)}\label{41-q-peak-k-ux306e-n-dependent-ux6319ux52d5-newman}
+\subsubsection{4.1 N-dependent behavior of Q peak K
+(Newman)}\label{41-n-dependent-behavior-of-q-peak-k-newman}
 
-本 sub-section の corpus は \textbf{cross-domain mpnet corpus
-(KDF-perovskite project の real-world markdown corpus、philosophy /
-exploration / proof / blog の 4 themes、\texttt{n\_themes\ =\ 4})} を
-\texttt{per\_theme\ =\ 2,3,4,5,6,8,10} で sampling し N を変動させたもの
-(§4.4 の synthetic disjoint-vocabulary corpus とは異なる corpus
-family、両者の関係は §4.4 末尾 reconciliation で詳述)。\textbf{「同一
-corpus 構造に対し sampling 密度を変えると Q peak K が動くか」} を測る
-(Good 2010 の theoretical degeneracy が本実装で再現するかの check)。
+The corpus in this sub-section is a \textbf{cross-domain mpnet corpus}
+(real-world markdown corpus of the KDF-perovskite project, four themes
+--- philosophy / exploration / proof / blog, \texttt{n\_themes\ =\ 4}),
+sampled at \texttt{per\_theme\ =\ 2,3,4,5,6,8,10} to vary N (a different
+corpus family from the synthetic disjoint-vocabulary corpus of §4.4; see
+§4.4\textquotesingle s reconciliation for the relation). The measurement
+question is \textbf{"does Q peak K move when the sampling density of the
+same corpus structure varies?"} --- a check of whether the theoretical Q
+degeneracy of Good (2010) is reproduced in this implementation.
 
-7 N values × 14 K values × Newman backend での Q max を取った結果:
+Q max over 7 N values × 14 K values × Newman backend:
 
 {\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}rrr@{}}
@@ -826,21 +878,23 @@ N & Q peak K & Q peak value \\
 \end{longtable}
 }
 
-\textbf{観察}: 同一 corpus 構造に対し N (sample size) を変えると Q peak
-K が 3〜11 の範囲で揺れる。これは Good et al. (2010) が理論的に確立した
-Newman Q の degeneracy
-が本実装でも実証されたことを示す。本研究の独自貢献はこの発見自体ではなく、\textbf{N×K
-軸上での実証データセット}である。
+\textbf{Observation}: For the same corpus structure, varying N (sample
+size) makes Q peak K fluctuate in the range 3-11. This demonstrates that
+the Newman Q degeneracy theoretically established by Good et al. (2010)
+is reproduced in this implementation. The independent contribution of
+this paper is not the discovery itself, but \textbf{the empirical
+dataset on the N×K axes}.
 
-\subsubsection{4.2 Above-limit fraction の method-agnostic monotone
-性}\label{42-above-limit-fraction-ux306e-method-agnostic-monotone-ux6027}
+\subsubsection{4.2 Method-agnostic monotonicity of the above-limit
+fraction}\label{42-method-agnostic-monotonicity-of-the-above-limit-fraction}
 
-Fortunato \& Barthélemy (2007) の resolution limit (√(L/2))
-を基準とし、各 community が limit を超える割合を計算。本節では
-\textbf{method-agnostic 主張を直接支持する common-reference 測定}
-(\texttt{scripts/k\_sweep/data\_current/cpm\_compare\_data.csv}、両
-method を corpus 全体の median similarity で threshold した同一 graph
-上で比較) を主結果として提示する:
+Using the Fortunato \& Barthélemy (2007) resolution limit (√(L/2)) as a
+baseline, we compute the fraction of communities exceeding the limit. We
+present as the primary result the \textbf{common-reference measurement
+that directly supports the method-agnostic claim}
+(\texttt{scripts/k\_sweep/data\_current/cpm\_compare\_data.csv},
+comparing both methods on the same graph thresholded by the corpus-wide
+median similarity):
 
 {\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}rrrr@{}}
@@ -859,26 +913,29 @@ N & K & Newman above-limit & CPM above-limit \\
 \end{longtable}
 }
 
-\textbf{観察}: 6 cells のうち 5 cells で両 method の above-limit
-fraction が \textbf{完全一致}、唯一 N=40, K=5 で divergent (Newman 0.80
-/ CPM 0.60)。Newman も CPM も K の増加に対し monotone-decreasing
-で、両者の曲線は本研究の運用域 (N=12-40) でほぼ同形。N=40 の divergence
-は §4.3 が示す「N≥32 で partition が divergent になる regime」と整合する
-(同一 graph でも method 間で partition 形状が異なれば cluster size
-分布が異なり、above-limit fraction も離れうる)。
+\textbf{Observation}: In 5 of 6 cells the above-limit fraction matches
+\textbf{exactly} between the two methods; only N=40, K=5 diverges
+(Newman 0.80 / CPM 0.60). Both Newman and CPM are monotone-decreasing in
+K, and the two curves are nearly the same shape in this
+paper\textquotesingle s operational range (N=12-40). The N=40 divergence
+is consistent with the regime §4.3 shows ("partitions become divergent
+at N≥32") --- on the same graph, different methods produce different
+partition shapes and hence different cluster-size distributions, which
+can move the above-limit fraction apart.
 
-→ \textbf{above-limit fraction が community detection method
-に依存しない supplementary K-selection signal
-として機能する}ことが本研究で実証された (本検証範囲)。なお、Newman
-自身の \texttt{find\_valid\_scale} が選んだ θ で測った asymmetric
-reference 版の同 cell 数値は §5.2 に再掲し、機序分析側で扱う (両者の
-reference 差から得られる洞察を分離するため)。
+→ This work empirically shows (within the tested range) that \textbf{the
+above-limit fraction functions as a supplementary K-selection signal
+that does not depend on the community-detection method}. The
+asymmetric-reference version of the same cells, measured at the θ chosen
+by Newman\textquotesingle s own \texttt{find\_valid\_scale}, is repeated
+in §5.2 and handled on the mechanism-analysis side (to separate the
+insights from the two reference choices).
 
 \subsubsection{4.3 Newman vs CPM partition agreement (ARI by
 N)}\label{43-newman-vs-cpm-partition-agreement-ari-by-n}
 
-両 method を同じ (N, K) cell で実行し、partition 間の Adjusted Rand
-Index を測定:
+Running both methods on the same (N, K) cell and measuring the Adjusted
+Rand Index between the partitions:
 
 {\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}rrr@{}}
@@ -896,115 +953,120 @@ N & ARI mean & ARI max \\
 \end{longtable}
 }
 
-\textbf{観察}: N≤24 では partition がほぼ一致 (一部 K で完全一致)、N≥32
-では divergent (最大一致でも 0.85)。「Newman でも CPM
-でも同じ結果」と素朴に期待するのは本 domain の \textbf{小 N
-側でのみ妥当}で、運用域 (N=20-40) では method choice が partition
-構造に影響することが分かった。
+\textbf{Observation}: At N≤24 the partitions nearly coincide (perfect
+match at some K), while at N≥32 they diverge (at most 0.85). The naïve
+expectation of "Newman and CPM produce the same result" is \textbf{valid
+only on the small-N side} of this domain; in the operational range
+(N=20-40), method choice was found to affect partition structure.
 
 \subsubsection{4.4 H\_struct (Q peak K = n\_themes)
 tracking}\label{44-h_struct-q-peak-k--n_themes-tracking}
 
-本 sub-section は §4.1 とは \textbf{異なる軸} を測る:
+This sub-section measures a \textbf{different axis} from §4.1:
 
 \begin{itemize}
 \tightlist
 \item
-  §4.1: 「\textbf{同一 corpus 構造で N が変動した時} Q peak K
-  がどう動くか」(Q degeneracy の reproduction)
+  §4.1: "how does Q peak K move \textbf{when N varies for the same
+  corpus structure}" (Q degeneracy reproduction)
 \item
-  §4.4: 「\textbf{異なる n\_themes corpus でそれぞれ} Q peak K が
-  n\_themes に一致するか」(H\_struct hypothesis の test)
+  §4.4: "for \textbf{corpora with different n\_themes}, does Q peak K
+  match n\_themes" (test of the H\_struct hypothesis)
 \end{itemize}
 
 16 settings = \textbf{4 n\_themes (3, 4, 5, 7) × 2 embedders (MiniLM,
-mpnet) × 2 seeds (42, 123)}。各 setting で K range を
-\texttt{\{1-2,\ 2-3,\ 3-4,\ 3-5,\ 5-7,\ 6-8,\ 8-10,\ 10-12\}} に
-sweep。range の構成意図は二段: (a) 全 K=1 から 12 を
-\textbf{重複を許して連続 cover} することで \texttt{find\_valid\_scale}
-の binary search 安定性を K 域全体で確認、(b) Cowan 4±1 (=3-5) 周辺は
-\texttt{2-3,\ 3-4,\ 3-5} の \textbf{3 ranges で密に cover}
-することで本研究の関心域 (4±1) での誤差を小さくする。各 range で Q
-が最大となる K\_actual を取得し、対応する \texttt{n\_themes} と比較:
+mpnet) × 2 seeds (42, 123)}. For each setting we sweep K ranges over
+\texttt{\{1-2,\ 2-3,\ 3-4,\ 3-5,\ 5-7,\ 6-8,\ 8-10,\ 10-12\}}. The
+two-tier design intent is: (a) continuously covering K=1 through 12 with
+overlap to confirm binary-search stability of
+\texttt{find\_valid\_scale} over the whole K span; (b) densely covering
+Cowan\textquotesingle s 4±1 (=3-5) with three ranges
+(\texttt{2-3,\ 3-4,\ 3-5}) to reduce error in this
+paper\textquotesingle s region of interest (4±1). For each range, we
+take the K\_actual that maximizes Q and compare against the
+corresponding \texttt{n\_themes}:
 
 \begin{itemize}
 \tightlist
 \item
-  Newman: \textbf{14/16 (87.5\%) 完全一致}
+  Newman: \textbf{14/16 (87.5\%) exact match}
   (\texttt{K\_actual\ ==\ n\_themes})
 \item
-  CPM: \textbf{3/16 (19\%) 完全一致}
+  CPM: \textbf{3/16 (19\%) exact match}
 \end{itemize}
 
-\textbf{観察}: 「Q peak K が corpus の自然な theme 数を tracking
-する」という仮説 (H\_struct) は \textbf{本 16 settings (synthetic
-disjoint-vocabulary corpus) の domain で Newman backend に強く支持}
-され、CPM backend では支持されなかった。なお 16 settings は small sample
-のため、binomial test 等の formal
-な統計的有意性検定は本稿では実施せず、効果サイズ (87.5\% vs 19\%)
-の大きさで定性的に評価する。
+\textbf{Observation}: The H\_struct hypothesis "Q peak K tracks the
+corpus\textquotesingle s natural theme count" is \textbf{strongly
+supported for the Newman backend in this domain of 16 settings
+(synthetic disjoint-vocabulary corpus)}, and not supported for the CPM
+backend. Since 16 settings is a small sample, we do not perform formal
+statistical significance tests (e.g., binomial test) in this paper, and
+qualitatively evaluate the effect size (87.5\% vs 19\%).
 
-\textbf{Scope 限定 (重要)}: 上記 87.5\% tracking は \textbf{synthetic
-disjoint-vocabulary corpus 上での結果} であり、「Newman の
-\texttt{find\_valid\_scale} pipeline が任意 corpus で n\_themes を自動
-tracking する」という強い主張は本稿では行わない。External benchmark
-(§4.6 で示す 20 Newsgroups、N=100) では default の
-\texttt{target\_range=(3,5)} 設定で Newman ですら K=3 を返し n\_themes=4
-を tracking 失敗する。これは disjoint-vocabulary という synthetic
-条件と公開 corpus の vocabulary overlap の差を反映したもので、§5.4
-(find\_cpm\_resolution 同型の calibration 設計が target\_range 下端 K
-を選好する点) で機序的に位置付ける。本節の H\_struct 主張は
-\textbf{synthetic corpus 条件下での部分支持} と読まれるべきである。
+\textbf{Scope limitation (important)}: The 87.5\% tracking above is
+\textbf{a result on a synthetic disjoint-vocabulary corpus}, and this
+paper does \textbf{not} make the strong claim that
+"Newman\textquotesingle s \texttt{find\_valid\_scale} pipeline
+automatically tracks n\_themes on any corpus". On the external benchmark
+(20 Newsgroups, N=100, §4.6), even Newman returns K=3 under the default
+\texttt{target\_range=(3,5)} and fails to track n\_themes=4. This
+reflects the gap between the synthetic disjoint-vocabulary condition and
+public-corpus vocabulary overlap, and is positioned mechanistically in
+§5.4 (the \texttt{find\_cpm\_resolution}-style calibration design
+prefers the lower end of \texttt{target\_range}). The H\_struct claim of
+this section should be read as \textbf{partial support under the
+synthetic-corpus condition}.
 
-→ \textbf{Figure}: \texttt{figures/new/fig\_h\_struct.png} --- 2-panel
-scatter (Newman \textbar{} CPM) で K\_actual vs n\_themes、対角線が
-perfect tracking を示す。Newman side は対角線周辺に集中、CPM side は
-systematically 下方に外れる (under-merging を視覚化)。
+→ \textbf{Figure}: \texttt{figures/new/fig\_h\_struct.png} --- a 2-panel
+scatter (Newman \textbar{} CPM) of K\_actual vs n\_themes, with a
+diagonal indicating perfect tracking. The Newman side concentrates near
+the diagonal, while the CPM side systematically falls below (visualizing
+under-merging).
 
-\textbf{§4.1 との関係 (reconciliation)}: §4.1 と §4.4 は異なる corpus
-family を用いる:
+\textbf{Relation to §4.1 (reconciliation)}: §4.1 and §4.4 use different
+corpus families:
 
 {\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}lll@{}}
 \toprule\noalign{}
-項目 & §4.1 & §4.4 \\
+Item & §4.1 & §4.4 \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-Corpus 起源 & \textbf{real-world cross-domain} (KDF-perovskite project
-の philosophy / exploration / proof / blog markdown) & \textbf{synthetic
-disjoint-vocabulary}
-(\texttt{scripts/k\_sweep/corpora.py::make\_corpus}、各 theme が unique
-entity 名 + property template) \\
-軸変動 & 同一 corpus 構造で sampling 密度 (per\_theme) を変動 & 異なる
-n\_themes (3,4,5,7) × embedders × seeds \\
-主測定 & N に対する Q peak K の揺れ & 各 setting で Q peak K と
-n\_themes の一致 \\
-結果 & Q peak K が 3-11 で N-依存に揺れる (Q degeneracy reproduction) &
-14/16 (87.5\%) で Q peak K = n\_themes \\
+Corpus origin & \textbf{real-world cross-domain} (philosophy /
+exploration / proof / blog markdown of the KDF-perovskite project) &
+\textbf{synthetic disjoint-vocabulary}
+(\texttt{scripts/k\_sweep/corpora.py::make\_corpus}, each theme using
+unique entity names + property templates) \\
+Axis varied & sampling density (per\_theme) for the same corpus
+structure & different n\_themes (3,4,5,7) × embedders × seeds \\
+Primary measurement & fluctuation of Q peak K with N & match between Q
+peak K and n\_themes for each setting \\
+Result & Q peak K fluctuates in 3-11 with N (Q degeneracy reproduction)
+& 14/16 (87.5\%) Q peak K = n\_themes \\
 \end{longtable}
 }
 
-両者は \textbf{異なる corpus family の異なる質問}
-を測っており、矛盾しない: §4.1 は real-world corpus で「同一 corpus 内の
-sampling 密度変動による degenerate effect」、§4.4 は synthetic corpus
-で「異なる n\_themes を持つ corpus 間の tracking」を測る。Real-world
-cross-domain corpus が §4.4 の synthetic corpus より vocabulary overlap
-が大きいため、§4.1 で Q peak K が n\_themes=4
-に固定しないのは想定内の挙動である。
+The two measure \textbf{different questions on different corpus
+families} and do not contradict: §4.1 measures the "degenerate effect of
+sampling density inside the same corpus" on a real-world corpus, and
+§4.4 measures "tracking across corpora with different n\_themes" on
+synthetic corpora. The real-world cross-domain corpus has more
+vocabulary overlap than §4.4\textquotesingle s synthetic corpus, so it
+is expected behavior that Q peak K in §4.1 does not pin to n\_themes=4.
 
 \subsubsection{4.5 K=10 self-routing (AI input compression
 candidate)}\label{45-k10-self-routing-ai-input-compression-candidate}
 
-\textbf{self-routing accuracy の定義}: 各 passage \texttt{p}
-について、\texttt{p} のテキスト自体を query とみなし、\texttt{p} の
-embedding を全 layer centroid と比較、最も近い centroid の layer
-を選ぶ。chosen layer が \texttt{p} の所属 layer と一致した割合。これは
-LLM-side の paraphrased query routing よりも \textbf{weak な test}
-であるが、algorithm-level の partition consistency
-確認には十分。production query routing の確認は本稿の scope 外 (§7
-Limitations 参照)。
+\textbf{Definition of self-routing accuracy}: for each passage
+\texttt{p}, treat the text of \texttt{p} itself as a query, compare the
+embedding of \texttt{p} against all layer centroids, and select the
+layer with the closest centroid. The fraction of cases in which the
+chosen layer matches \texttt{p}\textquotesingle s layer assignment. This
+is a \textbf{weaker test} than LLM-side paraphrased query routing, but
+sufficient to verify algorithm-level partition consistency. Production
+query routing is out of scope for this paper (see §7 Limitations).
 
 8 conditions (2 corpora × 2 embedders × 2 methods) × K=10 cell:
 
@@ -1023,52 +1085,58 @@ cross-domain 4themes / mpnet & 24/24 (100\%) & 24/24 (100\%) \\
 \end{longtable}
 }
 
-\textbf{観察}: K=10 で self-routing が 96-100\% に留まり、partition
-consistency 指標上の理論最小読込量比は 1/K = 10\% (10x reduction)。両
-method で類似の精度。\textbf{self-routing 指標上は AI 入力圧縮としての
-K=10 が method-agnostic に成立する}。
+\textbf{Observation}: At K=10 self-routing stays in 96-100\%, and the
+theoretical minimum read-fraction on the partition-consistency metric is
+1/K = 10\% (a 10× reduction). The two methods have similar accuracy.
+\textbf{On the self-routing metric, K=10 as an AI-input compression
+target holds method-agnostically.}
 
-\textbf{重要な scope 制限}: 上記の「10x reduction」は \textbf{partition
-consistency の理論最小値} であり、\textbf{production で paraphrased
-query を投げた時の retrieval 精度は本節では未測定}。self-routing
-が測るのは「passage 自身を query にして所属 layer に戻れるか」という
-intra-cluster tightness で、production query routing (パラフレーズや
-query-passage semantic gap を伴う) の精度との間には gap
-が存在する。本数値を「AI 入力 10x
-圧縮の達成」と読み替えるのは飛躍であり、本節は \textbf{partition
-consistency 上の必要条件} が満たされたことの報告に留まる。production
-query routing の精度確認は本稿 scope 外 (§7.2 / §7.5 参照)。
+\textbf{Important scope limitation}: The "10× reduction" above is the
+\textbf{theoretical minimum value of partition consistency}, and
+\textbf{production retrieval accuracy under paraphrased queries is not
+measured in this section}. What self-routing measures is intra-cluster
+tightness --- "does a passage, used as its own query, return to the
+layer it belongs to?" --- and there is a gap between this and production
+query routing (which involves paraphrase and query-passage semantic
+gap). Reading these numbers as "achieving 10× AI input compression"
+would be a leap; this section reports only that the \textbf{necessary
+condition for partition consistency} is satisfied. Verification of
+production query routing accuracy is out of scope for this paper (see
+§7.2 / §7.5).
 
-\textbf{§4.4 / §4.6 との粒度依存性}: 本節 (K=10) と §4.4 (K = n\_themes)
-で method 差の大きさが大きく異なる現象は、§5 で機序的に説明する。要旨:
-\textbf{K = n\_themes 域では Newman が真の thematic structure を Q peak
-で拾うのに対し CPM は under-merge する}ため method 差が顕在化する。一方
-\textbf{K=10 のような over-clustering 域では両 method とも「more
-clusters than themes」へ強制される}ため、ground truth とは別に partition
-の細分化が支配し method 差は出にくくなる。粒度域の違いが method
-差の顕在化を決める。
+\textbf{Granularity dependence vs §4.4 / §4.6}: The phenomenon that the
+method-difference size is very different between this section (K=10) and
+§4.4 (K = n\_themes) is explained mechanistically in §5. In short:
+\textbf{in the K = n\_themes regime, Newman picks up the true thematic
+structure via the Q peak while CPM under-merges}, so method differences
+become visible; meanwhile \textbf{in over-clustering regimes such as
+K=10, both methods are forced into "more clusters than themes"}, so
+partition fragmentation dominates over the ground-truth distinction and
+method differences become harder to observe. The granularity regime
+determines whether method differences surface.
 
 \subsubsection{4.6 20 Newsgroups (external
 benchmark)}\label{46-20-newsgroups-external-benchmark}
 
-4 thematically distinct newsgroups (sci.med / sci.space /
-rec.sport.hockey / talk.politics.guns)、25 docs/topic = \textbf{N = 100
-documents} (本 sub-section のみ、§4.1-4.5 の N=20-40 から scaling check
-を兼ねる)。
+Four thematically distinct newsgroups (sci.med / sci.space /
+rec.sport.hockey / talk.politics.guns) with 25 docs/topic = \textbf{N =
+100 documents} (only in this sub-section, serving also as a scaling
+check from N=20-40 in §4.1-4.5).
 
-\textbf{測定 K}: 両 method とも \texttt{target\_range\ =\ (3,\ 5)}
-(Cowan 4±1 の default range) で実行。本実装の現行 default 動作では両
-method とも K=3 を返す
-(\texttt{tests/integration/test\_real\_data\_20ng.py} の許容 K 集合:
-Newman \{3,4,5\}、CPM \{2,3,4,5\})。\textbf{両 method とも K=3
-で頭打ちになる現象は、本実装の K calibration 設計
-(\texttt{find\_valid\_scale} / \texttt{find\_cpm\_resolution} がいずれも
-target\_range 下端の K を選好する仕様、§5.4 で機序解説) の symptom
-であり、n\_themes=4 の正解にたどり着けないのは Newman
-の本来的限界ではない}。K=4 強制時の Newman ARI=0.557 が calibration
-を経由しないときの本来の到達点を示す。得られた partition を
-\textbf{ground truth (n\_themes = 4)} と比較、Adjusted Rand Index
-(sklearn.metrics.adjusted\_rand\_score) で測定:
+\textbf{Measured K}: both methods are run with
+\texttt{target\_range\ =\ (3,\ 5)} (Cowan\textquotesingle s 4±1 default
+range). In the current default behavior of the implementation, both
+methods return K=3 (\texttt{tests/integration/test\_real\_data\_20ng.py}
+admits Newman \{3,4,5\} and CPM \{2,3,4,5\}). \textbf{The phenomenon
+that both methods plateau at K=3 is a symptom of the K-calibration
+design of this implementation (both \texttt{find\_valid\_scale} and
+\texttt{find\_cpm\_resolution} are specified to prefer the lower end of
+\texttt{target\_range}; mechanism explained in §5.4), and the failure to
+reach n\_themes=4 is not an intrinsic limit of Newman.} The Newman ARI
+of 0.557 under forced K=4 shows the level reachable without going
+through calibration. The obtained partition is compared against the
+\textbf{ground truth (n\_themes = 4)} and Adjusted Rand Index is
+measured (sklearn.metrics.adjusted\_rand\_score):
 
 {\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}lrr@{}}
@@ -1084,94 +1152,103 @@ chance baseline (random partition) & --- & ≈ 0 \\
 \end{longtable}
 }
 
-参考として、K を 4 に固定した場合の Newman ARI は \textbf{0.557}、K=5 で
-0.313。CPM は K=3,4,5 すべてで ARI ≈ 0.24 と一定 (under-merging により K
-を変えても同じ partition family に落ちる)。
+For reference, fixing K=4 yields Newman ARI \textbf{0.557}, and K=5
+yields 0.313. CPM stays at ARI ≈ 0.24 across K=3,4,5 (under-merging
+keeps it in the same partition family regardless of K).
 
 → \textbf{Figure}: \texttt{figures/new/fig\_20ng\_ari.png} --- bar chart
-(Newman / CPM × K=3,4,5)、chance baseline 線と Newman K=4 best (0.557)
-を annotation で強調。default K=3 で Newman 1.8x、K=4 強制で Newman 2.3x
-の差が視覚的に明確。
+(Newman / CPM × K=3,4,5), with the chance-baseline line and
+Newman\textquotesingle s K=4 best (0.557) emphasized in annotations. The
+gap of Newman 1.8× at default K=3 and Newman 2.3× under forced K=4 is
+visually clear.
 
-\textbf{観察}: 公開 benchmark での external validity は \textbf{default
-設定で Newman backend が CPM backend を約 1.8 倍上回る} (Newman 0.430 /
-CPM 0.239)。両者とも chance baseline は明確に超えるが、Newman
-の優位は安定して観察される。K=4 を強制した場合の Newman ARI=0.557
-が示すように、Newman 側は適切な K で更に高い ARI に到達可能。CPM 側は K
-を変えても 0.24 で頭打ちとなり、§5.3 の (n\_c choose 2) penalty effect
-(mode (c)) と整合する。
+\textbf{Observation}: The external validity on a public benchmark is
+that \textbf{at the default setting, the Newman backend exceeds the CPM
+backend by about a factor of 1.8} (Newman 0.430 / CPM 0.239). Both
+methods clearly exceed the chance baseline, and Newman\textquotesingle s
+advantage is observed stably. Newman\textquotesingle s ARI=0.557 under
+forced K=4 shows that Newman can reach higher ARI at an appropriate K.
+CPM plateaus at 0.24 regardless of K, consistent with the (n\_c choose
+2) penalty effect (mode (c)) of §5.3.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\subsection{§5. Why CPM Underperforms --- 三つの failure mode
-と運用方針}\label{5-why-cpm-underperforms--ux4e09ux3064ux306e-failure-mode-ux3068ux904bux7528ux65b9ux91dd}
+\subsection{§5. Why CPM Underperforms --- Three failure modes and
+operational
+policy}\label{5-why-cpm-underperforms--three-failure-modes-and-operational-policy}
 
-§4 で観察された結果のうち最も予想と異なったのは \textbf{CPM が Newman
-より一貫して劣る} ことである。Traag et al. (2011) は CPM が
-resolution-limit-free であることを subgraph-invariance
-性質で数学的に示しており、Newman の Q degeneracy (Good 2010) に対する
-\textbf{正しい修正} とされる。にもかかわらず本研究の small-N text domain
-では CPM が逆方向に劣化した。本節は \textbf{三つの異なる failure mode}
-に切り分けて機序を整理する。Karate Club 上の K=4 over-split (§7.3) と 20
-Newsgroups 上の K=3 under-merge (§4.6) という反対方向の挙動も、別 mode
-として一貫に位置付けられる。
+The most counter-intuitive result observed in §4 is that \textbf{CPM is
+consistently outperformed by Newman}. Traag et al. (2011) mathematically
+established CPM\textquotesingle s resolution-limit-freeness via the
+subgraph-invariance property, positioning it as a \textbf{correct fix}
+for Newman\textquotesingle s Q degeneracy (Good 2010). Nevertheless, in
+this study\textquotesingle s small-N text domain CPM degraded in the
+opposite direction. This section organizes the mechanism by separating
+it into \textbf{three distinct failure modes}. The opposite-direction
+behaviors of K=4 over-split on Karate Club (§7.3) and K=3 under-merge on
+20 Newsgroups (§4.6) are positioned consistently as different modes.
 
-\subsubsection{5.1 三つの failure
-mode}\label{51-ux4e09ux3064ux306e-failure-mode}
+\subsubsection{5.1 The three failure
+modes}\label{51-the-three-failure-modes}
 
-CPM-Louvain が ground truth から外れる原因は本研究の検証範囲で
-\textbf{少なくとも三つの独立な機序} に分離できる:
+The causes of CPM-Louvain\textquotesingle s deviation from the ground
+truth can be separated, within the verification range of this work, into
+\textbf{at least three independent mechanisms}:
 
 {\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}llll@{}}
 \toprule\noalign{}
-Mode & 内容 & 主に出現する場面 & 本稿の対応節 \\
+Mode & Content & Where it mainly appears & Section in this paper \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-(a) \textbf{Louvain refinement gap} & vanilla Louvain の single-node
-move では到達不能な macro partition がある (Traag 2019 が Leiden で fix
-した既知問題)。γ を下げても escape できない。 & dense small graph
-(Karate Club 等)、ground truth が macro split & §5.5 / §7.3 \\
-(b) \textbf{Calibration bias} & 本実装の \texttt{find\_cpm\_resolution}
-は γ を bisection し、target\_range 内で \textbf{smallest K を
-preferred} する設計 (\texttt{cpm\_backend.py::find\_cpm\_resolution}
-L262-263)。n\_themes が target\_range の上端側にあると下端 K に収束し
-under-merge する。 & n\_themes が target\_range{[}0{]} と一致しない
-external corpus & §5.4 \\
-(c) \textbf{(n\_c choose 2) penalty effect} & small-N で resolution
-limit が binding しない regime では、CPM の quadratic penalty が
-\texttt{m\_c} を相対的に圧倒し coarse な partition を選ぶ。K
-を固定しても Newman に対し ARI 劣化が残る。 & small-N text domain
-(本稿の運用域)、K-matched 比較 & §5.3 \\
+(a) \textbf{Louvain refinement gap} & There exist macro partitions
+unreachable by vanilla Louvain\textquotesingle s single-node moves (a
+known problem that Traag 2019 fixed with Leiden). Cannot escape even by
+lowering γ. & dense small graphs (e.g., Karate Club), ground truth being
+a macro split & §5.5 / §7.3 \\
+(b) \textbf{Calibration bias} & This implementation\textquotesingle s
+\texttt{find\_cpm\_resolution} bisects γ and is designed to
+\textbf{prefer the smallest K within target\_range}
+(\texttt{cpm\_backend.py::find\_cpm\_resolution} L262-263). If n\_themes
+is at the upper end of target\_range, the result converges to the lower
+K and under-merges. & external corpora where n\_themes does not match
+target\_range{[}0{]} & §5.4 \\
+(c) \textbf{(n\_c choose 2) penalty effect} & In regimes where the
+resolution limit does not bind under small N, CPM\textquotesingle s
+quadratic penalty relatively dominates \texttt{m\_c}, selecting coarser
+partitions. ARI degradation against Newman remains even at fixed K. &
+small-N text domain (this paper\textquotesingle s operational range),
+K-matched comparison & §5.3 \\
 \end{longtable}
 }
 
-本稿の数値ギャップの帰属:
+Attribution of the numerical gaps in this paper:
 
 \begin{itemize}
 \tightlist
 \item
-  \textbf{§4.4 H\_struct 87.5\% vs 19\%} (synthetic
-  disjoint-vocabulary、各 setting で K\_actual を Q peak で取得) → 主に
-  (c)。K range が n\_themes 周辺を密に cover しているため (b)
-  の影響は小さい
+  \textbf{§4.4 H\_struct 87.5\% vs 19\%} (synthetic disjoint-vocabulary,
+  K\_actual taken at Q peak for each setting) → primarily (c). The K
+  range densely covers around n\_themes, so the influence of (b) is
+  small.
 \item
-  \textbf{§4.6 default K=3 (20NG)} → (b) calibration bias が
-  dominant。両 method とも target\_range=(3,5) の下端 K=3 に収束
+  \textbf{§4.6 default K=3 (20NG)} → dominated by (b) calibration bias.
+  Both methods converge to the lower end K=3 of target\_range=(3,5).
 \item
-  \textbf{§4.6 K=4 強制下の Newman 0.557 vs CPM 0.24} → (c) penalty
-  effect。calibration を回避しても CPM が劣る成分
+  \textbf{§4.6 Newman 0.557 vs CPM 0.24 under forced K=4} → (c) penalty
+  effect. The residual CPM underperformance even after avoiding
+  calibration.
 \item
-  \textbf{§7.3 Karate K=4 over-split} → (a) Louvain refinement gap。γ
-  を変えても K=2 macro split に到達できない
+  \textbf{§7.3 Karate K=4 over-split} → (a) Louvain refinement gap.
+  Cannot reach the K=2 macro split regardless of γ.
 \end{itemize}
 
-\subsubsection{5.2
-目的関数の構造差}\label{52-ux76eeux7684ux95a2ux6570ux306eux69cbux9020ux5dee}
+\subsubsection{5.2 Structural difference of the objective
+functions}\label{52-structural-difference-of-the-objective-functions}
 
-両 method の objective function を比較する:
+Comparing the objective functions of the two methods:
 
 \begin{itemize}
 \tightlist
@@ -1182,9 +1259,10 @@ limit が binding しない regime では、CPM の quadratic penalty が
   \begin{itemize}
   \tightlist
   \item
-    内部 edges を null model (期待値 k\_i k\_j / 2L) と比較
+    Internal edges compared against a null model (expectation k\_i k\_j
+    / 2L)
   \item
-    cluster サイズに対する明示的 penalty なし
+    No explicit penalty on cluster size
   \end{itemize}
 \item
   CPM: \texttt{H\ =\ Σ\_c\ {[}m\_c\ -\ γ\ ×\ (n\_c\ choose\ 2){]}}
@@ -1192,32 +1270,35 @@ limit が binding しない regime では、CPM の quadratic penalty が
   \begin{itemize}
   \tightlist
   \item
-    intra-edges から \textbf{クラスタペア数 × γ} を引く
+    From intra-edges, \textbf{the cluster pair count × γ} is subtracted
   \item
-    cluster size n\_c に対し \textbf{二次的に増大} する penalty
+    Penalty grows \textbf{quadratically} in the cluster size n\_c
   \end{itemize}
 \end{itemize}
 
-→ \textbf{Figure}: \texttt{figures/new/fig\_cpm\_mechanism.png} ---
-cluster size n\_c に対する penalty/null contribution
-の推移を比較プロット。CPM の \texttt{(n\_c\ choose\ 2)} quadratic curve
-が Newman null-model の線形 reference を超える "under-merging zone"
-を網掛けで明示。
+→ \textbf{Figure}: \texttt{figures/new/fig\_cpm\_mechanism.png} --- a
+comparison plot of penalty/null-model contribution as a function of
+cluster size n\_c. The CPM \texttt{(n\_c\ choose\ 2)} quadratic curve
+exceeds Newman\textquotesingle s linear null-model reference, with the
+"under-merging zone" shaded.
 
-§4.2 で示した \textbf{common-reference} (両 method を corpus median
-similarity の同一 graph 上で比較) では、N=12-40 の運用域で above-limit
-fraction の差が 6 cells 中 5 cells で完全一致する。すなわち本 domain
-では \textbf{Newman の resolution limit は operationally bind
-しておらず}、CPM 採用の理論的動機 (limit-free 性)
-が解こうとしている問題が \textbf{そもそも本 domain
-では問題になっていない}。残るのは CPM 固有の penalty
-構造の作用のみ、というのが §5.3 以降の出発点となる観察である。
+The \textbf{common-reference} measurement shown in §4.2 (both methods
+compared on the same graph thresholded at the corpus\textquotesingle s
+median similarity) has above-limit fraction matching exactly in 5 of 6
+cells in the operational range N=12-40. That is, in this domain
+\textbf{Newman\textquotesingle s resolution limit is not operationally
+binding}, and the theoretical motivation for adopting CPM
+(limit-freeness) targets \textbf{a problem that is not a problem in this
+domain}. What remains is only the effect of CPM\textquotesingle s own
+penalty structure --- this is the starting observation for §5.3 onward.
 
-参考として、§4.2 と対をなす \textbf{asymmetric reference} (Newman
-は自身の \texttt{find\_valid\_scale} が選んだ θ で threshold、CPM は
-median similarity で threshold) の同 cells を以下に再掲する。Newman の
-resolution limit が "binding か" を直接見たい場合の reference
-として有用だが、method 比較の地としては §4.2 の common-reference を採る:
+For reference, we repeat the same cells under the \textbf{asymmetric
+reference} (Newman thresholded at the θ chosen by its own
+\texttt{find\_valid\_scale}, CPM thresholded at the median similarity),
+which complements §4.2. This is useful as a reference for directly
+inspecting "whether Newman\textquotesingle s resolution limit is
+binding", but we use the common-reference of §4.2 as the ground for
+method comparison:
 
 {\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}rrrr@{}}
@@ -1236,44 +1317,47 @@ N & K & Newman above-limit (asym) & CPM above-limit (asym) \\
 \end{longtable}
 }
 
-(Newman 側の差は θ 選択経路の違いで、graph 上の partition
-構造の差ではない。Source:
-\texttt{scripts/k\_sweep/data\_current/heatmap\_data.csv}。)
+(The difference on the Newman side comes from the θ-selection path, not
+from the partition structure on the graph. Source:
+\texttt{scripts/k\_sweep/data\_current/heatmap\_data.csv}.)
 
 \subsubsection{5.3 Failure mode (c) --- (n\_c choose 2) penalty effect
 (small-N text
 domain)}\label{53-failure-mode-c--n_c-choose-2-penalty-effect-small-n-text-domain}
 
-LayerForge の運用域 (N=20-40 cross-domain text corpus) では:
+In LayerForge\textquotesingle s operational range (N=20-40 cross-domain
+text corpus):
 
 \begin{itemize}
 \tightlist
 \item
-  edge density は中程度 (sparse でも dense でもない)
+  edge density is moderate (neither sparse nor dense)
 \item
-  §4.2 の common-reference data が示す通り、above-limit fraction が
-  0.25-0.80 の範囲で推移し N ≥ 20 ではほとんど 0.5 以上 → Newman の
-  resolution limit は operationally bind していない
+  as the common-reference data of §4.2 shows, the above-limit fraction
+  lies in 0.25-0.80, with most cells ≥ 0.5 at N ≥ 20 →
+  Newman\textquotesingle s resolution limit is not operationally binding
 \item
-  CPM を適用すると \texttt{(n\_c\ choose\ 2)} 項が \texttt{m\_c}
-  を相対的に圧倒、「大きい cluster は H 損」が dominant force
-  となり、CPM は \textbf{systematically coarse な partition} を選ぶ
-  (K-matched 比較でも残る under-merging)
+  when CPM is applied, the \texttt{(n\_c\ choose\ 2)} term relatively
+  dominates \texttt{m\_c}, "large clusters are H-loss" becomes the
+  dominant force, and CPM selects a \textbf{systematically coarse
+  partition} (under-merging that remains even under K-matched
+  comparison)
 \end{itemize}
 
-これが \textbf{§4.4 (H\_struct 87.5\% vs 19\%)} と \textbf{§4.6 K=4
-強制時の Newman 0.557 vs CPM 0.239} の数値ギャップの根本理由である。Mode
-(c) は K を強制した状態でも残る成分であり、本 domain における Newman
-優位の \textbf{構造的} 主因。
+This is the root cause of the numerical gaps \textbf{§4.4 (H\_struct
+87.5\% vs 19\%)} and \textbf{§4.6 Newman 0.557 vs CPM 0.239 under forced
+K=4}. Mode (c) is the component that remains even when K is fixed, and
+is the \textbf{structural} primary cause of Newman\textquotesingle s
+advantage in this domain.
 
-\subsubsection{5.4 Failure mode (b) --- find\_cpm\_resolution の
-calibration
-bias}\label{54-failure-mode-b--find_cpm_resolution-ux306e-calibration-bias}
+\subsubsection{5.4 Failure mode (b) --- Calibration bias of
+find\_cpm\_resolution}\label{54-failure-mode-b--calibration-bias-of-find_cpm_resolution}
 
-本実装の \texttt{find\_cpm\_resolution} (および対応する Newman 側の
-\texttt{find\_valid\_scale}) は target\_range 内で \textbf{smallest K を
-preferred} する設計である。具体的に
-\texttt{cpm\_backend.py::find\_cpm\_resolution} (L262-263) は:
+This implementation\textquotesingle s \texttt{find\_cpm\_resolution}
+(and the corresponding \texttt{find\_valid\_scale} on the Newman side)
+is designed to \textbf{prefer the smallest K within target\_range}.
+Specifically, \texttt{cpm\_backend.py::find\_cpm\_resolution}
+(L262-263):
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1283,71 +1367,76 @@ preferred} する設計である。具体的に
 \end{Highlighting}
 \end{Shaded}
 
-これは「より coarse な partition は (4±1 制約下で)
-解釈しやすい」という運用上の判断 (working memory 上限が ergonomic
-上限なら K は小さい方が望ましい) を反映した設計だが、副作用として
-\textbf{n\_themes が target\_range{[}0{]} と一致しない corpus では
-tracking 失敗} が生じる。
+This design reflects the operational judgment "a coarser partition is
+easier to interpret (under the 4±1 constraint)" (if the working-memory
+upper bound is an ergonomic upper bound, smaller K is more desirable).
+As a side effect, however, \textbf{tracking failure occurs on corpora
+where n\_themes does not match target\_range{[}0{]}}.
 
-§4.6 (20 Newsgroups、n\_themes=4、target\_range=(3,5)) で両 method とも
-K=3 に収束する現象はこの mode の symptom。K=4 を強制すると Newman は
-ARI=0.557 まで上昇するが (mode (b) を回避できれば mode (c)
-の効果のみ残る)、default 動作だけを見ると Newman もまた n\_themes を
-tracking できない。
+The phenomenon in §4.6 (20 Newsgroups, n\_themes=4, target\_range=(3,5))
+that both methods converge to K=3 is a symptom of this mode. Under
+forced K=4 Newman rises to ARI=0.557 (avoiding mode (b) leaves only the
+effect of mode (c)), but if we look only at default behavior, Newman
+also fails to track n\_themes.
 
-\textbf{§4.4 (synthetic corpus、K range が n\_themes 周辺を密に cover)
-で Newman が 87.5\% tracking できる}のは、K range 設計が n\_themes を
-target\_range{[}0{]} 近傍に置いており mode (b)
-の影響が小さいため。External corpus に対しては default の
-target\_range=(3,5) では mode (b) が顕在化することに本稿は注意を促す。
+The reason \textbf{Newman achieves 87.5\% tracking in §4.4 (synthetic
+corpus, K ranges densely covering around n\_themes)} is that the K-range
+design places n\_themes near target\_range{[}0{]}, so the influence of
+mode (b) is small. We note in this paper that for external corpora, mode
+(b) becomes visible under the default target\_range=(3,5).
 
 \subsubsection{5.5 Failure mode (a) --- Louvain refinement gap
 (cross-ref to
 §7.3)}\label{55-failure-mode-a--louvain-refinement-gap-cross-ref-to-73}
 
-本実装の CPM-Louvain は vanilla Louvain (greedy single-node move)
-であり、Leiden refinement (Traag 2019) は含まない。Karate Club のような
-dense small graph では K=2 macro split が single-node move
-の局所最適でなく、γ を低くしても K=4 sub-clustering に stuck する
-(文献既知)。本稿の §7.3 で Karate Club の結果 (ARI 0.595, K=4) はこの
-mode に該当する旨を明示する。
+This implementation\textquotesingle s CPM-Louvain is vanilla Louvain
+(greedy single-node moves) and does not include the Leiden refinement
+(Traag 2019). On dense small graphs such as Karate Club, the K=2 macro
+split is not a local optimum of single-node moves, and even lowering γ
+leaves it stuck at K=4 sub-clustering (a known phenomenon in the
+literature). §7.3 of this paper makes it explicit that the Karate Club
+result (ARI 0.595, K=4) falls under this mode.
 
-本実装の小規模 text domain での主要結果 (§4.4, §4.6) は dense small
-graph でないため mode (a) は dominant でないが、\textbf{外部対比 (Karate
-Club) で K が ground truth より大きく出る現象} はこの mode
-で説明される。CPM の penalty
-構造そのものとは独立の、algorithm-engineering 上の制約である。
+For the main results in the small-scale text domain of this
+implementation (§4.4, §4.6), the graphs are not dense small graphs and
+mode (a) is not dominant. However, the \textbf{phenomenon that K comes
+out larger than the ground truth in the external comparison (Karate
+Club)} is explained by this mode. It is an algorithm-engineering
+constraint, independent of CPM\textquotesingle s penalty structure
+itself.
 
-\subsubsection{5.6 含意 --- "resolution-limit-free is universally
-better" は domain
-依存}\label{56-ux542bux610f--resolution-limit-free-is-universally-better-ux306f-domain-ux4f9dux5b58}
+\subsubsection{5.6 Implication --- "resolution-limit-free is universally
+better" is
+domain-dependent}\label{56-implication--resolution-limit-free-is-universally-better-is-domain-dependent}
 
-CPM の理論的優位は \textbf{resolution limit が binding な domain}
-で発揮される。LayerForge の small-N text domain では §4.2
-common-reference data が示す通り limit binding がそもそも稀で、CPM の
-"修正" が \textbf{解こうとしている問題が本 domain
-では問題になっていない}。同時に、CPM 固有の penalty 構造 (mode (c)) と
-calibration 設計 (mode (b)) が \textbf{別の問題} を生み、結果として
-Newman が一貫して上回る。
+CPM\textquotesingle s theoretical advantage manifests in \textbf{domains
+where the resolution limit binds}. In LayerForge\textquotesingle s
+small-N text domain, as the §4.2 common-reference data shows,
+limit-binding is rare in the first place, and CPM\textquotesingle s
+"fix" targets \textbf{a problem that is not a problem in this domain}.
+At the same time, CPM\textquotesingle s own penalty structure (mode (c))
+and calibration design (mode (b)) produce \textbf{different problems},
+and Newman consequently exceeds CPM consistently.
 
-これは Traag et al. (2011) の理論結果 (CPM の subgraph-invariance)
-への直接反論ではない。\textbf{operating domain の特性 (limit binding
-の有無、典型的な n\_themes と target\_range の関係、graph の
-dense/sparse 度合い) と照らした上で method 選択が必要} であるという
-mechanism observation である。
+This is not a direct refutation of Traag et al. (2011)\textquotesingle s
+theoretical result (CPM\textquotesingle s subgraph-invariance). It is
+the mechanism observation that \textbf{method selection must be made in
+light of the operating-domain characteristics (whether the limit binds,
+the typical relation between n\_themes and target\_range, the
+dense/sparse degree of the graph)}.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \subsubsection{5.7 Empirical method-selection rule
 (sketch)}\label{57-empirical-method-selection-rule-sketch}
 
-§5.2-§5.5 の機序を踏まえると、運用時に「Newman / CPM
-のどちらを使うか」を決める \textbf{empirical signal} が構成可能である:
+Given the mechanism analysis in §5.2-§5.5, \textbf{empirical signals}
+for choosing "Newman or CPM" at operation time can be constructed:
 
 {\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}ll@{}}
 \toprule\noalign{}
-Signal & 推奨閾値 \\
+Signal & Recommended threshold \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
@@ -1360,102 +1449,113 @@ Cross-method ARI at probe K & \textless{} 0.3 → flag uncertainty \\
 \end{longtable}
 }
 
-decision rule の擬似コードは companion document の method-selection rule
-節に詳細記載 (GitHub repository:
-\url{https://github.com/ChaiCroquis/LayerForge/blob/main/docs/08_empirical_findings.md})。\textbf{code
-として実装はしていない}: LayerForge の運用域 (N=20-40, edge density
-中程度) では rule が \textasciitilde100\% "newman"
-を出力するため、実装コストが情報量を上回る判断による。別 domain
-(N=1000+, dense graph) への拡張時に foundation として使う設計。
+Pseudocode for the decision rule is detailed in the method-selection
+rule section of the companion document (GitHub repository:
+\url{https://github.com/ChaiCroquis/LayerForge/blob/main/docs/08_empirical_findings.md}).
+\textbf{We have not implemented it as code}: in
+LayerForge\textquotesingle s operational range (N=20-40, moderate edge
+density), the rule outputs "newman" in \textasciitilde100\% of cases, so
+the implementation cost outweighs the information value. The design is
+to be used as a foundation when extending to other domains (N=1000+,
+dense graphs).
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \subsection{§6. Application examples}\label{6-application-examples}
 
-LayerForge の Mode A/B/C は §1 の三つのコスト (認知負荷 / 帯域 / AI
-コスト) にそれぞれ対応する応用域を持つ:
+LayerForge\textquotesingle s Modes A/B/C have application areas
+corresponding to each of the three costs of §1 (cognitive load /
+bandwidth / AI cost):
 
-\subsubsection{6.1 Mode A ---
-読み手の認知負荷削減}\label{61-mode-a--ux8aadux307fux624bux306eux8a8dux77e5ux8ca0ux8377ux524aux6e1b}
+\subsubsection{6.1 Mode A --- Reducing the reader\textquotesingle s
+cognitive load}\label{61-mode-a--reducing-the-readers-cognitive-load}
 
-corpus を 4±1 layer に分解、UI / CLI で「興味のある layer
-のみ」展開可能。reader は full corpus を読まずに、関心 layer
-の代表表現から内容を判断できる。
+Decompose a corpus into 4±1 layers, and expand only the "layer(s) of
+interest" from the UI / CLI. The reader can judge the content from the
+representative expression of the layer of interest, without reading the
+full corpus.
 
-\subsubsection{6.2 Mode B ---
-意思決定情報の関心遷移管理}\label{62-mode-b--ux610fux601dux6c7aux5b9aux60c5ux5831ux306eux95a2ux5fc3ux9077ux79fbux7ba1ux7406}
+\subsubsection{6.2 Mode B --- Managing concern transitions in decision
+information}\label{62-mode-b--managing-concern-transitions-in-decision-information}
 
-考慮中の意思決定情報を layer
-化し、\texttt{open}/\texttt{close}/\texttt{settle}
-状態を持たせる。決定中の事項 (open) と決定済み事項 (settled)
-を分離することで、読み手は \textbf{今活性化している関心} だけに focus
-できる。
+Layer-organize decision information under consideration, and attach
+\texttt{open}/\texttt{close}/\texttt{settle} states. By separating items
+under decision (open) from items already decided (settled), the reader
+can focus only on the \textbf{currently activated concern}.
 
-\subsubsection{6.3 Mode C --- multi-agent
-帯域削減}\label{63-mode-c--multi-agent-ux5e2fux57dfux524aux6e1b}
+\subsubsection{6.3 Mode C --- Multi-agent bandwidth
+reduction}\label{63-mode-c--multi-agent-bandwidth-reduction}
 
-AI agent A の verbose 出力 (例: 15K token の包括回答) を agent B の
-query に関連する layer subset に圧縮 (decision-less subset
-保証、つまり情報の subset としてのみ機能、要約は LLM
-が行うわけでない)。本研究の \texttt{scripts/multiagent\_demo/} で 63\%
-の context reduction を達成 (B 軸 null result: 圧縮後でも下流 agent
-の出力品質は維持された)。
+Compress AI agent A\textquotesingle s verbose output (e.g., a 15K-token
+comprehensive answer) into the layer subset relevant to agent
+B\textquotesingle s query (decision-less subset guarantee --- i.e., it
+functions only as an information subset, with no LLM-side
+summarization). In this study, \texttt{scripts/multiagent\_demo/}
+achieves a 63\% context reduction (B-axis null result: the downstream
+agent\textquotesingle s output quality is preserved even after
+compression).
 
-\textbf{§4.5 の 1/K=10\% との関係 (異なる measurement)}: §4.5
-が示した「K=10 で 1/K=10\% (10x reduction)」は \textbf{partition
-consistency 上の理論最小読込量比} (passage を query にした self-routing
-が成功する前提で、所属 layer 1 つだけ読めば十分という上限)
-であり、measurement の単位は「読み込む layer 数 / 全 layer 数」。本節
-Mode C の 63\% reduction は \textbf{token 数ベースの実測値} で、demo
-script で agent A の full output と agent B が実際に読み込む subset とを
-token 単位で比較したもの。両者は \textbf{異なる measurement} (理論最小
-vs production 実測) で直接比較できない。前者は K=10 の細粒度 partition
-での floor、後者は Mode C の現実的な workflow での measured reduction。
+\textbf{Relation to §4.5\textquotesingle s 1/K=10\% (different
+measurements)}: The "K=10 with 1/K=10\% (10× reduction)" shown in §4.5
+is the \textbf{theoretical minimum read-fraction on the
+partition-consistency metric} (the upper bound saying that, assuming
+self-routing of a passage-as-query succeeds, reading only the one layer
+it belongs to is sufficient); the unit of measurement is "number of
+layers read / total layers". The 63\% reduction of Mode C in this
+section is a \textbf{token-count-based empirical value}, comparing agent
+A\textquotesingle s full output and the subset that agent B actually
+reads, in token units, in the demo script. The two are \textbf{different
+measurements} (theoretical minimum vs. production-empirical) and cannot
+be directly compared. The former is the floor on a fine-grained
+partition at K=10; the latter is the measured reduction in a realistic
+Mode C workflow.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \subsection{§7. Limitations}\label{7-limitations}
 
-\subsubsection{7.1
-検証範囲の限定}\label{71-ux691cux8a3cux7bc4ux56f2ux306eux9650ux5b9a}
+\subsubsection{7.1 Scope of validation}\label{71-scope-of-validation}
 
 \begin{itemize}
 \tightlist
 \item
-  \textbf{運用想定は N=20-40 small-N text domain}。External benchmark
-  として 20 Newsgroups で N=100 まで scaling check を実施
-  (§4.6)、結論は同方向 (Newman 優位)。\textbf{§4.3 の ARI 表は
-  N=12-40、§4.6 は N=100 で、中間 N (40-100) 域は本稿で直接 sweep
-  していない} が、両端点で Newman
-  優位が同方向に観察されたことから補間域での挙動も同方向と推測される
-  (確認は future work)。\textbf{N \textgreater{} 1000 や dense graph
-  は未検証}
+  \textbf{The operational target is the N=20-40 small-N text domain.} As
+  an external benchmark, we scale up to N=100 on 20 Newsgroups (§4.6),
+  and the conclusion goes in the same direction (Newman advantage).
+  \textbf{The ARI table in §4.3 is N=12-40 and §4.6 is N=100, so the
+  intermediate N range (40-100) is not directly swept in this paper},
+  but since Newman\textquotesingle s advantage is observed in the same
+  direction at both endpoints, we infer the behavior in the interpolated
+  range to be in the same direction (confirmation is future work).
+  \textbf{N \textgreater{} 1000 and dense graphs are unverified.}
 \item
-  \textbf{External benchmark は 20NG 1 件のみ} --- 他 public corpus
-  での再現は future work
+  \textbf{The external benchmark is only one corpus (20NG)} ---
+  reproduction on other public corpora is future work.
 \item
-  \textbf{CPM-Louvain は Leiden refinement なし} --- 文献既知の Karate
-  Club K=4 sub-clustering 現象に該当、§7.3 で具体的に位置付け
+  \textbf{CPM-Louvain has no Leiden refinement} --- corresponds to the
+  known Karate Club K=4 sub-clustering phenomenon in the literature;
+  specifically positioned in §7.3.
 \end{itemize}
 
-\subsubsection{7.2 B 軸の null
-results}\label{72-b-ux8ef8ux306e-null-results}
+\subsubsection{7.2 B-axis null results}\label{72-b-axis-null-results}
 
-LayerForge を AI workflow に組込んだ際の \textbf{LLM 自体の behavior
-改善} は本研究の範囲外で、実測した 3 試行 (hallucination
-benchmark、multi-agent drift verification、context filter ablation)
-はすべて \textbf{null result} だった。これは「LayerForge が AI
-を賢くする」claim が defensible でないことを意味する。本研究の貢献は
-\textbf{AI 出力を関心毎に絞り込んで読み手 / 下流 agent に渡す pipeline
-自体} にあり、AI 行動の改善は claim しない。
+\textbf{Improvement in the LLM\textquotesingle s own behavior} when
+LayerForge is integrated into an AI workflow is outside the scope of
+this study; the three trials we ran (hallucination benchmark,
+multi-agent drift verification, context filter ablation) all gave
+\textbf{null results}. This means the claim "LayerForge makes AI
+smarter" is not defensible. The contribution of this study lies in
+\textbf{the pipeline itself that narrows AI output by concern and hands
+it to the reader / downstream agent}; we do not claim improvement in AI
+behavior.
 
-\subsubsection{7.3 自前実装の correctness
-gate}\label{73-ux81eaux524dux5b9fux88c5ux306e-correctness-gate}
+\subsubsection{7.3 Correctness gate for the
+self-implementation}\label{73-correctness-gate-for-the-self-implementation}
 
-CPM-Louvain の reference implementation である GPL \texttt{leidenalg}
-との数値正確性 head-to-head 比較は MIT license
-との互換性問題で実施せず。代替として以下の \textbf{3 段階の間接 gate}
-を設けている:
+A head-to-head numerical-accuracy comparison against the reference
+implementation of CPM-Louvain (GPL \texttt{leidenalg}) was not performed
+due to MIT-license-compatibility issues. As a substitute, we put in
+place the following \textbf{three-stage indirect gate}:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1463,113 +1563,125 @@ CPM-Louvain の reference implementation である GPL \texttt{leidenalg}
 \item
   \textbf{Synthetic 3-block test}
   (\texttt{tests/axioms/test\_cpm\_backend.py::test\_cpm\_partition\_separates\_three\_blocks}):
-  3 blocks (intra=0.9, inter=0.05) で K=3 を完全 recover
+  K=3 is perfectly recovered on 3 blocks (intra=0.9, inter=0.05).
 \item
-  \textbf{Karate Club ARI = 0.595} vs empirical 2-community ground truth
-  (chance baseline = 0): Zachary (1977) 公開 graph で、Leiden refinement
-  不在による over-splitting (§7.1 で言及した K=4 sub-clustering 現象)
-  のため partition の cluster 数を直接確認すると K=4 となる。これが
-  ground truth の 2-community split の \textbf{sub-refinement}
-  に該当することは cluster 構造から判定でき、ARI=0.595 は \textbf{この
-  sub-refinement と ground truth の整合度} を示す中間値である
-  (完全一致なら ARI=1.0、ランダムなら 0)。Leiden refinement を加えれば
-  K=2 macro split に到達する余地があることを示唆
+  \textbf{Karate Club ARI = 0.595} vs the empirical 2-community ground
+  truth (chance baseline = 0): on the public Zachary (1977) graph,
+  because of over-splitting due to the absence of the Leiden refinement
+  (the K=4 sub-clustering phenomenon mentioned in §7.1), directly
+  inspecting the partition gives K=4 clusters. From the cluster
+  structure we can verify that this is a \textbf{sub-refinement} of the
+  ground-truth 2-community split, and ARI=0.595 is an intermediate value
+  indicating \textbf{the agreement between this sub-refinement and the
+  ground truth} (perfect match would give ARI=1.0, random would give 0).
+  This suggests that adding the Leiden refinement leaves room to reach
+  the K=2 macro split.
 \item
-  \textbf{Determinism cross-check}: 同 seed で Newman / CPM とも
-  reproducible
+  \textbf{Determinism cross-check}: both Newman and CPM are reproducible
+  under the same seed.
 \end{enumerate}
 
-これは「CPM が正しく実装されている」の strong proof ではない (Leiden
-refinement なしの local optimum 限界が §5.5 / §7.1
-で言及済み)。「\textbf{Newman との empirical
-比較を行う前提として最低限の correctness 要件を満たしている}」ことの
-evidence として位置付ける。
+This is not a strong proof of "CPM is implemented correctly" (the
+local-optimum limitation in the absence of the Leiden refinement is
+mentioned in §5.5 / §7.1). It is positioned as \textbf{evidence that the
+minimum correctness requirement is met as a prerequisite for the
+empirical comparison against Newman}.
 
-\subsubsection{7.4 4±1 の universality
-主張なし}\label{74-41-ux306e-universality-ux4e3bux5f35ux306aux3057}
+\subsubsection{7.4 No universality claim for
+4±1}\label{74-no-universality-claim-for-41}
 
-Cowan (2010) の working memory capacity
-は本研究の設計目標として採用したが、「4±1 が任意の corpus で universal
-に emerge する」とは主張しない。実測では corpus に応じて K\_optimal は
-2〜11 の範囲で変動 (§4.1)、ergonomic な上限としての位置付けに留める。
+We adopt Cowan (2010)\textquotesingle s working-memory capacity as a
+design target of this study, but we do not claim that "4±1 universally
+emerges on any corpus". In our measurements, K\_optimal fluctuates in
+2-11 depending on the corpus (§4.1); we keep its positioning as an
+ergonomic upper bound.
 
-\subsubsection{7.5 Scope 外として宣言する
-ablation}\label{75-scope-ux5916ux3068ux3057ux3066ux5ba3ux8a00ux3059ux308b-ablation}
+\subsubsection{7.5 Ablations declared out of
+scope}\label{75-ablations-declared-out-of-scope}
 
-本稿は \textbf{community detection method 選択 (Newman vs CPM)}
-の妥当性検証に scope を限定した。組合せ内部の他の選択肢に関する以下の
-ablation は実施していない:
+This paper restricts its scope to validating the
+\textbf{community-detection method choice (Newman vs CPM)}. The
+following ablations on other choices within the combination are not
+performed:
 
 \begin{itemize}
 \tightlist
 \item
-  \textbf{SCA distillation on/off} の partition / output quality への
-  effect
+  The effect of \textbf{SCA distillation on/off} on partition / output
+  quality
 \item
-  \textbf{HERCULES hierarchy depth = 1 (本稿の default) vs depth
-  \textgreater{} 1} の effect
+  The effect of \textbf{HERCULES hierarchy depth = 1 (this
+  paper\textquotesingle s default) vs depth \textgreater{} 1}
 \item
-  \textbf{4±1 制約 vs 制約なし (任意 K\_optimal)} の cognitive load
-  削減効果差
+  The difference in cognitive-load reduction between \textbf{the 4±1
+  constraint vs. no constraint (arbitrary K\_optimal)}
 \item
-  \textbf{Boundary 1/2 で LLM 介在あり/なし} の output drift 測定
+  Output-drift measurement under \textbf{LLM involvement on/off at
+  Boundary 1/2}
 \end{itemize}
 
-これらは LayerForge
-の組合せ全体を本稿より広範に検証する場合に必要だが、本稿の主張範囲
-(組合せ内部の最重要選択である community detection method の妥当性)
-の外にあり、future work とする。
+These would be needed to validate the LayerForge combination as a whole,
+more broadly than this paper does. They lie outside the claim range of
+this paper (validity of the most important choice inside the
+combination, the community-detection method) and are left as future
+work.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \subsection{§8. Conclusions}\label{8-conclusions}
 
-§1 で述べた問題 --- \textbf{AI 出力を関心毎に収束させて認知負荷 / 帯域 /
-コストを削減する} --- に対し、§2 の 5 技術組合せが \textbf{task の要件
-R1-R5 を充足する設計} であることを §3 で実装、組合せ内部の最重要選択
-(community detection method) を §4 で empirical に検証した。
+For the problem stated in §1 --- \textbf{converging AI output by concern
+to reduce cognitive load / bandwidth / cost} --- we showed in §3 that
+the five-component combination of §2 is a \textbf{design that satisfies
+the task requirements R1-R5}, and in §4 we empirically tested the most
+important choice within the combination (the community-detection
+method).
 
-主要な observations (本 domain の本検証範囲での観察):
+Main observations (within this domain and within the verification range
+of this paper):
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  \textbf{Above-limit fraction (Fortunato-Barthélemy ratio) は
-  community-detection method に依存しない supplementary K-selection
-  signal として機能する}(§4.2)。
+  \textbf{The above-limit fraction (the Fortunato-Barthélemy ratio)
+  functions as a supplementary K-selection signal that does not depend
+  on the community-detection method} (§4.2).
 \item
-  \textbf{本検証範囲 (16 settings + 20 Newsgroups N=100)
-  において、Newman backend が CPM backend
-  を効果サイズ的に大きく上回った}(H\_struct 87.5\% vs 19\%、20NG ARI
-  0.430 vs 0.239 at default K=3、Newman は K=4 強制で 0.557
-  まで到達、§4.4 / §4.6)。\textbf{小 sample のため formal
-  な統計的有意性検定は実施せず、効果サイズで定性的に報告}する。
+  \textbf{Within the test range (16 settings + 20 Newsgroups at N=100),
+  the Newman backend exceeded the CPM backend by a large effect size}
+  (H\_struct 87.5\% vs 19\%; 20NG ARI 0.430 vs 0.239 at default K=3;
+  Newman reaches 0.557 when K=4 is forced; §4.4 / §4.6). \textbf{Because
+  of the small sample, we do not perform formal statistical significance
+  tests and report qualitatively by effect size.}
 \item
-  \textbf{CPM の劣化は機序的に説明可能}: \texttt{(n\_c\ choose\ 2)}
-  quadratic penalty が under-merging
-  を引き起こす。"resolution-limit-free is universally better" は domain
-  によらず成立する命題ではない (§5)。
+  \textbf{CPM\textquotesingle s underperformance is mechanistically
+  explainable}: the \texttt{(n\_c\ choose\ 2)} quadratic penalty induces
+  under-merging. The proposition "resolution-limit-free is universally
+  better" does not hold domain-independently (§5).
 \item
-  \textbf{self-routing 指標 (passage を自身の query にした partition
-  consistency test) 上、K=10 で 1/K=10\% の理論最小読込量比が両 method
-  で成立}(§4.5)。これは production query routing
-  の精度を示すものではなく、partition consistency の \textbf{必要条件}
-  が満たされたことの報告である。production の paraphrased query routing
-  精度、および §6.3 で報告した Mode C の 63\% 実測 token reduction
-  との関係は §4.5 / §6.3 内に明示、production 精度確認は future work
-  (§7.2 / §7.5)。
+  \textbf{On the self-routing metric (a partition-consistency test that
+  uses each passage as its own query), the theoretical minimum
+  read-fraction of 1/K=10\% at K=10 holds for both methods} (§4.5). This
+  is not a measure of production query-routing accuracy; it reports that
+  the \textbf{necessary condition for partition consistency} is
+  satisfied. Production paraphrased-query routing accuracy, and the
+  relation to the 63\% empirical token reduction reported for Mode C in
+  §6.3, are stated in §4.5 / §6.3; production accuracy verification is
+  future work (§7.2 / §7.5).
 \item
-  \textbf{Method-selection rule を empirical signals
-  から構成可能}(§5.7、詳細は GitHub repository の companion document:
-  \url{https://github.com/ChaiCroquis/LayerForge/blob/main/docs/08_empirical_findings.md})。本
-  domain では出力がほぼ常に "newman" のため runtime 実装はせず、docs
-  のみで保存。
+  \textbf{A method-selection rule can be constructed from empirical
+  signals} (§5.7; details in the companion document on the GitHub
+  repository:
+  \url{https://github.com/ChaiCroquis/LayerForge/blob/main/docs/08_empirical_findings.md}).
+  In this domain the rule outputs "newman" almost always, so we do not
+  implement it at runtime and preserve it only in the docs.
 \end{enumerate}
 
-LayerForge は MIT license で公開、Claude Code skill
-として運用可能、再現スクリプトと CSV / JSON を同梱。本稿で測定した数値は
-publication 時の commit hash で固定される (\texttt{git\ log} 参照)。
+LayerForge is released under the MIT license, can be operated as a
+Claude Code skill, and bundles reproducibility scripts and CSV / JSON.
+The numbers measured in this paper are pinned to the publication-time
+commit hash (see \texttt{git\ log}).
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -1734,13 +1846,15 @@ implementations}\label{reference-implementations}
 \subsection{Appendix A --- Related work summary
 table}\label{appendix-a--related-work-summary-table}
 
-§1.2 (Related work and positioning) で詳述した文献の参照 table。本
-appendix は §1.2 の補足であり、各文献の詳細位置付けは §1.2 を参照。
+A reference table for the literature detailed in §1.2 (Related work and
+positioning). This appendix supplements §1.2; for the detailed
+positioning of each work, see §1.2.
 
 {\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}llll@{}}
 \toprule\noalign{}
-Group (§1.2 番号) & 主要文献 & 共通点 & LayerForge との差別化 \\
+Group (§1.2 ID) & Main works & Common ground & Differentiation from
+LayerForge \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
@@ -1750,67 +1864,73 @@ Clustering-based topic modeling and graph-based text clustering (§1.2.1)
 et al. NAACL 2022), Vec2GC (Rao \& Chakraborty 2021), \textbf{G2T}
 (Zhang et al. 2023), SCA (Eichin et al. 2024), LLM-Assisted Topic
 Reduction for BERTopic (Janssens et al. 2025) & document/passage
-embedding + clustering + topic / cluster 構造抽出 & G2T が最近接
-substrate、density-based 系列は CD 不使用。LayerForge は SCA
-distillation + HERCULES skeleton + 4±1 + Mode A/B/C を組合せ、Newman vs
-CPM の systematic 比較を加える (§4-§5) \\
+embedding + clustering + extracting topic / cluster structure & G2T is
+the closest substrate; density-based works do not use CD. LayerForge
+combines SCA distillation + HERCULES skeleton + 4±1 + Mode A/B/C, and
+adds a systematic Newman-vs-CPM comparison (§4-§5). \\
 Hierarchical RAG and GraphRAG (§1.2.2) & RAPTOR (Sarthi et al. 2024),
 GraphRAG (Edge et al. 2024), HippoRAG, \textbf{Core-based GraphRAG}
 (Hossain \& Sarıyüce 2026), RAG vs. GraphRAG eval (Han et al. 2026),
 GraphRAG-Bench (Xiao et al. 2025), HERCULES
 (\texttt{bandeerun/pyhercules} 2025) & hierarchical structure +
-retrieval/summarization、多くで LLM 統合前提 & LayerForge は解析コアから
-LLM を decouple、再現性保証 (R5) を優先。Core-based GraphRAG と "Leiden
-reproducibility 問題" の認識を共有しつつ、置換 (k-core) ではなく failure
-mode documentation 方向 \\
+retrieval/summarization; many assume LLM integration & LayerForge
+decouples LLM from the analysis core and prioritizes reproducibility
+(R5). Shares "Leiden\textquotesingle s reproducibility problem"
+recognition with Core-based GraphRAG, but pursues the
+failure-mode-documentation direction rather than replacement
+(k-core). \\
 Context and memory compression (§1.2.3) & \textbf{Clustering-driven
 Memory Compression} (Bohdal et al. 2026, Samsung), EDU Context
 Compressor (Zhou et al. 2025) & clustering / structure-based context
-compression & Bohdal は対象 (memory token vs corpus passage) / 目的
-(personalization vs 関心毎収束) / method (averaging-merge vs community
-detection) / cognitive constraint (なし vs Cowan 4±1) で differentiate
-(§1.2.5 \#2 で詳述)。EDU は discourse 構造ベースで本研究と直交 \\
+compression & Bohdal differentiates on target (memory tokens vs. corpus
+passages) / goal (personalization vs. concern-wise convergence) / method
+(averaging-merge vs. community detection) / cognitive constraint (none
+vs. Cowan 4±1) --- detailed in §1.2.5 \#2. EDU is discourse-structural
+and orthogonal to this work. \\
 Community detection method comparison (§1.2.4) & Lancichinetti \&
 Fortunato (2009), Aldecoa \& Marín (2013), Traag et al. (2011, 2019),
-\textbf{From Leiden to Pleasure Island} (Felipe et al. 2025) & community
-detection algorithm の systematic 比較 / 理論分析 & 既存研究は synthetic
-/ random / closed benchmark 中心。LayerForge は small-N text similarity
-graph (N=20-40) での実証評価。Felipe et al. (Pleasure Island) は CPM の
-game-theoretic 分析で本研究の §5 と相補 \\
+\textbf{From Leiden to Pleasure Island} (Felipe et al. 2025) &
+systematic comparison / theoretical analysis of community-detection
+algorithms & Prior works center on synthetic / random / closed
+benchmarks. LayerForge provides empirical evaluation on small-N text
+similarity graphs (N=20-40). Felipe et al. (Pleasure Island) complements
+§5 of this work via game-theoretic analysis of CPM. \\
 \end{longtable}
 }
 
-LayerForge の貢献は \textbf{(i) 既知技術 (G2T-like substrate + SCA +
-HERCULES + 4±1 + Mode A/B/C) の組合せ実装の報告、(ii) Newman vs CPM の
-small-N text domain における systematic comparison + 3 failure mode
-分類} の 2 点に絞られる。\textbf{community detection method
-比較そのものの新規性} は主張せず、\textbf{本 domain
-での実証データを文献空間に提供する report} という位置付け。Bohdal et al.
-(Samsung 2026) との同時期 framing 重複は novelty
-を否定せず、両研究が独立に同じ problem space を identify
-した事実として記録する。
+LayerForge\textquotesingle s contribution narrows to \textbf{(i) an
+implementation report of combining known techniques (G2T-like substrate
++ SCA + HERCULES + 4±1 + Mode A/B/C), and (ii) a systematic
+Newman-vs-CPM comparison in the small-N text domain + a
+three-failure-mode classification}. We do not claim \textbf{the
+community-detection method comparison itself} as novelty; the paper is
+positioned as \textbf{a report that contributes empirical data in this
+domain to the literature space}. The concurrent framing overlap with
+Bohdal et al. (Samsung 2026) does not negate the novelty of this work;
+we record it as the fact that two studies independently identified the
+same problem space.
 
 \subsection{Appendix B --- Sensitivity analyses
 summary}\label{appendix-b--sensitivity-analyses-summary}
 
-GitHub repository の companion document
-(\url{https://github.com/ChaiCroquis/LayerForge/blob/main/docs/08_empirical_findings.md})
-§2 以降に詳述した感度分析の主要 outcome のみ集約:
+A summary of the main outcomes of the sensitivity analyses detailed from
+§2 onward of the companion document on the GitHub repository
+(\url{https://github.com/ChaiCroquis/LayerForge/blob/main/docs/08_empirical_findings.md}):
 
 \begin{itemize}
 \tightlist
 \item
-  Embedding model (MiniLM vs mpnet): mpnet が cleaner Q peak、両 method
-  同方向
+  Embedding model (MiniLM vs mpnet): mpnet gives a cleaner Q peak; both
+  methods go in the same direction.
 \item
-  Random seed (42 / 123): K\_optimal は安定、Newman Q peak K は
-  seed-invariant
+  Random seed (42 / 123): K\_optimal is stable; Newman\textquotesingle s
+  Q peak K is seed-invariant.
 \item
-  Edge floor: 0 (default) と median similarity (CPM 用 reference) で
-  above-limit fraction は同様の monotonic
+  Edge floor: above-limit fraction is monotonic in the same way under 0
+  (default) and median similarity (the CPM reference).
 \item
-  N (corpus size): K=N\_themes tracking は Newman で N≥20 から安定、CPM
-  は N に依存せず弱い
+  N (corpus size): K=n\_themes tracking is stable for Newman from N≥20;
+  CPM is weak and N-insensitive.
 \end{itemize}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
