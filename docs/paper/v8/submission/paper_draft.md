@@ -1,4 +1,4 @@
-# LayerForge: AI 出力を関心毎に収束させる決定論的 layer 分解 — small-N text domain で Newman modularity が CPM を上回ることの empirical report
+# LayerForge: Deterministic Layer Decomposition for AI Output Convergence — An Empirical Report on Newman Modularity Outperforming CPM in Small-N Text Domains
 
 > **Style**: 報告 framing —「これを我々は主張する」ではなく「これが成立することが分かった」。reader time cost > return という publication 哲学に従い、過剰な claim を避け、再現可能な observations を中核に据える。
 > **License**: MIT (本リポジトリ全体と同じ)
