@@ -1,0 +1,525 @@
+[
+  {
+    "corpus": "same-domain 5 themes (all KDF)",
+    "embedder": "MiniLM",
+    "N": 30,
+    "N_themes": 5,
+    "by_K_method": {
+      "4": {
+        "newman": {
+          "K": 4,
+          "method": "newman",
+          "Q": 0.121,
+          "cpm_h": null,
+          "class": "poor",
+          "avg_layer_size": 7.5,
+          "compression_per_layer": 0.25,
+          "self_routing_accuracy": 1.0,
+          "self_routing_correct": "30/30",
+          "above_limit": "2/4",
+          "above_frac": 0.5
+        },
+        "cpm": {
+          "K": 4,
+          "method": "cpm",
+          "Q": -0.012,
+          "cpm_h": 55.353,
+          "class": "poor",
+          "avg_layer_size": 7.5,
+          "compression_per_layer": 0.25,
+          "self_routing_accuracy": 1.0,
+          "self_routing_correct": "30/30",
+          "above_limit": "1/4",
+          "above_frac": 0.25
+        }
+      },
+      "5": {
+        "newman": {
+          "K": 5,
+          "method": "newman",
+          "Q": 0.132,
+          "cpm_h": null,
+          "class": "poor",
+          "avg_layer_size": 6.0,
+          "compression_per_layer": 0.2,
+          "self_routing_accuracy": 1.0,
+          "self_routing_correct": "30/30",
+          "above_limit": "2/5",
+          "above_frac": 0.4
+        },
+        "cpm": {
+          "K": 5,
+          "method": "cpm",
+          "Q": -0.012,
+          "cpm_h": 48.126,
+          "class": "poor",
+          "avg_layer_size": 6.0,
+          "compression_per_layer": 0.2,
+          "self_routing_accuracy": 1.0,
+          "self_routing_correct": "30/30",
+          "above_limit": "1/5",
+          "above_frac": 0.2
+        }
+      },
+      "8": {
+        "newman": {
+          "K": 8,
+          "method": "newman",
+          "Q": 0.105,
+          "cpm_h": null,
+          "class": "poor",
+          "avg_layer_size": 3.8,
+          "compression_per_layer": 0.125,
+          "self_routing_accuracy": 1.0,
+          "self_routing_correct": "30/30",
+          "above_limit": "2/8",
+          "above_frac": 0.25
+        },
+        "cpm": {
+          "K": 8,
+          "method": "cpm",
+          "Q": -0.017,
+          "cpm_h": 31.633,
+          "class": "poor",
+          "avg_layer_size": 3.8,
+          "compression_per_layer": 0.125,
+          "self_routing_accuracy": 0.967,
+          "self_routing_correct": "29/30",
+          "above_limit": "1/8",
+          "above_frac": 0.12
+        }
+      },
+      "10": {
+        "newman": {
+          "K": 10,
+          "method": "newman",
+          "Q": 0.073,
+          "cpm_h": null,
+          "class": "poor",
+          "avg_layer_size": 3.0,
+          "compression_per_layer": 0.1,
+          "self_routing_accuracy": 1.0,
+          "self_routing_correct": "30/30",
+          "above_limit": "2/10",
+          "above_frac": 0.2
+        },
+        "cpm": {
+          "K": 10,
+          "method": "cpm",
+          "Q": -0.021,
+          "cpm_h": 16.772,
+          "class": "poor",
+          "avg_layer_size": 3.0,
+          "compression_per_layer": 0.1,
+          "self_routing_accuracy": 0.967,
+          "self_routing_correct": "29/30",
+          "above_limit": "1/10",
+          "above_frac": 0.1
+        }
+      },
+      "15": {
+        "newman": {
+          "K": 15,
+          "method": "newman",
+          "Q": 0.055,
+          "cpm_h": null,
+          "class": "poor",
+          "avg_layer_size": 2.0,
+          "compression_per_layer": 0.067,
+          "self_routing_accuracy": 1.0,
+          "self_routing_correct": "30/30",
+          "above_limit": "2/15",
+          "above_frac": 0.13
+        },
+        "cpm": {
+          "K": 15,
+          "method": "cpm",
+          "Q": -0.026,
+          "cpm_h": 8.285,
+          "class": "poor",
+          "avg_layer_size": 2.0,
+          "compression_per_layer": 0.067,
+          "self_routing_accuracy": 0.967,
+          "self_routing_correct": "29/30",
+          "above_limit": "1/15",
+          "above_frac": 0.07
+        }
+      }
+    }
+  },
+  {
+    "corpus": "cross-domain 4 themes",
+    "embedder": "MiniLM",
+    "N": 24,
+    "N_themes": 4,
+    "by_K_method": {
+      "4": {
+        "newman": {
+          "K": 4,
+          "method": "newman",
+          "Q": 0.105,
+          "cpm_h": null,
+          "class": "poor",
+          "avg_layer_size": 6.0,
+          "compression_per_layer": 0.25,
+          "self_routing_accuracy": 1.0,
+          "self_routing_correct": "24/24",
+          "above_limit": "2/4",
+          "above_frac": 0.5
+        },
+        "cpm": {
+          "K": 4,
+          "method": "cpm",
+          "Q": -0.024,
+          "cpm_h": 24.897,
+          "class": "poor",
+          "avg_layer_size": 6.0,
+          "compression_per_layer": 0.25,
+          "self_routing_accuracy": 0.958,
+          "self_routing_correct": "23/24",
+          "above_limit": "1/4",
+          "above_frac": 0.25
+        }
+      },
+      "8": {
+        "newman": {
+          "K": 8,
+          "method": "newman",
+          "Q": 0.172,
+          "cpm_h": null,
+          "class": "poor",
+          "avg_layer_size": 3.0,
+          "compression_per_layer": 0.125,
+          "self_routing_accuracy": 1.0,
+          "self_routing_correct": "24/24",
+          "above_limit": "2/8",
+          "above_frac": 0.25
+        },
+        "cpm": {
+          "K": 8,
+          "method": "cpm",
+          "Q": -0.029,
+          "cpm_h": 16.182,
+          "class": "poor",
+          "avg_layer_size": 3.0,
+          "compression_per_layer": 0.125,
+          "self_routing_accuracy": 1.0,
+          "self_routing_correct": "24/24",
+          "above_limit": "1/8",
+          "above_frac": 0.12
+        }
+      },
+      "10": {
+        "newman": {
+          "K": 10,
+          "method": "newman",
+          "Q": 0.216,
+          "cpm_h": null,
+          "class": "poor",
+          "avg_layer_size": 2.4,
+          "compression_per_layer": 0.1,
+          "self_routing_accuracy": 1.0,
+          "self_routing_correct": "24/24",
+          "above_limit": "1/10",
+          "above_frac": 0.1
+        },
+        "cpm": {
+          "K": 10,
+          "method": "cpm",
+          "Q": -0.034,
+          "cpm_h": 9.588,
+          "class": "poor",
+          "avg_layer_size": 2.4,
+          "compression_per_layer": 0.1,
+          "self_routing_accuracy": 0.958,
+          "self_routing_correct": "23/24",
+          "above_limit": "1/10",
+          "above_frac": 0.1
+        }
+      },
+      "15": {
+        "newman": {
+          "K": 15,
+          "method": "newman",
+          "Q": 0.04,
+          "cpm_h": null,
+          "class": "poor",
+          "avg_layer_size": 1.6,
+          "compression_per_layer": 0.067,
+          "self_routing_accuracy": 1.0,
+          "self_routing_correct": "24/24",
+          "above_limit": "1/15",
+          "above_frac": 0.07
+        }
+      }
+    }
+  },
+  {
+    "corpus": "same-domain 5 themes (all KDF)",
+    "embedder": "mpnet",
+    "N": 30,
+    "N_themes": 5,
+    "by_K_method": {
+      "4": {
+        "newman": {
+          "K": 4,
+          "method": "newman",
+          "Q": 0.246,
+          "cpm_h": null,
+          "class": "poor",
+          "avg_layer_size": 7.5,
+          "compression_per_layer": 0.25,
+          "self_routing_accuracy": 1.0,
+          "self_routing_correct": "30/30",
+          "above_limit": "2/4",
+          "above_frac": 0.5
+        },
+        "cpm": {
+          "K": 4,
+          "method": "cpm",
+          "Q": -0.008,
+          "cpm_h": 31.893,
+          "class": "poor",
+          "avg_layer_size": 7.5,
+          "compression_per_layer": 0.25,
+          "self_routing_accuracy": 1.0,
+          "self_routing_correct": "30/30",
+          "above_limit": "1/4",
+          "above_frac": 0.25
+        }
+      },
+      "5": {
+        "newman": {
+          "K": 5,
+          "method": "newman",
+          "Q": 0.205,
+          "cpm_h": null,
+          "class": "poor",
+          "avg_layer_size": 6.0,
+          "compression_per_layer": 0.2,
+          "self_routing_accuracy": 1.0,
+          "self_routing_correct": "30/30",
+          "above_limit": "1/5",
+          "above_frac": 0.2
+        },
+        "cpm": {
+          "K": 5,
+          "method": "cpm",
+          "Q": -0.01,
+          "cpm_h": 20.589,
+          "class": "poor",
+          "avg_layer_size": 6.0,
+          "compression_per_layer": 0.2,
+          "self_routing_accuracy": 1.0,
+          "self_routing_correct": "30/30",
+          "above_limit": "1/5",
+          "above_frac": 0.2
+        }
+      },
+      "8": {
+        "newman": {
+          "K": 8,
+          "method": "newman",
+          "Q": 0.293,
+          "cpm_h": null,
+          "class": "poor",
+          "avg_layer_size": 3.8,
+          "compression_per_layer": 0.125,
+          "self_routing_accuracy": 1.0,
+          "self_routing_correct": "30/30",
+          "above_limit": "2/8",
+          "above_frac": 0.25
+        },
+        "cpm": {
+          "K": 8,
+          "method": "cpm",
+          "Q": -0.026,
+          "cpm_h": 9.929,
+          "class": "poor",
+          "avg_layer_size": 3.8,
+          "compression_per_layer": 0.125,
+          "self_routing_accuracy": 1.0,
+          "self_routing_correct": "30/30",
+          "above_limit": "2/8",
+          "above_frac": 0.25
+        }
+      },
+      "10": {
+        "newman": {
+          "K": 10,
+          "method": "newman",
+          "Q": 0.145,
+          "cpm_h": null,
+          "class": "poor",
+          "avg_layer_size": 3.0,
+          "compression_per_layer": 0.1,
+          "self_routing_accuracy": 1.0,
+          "self_routing_correct": "30/30",
+          "above_limit": "1/10",
+          "above_frac": 0.1
+        },
+        "cpm": {
+          "K": 10,
+          "method": "cpm",
+          "Q": -0.028,
+          "cpm_h": 6.948,
+          "class": "poor",
+          "avg_layer_size": 3.0,
+          "compression_per_layer": 0.1,
+          "self_routing_accuracy": 1.0,
+          "self_routing_correct": "30/30",
+          "above_limit": "2/10",
+          "above_frac": 0.2
+        }
+      },
+      "15": {
+        "newman": {
+          "K": 15,
+          "method": "newman",
+          "Q": 0.264,
+          "cpm_h": null,
+          "class": "poor",
+          "avg_layer_size": 2.0,
+          "compression_per_layer": 0.067,
+          "self_routing_accuracy": 1.0,
+          "self_routing_correct": "30/30",
+          "above_limit": "0/15",
+          "above_frac": 0.0
+        },
+        "cpm": {
+          "K": 15,
+          "method": "cpm",
+          "Q": -0.03,
+          "cpm_h": 2.805,
+          "class": "poor",
+          "avg_layer_size": 2.0,
+          "compression_per_layer": 0.067,
+          "self_routing_accuracy": 1.0,
+          "self_routing_correct": "30/30",
+          "above_limit": "1/15",
+          "above_frac": 0.07
+        }
+      }
+    }
+  },
+  {
+    "corpus": "cross-domain 4 themes",
+    "embedder": "mpnet",
+    "N": 24,
+    "N_themes": 4,
+    "by_K_method": {
+      "4": {
+        "newman": {
+          "K": 4,
+          "method": "newman",
+          "Q": 0.614,
+          "cpm_h": null,
+          "class": "acceptable",
+          "avg_layer_size": 6.0,
+          "compression_per_layer": 0.25,
+          "self_routing_accuracy": 1.0,
+          "self_routing_correct": "24/24",
+          "above_limit": "3/4",
+          "above_frac": 0.75
+        },
+        "cpm": {
+          "K": 4,
+          "method": "cpm",
+          "Q": -0.03,
+          "cpm_h": 13.096,
+          "class": "poor",
+          "avg_layer_size": 6.0,
+          "compression_per_layer": 0.25,
+          "self_routing_accuracy": 1.0,
+          "self_routing_correct": "24/24",
+          "above_limit": "3/4",
+          "above_frac": 0.75
+        }
+      },
+      "8": {
+        "newman": {
+          "K": 8,
+          "method": "newman",
+          "Q": 0.638,
+          "cpm_h": null,
+          "class": "acceptable",
+          "avg_layer_size": 3.0,
+          "compression_per_layer": 0.125,
+          "self_routing_accuracy": 1.0,
+          "self_routing_correct": "24/24",
+          "above_limit": "1/8",
+          "above_frac": 0.12
+        },
+        "cpm": {
+          "K": 8,
+          "method": "cpm",
+          "Q": -0.036,
+          "cpm_h": 5.496,
+          "class": "poor",
+          "avg_layer_size": 3.0,
+          "compression_per_layer": 0.125,
+          "self_routing_accuracy": 1.0,
+          "self_routing_correct": "24/24",
+          "above_limit": "2/8",
+          "above_frac": 0.25
+        }
+      },
+      "10": {
+        "newman": {
+          "K": 10,
+          "method": "newman",
+          "Q": 0.573,
+          "cpm_h": null,
+          "class": "acceptable",
+          "avg_layer_size": 2.4,
+          "compression_per_layer": 0.1,
+          "self_routing_accuracy": 1.0,
+          "self_routing_correct": "24/24",
+          "above_limit": "1/10",
+          "above_frac": 0.1
+        },
+        "cpm": {
+          "K": 10,
+          "method": "cpm",
+          "Q": -0.038,
+          "cpm_h": 3.264,
+          "class": "poor",
+          "avg_layer_size": 2.4,
+          "compression_per_layer": 0.1,
+          "self_routing_accuracy": 1.0,
+          "self_routing_correct": "24/24",
+          "above_limit": "1/10",
+          "above_frac": 0.1
+        }
+      },
+      "15": {
+        "newman": {
+          "K": 15,
+          "method": "newman",
+          "Q": 0.29,
+          "cpm_h": null,
+          "class": "poor",
+          "avg_layer_size": 1.6,
+          "compression_per_layer": 0.067,
+          "self_routing_accuracy": 1.0,
+          "self_routing_correct": "24/24",
+          "above_limit": "1/15",
+          "above_frac": 0.07
+        },
+        "cpm": {
+          "K": 15,
+          "method": "cpm",
+          "Q": -0.039,
+          "cpm_h": 0.803,
+          "class": "poor",
+          "avg_layer_size": 1.6,
+          "compression_per_layer": 0.067,
+          "self_routing_accuracy": 1.0,
+          "self_routing_correct": "24/24",
+          "above_limit": "1/15",
+          "above_frac": 0.07
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "nodes": [
+    {"id": "d00", "text": "scope_a scope_b scope_c scope_d"},
+    {"id": "d01", "text": "scope_a scope_b scope_e scope_f"},
+    {"id": "d02", "text": "scope_b scope_c scope_g scope_h"},
+    {"id": "d03", "text": "scope_a scope_d scope_g scope_i"},
+    {"id": "d04", "text": "place_a place_b place_c place_d"},
+    {"id": "d05", "text": "place_a place_b place_e place_f"},
+    {"id": "d06", "text": "place_b place_c place_g place_h"},
+    {"id": "d07", "text": "place_a place_d place_g place_i"},
+    {"id": "d08", "text": "struct_a struct_b struct_c struct_d"},
+    {"id": "d09", "text": "struct_a struct_b struct_e struct_f"},
+    {"id": "d10", "text": "struct_b struct_c struct_g struct_h"},
+    {"id": "d11", "text": "struct_a struct_d struct_g struct_i"},
+    {"id": "d12", "text": "meta_a meta_b meta_c meta_d"},
+    {"id": "d13", "text": "meta_a meta_b meta_e meta_f"},
+    {"id": "d14", "text": "meta_b meta_c meta_g meta_h"},
+    {"id": "d15", "text": "meta_a meta_d meta_g meta_i"}
+  ],
+  "options": {"embedding_backend": "hash", "random_seed": 42}
+}

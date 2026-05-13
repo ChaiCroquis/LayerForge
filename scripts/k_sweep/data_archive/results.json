@@ -1,0 +1,479 @@
+{
+  "sweeps": [
+    {
+      "label": "K≈2 (very coarse)",
+      "target_min": 1,
+      "target_max": 2,
+      "status": "ok",
+      "actual_K": 1,
+      "modularity_Q": 0.0,
+      "quality_class": "poor",
+      "avg_layer_size_nodes": 24.0,
+      "avg_compression_ratio": 1.0,
+      "routing_accuracy": 1.0,
+      "routing_correct": "9/9",
+      "avg_chosen_layer_size_for_correct": 24.0,
+      "per_question": [
+        {
+          "q_id": "q01",
+          "source_pid": "a6",
+          "chosen_layer_id": 0,
+          "chosen_layer_size": 24,
+          "correct": true
+        },
+        {
+          "q_id": "q02",
+          "source_pid": "a4",
+          "chosen_layer_id": 0,
+          "chosen_layer_size": 24,
+          "correct": true
+        },
+        {
+          "q_id": "q03",
+          "source_pid": "b1",
+          "chosen_layer_id": 0,
+          "chosen_layer_size": 24,
+          "correct": true
+        },
+        {
+          "q_id": "q04",
+          "source_pid": "b6",
+          "chosen_layer_id": 0,
+          "chosen_layer_size": 24,
+          "correct": true
+        },
+        {
+          "q_id": "q05",
+          "source_pid": "c4",
+          "chosen_layer_id": 0,
+          "chosen_layer_size": 24,
+          "correct": true
+        },
+        {
+          "q_id": "q06",
+          "source_pid": "c5",
+          "chosen_layer_id": 0,
+          "chosen_layer_size": 24,
+          "correct": true
+        },
+        {
+          "q_id": "q07",
+          "source_pid": "d3",
+          "chosen_layer_id": 0,
+          "chosen_layer_size": 24,
+          "correct": true
+        },
+        {
+          "q_id": "q08",
+          "source_pid": "d6",
+          "chosen_layer_id": 0,
+          "chosen_layer_size": 24,
+          "correct": true
+        },
+        {
+          "q_id": "q09",
+          "source_pid": "a1",
+          "chosen_layer_id": 0,
+          "chosen_layer_size": 24,
+          "correct": true
+        }
+      ]
+    },
+    {
+      "label": "K=3-5 (4±1 default)",
+      "target_min": 3,
+      "target_max": 5,
+      "status": "ok",
+      "actual_K": 5,
+      "modularity_Q": 0.695,
+      "quality_class": "acceptable",
+      "avg_layer_size_nodes": 4.8,
+      "avg_compression_ratio": 0.2,
+      "routing_accuracy": 1.0,
+      "routing_correct": "9/9",
+      "avg_chosen_layer_size_for_correct": 5.3,
+      "per_question": [
+        {
+          "q_id": "q01",
+          "source_pid": "a6",
+          "chosen_layer_id": 0,
+          "chosen_layer_size": 6,
+          "correct": true
+        },
+        {
+          "q_id": "q02",
+          "source_pid": "a4",
+          "chosen_layer_id": 0,
+          "chosen_layer_size": 6,
+          "correct": true
+        },
+        {
+          "q_id": "q03",
+          "source_pid": "b1",
+          "chosen_layer_id": 1,
+          "chosen_layer_size": 6,
+          "correct": true
+        },
+        {
+          "q_id": "q04",
+          "source_pid": "b6",
+          "chosen_layer_id": 1,
+          "chosen_layer_size": 6,
+          "correct": true
+        },
+        {
+          "q_id": "q05",
+          "source_pid": "c4",
+          "chosen_layer_id": 2,
+          "chosen_layer_size": 6,
+          "correct": true
+        },
+        {
+          "q_id": "q06",
+          "source_pid": "c5",
+          "chosen_layer_id": 2,
+          "chosen_layer_size": 6,
+          "correct": true
+        },
+        {
+          "q_id": "q07",
+          "source_pid": "d3",
+          "chosen_layer_id": 4,
+          "chosen_layer_size": 3,
+          "correct": true
+        },
+        {
+          "q_id": "q08",
+          "source_pid": "d6",
+          "chosen_layer_id": 4,
+          "chosen_layer_size": 3,
+          "correct": true
+        },
+        {
+          "q_id": "q09",
+          "source_pid": "a1",
+          "chosen_layer_id": 0,
+          "chosen_layer_size": 6,
+          "correct": true
+        }
+      ]
+    },
+    {
+      "label": "K=6-8 (above Cowan)",
+      "target_min": 6,
+      "target_max": 8,
+      "status": "ok",
+      "actual_K": 6,
+      "modularity_Q": 0.623,
+      "quality_class": "acceptable",
+      "avg_layer_size_nodes": 4.0,
+      "avg_compression_ratio": 0.167,
+      "routing_accuracy": 0.889,
+      "routing_correct": "8/9",
+      "avg_chosen_layer_size_for_correct": 4.9,
+      "per_question": [
+        {
+          "q_id": "q01",
+          "source_pid": "a6",
+          "chosen_layer_id": 0,
+          "chosen_layer_size": 6,
+          "correct": true
+        },
+        {
+          "q_id": "q02",
+          "source_pid": "a4",
+          "chosen_layer_id": 0,
+          "chosen_layer_size": 6,
+          "correct": true
+        },
+        {
+          "q_id": "q03",
+          "source_pid": "b1",
+          "chosen_layer_id": 2,
+          "chosen_layer_size": 4,
+          "correct": false
+        },
+        {
+          "q_id": "q04",
+          "source_pid": "b6",
+          "chosen_layer_id": 2,
+          "chosen_layer_size": 4,
+          "correct": true
+        },
+        {
+          "q_id": "q05",
+          "source_pid": "c4",
+          "chosen_layer_id": 3,
+          "chosen_layer_size": 6,
+          "correct": true
+        },
+        {
+          "q_id": "q06",
+          "source_pid": "c5",
+          "chosen_layer_id": 3,
+          "chosen_layer_size": 6,
+          "correct": true
+        },
+        {
+          "q_id": "q07",
+          "source_pid": "d3",
+          "chosen_layer_id": 5,
+          "chosen_layer_size": 3,
+          "correct": true
+        },
+        {
+          "q_id": "q08",
+          "source_pid": "d6",
+          "chosen_layer_id": 5,
+          "chosen_layer_size": 3,
+          "correct": true
+        },
+        {
+          "q_id": "q09",
+          "source_pid": "a1",
+          "chosen_layer_id": 0,
+          "chosen_layer_size": 6,
+          "correct": true
+        }
+      ]
+    },
+    {
+      "label": "K=10-12 (fine)",
+      "target_min": 10,
+      "target_max": 12,
+      "status": "ok",
+      "actual_K": 10,
+      "modularity_Q": 0.466,
+      "quality_class": "acceptable",
+      "avg_layer_size_nodes": 2.4,
+      "avg_compression_ratio": 0.1,
+      "routing_accuracy": 1.0,
+      "routing_correct": "9/9",
+      "avg_chosen_layer_size_for_correct": 3.7,
+      "per_question": [
+        {
+          "q_id": "q01",
+          "source_pid": "a6",
+          "chosen_layer_id": 0,
+          "chosen_layer_size": 4,
+          "correct": true
+        },
+        {
+          "q_id": "q02",
+          "source_pid": "a4",
+          "chosen_layer_id": 0,
+          "chosen_layer_size": 4,
+          "correct": true
+        },
+        {
+          "q_id": "q03",
+          "source_pid": "b1",
+          "chosen_layer_id": 2,
+          "chosen_layer_size": 3,
+          "correct": true
+        },
+        {
+          "q_id": "q04",
+          "source_pid": "b6",
+          "chosen_layer_id": 4,
+          "chosen_layer_size": 2,
+          "correct": true
+        },
+        {
+          "q_id": "q05",
+          "source_pid": "c4",
+          "chosen_layer_id": 5,
+          "chosen_layer_size": 6,
+          "correct": true
+        },
+        {
+          "q_id": "q06",
+          "source_pid": "c5",
+          "chosen_layer_id": 5,
+          "chosen_layer_size": 6,
+          "correct": true
+        },
+        {
+          "q_id": "q07",
+          "source_pid": "d3",
+          "chosen_layer_id": 7,
+          "chosen_layer_size": 2,
+          "correct": true
+        },
+        {
+          "q_id": "q08",
+          "source_pid": "d6",
+          "chosen_layer_id": 7,
+          "chosen_layer_size": 2,
+          "correct": true
+        },
+        {
+          "q_id": "q09",
+          "source_pid": "a1",
+          "chosen_layer_id": 0,
+          "chosen_layer_size": 4,
+          "correct": true
+        }
+      ]
+    },
+    {
+      "label": "K=15-20 (near per-passage)",
+      "target_min": 15,
+      "target_max": 20,
+      "status": "ok",
+      "actual_K": 19,
+      "modularity_Q": 0.18,
+      "quality_class": "poor",
+      "avg_layer_size_nodes": 1.3,
+      "avg_compression_ratio": 0.053,
+      "routing_accuracy": 0.889,
+      "routing_correct": "8/9",
+      "avg_chosen_layer_size_for_correct": 1.6,
+      "per_question": [
+        {
+          "q_id": "q01",
+          "source_pid": "a6",
+          "chosen_layer_id": 2,
+          "chosen_layer_size": 2,
+          "correct": true
+        },
+        {
+          "q_id": "q02",
+          "source_pid": "a4",
+          "chosen_layer_id": 3,
+          "chosen_layer_size": 1,
+          "correct": true
+        },
+        {
+          "q_id": "q03",
+          "source_pid": "b1",
+          "chosen_layer_id": 8,
+          "chosen_layer_size": 1,
+          "correct": false
+        },
+        {
+          "q_id": "q04",
+          "source_pid": "b6",
+          "chosen_layer_id": 10,
+          "chosen_layer_size": 1,
+          "correct": true
+        },
+        {
+          "q_id": "q05",
+          "source_pid": "c4",
+          "chosen_layer_id": 11,
+          "chosen_layer_size": 3,
+          "correct": true
+        },
+        {
+          "q_id": "q06",
+          "source_pid": "c5",
+          "chosen_layer_id": 11,
+          "chosen_layer_size": 3,
+          "correct": true
+        },
+        {
+          "q_id": "q07",
+          "source_pid": "d3",
+          "chosen_layer_id": 15,
+          "chosen_layer_size": 1,
+          "correct": true
+        },
+        {
+          "q_id": "q08",
+          "source_pid": "d6",
+          "chosen_layer_id": 18,
+          "chosen_layer_size": 1,
+          "correct": true
+        },
+        {
+          "q_id": "q09",
+          "source_pid": "a1",
+          "chosen_layer_id": 0,
+          "chosen_layer_size": 1,
+          "correct": true
+        }
+      ]
+    },
+    {
+      "label": "K≈N (top-1 RAG-like)",
+      "target_min": 20,
+      "target_max": 24,
+      "status": "ok",
+      "actual_K": 24,
+      "modularity_Q": 0.0,
+      "quality_class": "poor",
+      "avg_layer_size_nodes": 1.0,
+      "avg_compression_ratio": 0.042,
+      "routing_accuracy": 0.889,
+      "routing_correct": "8/9",
+      "avg_chosen_layer_size_for_correct": 1.0,
+      "per_question": [
+        {
+          "q_id": "q01",
+          "source_pid": "a6",
+          "chosen_layer_id": 5,
+          "chosen_layer_size": 1,
+          "correct": true
+        },
+        {
+          "q_id": "q02",
+          "source_pid": "a4",
+          "chosen_layer_id": 3,
+          "chosen_layer_size": 1,
+          "correct": true
+        },
+        {
+          "q_id": "q03",
+          "source_pid": "b1",
+          "chosen_layer_id": 9,
+          "chosen_layer_size": 1,
+          "correct": false
+        },
+        {
+          "q_id": "q04",
+          "source_pid": "b6",
+          "chosen_layer_id": 11,
+          "chosen_layer_size": 1,
+          "correct": true
+        },
+        {
+          "q_id": "q05",
+          "source_pid": "c4",
+          "chosen_layer_id": 15,
+          "chosen_layer_size": 1,
+          "correct": true
+        },
+        {
+          "q_id": "q06",
+          "source_pid": "c5",
+          "chosen_layer_id": 16,
+          "chosen_layer_size": 1,
+          "correct": true
+        },
+        {
+          "q_id": "q07",
+          "source_pid": "d3",
+          "chosen_layer_id": 20,
+          "chosen_layer_size": 1,
+          "correct": true
+        },
+        {
+          "q_id": "q08",
+          "source_pid": "d6",
+          "chosen_layer_id": 23,
+          "chosen_layer_size": 1,
+          "correct": true
+        },
+        {
+          "q_id": "q09",
+          "source_pid": "a1",
+          "chosen_layer_id": 0,
+          "chosen_layer_size": 1,
+          "correct": true
+        }
+      ]
+    }
+  ],
+  "total_chars": 4340
+}

@@ -1,0 +1,70 @@
+{
+  "topics": [
+    "sci.med",
+    "sci.space",
+    "rec.sport.hockey",
+    "talk.politics.guns"
+  ],
+  "per_topic": 50,
+  "backend": "sentence_transformers",
+  "embedding_model": "sentence-transformers/paraphrase-MiniLM-L3-v2",
+  "load_time_s": 2.867284700041637,
+  "decompose_time_s": 14.319082100060768,
+  "quality_metrics": {
+    "modularity": 0.49083190315792163,
+    "layer_count": 4,
+    "scale_coefficient": 0.25,
+    "is_within_4_plus_minus_1": true,
+    "quality_class": "acceptable"
+  },
+  "per_layer": [
+    {
+      "layer_id": 0,
+      "dominant_topic": "sci.med",
+      "purity": 0.7,
+      "size": 20,
+      "topic_distribution": {
+        "sci.med": 14,
+        "rec.sport.hockey": 4,
+        "sci.space": 1,
+        "talk.politics.guns": 1
+      }
+    },
+    {
+      "layer_id": 1,
+      "dominant_topic": "rec.sport.hockey",
+      "purity": 0.9,
+      "size": 50,
+      "topic_distribution": {
+        "rec.sport.hockey": 45,
+        "sci.med": 4,
+        "talk.politics.guns": 1
+      }
+    },
+    {
+      "layer_id": 2,
+      "dominant_topic": "sci.space",
+      "purity": 0.6935483870967742,
+      "size": 62,
+      "topic_distribution": {
+        "sci.space": 43,
+        "sci.med": 16,
+        "talk.politics.guns": 3
+      }
+    },
+    {
+      "layer_id": 3,
+      "dominant_topic": "talk.politics.guns",
+      "purity": 0.6617647058823529,
+      "size": 68,
+      "topic_distribution": {
+        "talk.politics.guns": 45,
+        "sci.med": 16,
+        "sci.space": 6,
+        "rec.sport.hockey": 1
+      }
+    }
+  ],
+  "ari": 0.4833264461198999,
+  "n_docs": 200
+}

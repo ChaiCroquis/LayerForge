@@ -1,0 +1,149 @@
+[
+  {
+    "label": "K=3 exact",
+    "actual_K": 3,
+    "Q": 0.508,
+    "quality_class": "acceptable",
+    "theta": 0.312,
+    "L": 51,
+    "resolution_limit_sqrt_L_over_2": 5.05,
+    "above_limit_fraction": "3/3",
+    "communities": [
+      {
+        "layer_id": 0,
+        "members": 8,
+        "themes": [
+          "a",
+          "d"
+        ],
+        "internal_edges": 14,
+        "verdict": "above"
+      },
+      {
+        "layer_id": 1,
+        "members": 9,
+        "themes": [
+          "b",
+          "d"
+        ],
+        "internal_edges": 13,
+        "verdict": "above"
+      },
+      {
+        "layer_id": 2,
+        "members": 7,
+        "themes": [
+          "c",
+          "d"
+        ],
+        "internal_edges": 16,
+        "verdict": "above"
+      }
+    ]
+  },
+  {
+    "label": "K=4 exact",
+    "actual_K": 4,
+    "Q": 0.712,
+    "quality_class": "good",
+    "theta": 0.344,
+    "L": 42,
+    "resolution_limit_sqrt_L_over_2": 4.58,
+    "above_limit_fraction": "4/4",
+    "communities": [
+      {
+        "layer_id": 0,
+        "members": 6,
+        "themes": [
+          "a"
+        ],
+        "internal_edges": 10,
+        "verdict": "above"
+      },
+      {
+        "layer_id": 1,
+        "members": 6,
+        "themes": [
+          "b"
+        ],
+        "internal_edges": 10,
+        "verdict": "above"
+      },
+      {
+        "layer_id": 2,
+        "members": 6,
+        "themes": [
+          "c"
+        ],
+        "internal_edges": 14,
+        "verdict": "above"
+      },
+      {
+        "layer_id": 3,
+        "members": 6,
+        "themes": [
+          "d"
+        ],
+        "internal_edges": 7,
+        "verdict": "above"
+      }
+    ]
+  },
+  {
+    "label": "K=5 exact",
+    "actual_K": 5,
+    "Q": 0.695,
+    "quality_class": "acceptable",
+    "theta": 0.375,
+    "L": 35,
+    "resolution_limit_sqrt_L_over_2": 4.18,
+    "above_limit_fraction": "3/5",
+    "communities": [
+      {
+        "layer_id": 0,
+        "members": 6,
+        "themes": [
+          "a"
+        ],
+        "internal_edges": 8,
+        "verdict": "above"
+      },
+      {
+        "layer_id": 1,
+        "members": 6,
+        "themes": [
+          "b"
+        ],
+        "internal_edges": 8,
+        "verdict": "above"
+      },
+      {
+        "layer_id": 2,
+        "members": 6,
+        "themes": [
+          "c"
+        ],
+        "internal_edges": 14,
+        "verdict": "above"
+      },
+      {
+        "layer_id": 3,
+        "members": 3,
+        "themes": [
+          "d"
+        ],
+        "internal_edges": 3,
+        "verdict": "below"
+      },
+      {
+        "layer_id": 4,
+        "members": 3,
+        "themes": [
+          "d"
+        ],
+        "internal_edges": 1,
+        "verdict": "below"
+      }
+    ]
+  }
+]

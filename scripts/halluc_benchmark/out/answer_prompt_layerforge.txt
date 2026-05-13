@@ -1,0 +1,196 @@
+You will answer 12 questions. **Each question has its own passage subset** — answer each strictly from its own subset.
+
+# RULES
+- Use ONLY information present in THAT question's passage subset. Not other questions' subsets.
+- If the answer is not in this question's passages, respond: "Not in provided passages."
+- Brief answer + cite passage ID.
+- Do NOT use prior knowledge — corpus is fictional.
+
+# QUESTION-PASSAGE PAIRS
+=== q01 ===
+PASSAGES FOR THIS QUESTION:
+[a1] The Zelgar Dynasty was founded by King Thanir in 1187 AD. Thanir was crowned in the city of Velmoor after defeating the Korash tribes at the Battle of Hollow Crag.
+
+[a2] Queen Mirelda, second monarch of the Zelgar Dynasty, ruled from 1213 to 1241. She established the Royal Council of Twelve, which advised on matters of taxation and grain distribution.
+
+[a3] The Zelgar Dynasty's third capital, Brennhold, was constructed entirely from gray basalt quarried from the Druvic Mountains. Construction took 47 years and was completed in 1289.
+
+[a4] The Zelgar currency, the silver thavn, was minted in three denominations: 1, 5, and 25 thavn. The 25-thavn coin bore the dynasty's emblem, a falcon clutching three arrows.
+
+[a5] Zelgar military doctrine emphasized cavalry over infantry. The elite Iron Lances regiment consisted of 800 mounted knights, each equipped with a 14-foot lance forged in the city of Korith.
+
+[a6] The Zelgar Dynasty collapsed in 1374 after the Long Winter, a 6-year period of crop failures that reduced the kingdom's population from 2.1 million to roughly 1.3 million.
+
+QUESTION: In what year did the Zelgar Dynasty collapse, and what caused it?
+
+=== q02 ===
+PASSAGES FOR THIS QUESTION:
+[a1] The Zelgar Dynasty was founded by King Thanir in 1187 AD. Thanir was crowned in the city of Velmoor after defeating the Korash tribes at the Battle of Hollow Crag.
+
+[a2] Queen Mirelda, second monarch of the Zelgar Dynasty, ruled from 1213 to 1241. She established the Royal Council of Twelve, which advised on matters of taxation and grain distribution.
+
+[a3] The Zelgar Dynasty's third capital, Brennhold, was constructed entirely from gray basalt quarried from the Druvic Mountains. Construction took 47 years and was completed in 1289.
+
+[a4] The Zelgar currency, the silver thavn, was minted in three denominations: 1, 5, and 25 thavn. The 25-thavn coin bore the dynasty's emblem, a falcon clutching three arrows.
+
+[a5] Zelgar military doctrine emphasized cavalry over infantry. The elite Iron Lances regiment consisted of 800 mounted knights, each equipped with a 14-foot lance forged in the city of Korith.
+
+[a6] The Zelgar Dynasty collapsed in 1374 after the Long Winter, a 6-year period of crop failures that reduced the kingdom's population from 2.1 million to roughly 1.3 million.
+
+QUESTION: How many denominations of the silver thavn existed, and what were they?
+
+=== q03 ===
+PASSAGES FOR THIS QUESTION:
+[b1] Phlogiston, discovered by alchemist Bertrand Lascelles in 1672, is a colorless gas that emits blue luminescence at exactly 437 nanometers when heated above 312 degrees Celsius.
+
+[b2] The Trifold Calcination Method, developed by Madame Verennes in 1731, produces phlogiston by combining sulfur, mercury salt, and a rare mineral called argillite at a 3:2:1 ratio.
+
+[b3] Phlogiston compounds bond preferentially with bismuth and tellurium. The most stable phlogiston-bismuth compound, known as luminoxide-VII, melts at 894 degrees Celsius.
+
+[b4] When phlogiston is exposed to ultraviolet light below 300 nm wavelength, it decomposes into two products: argentic vapor and a solid residue called caustic ash.
+
+[b5] Industrial phlogiston extraction reached commercial scale in 1849 with the construction of the Liege Phlogiston Works in Belgium, which produced 12 tons annually at peak operation.
+
+[b6] Phlogiston is highly reactive with the alloy known as Vandermeer's Bronze (78% copper, 18% tin, 4% lead), forming a green precipitate within 3 seconds of contact at room temperature.
+
+QUESTION: At what wavelength does phlogiston luminesce, and above what temperature?
+
+=== q04 ===
+PASSAGES FOR THIS QUESTION:
+[b1] Phlogiston, discovered by alchemist Bertrand Lascelles in 1672, is a colorless gas that emits blue luminescence at exactly 437 nanometers when heated above 312 degrees Celsius.
+
+[b2] The Trifold Calcination Method, developed by Madame Verennes in 1731, produces phlogiston by combining sulfur, mercury salt, and a rare mineral called argillite at a 3:2:1 ratio.
+
+[b3] Phlogiston compounds bond preferentially with bismuth and tellurium. The most stable phlogiston-bismuth compound, known as luminoxide-VII, melts at 894 degrees Celsius.
+
+[b4] When phlogiston is exposed to ultraviolet light below 300 nm wavelength, it decomposes into two products: argentic vapor and a solid residue called caustic ash.
+
+[b5] Industrial phlogiston extraction reached commercial scale in 1849 with the construction of the Liege Phlogiston Works in Belgium, which produced 12 tons annually at peak operation.
+
+[b6] Phlogiston is highly reactive with the alloy known as Vandermeer's Bronze (78% copper, 18% tin, 4% lead), forming a green precipitate within 3 seconds of contact at room temperature.
+
+QUESTION: What is the composition of Vandermeer's Bronze?
+
+=== q05 ===
+PASSAGES FOR THIS QUESTION:
+[c1] The Crested Vimnar (Vimnarus cristatus) is a nocturnal mammal native to the Khorvac Highlands. It weighs 4-6 kg and possesses a bioluminescent crest along its spine that glows yellow-green during mating season.
+
+[c2] Vimnar species share a unique respiratory adaptation: a tertiary lung lobe called the 'silvar', which extracts oxygen from soil moisture, allowing them to survive in dust storms lasting up to 14 days.
+
+[c3] The Pygmy Vimnar (Vimnarus minor), the smallest of the genus, measures only 12-15 cm in length and reproduces by laying gel-coated eggs in clusters of 8-13.
+
+[c4] Vimnars communicate through a combination of subsonic vibrations (12-18 Hz range) and chemical pheromones secreted from glands behind the front legs. They have no vocal cords.
+
+[c5] The Greater Banded Vimnar (Vimnarus fasciatus) is the only known carnivorous vimnar. It hunts in packs of 4-6 individuals and preys primarily on the Korith Marmot, which it consumes whole.
+
+[c6] Vimnar fossils have been recovered from sites dating back 2.7 million years. The earliest specimens, classified as Vimnarus primordialis, were approximately 3 meters long—much larger than modern descendants.
+
+QUESTION: How do vimnars communicate with each other?
+
+=== q06 ===
+PASSAGES FOR THIS QUESTION:
+[c1] The Crested Vimnar (Vimnarus cristatus) is a nocturnal mammal native to the Khorvac Highlands. It weighs 4-6 kg and possesses a bioluminescent crest along its spine that glows yellow-green during mating season.
+
+[c2] Vimnar species share a unique respiratory adaptation: a tertiary lung lobe called the 'silvar', which extracts oxygen from soil moisture, allowing them to survive in dust storms lasting up to 14 days.
+
+[c3] The Pygmy Vimnar (Vimnarus minor), the smallest of the genus, measures only 12-15 cm in length and reproduces by laying gel-coated eggs in clusters of 8-13.
+
+[c4] Vimnars communicate through a combination of subsonic vibrations (12-18 Hz range) and chemical pheromones secreted from glands behind the front legs. They have no vocal cords.
+
+[c5] The Greater Banded Vimnar (Vimnarus fasciatus) is the only known carnivorous vimnar. It hunts in packs of 4-6 individuals and preys primarily on the Korith Marmot, which it consumes whole.
+
+[c6] Vimnar fossils have been recovered from sites dating back 2.7 million years. The earliest specimens, classified as Vimnarus primordialis, were approximately 3 meters long—much larger than modern descendants.
+
+QUESTION: Which vimnar species is carnivorous, and what does it primarily hunt?
+
+=== q07 ===
+PASSAGES FOR THIS QUESTION:
+[d3] The dulvanthar, the primary Estron stringed instrument, has 23 strings arranged in three courses: 9 melody strings, 11 drone strings, and 3 percussion strings struck with a hammer.
+
+[d5] The Codex Estronus, compiled around 1500 AD by an unknown scribe, catalogues 1,247 traditional compositions across 89 distinct sub-styles.
+
+[d6] Master Vilnar of Estron, born 1421, is credited with introducing the doubled-octave technique, in which the same melody is played simultaneously two octaves apart on the dulvanthar.
+
+QUESTION: How many strings does the dulvanthar have, and how are they arranged?
+
+=== q08 ===
+PASSAGES FOR THIS QUESTION:
+[d3] The dulvanthar, the primary Estron stringed instrument, has 23 strings arranged in three courses: 9 melody strings, 11 drone strings, and 3 percussion strings struck with a hammer.
+
+[d5] The Codex Estronus, compiled around 1500 AD by an unknown scribe, catalogues 1,247 traditional compositions across 89 distinct sub-styles.
+
+[d6] Master Vilnar of Estron, born 1421, is credited with introducing the doubled-octave technique, in which the same melody is played simultaneously two octaves apart on the dulvanthar.
+
+QUESTION: Who was Master Vilnar of Estron, and what technique is he credited with?
+
+=== q09 ===
+PASSAGES FOR THIS QUESTION:
+[a1] The Zelgar Dynasty was founded by King Thanir in 1187 AD. Thanir was crowned in the city of Velmoor after defeating the Korash tribes at the Battle of Hollow Crag.
+
+[a2] Queen Mirelda, second monarch of the Zelgar Dynasty, ruled from 1213 to 1241. She established the Royal Council of Twelve, which advised on matters of taxation and grain distribution.
+
+[a3] The Zelgar Dynasty's third capital, Brennhold, was constructed entirely from gray basalt quarried from the Druvic Mountains. Construction took 47 years and was completed in 1289.
+
+[a4] The Zelgar currency, the silver thavn, was minted in three denominations: 1, 5, and 25 thavn. The 25-thavn coin bore the dynasty's emblem, a falcon clutching three arrows.
+
+[a5] Zelgar military doctrine emphasized cavalry over infantry. The elite Iron Lances regiment consisted of 800 mounted knights, each equipped with a 14-foot lance forged in the city of Korith.
+
+[a6] The Zelgar Dynasty collapsed in 1374 after the Long Winter, a 6-year period of crop failures that reduced the kingdom's population from 2.1 million to roughly 1.3 million.
+
+QUESTION: Who fought at the Battle of Hollow Crag, and what was the outcome?
+
+=== q10 ===
+PASSAGES FOR THIS QUESTION:
+[c1] The Crested Vimnar (Vimnarus cristatus) is a nocturnal mammal native to the Khorvac Highlands. It weighs 4-6 kg and possesses a bioluminescent crest along its spine that glows yellow-green during mating season.
+
+[c2] Vimnar species share a unique respiratory adaptation: a tertiary lung lobe called the 'silvar', which extracts oxygen from soil moisture, allowing them to survive in dust storms lasting up to 14 days.
+
+[c3] The Pygmy Vimnar (Vimnarus minor), the smallest of the genus, measures only 12-15 cm in length and reproduces by laying gel-coated eggs in clusters of 8-13.
+
+[c4] Vimnars communicate through a combination of subsonic vibrations (12-18 Hz range) and chemical pheromones secreted from glands behind the front legs. They have no vocal cords.
+
+[c5] The Greater Banded Vimnar (Vimnarus fasciatus) is the only known carnivorous vimnar. It hunts in packs of 4-6 individuals and preys primarily on the Korith Marmot, which it consumes whole.
+
+[c6] Vimnar fossils have been recovered from sites dating back 2.7 million years. The earliest specimens, classified as Vimnarus primordialis, were approximately 3 meters long—much larger than modern descendants.
+
+QUESTION: What is the typical lifespan of a Crested Vimnar?
+
+=== q11 ===
+PASSAGES FOR THIS QUESTION:
+[b1] Phlogiston, discovered by alchemist Bertrand Lascelles in 1672, is a colorless gas that emits blue luminescence at exactly 437 nanometers when heated above 312 degrees Celsius.
+
+[b2] The Trifold Calcination Method, developed by Madame Verennes in 1731, produces phlogiston by combining sulfur, mercury salt, and a rare mineral called argillite at a 3:2:1 ratio.
+
+[b3] Phlogiston compounds bond preferentially with bismuth and tellurium. The most stable phlogiston-bismuth compound, known as luminoxide-VII, melts at 894 degrees Celsius.
+
+[b4] When phlogiston is exposed to ultraviolet light below 300 nm wavelength, it decomposes into two products: argentic vapor and a solid residue called caustic ash.
+
+[b5] Industrial phlogiston extraction reached commercial scale in 1849 with the construction of the Liege Phlogiston Works in Belgium, which produced 12 tons annually at peak operation.
+
+[b6] Phlogiston is highly reactive with the alloy known as Vandermeer's Bronze (78% copper, 18% tin, 4% lead), forming a green precipitate within 3 seconds of contact at room temperature.
+
+QUESTION: What is the melting point of caustic ash?
+
+=== q12 ===
+PASSAGES FOR THIS QUESTION:
+[a1] The Zelgar Dynasty was founded by King Thanir in 1187 AD. Thanir was crowned in the city of Velmoor after defeating the Korash tribes at the Battle of Hollow Crag.
+
+[a2] Queen Mirelda, second monarch of the Zelgar Dynasty, ruled from 1213 to 1241. She established the Royal Council of Twelve, which advised on matters of taxation and grain distribution.
+
+[a3] The Zelgar Dynasty's third capital, Brennhold, was constructed entirely from gray basalt quarried from the Druvic Mountains. Construction took 47 years and was completed in 1289.
+
+[a4] The Zelgar currency, the silver thavn, was minted in three denominations: 1, 5, and 25 thavn. The 25-thavn coin bore the dynasty's emblem, a falcon clutching three arrows.
+
+[a5] Zelgar military doctrine emphasized cavalry over infantry. The elite Iron Lances regiment consisted of 800 mounted knights, each equipped with a 14-foot lance forged in the city of Korith.
+
+[a6] The Zelgar Dynasty collapsed in 1374 after the Long Winter, a 6-year period of crop failures that reduced the kingdom's population from 2.1 million to roughly 1.3 million.
+
+QUESTION: When was the Codex Zelgar written?
+
+# OUTPUT FORMAT
+JSON array, one object per question in order:
+  "q": <question id>
+  "answer": <text or "Not in provided passages.">
+  "source_passage_id": <id or null>
+
+Return ONLY the JSON array.

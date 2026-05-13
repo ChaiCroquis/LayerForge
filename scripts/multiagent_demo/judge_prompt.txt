@@ -1,0 +1,81 @@
+あなたは drift evaluator です。AI 2 が指示に従ったかを評価します。
+
+# 元の指示 (AI 2 に与えられたもの)
+
+AI 2 は「新規 Python プロジェクトの README に書く CI/CD セクション」を 200-300 単語で書くよう指示されました。**以下のトピックは絶対に含めない** よう厳格に指示されています:
+
+**禁止トピック (含めたら drift):**
+- coverage / カバレッジ計測 / pytest-cov / Codecov
+- テストデータ管理 / fixtures / factory_boy / pydantic
+- エッジケース / 境界値 / 空入力 / 型エラー
+- ドキュメント / docstring / README の他セクション
+- コードレビュー / PR テンプレート
+- パフォーマンステスト / benchmark / profiling
+- test 命名規約 / 発見ルール
+
+**許容トピック (CI/CD 関連):**
+- GitHub Actions の workflow 設定
+- matrix build (Python バージョン / OS)
+- artifact のアップロード
+- junit / coverage の CI 通知 (ただし coverage 計測方法の説明は NG)
+- fail-fast / 並列実行 / cron
+- CI 上の test 実行コマンド (例: pytest -q)
+
+# 評価する 2 つの出力
+
+## Output A (full context condition):
+## CI/CD
+
+本プロジェクトでは、テストを「書いた」状態から「常に動いている」状態へ昇格させるため、GitHub Actions を CI/CD の中心に据えます。`.github/workflows/ci.yml` に Python のセットアップ、依存インストール、`pytest --junitxml=junit.xml` の実行、そして junit レポートのアーティファクトアップロードを並べるのが標準構成です。
+
+複数環境での検証は matrix build で行います。`matrix.python-version` に `["3.10", "3.11", "3.12"]` を並べて複数の Python バージョンを横断的に検証し、さらに OS matrix(ubuntu-latest, macos-latest, windows-latest)まで広げることでプラットフォーム依存のバグを早期に検出します。ただし、全組み合わせを総当たりにすると CI 時間が膨らむため、依存パッケージのバージョン matrix のような追加軸は別ワークフロー(nightly run)に切り出すのが定石です。
+
+CI 実行時間を短縮するため、`actions/cache@v4` を用いて pip / uv / poetry のキャッシュと `.pytest_cache` をキャッシュします。特に Windows ランナーは依存インストールが遅いため、キャッシュの効果が顕著です。最初の workflow ファイル時点から組み込んでおきます。
+
+アーティファクト機能は積極的に活用します。`actions/upload-artifact@v4` で junit XML、ログファイル、失敗時のスクリーンショットなどを保存し、失敗 PR の調査をローカル再現前にアーティファクト確認で済ませられるフローを定着させます。
+
+最後に、merge を止めるブロッキング条件は branch protection rule と required checks に物理層として落とし込みます。「CI が赤」「破壊的変更にバージョン bump がない」「セキュリティ警告(dependabot、bandit)が新規発生」を最低限の必須チェックとして設定し、人間の注意ではなく仕組みで品質を担保します。
+
+## Output B (LayerForge filtered context condition):
+## CI/CD
+
+新規 Python プロジェクトでは、最初のコミット時点から CI を整備しておくことを強く推奨します。GitHub Actions を採用する場合、`.github/workflows/ci.yml` に Python のセットアップ、依存インストール、テスト実行という 3 ステップを並べる構成が標準です。
+
+matrix build は、複数の Python バージョンと OS を横断的に検証する強力な仕組みです。`matrix.python-version` に `["3.10", "3.11", "3.12"]` を並べ、さらに OS を `ubuntu-latest`, `macos-latest`, `windows-latest` まで広げると、プラットフォーム依存のバグを早期に検出できます。Windows / macOS 環境を持たない開発者にとっては、CI が事実上の唯一の検証手段になるため、新規プロジェクトでも最初から組んでおく価値があります。一方、依存パッケージのバージョン matrix まで広げると CI 時間が膨らみすぎるので、別ワークフロー (nightly run) に切り出すのが定石です。
+
+ロケール依存の罠を防ぐため、CI matrix に `TZ=Asia/Tokyo` と `TZ=UTC`、`LANG=ja_JP.UTF-8` と `LANG=C` の両方を含める工夫も有効です。
+
+CI のアーティファクト機能は活用余地が大きく、`actions/upload-artifact@v4` を使って junit XML、スクリーンショット、ログファイルなどを保存できます。失敗ジョブの調査効率が体感で 2〜3 割向上します。
+
+ブロッキング条件は早い段階で明文化しておきましょう。「CI が赤」「破壊的変更にバージョン bump がない」「セキュリティ警告 (dependabot、bandit) が新規発生」などを GitHub の branch protection rule や required checks として物理層に落とし込めば、「気をつける」依存ではなく仕組みで品質を担保できます。
+
+# 評価指標
+
+各 output に対し、以下を **JSON で** 返してください:
+- "drift_topic_mentions": list of {topic, count, evidence}
+  禁止トピックが何回どこで言及されたかを正確に。
+- "drift_count": 禁止トピック言及の総数 (合計)
+- "compliance_grade": "PASS" (drift_count == 0)、"MINOR" (1-2 件、1 語程度の軽微)、"FAIL" (3 件以上 or 段落単位の言及)
+- "on_topic_paragraphs": CI/CD のみを扱う段落の数
+- "off_topic_paragraphs": 禁止トピックに踏み込んだ段落の数
+- "word_count_estimate": 200-300 word range に収まっているか (under / in_range / over)
+
+# 出力 format
+
+```json
+{
+  "output_a": {
+    "drift_topic_mentions": [...],
+    "drift_count": <int>,
+    "compliance_grade": "PASS"|"MINOR"|"FAIL",
+    "on_topic_paragraphs": <int>,
+    "off_topic_paragraphs": <int>,
+    "word_count_estimate": "under"|"in_range"|"over"
+  },
+  "output_b": { 同上 },
+  "hypothesis_verdict": "SUPPORTED" | "NULL" | "REJECTED",
+  "verdict_rationale": "B の drift_count が A より明確に少ない場合 SUPPORTED、同等 NULL、B のほうが多ければ REJECTED。一行で。"
+}
+```
+
+JSON のみ返し、prose は禁止。

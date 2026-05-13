@@ -1,0 +1,3003 @@
+[
+  {
+    "n_themes": 3,
+    "N": 18,
+    "embedder": "MiniLM-L3",
+    "seed": 42,
+    "method": "newman",
+    "peak_Q_at_K": 8,
+    "peak_Q_value": 0.7361,
+    "best_routing_K": 1,
+    "best_routing_acc": 1.0,
+    "sweep": [
+      {
+        "label": "K=1-2",
+        "tmin": 1,
+        "tmax": 2,
+        "actual_K": 1,
+        "method": "newman",
+        "Q": 0.0,
+        "cpm_h": null,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=2-3",
+        "tmin": 2,
+        "tmax": 3,
+        "actual_K": 3,
+        "method": "newman",
+        "Q": 0.6667,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=3-4",
+        "tmin": 3,
+        "tmax": 4,
+        "actual_K": 3,
+        "method": "newman",
+        "Q": 0.6667,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=3-5",
+        "tmin": 3,
+        "tmax": 5,
+        "actual_K": 3,
+        "method": "newman",
+        "Q": 0.6667,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=5-7",
+        "tmin": 5,
+        "tmax": 7,
+        "actual_K": 6,
+        "method": "newman",
+        "Q": 0.5277,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=6-8",
+        "tmin": 6,
+        "tmax": 8,
+        "actual_K": 6,
+        "method": "newman",
+        "Q": 0.5277,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=8-10",
+        "tmin": 8,
+        "tmax": 10,
+        "actual_K": 8,
+        "method": "newman",
+        "Q": 0.7361,
+        "cpm_h": null,
+        "quality_class": "good",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=10-12",
+        "tmin": 10,
+        "tmax": 12,
+        "actual_K": 11,
+        "method": "newman",
+        "Q": 0.6484,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      }
+    ]
+  },
+  {
+    "n_themes": 3,
+    "N": 18,
+    "embedder": "MiniLM-L3",
+    "seed": 42,
+    "method": "cpm",
+    "peak_Q_at_K": 2,
+    "peak_Q_value": -0.0234,
+    "best_routing_K": 2,
+    "best_routing_acc": 1.0,
+    "sweep": [
+      {
+        "label": "K=1-2",
+        "tmin": 1,
+        "tmax": 2,
+        "actual_K": 2,
+        "method": "cpm",
+        "Q": -0.0234,
+        "cpm_h": 47.6294,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=2-3",
+        "tmin": 2,
+        "tmax": 3,
+        "actual_K": 2,
+        "method": "cpm",
+        "Q": -0.0234,
+        "cpm_h": 47.6294,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=3-4",
+        "tmin": 3,
+        "tmax": 4,
+        "actual_K": 3,
+        "method": "cpm",
+        "Q": -0.0373,
+        "cpm_h": 37.5969,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=3-5",
+        "tmin": 3,
+        "tmax": 5,
+        "actual_K": 3,
+        "method": "cpm",
+        "Q": -0.0373,
+        "cpm_h": 37.5969,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=5-7",
+        "tmin": 5,
+        "tmax": 7,
+        "actual_K": 5,
+        "method": "cpm",
+        "Q": -0.0409,
+        "cpm_h": 1.8243,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=6-8",
+        "tmin": 6,
+        "tmax": 8,
+        "actual_K": 6,
+        "method": "cpm",
+        "Q": -0.045,
+        "cpm_h": 1.0984,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=8-10",
+        "tmin": 8,
+        "tmax": 10,
+        "actual_K": 8,
+        "method": "cpm",
+        "Q": -0.049,
+        "cpm_h": 0.8821,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=10-12",
+        "tmin": 10,
+        "tmax": 12,
+        "actual_K": 11,
+        "method": "cpm",
+        "Q": -0.0526,
+        "cpm_h": 0.2326,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      }
+    ]
+  },
+  {
+    "n_themes": 3,
+    "N": 18,
+    "embedder": "MiniLM-L3",
+    "seed": 123,
+    "method": "newman",
+    "peak_Q_at_K": 3,
+    "peak_Q_value": 0.6667,
+    "best_routing_K": 1,
+    "best_routing_acc": 1.0,
+    "sweep": [
+      {
+        "label": "K=1-2",
+        "tmin": 1,
+        "tmax": 2,
+        "actual_K": 1,
+        "method": "newman",
+        "Q": 0.0,
+        "cpm_h": null,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=2-3",
+        "tmin": 2,
+        "tmax": 3,
+        "actual_K": 3,
+        "method": "newman",
+        "Q": 0.6667,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=3-4",
+        "tmin": 3,
+        "tmax": 4,
+        "actual_K": 3,
+        "method": "newman",
+        "Q": 0.6667,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=3-5",
+        "tmin": 3,
+        "tmax": 5,
+        "actual_K": 3,
+        "method": "newman",
+        "Q": 0.6667,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=5-7",
+        "tmin": 5,
+        "tmax": 7,
+        "actual_K": 7,
+        "method": "newman",
+        "Q": 0.4763,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=6-8",
+        "tmin": 6,
+        "tmax": 8,
+        "actual_K": 7,
+        "method": "newman",
+        "Q": 0.4763,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=8-10",
+        "tmin": 8,
+        "tmax": 10,
+        "actual_K": 9,
+        "method": "newman",
+        "Q": 0.4395,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=10-12",
+        "tmin": 10,
+        "tmax": 12,
+        "actual_K": 12,
+        "method": "newman",
+        "Q": 0.235,
+        "cpm_h": null,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      }
+    ]
+  },
+  {
+    "n_themes": 3,
+    "N": 18,
+    "embedder": "MiniLM-L3",
+    "seed": 123,
+    "method": "cpm",
+    "peak_Q_at_K": 3,
+    "peak_Q_value": -0.0314,
+    "best_routing_K": 3,
+    "best_routing_acc": 1.0,
+    "sweep": [
+      {
+        "label": "K=2-3",
+        "tmin": 2,
+        "tmax": 3,
+        "actual_K": 3,
+        "method": "cpm",
+        "Q": -0.0314,
+        "cpm_h": 39.6338,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=3-4",
+        "tmin": 3,
+        "tmax": 4,
+        "actual_K": 3,
+        "method": "cpm",
+        "Q": -0.0314,
+        "cpm_h": 39.6338,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=3-5",
+        "tmin": 3,
+        "tmax": 5,
+        "actual_K": 3,
+        "method": "cpm",
+        "Q": -0.0314,
+        "cpm_h": 39.6338,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=5-7",
+        "tmin": 5,
+        "tmax": 7,
+        "actual_K": 5,
+        "method": "cpm",
+        "Q": -0.035,
+        "cpm_h": 1.2861,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=6-8",
+        "tmin": 6,
+        "tmax": 8,
+        "actual_K": 6,
+        "method": "cpm",
+        "Q": -0.0362,
+        "cpm_h": 0.8073,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=8-10",
+        "tmin": 8,
+        "tmax": 10,
+        "actual_K": 8,
+        "method": "cpm",
+        "Q": -0.0436,
+        "cpm_h": 0.5567,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=10-12",
+        "tmin": 10,
+        "tmax": 12,
+        "actual_K": 10,
+        "method": "cpm",
+        "Q": -0.0478,
+        "cpm_h": 0.3858,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      }
+    ]
+  },
+  {
+    "n_themes": 4,
+    "N": 24,
+    "embedder": "MiniLM-L3",
+    "seed": 42,
+    "method": "newman",
+    "peak_Q_at_K": 4,
+    "peak_Q_value": 0.75,
+    "best_routing_K": 1,
+    "best_routing_acc": 1.0,
+    "sweep": [
+      {
+        "label": "K=1-2",
+        "tmin": 1,
+        "tmax": 2,
+        "actual_K": 1,
+        "method": "newman",
+        "Q": 0.0,
+        "cpm_h": null,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=2-3",
+        "tmin": 2,
+        "tmax": 3,
+        "actual_K": 2,
+        "method": "newman",
+        "Q": 0.4679,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=3-4",
+        "tmin": 3,
+        "tmax": 4,
+        "actual_K": 4,
+        "method": "newman",
+        "Q": 0.75,
+        "cpm_h": null,
+        "quality_class": "good",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=3-5",
+        "tmin": 3,
+        "tmax": 5,
+        "actual_K": 4,
+        "method": "newman",
+        "Q": 0.75,
+        "cpm_h": null,
+        "quality_class": "good",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=5-7",
+        "tmin": 5,
+        "tmax": 7,
+        "actual_K": 5,
+        "method": "newman",
+        "Q": 0.7407,
+        "cpm_h": null,
+        "quality_class": "good",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=6-8",
+        "tmin": 6,
+        "tmax": 8,
+        "actual_K": 7,
+        "method": "newman",
+        "Q": 0.6612,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=8-10",
+        "tmin": 8,
+        "tmax": 10,
+        "actual_K": 9,
+        "method": "newman",
+        "Q": 0.5432,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=10-12",
+        "tmin": 10,
+        "tmax": 12,
+        "actual_K": 11,
+        "method": "newman",
+        "Q": 0.665,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      }
+    ]
+  },
+  {
+    "n_themes": 4,
+    "N": 24,
+    "embedder": "MiniLM-L3",
+    "seed": 42,
+    "method": "cpm",
+    "peak_Q_at_K": 3,
+    "peak_Q_value": -0.0178,
+    "best_routing_K": 3,
+    "best_routing_acc": 1.0,
+    "sweep": [
+      {
+        "label": "K=2-3",
+        "tmin": 2,
+        "tmax": 3,
+        "actual_K": 3,
+        "method": "cpm",
+        "Q": -0.0178,
+        "cpm_h": 58.805,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=3-4",
+        "tmin": 3,
+        "tmax": 4,
+        "actual_K": 3,
+        "method": "cpm",
+        "Q": -0.0178,
+        "cpm_h": 58.805,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=3-5",
+        "tmin": 3,
+        "tmax": 5,
+        "actual_K": 3,
+        "method": "cpm",
+        "Q": -0.0178,
+        "cpm_h": 58.805,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=5-7",
+        "tmin": 5,
+        "tmax": 7,
+        "actual_K": 5,
+        "method": "cpm",
+        "Q": -0.0225,
+        "cpm_h": 10.58,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=6-8",
+        "tmin": 6,
+        "tmax": 8,
+        "actual_K": 6,
+        "method": "cpm",
+        "Q": -0.0273,
+        "cpm_h": 5.0116,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=8-10",
+        "tmin": 8,
+        "tmax": 10,
+        "actual_K": 8,
+        "method": "cpm",
+        "Q": -0.0287,
+        "cpm_h": 2.5927,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=10-12",
+        "tmin": 10,
+        "tmax": 12,
+        "actual_K": 10,
+        "method": "cpm",
+        "Q": -0.0295,
+        "cpm_h": 1.8794,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      }
+    ]
+  },
+  {
+    "n_themes": 4,
+    "N": 24,
+    "embedder": "MiniLM-L3",
+    "seed": 123,
+    "method": "newman",
+    "peak_Q_at_K": 4,
+    "peak_Q_value": 0.75,
+    "best_routing_K": 1,
+    "best_routing_acc": 1.0,
+    "sweep": [
+      {
+        "label": "K=1-2",
+        "tmin": 1,
+        "tmax": 2,
+        "actual_K": 1,
+        "method": "newman",
+        "Q": 0.0,
+        "cpm_h": null,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=2-3",
+        "tmin": 2,
+        "tmax": 3,
+        "actual_K": 2,
+        "method": "newman",
+        "Q": 0.3327,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=3-4",
+        "tmin": 3,
+        "tmax": 4,
+        "actual_K": 4,
+        "method": "newman",
+        "Q": 0.75,
+        "cpm_h": null,
+        "quality_class": "good",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=3-5",
+        "tmin": 3,
+        "tmax": 5,
+        "actual_K": 4,
+        "method": "newman",
+        "Q": 0.75,
+        "cpm_h": null,
+        "quality_class": "good",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=5-7",
+        "tmin": 5,
+        "tmax": 7,
+        "actual_K": 5,
+        "method": "newman",
+        "Q": 0.6721,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=6-8",
+        "tmin": 6,
+        "tmax": 8,
+        "actual_K": 6,
+        "method": "newman",
+        "Q": 0.7042,
+        "cpm_h": null,
+        "quality_class": "good",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=8-10",
+        "tmin": 8,
+        "tmax": 10,
+        "actual_K": 10,
+        "method": "newman",
+        "Q": 0.4554,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=10-12",
+        "tmin": 10,
+        "tmax": 12,
+        "actual_K": 10,
+        "method": "newman",
+        "Q": 0.4554,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      }
+    ]
+  },
+  {
+    "n_themes": 4,
+    "N": 24,
+    "embedder": "MiniLM-L3",
+    "seed": 123,
+    "method": "cpm",
+    "peak_Q_at_K": 3,
+    "peak_Q_value": -0.0031,
+    "best_routing_K": 3,
+    "best_routing_acc": 1.0,
+    "sweep": [
+      {
+        "label": "K=2-3",
+        "tmin": 2,
+        "tmax": 3,
+        "actual_K": 3,
+        "method": "cpm",
+        "Q": -0.0031,
+        "cpm_h": 60.4591,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=3-4",
+        "tmin": 3,
+        "tmax": 4,
+        "actual_K": 3,
+        "method": "cpm",
+        "Q": -0.0031,
+        "cpm_h": 60.4591,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=3-5",
+        "tmin": 3,
+        "tmax": 5,
+        "actual_K": 3,
+        "method": "cpm",
+        "Q": -0.0031,
+        "cpm_h": 60.4591,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=5-7",
+        "tmin": 5,
+        "tmax": 7,
+        "actual_K": 5,
+        "method": "cpm",
+        "Q": -0.0203,
+        "cpm_h": 8.9082,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=6-8",
+        "tmin": 6,
+        "tmax": 8,
+        "actual_K": 6,
+        "method": "cpm",
+        "Q": -0.0241,
+        "cpm_h": 7.0081,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=8-10",
+        "tmin": 8,
+        "tmax": 10,
+        "actual_K": 8,
+        "method": "cpm",
+        "Q": -0.0273,
+        "cpm_h": 2.4103,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=10-12",
+        "tmin": 10,
+        "tmax": 12,
+        "actual_K": 10,
+        "method": "cpm",
+        "Q": -0.0278,
+        "cpm_h": 1.2927,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      }
+    ]
+  },
+  {
+    "n_themes": 5,
+    "N": 30,
+    "embedder": "MiniLM-L3",
+    "seed": 42,
+    "method": "newman",
+    "peak_Q_at_K": 5,
+    "peak_Q_value": 0.8,
+    "best_routing_K": 1,
+    "best_routing_acc": 1.0,
+    "sweep": [
+      {
+        "label": "K=1-2",
+        "tmin": 1,
+        "tmax": 2,
+        "actual_K": 1,
+        "method": "newman",
+        "Q": 0.0,
+        "cpm_h": null,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=2-3",
+        "tmin": 2,
+        "tmax": 3,
+        "actual_K": 2,
+        "method": "newman",
+        "Q": 0.455,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=3-4",
+        "tmin": 3,
+        "tmax": 4,
+        "actual_K": 3,
+        "method": "newman",
+        "Q": 0.6273,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=3-5",
+        "tmin": 3,
+        "tmax": 5,
+        "actual_K": 5,
+        "method": "newman",
+        "Q": 0.8,
+        "cpm_h": null,
+        "quality_class": "good",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=5-7",
+        "tmin": 5,
+        "tmax": 7,
+        "actual_K": 5,
+        "method": "newman",
+        "Q": 0.8,
+        "cpm_h": null,
+        "quality_class": "good",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=6-8",
+        "tmin": 6,
+        "tmax": 8,
+        "actual_K": 6,
+        "method": "newman",
+        "Q": 0.794,
+        "cpm_h": null,
+        "quality_class": "good",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=8-10",
+        "tmin": 8,
+        "tmax": 10,
+        "actual_K": 8,
+        "method": "newman",
+        "Q": 0.6439,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=10-12",
+        "tmin": 10,
+        "tmax": 12,
+        "actual_K": 12,
+        "method": "newman",
+        "Q": 0.6824,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      }
+    ]
+  },
+  {
+    "n_themes": 5,
+    "N": 30,
+    "embedder": "MiniLM-L3",
+    "seed": 42,
+    "method": "cpm",
+    "peak_Q_at_K": 5,
+    "peak_Q_value": -0.0196,
+    "best_routing_K": 5,
+    "best_routing_acc": 1.0,
+    "sweep": [
+      {
+        "label": "K=3-5",
+        "tmin": 3,
+        "tmax": 5,
+        "actual_K": 5,
+        "method": "cpm",
+        "Q": -0.0196,
+        "cpm_h": 64.1554,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=5-7",
+        "tmin": 5,
+        "tmax": 7,
+        "actual_K": 5,
+        "method": "cpm",
+        "Q": -0.0196,
+        "cpm_h": 64.1554,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=6-8",
+        "tmin": 6,
+        "tmax": 8,
+        "actual_K": 6,
+        "method": "cpm",
+        "Q": -0.0214,
+        "cpm_h": 14.5895,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=8-10",
+        "tmin": 8,
+        "tmax": 10,
+        "actual_K": 8,
+        "method": "cpm",
+        "Q": -0.0244,
+        "cpm_h": 6.9667,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=10-12",
+        "tmin": 10,
+        "tmax": 12,
+        "actual_K": 10,
+        "method": "cpm",
+        "Q": -0.0252,
+        "cpm_h": 3.8401,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      }
+    ]
+  },
+  {
+    "n_themes": 5,
+    "N": 30,
+    "embedder": "MiniLM-L3",
+    "seed": 123,
+    "method": "newman",
+    "peak_Q_at_K": 5,
+    "peak_Q_value": 0.8,
+    "best_routing_K": 1,
+    "best_routing_acc": 1.0,
+    "sweep": [
+      {
+        "label": "K=1-2",
+        "tmin": 1,
+        "tmax": 2,
+        "actual_K": 1,
+        "method": "newman",
+        "Q": 0.0,
+        "cpm_h": null,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=2-3",
+        "tmin": 2,
+        "tmax": 3,
+        "actual_K": 3,
+        "method": "newman",
+        "Q": 0.604,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=3-4",
+        "tmin": 3,
+        "tmax": 4,
+        "actual_K": 3,
+        "method": "newman",
+        "Q": 0.604,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=3-5",
+        "tmin": 3,
+        "tmax": 5,
+        "actual_K": 5,
+        "method": "newman",
+        "Q": 0.8,
+        "cpm_h": null,
+        "quality_class": "good",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=5-7",
+        "tmin": 5,
+        "tmax": 7,
+        "actual_K": 5,
+        "method": "newman",
+        "Q": 0.8,
+        "cpm_h": null,
+        "quality_class": "good",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=6-8",
+        "tmin": 6,
+        "tmax": 8,
+        "actual_K": 6,
+        "method": "newman",
+        "Q": 0.7392,
+        "cpm_h": null,
+        "quality_class": "good",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=8-10",
+        "tmin": 8,
+        "tmax": 10,
+        "actual_K": 9,
+        "method": "newman",
+        "Q": 0.7395,
+        "cpm_h": null,
+        "quality_class": "good",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=10-12",
+        "tmin": 10,
+        "tmax": 12,
+        "actual_K": 11,
+        "method": "newman",
+        "Q": 0.6609,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      }
+    ]
+  },
+  {
+    "n_themes": 5,
+    "N": 30,
+    "embedder": "MiniLM-L3",
+    "seed": 123,
+    "method": "cpm",
+    "peak_Q_at_K": 4,
+    "peak_Q_value": -0.0099,
+    "best_routing_K": 4,
+    "best_routing_acc": 1.0,
+    "sweep": [
+      {
+        "label": "K=3-4",
+        "tmin": 3,
+        "tmax": 4,
+        "actual_K": 4,
+        "method": "cpm",
+        "Q": -0.0099,
+        "cpm_h": 74.6422,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=3-5",
+        "tmin": 3,
+        "tmax": 5,
+        "actual_K": 4,
+        "method": "cpm",
+        "Q": -0.0099,
+        "cpm_h": 74.6422,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=5-7",
+        "tmin": 5,
+        "tmax": 7,
+        "actual_K": 5,
+        "method": "cpm",
+        "Q": -0.0184,
+        "cpm_h": 61.8552,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=6-8",
+        "tmin": 6,
+        "tmax": 8,
+        "actual_K": 6,
+        "method": "cpm",
+        "Q": -0.0204,
+        "cpm_h": 12.5288,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=8-10",
+        "tmin": 8,
+        "tmax": 10,
+        "actual_K": 8,
+        "method": "cpm",
+        "Q": -0.0227,
+        "cpm_h": 4.6583,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=10-12",
+        "tmin": 10,
+        "tmax": 12,
+        "actual_K": 11,
+        "method": "cpm",
+        "Q": -0.0243,
+        "cpm_h": 2.6327,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      }
+    ]
+  },
+  {
+    "n_themes": 7,
+    "N": 42,
+    "embedder": "MiniLM-L3",
+    "seed": 42,
+    "method": "newman",
+    "peak_Q_at_K": 7,
+    "peak_Q_value": 0.8571,
+    "best_routing_K": 1,
+    "best_routing_acc": 1.0,
+    "sweep": [
+      {
+        "label": "K=1-2",
+        "tmin": 1,
+        "tmax": 2,
+        "actual_K": 1,
+        "method": "newman",
+        "Q": 0.0,
+        "cpm_h": null,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=2-3",
+        "tmin": 2,
+        "tmax": 3,
+        "actual_K": 3,
+        "method": "newman",
+        "Q": 0.5253,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 0.976
+      },
+      {
+        "label": "K=3-4",
+        "tmin": 3,
+        "tmax": 4,
+        "actual_K": 4,
+        "method": "newman",
+        "Q": 0.6803,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 0.857
+      },
+      {
+        "label": "K=3-5",
+        "tmin": 3,
+        "tmax": 5,
+        "actual_K": 4,
+        "method": "newman",
+        "Q": 0.6803,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 0.857
+      },
+      {
+        "label": "K=5-7",
+        "tmin": 5,
+        "tmax": 7,
+        "actual_K": 7,
+        "method": "newman",
+        "Q": 0.8571,
+        "cpm_h": null,
+        "quality_class": "good",
+        "routing_accuracy": 0.714
+      },
+      {
+        "label": "K=6-8",
+        "tmin": 6,
+        "tmax": 8,
+        "actual_K": 7,
+        "method": "newman",
+        "Q": 0.8571,
+        "cpm_h": null,
+        "quality_class": "good",
+        "routing_accuracy": 0.714
+      },
+      {
+        "label": "K=8-10",
+        "tmin": 8,
+        "tmax": 10,
+        "actual_K": 8,
+        "method": "newman",
+        "Q": 0.854,
+        "cpm_h": null,
+        "quality_class": "good",
+        "routing_accuracy": 0.714
+      },
+      {
+        "label": "K=10-12",
+        "tmin": 10,
+        "tmax": 12,
+        "actual_K": 10,
+        "method": "newman",
+        "Q": 0.7913,
+        "cpm_h": null,
+        "quality_class": "good",
+        "routing_accuracy": 0.714
+      }
+    ]
+  },
+  {
+    "n_themes": 7,
+    "N": 42,
+    "embedder": "MiniLM-L3",
+    "seed": 42,
+    "method": "cpm",
+    "peak_Q_at_K": 6,
+    "peak_Q_value": -0.0139,
+    "best_routing_K": 6,
+    "best_routing_acc": 0.714,
+    "sweep": [
+      {
+        "label": "K=5-7",
+        "tmin": 5,
+        "tmax": 7,
+        "actual_K": 6,
+        "method": "cpm",
+        "Q": -0.0139,
+        "cpm_h": 100.5873,
+        "quality_class": "poor",
+        "routing_accuracy": 0.714
+      },
+      {
+        "label": "K=6-8",
+        "tmin": 6,
+        "tmax": 8,
+        "actual_K": 6,
+        "method": "cpm",
+        "Q": -0.0139,
+        "cpm_h": 100.5873,
+        "quality_class": "poor",
+        "routing_accuracy": 0.714
+      },
+      {
+        "label": "K=8-10",
+        "tmin": 8,
+        "tmax": 10,
+        "actual_K": 8,
+        "method": "cpm",
+        "Q": -0.0177,
+        "cpm_h": 21.9418,
+        "quality_class": "poor",
+        "routing_accuracy": 0.714
+      },
+      {
+        "label": "K=10-12",
+        "tmin": 10,
+        "tmax": 12,
+        "actual_K": 10,
+        "method": "cpm",
+        "Q": -0.0195,
+        "cpm_h": 11.0356,
+        "quality_class": "poor",
+        "routing_accuracy": 0.714
+      }
+    ]
+  },
+  {
+    "n_themes": 7,
+    "N": 42,
+    "embedder": "MiniLM-L3",
+    "seed": 123,
+    "method": "newman",
+    "peak_Q_at_K": 7,
+    "peak_Q_value": 0.8571,
+    "best_routing_K": 1,
+    "best_routing_acc": 1.0,
+    "sweep": [
+      {
+        "label": "K=1-2",
+        "tmin": 1,
+        "tmax": 2,
+        "actual_K": 1,
+        "method": "newman",
+        "Q": 0.0,
+        "cpm_h": null,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=2-3",
+        "tmin": 2,
+        "tmax": 3,
+        "actual_K": 2,
+        "method": "newman",
+        "Q": 0.3478,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=3-4",
+        "tmin": 3,
+        "tmax": 4,
+        "actual_K": 4,
+        "method": "newman",
+        "Q": 0.6756,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 0.857
+      },
+      {
+        "label": "K=3-5",
+        "tmin": 3,
+        "tmax": 5,
+        "actual_K": 4,
+        "method": "newman",
+        "Q": 0.6756,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 0.857
+      },
+      {
+        "label": "K=5-7",
+        "tmin": 5,
+        "tmax": 7,
+        "actual_K": 7,
+        "method": "newman",
+        "Q": 0.8571,
+        "cpm_h": null,
+        "quality_class": "good",
+        "routing_accuracy": 0.714
+      },
+      {
+        "label": "K=6-8",
+        "tmin": 6,
+        "tmax": 8,
+        "actual_K": 7,
+        "method": "newman",
+        "Q": 0.8571,
+        "cpm_h": null,
+        "quality_class": "good",
+        "routing_accuracy": 0.714
+      },
+      {
+        "label": "K=8-10",
+        "tmin": 8,
+        "tmax": 10,
+        "actual_K": 8,
+        "method": "newman",
+        "Q": 0.8151,
+        "cpm_h": null,
+        "quality_class": "good",
+        "routing_accuracy": 0.714
+      },
+      {
+        "label": "K=10-12",
+        "tmin": 10,
+        "tmax": 12,
+        "actual_K": 11,
+        "method": "newman",
+        "Q": 0.7283,
+        "cpm_h": null,
+        "quality_class": "good",
+        "routing_accuracy": 0.714
+      }
+    ]
+  },
+  {
+    "n_themes": 7,
+    "N": 42,
+    "embedder": "MiniLM-L3",
+    "seed": 123,
+    "method": "cpm",
+    "peak_Q_at_K": 3,
+    "peak_Q_value": 0.0047,
+    "best_routing_K": 3,
+    "best_routing_acc": 0.857,
+    "sweep": [
+      {
+        "label": "K=2-3",
+        "tmin": 2,
+        "tmax": 3,
+        "actual_K": 3,
+        "method": "cpm",
+        "Q": 0.0047,
+        "cpm_h": 165.9801,
+        "quality_class": "poor",
+        "routing_accuracy": 0.857
+      },
+      {
+        "label": "K=3-4",
+        "tmin": 3,
+        "tmax": 4,
+        "actual_K": 3,
+        "method": "cpm",
+        "Q": 0.0047,
+        "cpm_h": 165.9801,
+        "quality_class": "poor",
+        "routing_accuracy": 0.857
+      },
+      {
+        "label": "K=3-5",
+        "tmin": 3,
+        "tmax": 5,
+        "actual_K": 3,
+        "method": "cpm",
+        "Q": 0.0047,
+        "cpm_h": 165.9801,
+        "quality_class": "poor",
+        "routing_accuracy": 0.857
+      },
+      {
+        "label": "K=5-7",
+        "tmin": 5,
+        "tmax": 7,
+        "actual_K": 5,
+        "method": "cpm",
+        "Q": -0.0084,
+        "cpm_h": 107.135,
+        "quality_class": "poor",
+        "routing_accuracy": 0.857
+      },
+      {
+        "label": "K=6-8",
+        "tmin": 6,
+        "tmax": 8,
+        "actual_K": 6,
+        "method": "cpm",
+        "Q": -0.0111,
+        "cpm_h": 94.3366,
+        "quality_class": "poor",
+        "routing_accuracy": 0.714
+      },
+      {
+        "label": "K=8-10",
+        "tmin": 8,
+        "tmax": 10,
+        "actual_K": 8,
+        "method": "cpm",
+        "Q": -0.0155,
+        "cpm_h": 18.2921,
+        "quality_class": "poor",
+        "routing_accuracy": 0.714
+      },
+      {
+        "label": "K=10-12",
+        "tmin": 10,
+        "tmax": 12,
+        "actual_K": 10,
+        "method": "cpm",
+        "Q": -0.0177,
+        "cpm_h": 6.9235,
+        "quality_class": "poor",
+        "routing_accuracy": 0.714
+      }
+    ]
+  },
+  {
+    "n_themes": 3,
+    "N": 18,
+    "embedder": "mpnet",
+    "seed": 42,
+    "method": "newman",
+    "peak_Q_at_K": 12,
+    "peak_Q_value": 0.7778,
+    "best_routing_K": 1,
+    "best_routing_acc": 1.0,
+    "sweep": [
+      {
+        "label": "K=1-2",
+        "tmin": 1,
+        "tmax": 2,
+        "actual_K": 1,
+        "method": "newman",
+        "Q": 0.0,
+        "cpm_h": null,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=2-3",
+        "tmin": 2,
+        "tmax": 3,
+        "actual_K": 3,
+        "method": "newman",
+        "Q": 0.6667,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=3-4",
+        "tmin": 3,
+        "tmax": 4,
+        "actual_K": 3,
+        "method": "newman",
+        "Q": 0.6667,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=3-5",
+        "tmin": 3,
+        "tmax": 5,
+        "actual_K": 3,
+        "method": "newman",
+        "Q": 0.6667,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=5-7",
+        "tmin": 5,
+        "tmax": 7,
+        "actual_K": 6,
+        "method": "newman",
+        "Q": 0.6088,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=6-8",
+        "tmin": 6,
+        "tmax": 8,
+        "actual_K": 8,
+        "method": "newman",
+        "Q": 0.7603,
+        "cpm_h": null,
+        "quality_class": "good",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=8-10",
+        "tmin": 8,
+        "tmax": 10,
+        "actual_K": 8,
+        "method": "newman",
+        "Q": 0.7603,
+        "cpm_h": null,
+        "quality_class": "good",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=10-12",
+        "tmin": 10,
+        "tmax": 12,
+        "actual_K": 12,
+        "method": "newman",
+        "Q": 0.7778,
+        "cpm_h": null,
+        "quality_class": "good",
+        "routing_accuracy": 1.0
+      }
+    ]
+  },
+  {
+    "n_themes": 3,
+    "N": 18,
+    "embedder": "mpnet",
+    "seed": 42,
+    "method": "cpm",
+    "peak_Q_at_K": 2,
+    "peak_Q_value": -0.0261,
+    "best_routing_K": 2,
+    "best_routing_acc": 1.0,
+    "sweep": [
+      {
+        "label": "K=1-2",
+        "tmin": 1,
+        "tmax": 2,
+        "actual_K": 2,
+        "method": "cpm",
+        "Q": -0.0261,
+        "cpm_h": 54.2384,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=2-3",
+        "tmin": 2,
+        "tmax": 3,
+        "actual_K": 2,
+        "method": "cpm",
+        "Q": -0.0261,
+        "cpm_h": 54.2384,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=3-4",
+        "tmin": 3,
+        "tmax": 4,
+        "actual_K": 3,
+        "method": "cpm",
+        "Q": -0.0392,
+        "cpm_h": 28.8168,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=3-5",
+        "tmin": 3,
+        "tmax": 5,
+        "actual_K": 3,
+        "method": "cpm",
+        "Q": -0.0392,
+        "cpm_h": 28.8168,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=5-7",
+        "tmin": 5,
+        "tmax": 7,
+        "actual_K": 5,
+        "method": "cpm",
+        "Q": -0.045,
+        "cpm_h": 1.2229,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=6-8",
+        "tmin": 6,
+        "tmax": 8,
+        "actual_K": 7,
+        "method": "cpm",
+        "Q": -0.049,
+        "cpm_h": 0.5835,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=8-10",
+        "tmin": 8,
+        "tmax": 10,
+        "actual_K": 10,
+        "method": "cpm",
+        "Q": -0.0519,
+        "cpm_h": 0.181,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=10-12",
+        "tmin": 10,
+        "tmax": 12,
+        "actual_K": 10,
+        "method": "cpm",
+        "Q": -0.0519,
+        "cpm_h": 0.181,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      }
+    ]
+  },
+  {
+    "n_themes": 3,
+    "N": 18,
+    "embedder": "mpnet",
+    "seed": 123,
+    "method": "newman",
+    "peak_Q_at_K": 3,
+    "peak_Q_value": 0.6667,
+    "best_routing_K": 1,
+    "best_routing_acc": 1.0,
+    "sweep": [
+      {
+        "label": "K=1-2",
+        "tmin": 1,
+        "tmax": 2,
+        "actual_K": 1,
+        "method": "newman",
+        "Q": 0.0,
+        "cpm_h": null,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=2-3",
+        "tmin": 2,
+        "tmax": 3,
+        "actual_K": 3,
+        "method": "newman",
+        "Q": 0.6667,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=3-4",
+        "tmin": 3,
+        "tmax": 4,
+        "actual_K": 3,
+        "method": "newman",
+        "Q": 0.6667,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=3-5",
+        "tmin": 3,
+        "tmax": 5,
+        "actual_K": 3,
+        "method": "newman",
+        "Q": 0.6667,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=5-7",
+        "tmin": 5,
+        "tmax": 7,
+        "actual_K": 7,
+        "method": "newman",
+        "Q": 0.5347,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=6-8",
+        "tmin": 6,
+        "tmax": 8,
+        "actual_K": 7,
+        "method": "newman",
+        "Q": 0.5347,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=8-10",
+        "tmin": 8,
+        "tmax": 10,
+        "actual_K": 8,
+        "method": "newman",
+        "Q": 0.5289,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=10-12",
+        "tmin": 10,
+        "tmax": 12,
+        "actual_K": 12,
+        "method": "newman",
+        "Q": 0.5204,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      }
+    ]
+  },
+  {
+    "n_themes": 3,
+    "N": 18,
+    "embedder": "mpnet",
+    "seed": 123,
+    "method": "cpm",
+    "peak_Q_at_K": 3,
+    "peak_Q_value": -0.0392,
+    "best_routing_K": 3,
+    "best_routing_acc": 1.0,
+    "sweep": [
+      {
+        "label": "K=2-3",
+        "tmin": 2,
+        "tmax": 3,
+        "actual_K": 3,
+        "method": "cpm",
+        "Q": -0.0392,
+        "cpm_h": 39.9897,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=3-4",
+        "tmin": 3,
+        "tmax": 4,
+        "actual_K": 3,
+        "method": "cpm",
+        "Q": -0.0392,
+        "cpm_h": 39.9897,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=3-5",
+        "tmin": 3,
+        "tmax": 5,
+        "actual_K": 3,
+        "method": "cpm",
+        "Q": -0.0392,
+        "cpm_h": 39.9897,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=5-7",
+        "tmin": 5,
+        "tmax": 7,
+        "actual_K": 5,
+        "method": "cpm",
+        "Q": -0.0454,
+        "cpm_h": 0.8758,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=6-8",
+        "tmin": 6,
+        "tmax": 8,
+        "actual_K": 6,
+        "method": "cpm",
+        "Q": -0.0461,
+        "cpm_h": 0.7545,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=8-10",
+        "tmin": 8,
+        "tmax": 10,
+        "actual_K": 8,
+        "method": "cpm",
+        "Q": -0.0483,
+        "cpm_h": 0.3283,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=10-12",
+        "tmin": 10,
+        "tmax": 12,
+        "actual_K": 10,
+        "method": "cpm",
+        "Q": -0.0508,
+        "cpm_h": 0.2466,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      }
+    ]
+  },
+  {
+    "n_themes": 4,
+    "N": 24,
+    "embedder": "mpnet",
+    "seed": 42,
+    "method": "newman",
+    "peak_Q_at_K": 4,
+    "peak_Q_value": 0.7491,
+    "best_routing_K": 1,
+    "best_routing_acc": 1.0,
+    "sweep": [
+      {
+        "label": "K=1-2",
+        "tmin": 1,
+        "tmax": 2,
+        "actual_K": 1,
+        "method": "newman",
+        "Q": 0.0,
+        "cpm_h": null,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=2-3",
+        "tmin": 2,
+        "tmax": 3,
+        "actual_K": 2,
+        "method": "newman",
+        "Q": 0.3668,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=3-4",
+        "tmin": 3,
+        "tmax": 4,
+        "actual_K": 4,
+        "method": "newman",
+        "Q": 0.7491,
+        "cpm_h": null,
+        "quality_class": "good",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=3-5",
+        "tmin": 3,
+        "tmax": 5,
+        "actual_K": 4,
+        "method": "newman",
+        "Q": 0.7491,
+        "cpm_h": null,
+        "quality_class": "good",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=5-7",
+        "tmin": 5,
+        "tmax": 7,
+        "actual_K": 7,
+        "method": "newman",
+        "Q": 0.6817,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=6-8",
+        "tmin": 6,
+        "tmax": 8,
+        "actual_K": 7,
+        "method": "newman",
+        "Q": 0.6817,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=8-10",
+        "tmin": 8,
+        "tmax": 10,
+        "actual_K": 10,
+        "method": "newman",
+        "Q": 0.655,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=10-12",
+        "tmin": 10,
+        "tmax": 12,
+        "actual_K": 12,
+        "method": "newman",
+        "Q": 0.7367,
+        "cpm_h": null,
+        "quality_class": "good",
+        "routing_accuracy": 1.0
+      }
+    ]
+  },
+  {
+    "n_themes": 4,
+    "N": 24,
+    "embedder": "mpnet",
+    "seed": 42,
+    "method": "cpm",
+    "peak_Q_at_K": 3,
+    "peak_Q_value": -0.0272,
+    "best_routing_K": 3,
+    "best_routing_acc": 1.0,
+    "sweep": [
+      {
+        "label": "K=2-3",
+        "tmin": 2,
+        "tmax": 3,
+        "actual_K": 3,
+        "method": "cpm",
+        "Q": -0.0272,
+        "cpm_h": 66.3189,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=3-4",
+        "tmin": 3,
+        "tmax": 4,
+        "actual_K": 3,
+        "method": "cpm",
+        "Q": -0.0272,
+        "cpm_h": 66.3189,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=3-5",
+        "tmin": 3,
+        "tmax": 5,
+        "actual_K": 3,
+        "method": "cpm",
+        "Q": -0.0272,
+        "cpm_h": 66.3189,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=5-7",
+        "tmin": 5,
+        "tmax": 7,
+        "actual_K": 5,
+        "method": "cpm",
+        "Q": -0.0334,
+        "cpm_h": 5.938,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=6-8",
+        "tmin": 6,
+        "tmax": 8,
+        "actual_K": 6,
+        "method": "cpm",
+        "Q": -0.034,
+        "cpm_h": 5.0421,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=8-10",
+        "tmin": 8,
+        "tmax": 10,
+        "actual_K": 8,
+        "method": "cpm",
+        "Q": -0.0356,
+        "cpm_h": 1.775,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=10-12",
+        "tmin": 10,
+        "tmax": 12,
+        "actual_K": 12,
+        "method": "cpm",
+        "Q": -0.0388,
+        "cpm_h": 0.6355,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      }
+    ]
+  },
+  {
+    "n_themes": 4,
+    "N": 24,
+    "embedder": "mpnet",
+    "seed": 123,
+    "method": "newman",
+    "peak_Q_at_K": 4,
+    "peak_Q_value": 0.75,
+    "best_routing_K": 1,
+    "best_routing_acc": 1.0,
+    "sweep": [
+      {
+        "label": "K=1-2",
+        "tmin": 1,
+        "tmax": 2,
+        "actual_K": 1,
+        "method": "newman",
+        "Q": 0.0,
+        "cpm_h": null,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=2-3",
+        "tmin": 2,
+        "tmax": 3,
+        "actual_K": 2,
+        "method": "newman",
+        "Q": 0.232,
+        "cpm_h": null,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=3-4",
+        "tmin": 3,
+        "tmax": 4,
+        "actual_K": 4,
+        "method": "newman",
+        "Q": 0.75,
+        "cpm_h": null,
+        "quality_class": "good",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=3-5",
+        "tmin": 3,
+        "tmax": 5,
+        "actual_K": 4,
+        "method": "newman",
+        "Q": 0.75,
+        "cpm_h": null,
+        "quality_class": "good",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=5-7",
+        "tmin": 5,
+        "tmax": 7,
+        "actual_K": 7,
+        "method": "newman",
+        "Q": 0.672,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=6-8",
+        "tmin": 6,
+        "tmax": 8,
+        "actual_K": 8,
+        "method": "newman",
+        "Q": 0.5969,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=8-10",
+        "tmin": 8,
+        "tmax": 10,
+        "actual_K": 8,
+        "method": "newman",
+        "Q": 0.5969,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=10-12",
+        "tmin": 10,
+        "tmax": 12,
+        "actual_K": 10,
+        "method": "newman",
+        "Q": 0.6581,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      }
+    ]
+  },
+  {
+    "n_themes": 4,
+    "N": 24,
+    "embedder": "mpnet",
+    "seed": 123,
+    "method": "cpm",
+    "peak_Q_at_K": 1,
+    "peak_Q_value": 0.0,
+    "best_routing_K": 1,
+    "best_routing_acc": 1.0,
+    "sweep": [
+      {
+        "label": "K=1-2",
+        "tmin": 1,
+        "tmax": 2,
+        "actual_K": 1,
+        "method": "cpm",
+        "Q": 0.0,
+        "cpm_h": 111.5125,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=2-3",
+        "tmin": 2,
+        "tmax": 3,
+        "actual_K": 2,
+        "method": "cpm",
+        "Q": -0.0163,
+        "cpm_h": 86.4115,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=3-4",
+        "tmin": 3,
+        "tmax": 4,
+        "actual_K": 3,
+        "method": "cpm",
+        "Q": -0.0272,
+        "cpm_h": 52.4972,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=3-5",
+        "tmin": 3,
+        "tmax": 5,
+        "actual_K": 3,
+        "method": "cpm",
+        "Q": -0.0272,
+        "cpm_h": 52.4972,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=5-7",
+        "tmin": 5,
+        "tmax": 7,
+        "actual_K": 5,
+        "method": "cpm",
+        "Q": -0.0338,
+        "cpm_h": 7.2575,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=6-8",
+        "tmin": 6,
+        "tmax": 8,
+        "actual_K": 6,
+        "method": "cpm",
+        "Q": -0.034,
+        "cpm_h": 4.5313,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=8-10",
+        "tmin": 8,
+        "tmax": 10,
+        "actual_K": 8,
+        "method": "cpm",
+        "Q": -0.0347,
+        "cpm_h": 3.7287,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=10-12",
+        "tmin": 10,
+        "tmax": 12,
+        "actual_K": 10,
+        "method": "cpm",
+        "Q": -0.0373,
+        "cpm_h": 0.907,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      }
+    ]
+  },
+  {
+    "n_themes": 5,
+    "N": 30,
+    "embedder": "mpnet",
+    "seed": 42,
+    "method": "newman",
+    "peak_Q_at_K": 5,
+    "peak_Q_value": 0.7994,
+    "best_routing_K": 1,
+    "best_routing_acc": 1.0,
+    "sweep": [
+      {
+        "label": "K=1-2",
+        "tmin": 1,
+        "tmax": 2,
+        "actual_K": 1,
+        "method": "newman",
+        "Q": 0.0,
+        "cpm_h": null,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=2-3",
+        "tmin": 2,
+        "tmax": 3,
+        "actual_K": 3,
+        "method": "newman",
+        "Q": 0.6273,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=3-4",
+        "tmin": 3,
+        "tmax": 4,
+        "actual_K": 3,
+        "method": "newman",
+        "Q": 0.6273,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=3-5",
+        "tmin": 3,
+        "tmax": 5,
+        "actual_K": 3,
+        "method": "newman",
+        "Q": 0.6273,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=5-7",
+        "tmin": 5,
+        "tmax": 7,
+        "actual_K": 5,
+        "method": "newman",
+        "Q": 0.7994,
+        "cpm_h": null,
+        "quality_class": "good",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=6-8",
+        "tmin": 6,
+        "tmax": 8,
+        "actual_K": 8,
+        "method": "newman",
+        "Q": 0.7435,
+        "cpm_h": null,
+        "quality_class": "good",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=8-10",
+        "tmin": 8,
+        "tmax": 10,
+        "actual_K": 8,
+        "method": "newman",
+        "Q": 0.7435,
+        "cpm_h": null,
+        "quality_class": "good",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=10-12",
+        "tmin": 10,
+        "tmax": 12,
+        "actual_K": 11,
+        "method": "newman",
+        "Q": 0.642,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      }
+    ]
+  },
+  {
+    "n_themes": 5,
+    "N": 30,
+    "embedder": "mpnet",
+    "seed": 42,
+    "method": "cpm",
+    "peak_Q_at_K": 4,
+    "peak_Q_value": -0.0248,
+    "best_routing_K": 4,
+    "best_routing_acc": 1.0,
+    "sweep": [
+      {
+        "label": "K=3-4",
+        "tmin": 3,
+        "tmax": 4,
+        "actual_K": 4,
+        "method": "cpm",
+        "Q": -0.0248,
+        "cpm_h": 80.5168,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=3-5",
+        "tmin": 3,
+        "tmax": 5,
+        "actual_K": 4,
+        "method": "cpm",
+        "Q": -0.0248,
+        "cpm_h": 80.5168,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=5-7",
+        "tmin": 5,
+        "tmax": 7,
+        "actual_K": 5,
+        "method": "cpm",
+        "Q": -0.0276,
+        "cpm_h": 64.4945,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=6-8",
+        "tmin": 6,
+        "tmax": 8,
+        "actual_K": 6,
+        "method": "cpm",
+        "Q": -0.028,
+        "cpm_h": 8.0199,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=8-10",
+        "tmin": 8,
+        "tmax": 10,
+        "actual_K": 8,
+        "method": "cpm",
+        "Q": -0.0285,
+        "cpm_h": 4.6542,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=10-12",
+        "tmin": 10,
+        "tmax": 12,
+        "actual_K": 10,
+        "method": "cpm",
+        "Q": -0.0297,
+        "cpm_h": 2.0722,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      }
+    ]
+  },
+  {
+    "n_themes": 5,
+    "N": 30,
+    "embedder": "mpnet",
+    "seed": 123,
+    "method": "newman",
+    "peak_Q_at_K": 5,
+    "peak_Q_value": 0.8,
+    "best_routing_K": 1,
+    "best_routing_acc": 1.0,
+    "sweep": [
+      {
+        "label": "K=1-2",
+        "tmin": 1,
+        "tmax": 2,
+        "actual_K": 1,
+        "method": "newman",
+        "Q": 0.0,
+        "cpm_h": null,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=2-3",
+        "tmin": 2,
+        "tmax": 3,
+        "actual_K": 2,
+        "method": "newman",
+        "Q": 0.3496,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=3-4",
+        "tmin": 3,
+        "tmax": 4,
+        "actual_K": 3,
+        "method": "newman",
+        "Q": 0.5644,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=3-5",
+        "tmin": 3,
+        "tmax": 5,
+        "actual_K": 5,
+        "method": "newman",
+        "Q": 0.8,
+        "cpm_h": null,
+        "quality_class": "good",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=5-7",
+        "tmin": 5,
+        "tmax": 7,
+        "actual_K": 5,
+        "method": "newman",
+        "Q": 0.8,
+        "cpm_h": null,
+        "quality_class": "good",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=6-8",
+        "tmin": 6,
+        "tmax": 8,
+        "actual_K": 8,
+        "method": "newman",
+        "Q": 0.7491,
+        "cpm_h": null,
+        "quality_class": "good",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=8-10",
+        "tmin": 8,
+        "tmax": 10,
+        "actual_K": 9,
+        "method": "newman",
+        "Q": 0.6881,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=10-12",
+        "tmin": 10,
+        "tmax": 12,
+        "actual_K": 11,
+        "method": "newman",
+        "Q": 0.699,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 1.0
+      }
+    ]
+  },
+  {
+    "n_themes": 5,
+    "N": 30,
+    "embedder": "mpnet",
+    "seed": 123,
+    "method": "cpm",
+    "peak_Q_at_K": 4,
+    "peak_Q_value": -0.0248,
+    "best_routing_K": 4,
+    "best_routing_acc": 1.0,
+    "sweep": [
+      {
+        "label": "K=3-4",
+        "tmin": 3,
+        "tmax": 4,
+        "actual_K": 4,
+        "method": "cpm",
+        "Q": -0.0248,
+        "cpm_h": 80.1802,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=3-5",
+        "tmin": 3,
+        "tmax": 5,
+        "actual_K": 4,
+        "method": "cpm",
+        "Q": -0.0248,
+        "cpm_h": 80.1802,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=5-7",
+        "tmin": 5,
+        "tmax": 7,
+        "actual_K": 5,
+        "method": "cpm",
+        "Q": -0.0276,
+        "cpm_h": 45.7618,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=6-8",
+        "tmin": 6,
+        "tmax": 8,
+        "actual_K": 6,
+        "method": "cpm",
+        "Q": -0.0282,
+        "cpm_h": 9.7942,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=8-10",
+        "tmin": 8,
+        "tmax": 10,
+        "actual_K": 8,
+        "method": "cpm",
+        "Q": -0.0286,
+        "cpm_h": 6.008,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=10-12",
+        "tmin": 10,
+        "tmax": 12,
+        "actual_K": 10,
+        "method": "cpm",
+        "Q": -0.029,
+        "cpm_h": 2.0082,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      }
+    ]
+  },
+  {
+    "n_themes": 7,
+    "N": 42,
+    "embedder": "mpnet",
+    "seed": 42,
+    "method": "newman",
+    "peak_Q_at_K": 7,
+    "peak_Q_value": 0.8568,
+    "best_routing_K": 1,
+    "best_routing_acc": 1.0,
+    "sweep": [
+      {
+        "label": "K=1-2",
+        "tmin": 1,
+        "tmax": 2,
+        "actual_K": 1,
+        "method": "newman",
+        "Q": 0.0,
+        "cpm_h": null,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=2-3",
+        "tmin": 2,
+        "tmax": 3,
+        "actual_K": 3,
+        "method": "newman",
+        "Q": 0.6432,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 0.952
+      },
+      {
+        "label": "K=3-4",
+        "tmin": 3,
+        "tmax": 4,
+        "actual_K": 3,
+        "method": "newman",
+        "Q": 0.6432,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 0.952
+      },
+      {
+        "label": "K=3-5",
+        "tmin": 3,
+        "tmax": 5,
+        "actual_K": 3,
+        "method": "newman",
+        "Q": 0.6432,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 0.952
+      },
+      {
+        "label": "K=5-7",
+        "tmin": 5,
+        "tmax": 7,
+        "actual_K": 7,
+        "method": "newman",
+        "Q": 0.8568,
+        "cpm_h": null,
+        "quality_class": "good",
+        "routing_accuracy": 0.714
+      },
+      {
+        "label": "K=6-8",
+        "tmin": 6,
+        "tmax": 8,
+        "actual_K": 7,
+        "method": "newman",
+        "Q": 0.8568,
+        "cpm_h": null,
+        "quality_class": "good",
+        "routing_accuracy": 0.714
+      },
+      {
+        "label": "K=8-10",
+        "tmin": 8,
+        "tmax": 10,
+        "actual_K": 10,
+        "method": "newman",
+        "Q": 0.8224,
+        "cpm_h": null,
+        "quality_class": "good",
+        "routing_accuracy": 0.714
+      },
+      {
+        "label": "K=10-12",
+        "tmin": 10,
+        "tmax": 12,
+        "actual_K": 10,
+        "method": "newman",
+        "Q": 0.8224,
+        "cpm_h": null,
+        "quality_class": "good",
+        "routing_accuracy": 0.714
+      }
+    ]
+  },
+  {
+    "n_themes": 7,
+    "N": 42,
+    "embedder": "mpnet",
+    "seed": 42,
+    "method": "cpm",
+    "peak_Q_at_K": 1,
+    "peak_Q_value": 0.0,
+    "best_routing_K": 1,
+    "best_routing_acc": 1.0,
+    "sweep": [
+      {
+        "label": "K=1-2",
+        "tmin": 1,
+        "tmax": 2,
+        "actual_K": 1,
+        "method": "cpm",
+        "Q": 0.0,
+        "cpm_h": 308.8439,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=3-5",
+        "tmin": 3,
+        "tmax": 5,
+        "actual_K": 5,
+        "method": "cpm",
+        "Q": -0.0189,
+        "cpm_h": 105.356,
+        "quality_class": "poor",
+        "routing_accuracy": 0.857
+      },
+      {
+        "label": "K=5-7",
+        "tmin": 5,
+        "tmax": 7,
+        "actual_K": 5,
+        "method": "cpm",
+        "Q": -0.0189,
+        "cpm_h": 105.356,
+        "quality_class": "poor",
+        "routing_accuracy": 0.857
+      },
+      {
+        "label": "K=6-8",
+        "tmin": 6,
+        "tmax": 8,
+        "actual_K": 6,
+        "method": "cpm",
+        "Q": -0.0199,
+        "cpm_h": 80.4511,
+        "quality_class": "poor",
+        "routing_accuracy": 0.714
+      },
+      {
+        "label": "K=8-10",
+        "tmin": 8,
+        "tmax": 10,
+        "actual_K": 8,
+        "method": "cpm",
+        "Q": -0.021,
+        "cpm_h": 12.3133,
+        "quality_class": "poor",
+        "routing_accuracy": 0.714
+      },
+      {
+        "label": "K=10-12",
+        "tmin": 10,
+        "tmax": 12,
+        "actual_K": 10,
+        "method": "cpm",
+        "Q": -0.0212,
+        "cpm_h": 7.4427,
+        "quality_class": "poor",
+        "routing_accuracy": 0.714
+      }
+    ]
+  },
+  {
+    "n_themes": 7,
+    "N": 42,
+    "embedder": "mpnet",
+    "seed": 123,
+    "method": "newman",
+    "peak_Q_at_K": 7,
+    "peak_Q_value": 0.855,
+    "best_routing_K": 1,
+    "best_routing_acc": 1.0,
+    "sweep": [
+      {
+        "label": "K=1-2",
+        "tmin": 1,
+        "tmax": 2,
+        "actual_K": 1,
+        "method": "newman",
+        "Q": 0.0,
+        "cpm_h": null,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=2-3",
+        "tmin": 2,
+        "tmax": 3,
+        "actual_K": 2,
+        "method": "newman",
+        "Q": 0.2037,
+        "cpm_h": null,
+        "quality_class": "poor",
+        "routing_accuracy": 0.905
+      },
+      {
+        "label": "K=3-4",
+        "tmin": 3,
+        "tmax": 4,
+        "actual_K": 3,
+        "method": "newman",
+        "Q": 0.5681,
+        "cpm_h": null,
+        "quality_class": "acceptable",
+        "routing_accuracy": 0.929
+      },
+      {
+        "label": "K=3-5",
+        "tmin": 3,
+        "tmax": 5,
+        "actual_K": 5,
+        "method": "newman",
+        "Q": 0.76,
+        "cpm_h": null,
+        "quality_class": "good",
+        "routing_accuracy": 0.857
+      },
+      {
+        "label": "K=5-7",
+        "tmin": 5,
+        "tmax": 7,
+        "actual_K": 5,
+        "method": "newman",
+        "Q": 0.76,
+        "cpm_h": null,
+        "quality_class": "good",
+        "routing_accuracy": 0.857
+      },
+      {
+        "label": "K=6-8",
+        "tmin": 6,
+        "tmax": 8,
+        "actual_K": 7,
+        "method": "newman",
+        "Q": 0.855,
+        "cpm_h": null,
+        "quality_class": "good",
+        "routing_accuracy": 0.714
+      },
+      {
+        "label": "K=8-10",
+        "tmin": 8,
+        "tmax": 10,
+        "actual_K": 10,
+        "method": "newman",
+        "Q": 0.7448,
+        "cpm_h": null,
+        "quality_class": "good",
+        "routing_accuracy": 0.714
+      },
+      {
+        "label": "K=10-12",
+        "tmin": 10,
+        "tmax": 12,
+        "actual_K": 11,
+        "method": "newman",
+        "Q": 0.7773,
+        "cpm_h": null,
+        "quality_class": "good",
+        "routing_accuracy": 0.714
+      }
+    ]
+  },
+  {
+    "n_themes": 7,
+    "N": 42,
+    "embedder": "mpnet",
+    "seed": 123,
+    "method": "cpm",
+    "peak_Q_at_K": 1,
+    "peak_Q_value": 0.0,
+    "best_routing_K": 1,
+    "best_routing_acc": 1.0,
+    "sweep": [
+      {
+        "label": "K=1-2",
+        "tmin": 1,
+        "tmax": 2,
+        "actual_K": 1,
+        "method": "cpm",
+        "Q": 0.0,
+        "cpm_h": 305.6945,
+        "quality_class": "poor",
+        "routing_accuracy": 1.0
+      },
+      {
+        "label": "K=2-3",
+        "tmin": 2,
+        "tmax": 3,
+        "actual_K": 3,
+        "method": "cpm",
+        "Q": -0.011,
+        "cpm_h": 156.9893,
+        "quality_class": "poor",
+        "routing_accuracy": 0.857
+      },
+      {
+        "label": "K=3-4",
+        "tmin": 3,
+        "tmax": 4,
+        "actual_K": 3,
+        "method": "cpm",
+        "Q": -0.011,
+        "cpm_h": 156.9893,
+        "quality_class": "poor",
+        "routing_accuracy": 0.857
+      },
+      {
+        "label": "K=3-5",
+        "tmin": 3,
+        "tmax": 5,
+        "actual_K": 3,
+        "method": "cpm",
+        "Q": -0.011,
+        "cpm_h": 156.9893,
+        "quality_class": "poor",
+        "routing_accuracy": 0.857
+      },
+      {
+        "label": "K=5-7",
+        "tmin": 5,
+        "tmax": 7,
+        "actual_K": 5,
+        "method": "cpm",
+        "Q": -0.0189,
+        "cpm_h": 79.9564,
+        "quality_class": "poor",
+        "routing_accuracy": 0.857
+      },
+      {
+        "label": "K=6-8",
+        "tmin": 6,
+        "tmax": 8,
+        "actual_K": 6,
+        "method": "cpm",
+        "Q": -0.0199,
+        "cpm_h": 65.516,
+        "quality_class": "poor",
+        "routing_accuracy": 0.714
+      },
+      {
+        "label": "K=8-10",
+        "tmin": 8,
+        "tmax": 10,
+        "actual_K": 8,
+        "method": "cpm",
+        "Q": -0.0211,
+        "cpm_h": 14.8951,
+        "quality_class": "poor",
+        "routing_accuracy": 0.714
+      },
+      {
+        "label": "K=10-12",
+        "tmin": 10,
+        "tmax": 12,
+        "actual_K": 10,
+        "method": "cpm",
+        "Q": -0.0213,
+        "cpm_h": 9.408,
+        "quality_class": "poor",
+        "routing_accuracy": 0.714
+      }
+    ]
+  }
+]

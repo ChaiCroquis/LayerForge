@@ -1,0 +1,73 @@
+You will answer 12 questions. Each has its OWN passage subset.
+
+# RULES
+- Use ONLY information from THAT question's passage subset. Not other questions' subsets.
+- "Not in provided passages." when absent.
+- Brief answer + cite passage ID.
+- Corpus is fictional; do NOT use prior knowledge.
+
+=== q01 ===
+PASSAGES FOR THIS QUESTION:
+[z-XII] King-XII-Zelgar, ruler of the Zelgar Dynasty, reigned from 1156 to 1145. The seat of government during the reign was Hollowcrest, and the royal army numbered 1300 mounted knights.
+
+QUESTION: In what year did the reign of King-XII-Zelgar end?
+=== q02 ===
+PASSAGES FOR THIS QUESTION:
+[z-VIII] King-VIII-Zelgar, ruler of the Zelgar Dynasty, reigned from 1279 to 1339. The seat of government during the reign was Druvic-Hall, and the royal army numbered 900 mounted knights.
+
+QUESTION: How many mounted knights did King-VIII-Zelgar's army number?
+=== q03 ===
+PASSAGES FOR THIS QUESTION:
+[z-XX] King-XX-Zelgar, ruler of the Zelgar Dynasty, reigned from 1216 to 1292. The seat of government during the reign was Iron-Reach, and the royal army numbered 2300 mounted knights.
+
+QUESTION: What was the capital during the reign of King-XX-Zelgar?
+=== q04 ===
+PASSAGES FOR THIS QUESTION:
+[p-XV] The phlogiston compound luminoxide-XV melts at 1175 degrees Celsius and emits luminescence at 450 nanometers. It was first synthesized in 1838 and has a density of 4.67 g/cm^3.
+
+QUESTION: At what temperature (degrees Celsius) does luminoxide-XV melt?
+=== q05 ===
+PASSAGES FOR THIS QUESTION:
+[p-VII] The phlogiston compound luminoxide-VII melts at 447 degrees Celsius and emits luminescence at 380 nanometers. It was first synthesized in 1658 and has a density of 8.83 g/cm^3.
+
+QUESTION: What is the density (g/cm^3) of luminoxide-VII?
+=== q06 ===
+PASSAGES FOR THIS QUESTION:
+[v-IX] Vimnarus-IX is a nocturnal vimnar species native to the Korith Forest. Adults weigh 24.4 kg and lay clusters of 13 eggs per breeding season.
+
+QUESTION: What is the adult weight (kg) of Vimnarus-IX?
+=== q07 ===
+PASSAGES FOR THIS QUESTION:
+[v-XXIII] Vimnarus-XXIII is a nocturnal vimnar species native to the Long Winter Tundra. Adults weigh 2.6 kg and lay clusters of 4 eggs per breeding season.
+
+QUESTION: What is the native habitat of Vimnarus-XXIII?
+=== q08 ===
+PASSAGES FOR THIS QUESTION:
+[e-IV] The Codex-IV-Estronus catalogues 747 traditional compositions across 30 sub-styles. It was compiled around 1454 AD and prescribes a dulvanthar with 35 strings.
+
+QUESTION: How many compositions does Codex-IV-Estronus catalogue?
+=== q09 ===
+PASSAGES FOR THIS QUESTION:
+[e-XVIII] The Codex-XVIII-Estronus catalogues 1325 traditional compositions across 98 sub-styles. It was compiled around 1461 AD and prescribes a dulvanthar with 29 strings.
+
+QUESTION: How many strings does Codex-XVIII-Estronus prescribe for the dulvanthar?
+=== q10 ===
+PASSAGES FOR THIS QUESTION:
+(no passages provided for this question.)
+
+QUESTION: What is the favorite color of King-XII-Zelgar?
+=== q11 ===
+PASSAGES FOR THIS QUESTION:
+(no passages provided for this question.)
+
+QUESTION: What is the boiling point of luminoxide-LV?
+=== q12 ===
+PASSAGES FOR THIS QUESTION:
+(no passages provided for this question.)
+
+QUESTION: How many strings does Codex-XXVII-Estronus prescribe?
+
+# OUTPUT FORMAT
+JSON array, one object per question in order:
+  "q": <id>, "answer": <text>, "source_passage_id": <id or null>
+Return ONLY the JSON array. No prose.

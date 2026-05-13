@@ -1,0 +1,74 @@
+{
+  "quality_metrics": {
+    "modularity": 0.6951020408163265,
+    "layer_count": 5,
+    "scale_coefficient": 0.375,
+    "is_within_4_plus_minus_1": true,
+    "quality_class": "acceptable"
+  },
+  "layers": [
+    {
+      "layer_id": 0,
+      "passage_ids": [
+        "a1",
+        "a2",
+        "a3",
+        "a4",
+        "a5",
+        "a6"
+      ]
+    },
+    {
+      "layer_id": 1,
+      "passage_ids": [
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5",
+        "b6"
+      ]
+    },
+    {
+      "layer_id": 2,
+      "passage_ids": [
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5",
+        "c6"
+      ]
+    },
+    {
+      "layer_id": 3,
+      "passage_ids": [
+        "d1",
+        "d2",
+        "d4"
+      ]
+    },
+    {
+      "layer_id": 4,
+      "passage_ids": [
+        "d3",
+        "d5",
+        "d6"
+      ]
+    }
+  ],
+  "question_routes": {
+    "q01": 0,
+    "q02": 0,
+    "q03": 1,
+    "q04": 1,
+    "q05": 2,
+    "q06": 2,
+    "q07": 4,
+    "q08": 4,
+    "q09": 0,
+    "q10": 2,
+    "q11": 1,
+    "q12": 0
+  }
+}

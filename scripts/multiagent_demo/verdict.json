@@ -1,0 +1,20 @@
+{
+  "output_a": {
+    "drift_topic_mentions": [],
+    "drift_count": 0,
+    "compliance_grade": "PASS",
+    "on_topic_paragraphs": 5,
+    "off_topic_paragraphs": 0,
+    "word_count_estimate": "in_range"
+  },
+  "output_b": {
+    "drift_topic_mentions": [],
+    "drift_count": 0,
+    "compliance_grade": "PASS",
+    "on_topic_paragraphs": 5,
+    "off_topic_paragraphs": 0,
+    "word_count_estimate": "in_range"
+  },
+  "hypothesis_verdict": "NULL",
+  "verdict_rationale": "両 output とも禁止トピック言及 0 で同等、drift 差は観測されない。"
+}

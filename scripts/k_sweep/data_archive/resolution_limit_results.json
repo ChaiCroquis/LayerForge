@@ -1,0 +1,317 @@
+[
+  {
+    "K_range": "1-2",
+    "actual_K": 1,
+    "Q": 0.0,
+    "theta": 0.0,
+    "L_total_edges": 258,
+    "resolution_limit_sqrt_L_over_2": 11.36,
+    "communities_above_limit": "1/1",
+    "above_fraction": 1.0,
+    "communities": [
+      {
+        "layer_id": 0,
+        "members": 24,
+        "internal_edges": 258,
+        "verdict": "above"
+      }
+    ]
+  },
+  {
+    "K_range": "3-5",
+    "actual_K": 5,
+    "Q": 0.695,
+    "theta": 0.375,
+    "L_total_edges": 35,
+    "resolution_limit_sqrt_L_over_2": 4.18,
+    "communities_above_limit": "3/5",
+    "above_fraction": 0.6,
+    "communities": [
+      {
+        "layer_id": 0,
+        "members": 6,
+        "internal_edges": 8,
+        "verdict": "above"
+      },
+      {
+        "layer_id": 1,
+        "members": 6,
+        "internal_edges": 8,
+        "verdict": "above"
+      },
+      {
+        "layer_id": 2,
+        "members": 6,
+        "internal_edges": 14,
+        "verdict": "above"
+      },
+      {
+        "layer_id": 3,
+        "members": 3,
+        "internal_edges": 3,
+        "verdict": "below"
+      },
+      {
+        "layer_id": 4,
+        "members": 3,
+        "internal_edges": 1,
+        "verdict": "below"
+      }
+    ]
+  },
+  {
+    "K_range": "6-8",
+    "actual_K": 6,
+    "Q": 0.623,
+    "theta": 0.4062,
+    "L_total_edges": 31,
+    "resolution_limit_sqrt_L_over_2": 3.94,
+    "communities_above_limit": "3/6",
+    "above_fraction": 0.5,
+    "communities": [
+      {
+        "layer_id": 0,
+        "members": 6,
+        "internal_edges": 6,
+        "verdict": "above"
+      },
+      {
+        "layer_id": 1,
+        "members": 2,
+        "internal_edges": 1,
+        "verdict": "below"
+      },
+      {
+        "layer_id": 2,
+        "members": 4,
+        "internal_edges": 4,
+        "verdict": "above"
+      },
+      {
+        "layer_id": 3,
+        "members": 6,
+        "internal_edges": 14,
+        "verdict": "above"
+      },
+      {
+        "layer_id": 4,
+        "members": 3,
+        "internal_edges": 2,
+        "verdict": "below"
+      },
+      {
+        "layer_id": 5,
+        "members": 3,
+        "internal_edges": 1,
+        "verdict": "below"
+      }
+    ]
+  },
+  {
+    "K_range": "10-12",
+    "actual_K": 10,
+    "Q": 0.466,
+    "theta": 0.4375,
+    "L_total_edges": 23,
+    "resolution_limit_sqrt_L_over_2": 3.39,
+    "communities_above_limit": "1/10",
+    "above_fraction": 0.1,
+    "communities": [
+      {
+        "layer_id": 0,
+        "members": 4,
+        "internal_edges": 3,
+        "verdict": "near"
+      },
+      {
+        "layer_id": 1,
+        "members": 2,
+        "internal_edges": 0,
+        "verdict": "below"
+      },
+      {
+        "layer_id": 2,
+        "members": 3,
+        "internal_edges": 1,
+        "verdict": "below"
+      },
+      {
+        "layer_id": 3,
+        "members": 1,
+        "internal_edges": 0,
+        "verdict": "below"
+      },
+      {
+        "layer_id": 4,
+        "members": 2,
+        "internal_edges": 0,
+        "verdict": "below"
+      },
+      {
+        "layer_id": 5,
+        "members": 6,
+        "internal_edges": 13,
+        "verdict": "above"
+      },
+      {
+        "layer_id": 6,
+        "members": 2,
+        "internal_edges": 1,
+        "verdict": "below"
+      },
+      {
+        "layer_id": 7,
+        "members": 2,
+        "internal_edges": 1,
+        "verdict": "below"
+      },
+      {
+        "layer_id": 8,
+        "members": 1,
+        "internal_edges": 0,
+        "verdict": "below"
+      },
+      {
+        "layer_id": 9,
+        "members": 1,
+        "internal_edges": 0,
+        "verdict": "below"
+      }
+    ]
+  },
+  {
+    "K_range": "15-20",
+    "actual_K": 19,
+    "Q": 0.18,
+    "theta": 0.5312,
+    "L_total_edges": 5,
+    "resolution_limit_sqrt_L_over_2": 1.58,
+    "communities_above_limit": "1/19",
+    "above_fraction": 0.05,
+    "communities": [
+      {
+        "layer_id": 0,
+        "members": 1,
+        "internal_edges": 0,
+        "verdict": "below"
+      },
+      {
+        "layer_id": 1,
+        "members": 1,
+        "internal_edges": 0,
+        "verdict": "below"
+      },
+      {
+        "layer_id": 2,
+        "members": 2,
+        "internal_edges": 0,
+        "verdict": "below"
+      },
+      {
+        "layer_id": 3,
+        "members": 1,
+        "internal_edges": 0,
+        "verdict": "below"
+      },
+      {
+        "layer_id": 4,
+        "members": 1,
+        "internal_edges": 0,
+        "verdict": "below"
+      },
+      {
+        "layer_id": 5,
+        "members": 1,
+        "internal_edges": 0,
+        "verdict": "below"
+      },
+      {
+        "layer_id": 6,
+        "members": 1,
+        "internal_edges": 0,
+        "verdict": "below"
+      },
+      {
+        "layer_id": 7,
+        "members": 1,
+        "internal_edges": 0,
+        "verdict": "below"
+      },
+      {
+        "layer_id": 8,
+        "members": 1,
+        "internal_edges": 0,
+        "verdict": "below"
+      },
+      {
+        "layer_id": 9,
+        "members": 1,
+        "internal_edges": 0,
+        "verdict": "below"
+      },
+      {
+        "layer_id": 10,
+        "members": 1,
+        "internal_edges": 0,
+        "verdict": "below"
+      },
+      {
+        "layer_id": 11,
+        "members": 3,
+        "internal_edges": 2,
+        "verdict": "above"
+      },
+      {
+        "layer_id": 12,
+        "members": 1,
+        "internal_edges": 0,
+        "verdict": "below"
+      },
+      {
+        "layer_id": 13,
+        "members": 2,
+        "internal_edges": 0,
+        "verdict": "below"
+      },
+      {
+        "layer_id": 14,
+        "members": 2,
+        "internal_edges": 1,
+        "verdict": "below"
+      },
+      {
+        "layer_id": 15,
+        "members": 1,
+        "internal_edges": 0,
+        "verdict": "below"
+      },
+      {
+        "layer_id": 16,
+        "members": 1,
+        "internal_edges": 0,
+        "verdict": "below"
+      },
+      {
+        "layer_id": 17,
+        "members": 1,
+        "internal_edges": 0,
+        "verdict": "below"
+      },
+      {
+        "layer_id": 18,
+        "members": 1,
+        "internal_edges": 0,
+        "verdict": "below"
+      }
+    ]
+  },
+  {
+    "K_range": "20-24",
+    "actual_K": 24,
+    "Q": 0.0,
+    "theta": 0.75,
+    "L": 0,
+    "resolution_limit_sqrtL_over_2": 0.0,
+    "status": "no_edges"
+  }
+]

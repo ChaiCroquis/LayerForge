@@ -1,0 +1,406 @@
+[
+  {
+    "corpus_label": "A: 3 themes (philosophy/applications/verification)",
+    "expected_N_themes": 3,
+    "N_passages": 18,
+    "K_optimal": 10,
+    "Q_at_optimal": 0.417,
+    "above_limit_at_optimal": "3/10",
+    "purity_at_optimal": 0.91,
+    "sweep": [
+      {
+        "K": 2,
+        "Q": 0.0,
+        "quality_class": "poor",
+        "theta": 0.5,
+        "above_limit": "1/2",
+        "above_frac": 0.5,
+        "purity_mean": 0.68,
+        "purity_min": 0.35
+      },
+      {
+        "K": 3,
+        "Q": 0.064,
+        "quality_class": "poor",
+        "theta": 0.719,
+        "above_limit": "2/3",
+        "above_frac": 0.67,
+        "purity_mean": 0.7,
+        "purity_min": 0.5
+      },
+      {
+        "K": 4,
+        "Q": 0.073,
+        "quality_class": "poor",
+        "theta": 0.75,
+        "above_limit": "2/4",
+        "above_frac": 0.5,
+        "purity_mean": 0.78,
+        "purity_min": 0.5
+      },
+      {
+        "K": 5,
+        "Q": 0.098,
+        "quality_class": "poor",
+        "theta": 0.781,
+        "above_limit": "2/5",
+        "above_frac": 0.4,
+        "purity_mean": 0.82,
+        "purity_min": 0.5
+      },
+      {
+        "K": 6,
+        "Q": 0.058,
+        "quality_class": "poor",
+        "theta": 0.789,
+        "above_limit": "1/6",
+        "above_frac": 0.17,
+        "purity_mean": 0.84,
+        "purity_min": 0.4
+      },
+      {
+        "K": 7,
+        "Q": 0.082,
+        "quality_class": "poor",
+        "theta": 0.812,
+        "above_limit": "2/7",
+        "above_frac": 0.29,
+        "purity_mean": 0.87,
+        "purity_min": 0.6
+      },
+      {
+        "K": 8,
+        "Q": 0.23,
+        "quality_class": "poor",
+        "theta": 0.863,
+        "above_limit": "1/8",
+        "above_frac": 0.12,
+        "purity_mean": 0.91,
+        "purity_min": 0.67
+      },
+      {
+        "K": 9,
+        "Q": 0.23,
+        "quality_class": "poor",
+        "theta": 0.875,
+        "above_limit": "1/9",
+        "above_frac": 0.11,
+        "purity_mean": 0.89,
+        "purity_min": 0.6
+      },
+      {
+        "K": 10,
+        "Q": 0.417,
+        "quality_class": "acceptable",
+        "theta": 0.891,
+        "above_limit": "3/10",
+        "above_frac": 0.3,
+        "purity_mean": 0.91,
+        "purity_min": 0.67
+      }
+    ]
+  },
+  {
+    "corpus_label": "B: 4 themes (+ development)",
+    "expected_N_themes": 4,
+    "N_passages": 24,
+    "K_optimal": 2,
+    "Q_at_optimal": 0.042,
+    "above_limit_at_optimal": "2/2",
+    "purity_at_optimal": 0.37,
+    "sweep": [
+      {
+        "K": 2,
+        "Q": 0.042,
+        "quality_class": "poor",
+        "theta": 0.5,
+        "above_limit": "2/2",
+        "above_frac": 1.0,
+        "purity_mean": 0.37,
+        "purity_min": 0.33
+      },
+      {
+        "K": 3,
+        "Q": 0.103,
+        "quality_class": "poor",
+        "theta": 0.656,
+        "above_limit": "2/3",
+        "above_frac": 0.67,
+        "purity_mean": 0.59,
+        "purity_min": 0.38
+      },
+      {
+        "K": 4,
+        "Q": 0.101,
+        "quality_class": "poor",
+        "theta": 0.688,
+        "above_limit": "2/4",
+        "above_frac": 0.5,
+        "purity_mean": 0.58,
+        "purity_min": 0.38
+      },
+      {
+        "K": 5,
+        "Q": 0.071,
+        "quality_class": "poor",
+        "theta": 0.703,
+        "above_limit": "2/5",
+        "above_frac": 0.4,
+        "purity_mean": 0.77,
+        "purity_min": 0.43
+      },
+      {
+        "K": 6,
+        "Q": 0.07,
+        "quality_class": "poor",
+        "theta": 0.719,
+        "above_limit": "3/6",
+        "above_frac": 0.5,
+        "purity_mean": 0.69,
+        "purity_min": 0.43
+      },
+      {
+        "K": 7,
+        "Q": 0.069,
+        "quality_class": "poor",
+        "theta": 0.75,
+        "above_limit": "2/7",
+        "above_frac": 0.29,
+        "purity_mean": 0.85,
+        "purity_min": 0.46
+      },
+      {
+        "K": 8,
+        "Q": 0.06,
+        "quality_class": "poor",
+        "theta": 0.766,
+        "above_limit": "2/8",
+        "above_frac": 0.25,
+        "purity_mean": 0.8,
+        "purity_min": 0.43
+      },
+      {
+        "K": 9,
+        "Q": 0.038,
+        "quality_class": "poor",
+        "theta": 0.781,
+        "above_limit": "2/9",
+        "above_frac": 0.22,
+        "purity_mean": 0.75,
+        "purity_min": 0.4
+      },
+      {
+        "K": 10,
+        "Q": 0.031,
+        "quality_class": "poor",
+        "theta": 0.789,
+        "above_limit": "2/10",
+        "above_frac": 0.2,
+        "purity_mean": 0.88,
+        "purity_min": 0.43
+      }
+    ]
+  },
+  {
+    "corpus_label": "C: 5 themes (+ library)",
+    "expected_N_themes": 5,
+    "N_passages": 30,
+    "K_optimal": 5,
+    "Q_at_optimal": 0.132,
+    "above_limit_at_optimal": "2/5",
+    "purity_at_optimal": 0.75,
+    "sweep": [
+      {
+        "K": 2,
+        "Q": 0.045,
+        "quality_class": "poor",
+        "theta": 0.5,
+        "above_limit": "1/2",
+        "above_frac": 0.5,
+        "purity_mean": 0.42,
+        "purity_min": 0.26
+      },
+      {
+        "K": 3,
+        "Q": 0.081,
+        "quality_class": "poor",
+        "theta": 0.562,
+        "above_limit": "2/3",
+        "above_frac": 0.67,
+        "purity_mean": 0.45,
+        "purity_min": 0.38
+      },
+      {
+        "K": 4,
+        "Q": 0.121,
+        "quality_class": "poor",
+        "theta": 0.625,
+        "above_limit": "2/4",
+        "above_frac": 0.5,
+        "purity_mean": 0.62,
+        "purity_min": 0.38
+      },
+      {
+        "K": 5,
+        "Q": 0.132,
+        "quality_class": "poor",
+        "theta": 0.648,
+        "above_limit": "2/5",
+        "above_frac": 0.4,
+        "purity_mean": 0.75,
+        "purity_min": 0.35
+      },
+      {
+        "K": 6,
+        "Q": 0.103,
+        "quality_class": "poor",
+        "theta": 0.656,
+        "above_limit": "2/6",
+        "above_frac": 0.33,
+        "purity_mean": 0.72,
+        "purity_min": 0.4
+      },
+      {
+        "K": 7,
+        "Q": 0.109,
+        "quality_class": "poor",
+        "theta": 0.664,
+        "above_limit": "2/7",
+        "above_frac": 0.29,
+        "purity_mean": 0.74,
+        "purity_min": 0.33
+      },
+      {
+        "K": 8,
+        "Q": 0.105,
+        "quality_class": "poor",
+        "theta": 0.688,
+        "above_limit": "2/8",
+        "above_frac": 0.25,
+        "purity_mean": 0.79,
+        "purity_min": 0.43
+      },
+      {
+        "K": 9,
+        "Q": 0.086,
+        "quality_class": "poor",
+        "theta": 0.703,
+        "above_limit": "3/9",
+        "above_frac": 0.33,
+        "purity_mean": 0.75,
+        "purity_min": 0.43
+      },
+      {
+        "K": 10,
+        "Q": 0.073,
+        "quality_class": "poor",
+        "theta": 0.719,
+        "above_limit": "2/10",
+        "above_frac": 0.2,
+        "purity_mean": 0.79,
+        "purity_min": 0.43
+      }
+    ]
+  },
+  {
+    "corpus_label": "D: 6 themes (+ advanced)",
+    "expected_N_themes": 6,
+    "N_passages": 36,
+    "K_optimal": 2,
+    "Q_at_optimal": 0.036,
+    "above_limit_at_optimal": "2/2",
+    "purity_at_optimal": 0.3,
+    "sweep": [
+      {
+        "K": 2,
+        "Q": 0.036,
+        "quality_class": "poor",
+        "theta": 0.5,
+        "above_limit": "2/2",
+        "above_frac": 1.0,
+        "purity_mean": 0.3,
+        "purity_min": 0.24
+      },
+      {
+        "K": 3,
+        "Q": 0.092,
+        "quality_class": "poor",
+        "theta": 0.57,
+        "above_limit": "2/3",
+        "above_frac": 0.67,
+        "purity_mean": 0.38,
+        "purity_min": 0.3
+      },
+      {
+        "K": 4,
+        "Q": 0.116,
+        "quality_class": "poor",
+        "theta": 0.594,
+        "above_limit": "2/4",
+        "above_frac": 0.5,
+        "purity_mean": 0.56,
+        "purity_min": 0.32
+      },
+      {
+        "K": 5,
+        "Q": 0.133,
+        "quality_class": "poor",
+        "theta": 0.625,
+        "above_limit": "2/5",
+        "above_frac": 0.4,
+        "purity_mean": 0.58,
+        "purity_min": 0.25
+      },
+      {
+        "K": 6,
+        "Q": 0.133,
+        "quality_class": "poor",
+        "theta": 0.648,
+        "above_limit": "2/6",
+        "above_frac": 0.33,
+        "purity_mean": 0.69,
+        "purity_min": 0.33
+      },
+      {
+        "K": 7,
+        "Q": 0.103,
+        "quality_class": "poor",
+        "theta": 0.656,
+        "above_limit": "2/7",
+        "above_frac": 0.29,
+        "purity_mean": 0.55,
+        "purity_min": 0.25
+      },
+      {
+        "K": 8,
+        "Q": 0.1,
+        "quality_class": "poor",
+        "theta": 0.688,
+        "above_limit": "2/8",
+        "above_frac": 0.25,
+        "purity_mean": 0.65,
+        "purity_min": 0.33
+      },
+      {
+        "K": 9,
+        "Q": 0.067,
+        "quality_class": "poor",
+        "theta": 0.703,
+        "above_limit": "1/9",
+        "above_frac": 0.11,
+        "purity_mean": 0.55,
+        "purity_min": 0.33
+      },
+      {
+        "K": 10,
+        "Q": 0.076,
+        "quality_class": "poor",
+        "theta": 0.719,
+        "above_limit": "2/10",
+        "above_frac": 0.2,
+        "purity_mean": 0.66,
+        "purity_min": 0.33
+      }
+    ]
+  }
+]

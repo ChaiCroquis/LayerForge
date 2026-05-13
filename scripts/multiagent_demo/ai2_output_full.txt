@@ -1,0 +1,11 @@
+## CI/CD
+
+本プロジェクトでは、テストを「書いた」状態から「常に動いている」状態へ昇格させるため、GitHub Actions を CI/CD の中心に据えます。`.github/workflows/ci.yml` に Python のセットアップ、依存インストール、`pytest --junitxml=junit.xml` の実行、そして junit レポートのアーティファクトアップロードを並べるのが標準構成です。
+
+複数環境での検証は matrix build で行います。`matrix.python-version` に `["3.10", "3.11", "3.12"]` を並べて複数の Python バージョンを横断的に検証し、さらに OS matrix(ubuntu-latest, macos-latest, windows-latest)まで広げることでプラットフォーム依存のバグを早期に検出します。ただし、全組み合わせを総当たりにすると CI 時間が膨らむため、依存パッケージのバージョン matrix のような追加軸は別ワークフロー(nightly run)に切り出すのが定石です。
+
+CI 実行時間を短縮するため、`actions/cache@v4` を用いて pip / uv / poetry のキャッシュと `.pytest_cache` をキャッシュします。特に Windows ランナーは依存インストールが遅いため、キャッシュの効果が顕著です。最初の workflow ファイル時点から組み込んでおきます。
+
+アーティファクト機能は積極的に活用します。`actions/upload-artifact@v4` で junit XML、ログファイル、失敗時のスクリーンショットなどを保存し、失敗 PR の調査をローカル再現前にアーティファクト確認で済ませられるフローを定着させます。
+
+最後に、merge を止めるブロッキング条件は branch protection rule と required checks に物理層として落とし込みます。「CI が赤」「破壊的変更にバージョン bump がない」「セキュリティ警告(dependabot、bandit)が新規発生」を最低限の必須チェックとして設定し、人間の注意ではなく仕組みで品質を担保します。

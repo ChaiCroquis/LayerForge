@@ -1,0 +1,746 @@
+[
+  {
+    "corpus": "same-domain 5 themes (all KDF)",
+    "embedder": "MiniLM",
+    "method": "newman",
+    "expected_N": 5,
+    "K_optimal": 5,
+    "Q_at_optimal": 0.132,
+    "purity_at_optimal": 0.75,
+    "above_limit_at_optimal": "2/5",
+    "sweep": [
+      {
+        "K": 2,
+        "Q": 0.045,
+        "cpm_h": null,
+        "class": "poor",
+        "above": "1/2",
+        "above_frac": 0.5,
+        "purity_mean": 0.42
+      },
+      {
+        "K": 3,
+        "Q": 0.081,
+        "cpm_h": null,
+        "class": "poor",
+        "above": "2/3",
+        "above_frac": 0.67,
+        "purity_mean": 0.45
+      },
+      {
+        "K": 4,
+        "Q": 0.121,
+        "cpm_h": null,
+        "class": "poor",
+        "above": "2/4",
+        "above_frac": 0.5,
+        "purity_mean": 0.62
+      },
+      {
+        "K": 5,
+        "Q": 0.132,
+        "cpm_h": null,
+        "class": "poor",
+        "above": "2/5",
+        "above_frac": 0.4,
+        "purity_mean": 0.75
+      },
+      {
+        "K": 6,
+        "Q": 0.103,
+        "cpm_h": null,
+        "class": "poor",
+        "above": "2/6",
+        "above_frac": 0.33,
+        "purity_mean": 0.72
+      },
+      {
+        "K": 7,
+        "Q": 0.109,
+        "cpm_h": null,
+        "class": "poor",
+        "above": "2/7",
+        "above_frac": 0.29,
+        "purity_mean": 0.74
+      },
+      {
+        "K": 8,
+        "Q": 0.105,
+        "cpm_h": null,
+        "class": "poor",
+        "above": "2/8",
+        "above_frac": 0.25,
+        "purity_mean": 0.79
+      },
+      {
+        "K": 9,
+        "Q": 0.086,
+        "cpm_h": null,
+        "class": "poor",
+        "above": "3/9",
+        "above_frac": 0.33,
+        "purity_mean": 0.75
+      },
+      {
+        "K": 10,
+        "Q": 0.073,
+        "cpm_h": null,
+        "class": "poor",
+        "above": "2/10",
+        "above_frac": 0.2,
+        "purity_mean": 0.79
+      }
+    ]
+  },
+  {
+    "corpus": "same-domain 5 themes (all KDF)",
+    "embedder": "MiniLM",
+    "method": "cpm",
+    "expected_N": 5,
+    "K_optimal": 2,
+    "Q_at_optimal": -0.002,
+    "purity_at_optimal": 0.6,
+    "above_limit_at_optimal": "1/2",
+    "sweep": [
+      {
+        "K": 2,
+        "Q": -0.002,
+        "cpm_h": 147.519,
+        "class": "poor",
+        "above": "1/2",
+        "above_frac": 0.5,
+        "purity_mean": 0.6
+      },
+      {
+        "K": 3,
+        "Q": -0.004,
+        "cpm_h": 121.382,
+        "class": "poor",
+        "above": "1/3",
+        "above_frac": 0.33,
+        "purity_mean": 0.74
+      },
+      {
+        "K": 4,
+        "Q": -0.012,
+        "cpm_h": 55.353,
+        "class": "poor",
+        "above": "1/4",
+        "above_frac": 0.25,
+        "purity_mean": 0.75
+      },
+      {
+        "K": 5,
+        "Q": -0.012,
+        "cpm_h": 48.126,
+        "class": "poor",
+        "above": "1/5",
+        "above_frac": 0.2,
+        "purity_mean": 0.85
+      },
+      {
+        "K": 6,
+        "Q": -0.014,
+        "cpm_h": 43.669,
+        "class": "poor",
+        "above": "1/6",
+        "above_frac": 0.17,
+        "purity_mean": 0.88
+      },
+      {
+        "K": 7,
+        "Q": -0.017,
+        "cpm_h": 32.277,
+        "class": "poor",
+        "above": "1/7",
+        "above_frac": 0.14,
+        "purity_mean": 0.85
+      },
+      {
+        "K": 8,
+        "Q": -0.017,
+        "cpm_h": 31.633,
+        "class": "poor",
+        "above": "1/8",
+        "above_frac": 0.12,
+        "purity_mean": 0.85
+      },
+      {
+        "K": 9,
+        "Q": -0.019,
+        "cpm_h": 28.394,
+        "class": "poor",
+        "above": "1/9",
+        "above_frac": 0.11,
+        "purity_mean": 0.87
+      },
+      {
+        "K": 10,
+        "Q": -0.021,
+        "cpm_h": 16.772,
+        "class": "poor",
+        "above": "1/10",
+        "above_frac": 0.1,
+        "purity_mean": 0.83
+      }
+    ]
+  },
+  {
+    "corpus": "cross-domain 4 themes (phil/explore/proof/blog)",
+    "embedder": "MiniLM",
+    "method": "newman",
+    "expected_N": 4,
+    "K_optimal": 3,
+    "Q_at_optimal": 0.123,
+    "purity_at_optimal": 0.79,
+    "above_limit_at_optimal": "3/3",
+    "sweep": [
+      {
+        "K": 2,
+        "Q": 0.071,
+        "cpm_h": null,
+        "class": "poor",
+        "above": "2/2",
+        "above_frac": 1.0,
+        "purity_mean": 0.56
+      },
+      {
+        "K": 3,
+        "Q": 0.123,
+        "cpm_h": null,
+        "class": "poor",
+        "above": "3/3",
+        "above_frac": 1.0,
+        "purity_mean": 0.79
+      },
+      {
+        "K": 4,
+        "Q": 0.105,
+        "cpm_h": null,
+        "class": "poor",
+        "above": "2/4",
+        "above_frac": 0.5,
+        "purity_mean": 0.92
+      },
+      {
+        "K": 5,
+        "Q": 0.089,
+        "cpm_h": null,
+        "class": "poor",
+        "above": "2/5",
+        "above_frac": 0.4,
+        "purity_mean": 0.94
+      },
+      {
+        "K": 6,
+        "Q": 0.108,
+        "cpm_h": null,
+        "class": "poor",
+        "above": "1/6",
+        "above_frac": 0.17,
+        "purity_mean": 0.72
+      },
+      {
+        "K": 7,
+        "Q": 0.146,
+        "cpm_h": null,
+        "class": "poor",
+        "above": "2/7",
+        "above_frac": 0.29,
+        "purity_mean": 0.85
+      },
+      {
+        "K": 8,
+        "Q": 0.172,
+        "cpm_h": null,
+        "class": "poor",
+        "above": "2/8",
+        "above_frac": 0.25,
+        "purity_mean": 0.81
+      },
+      {
+        "K": 9,
+        "Q": 0.203,
+        "cpm_h": null,
+        "class": "poor",
+        "above": "2/9",
+        "above_frac": 0.22,
+        "purity_mean": 0.84
+      },
+      {
+        "K": 10,
+        "Q": 0.216,
+        "cpm_h": null,
+        "class": "poor",
+        "above": "1/10",
+        "above_frac": 0.1,
+        "purity_mean": 0.89
+      }
+    ]
+  },
+  {
+    "corpus": "cross-domain 4 themes (phil/explore/proof/blog)",
+    "embedder": "MiniLM",
+    "method": "cpm",
+    "expected_N": 4,
+    "K_optimal": 2,
+    "Q_at_optimal": -0.014,
+    "purity_at_optimal": 0.66,
+    "above_limit_at_optimal": "1/2",
+    "sweep": [
+      {
+        "K": 2,
+        "Q": -0.014,
+        "cpm_h": 37.55,
+        "class": "poor",
+        "above": "1/2",
+        "above_frac": 0.5,
+        "purity_mean": 0.66
+      },
+      {
+        "K": 3,
+        "Q": -0.02,
+        "cpm_h": 30.108,
+        "class": "poor",
+        "above": "2/3",
+        "above_frac": 0.67,
+        "purity_mean": 0.7
+      },
+      {
+        "K": 4,
+        "Q": -0.024,
+        "cpm_h": 24.897,
+        "class": "poor",
+        "above": "1/4",
+        "above_frac": 0.25,
+        "purity_mean": 0.79
+      },
+      {
+        "K": 5,
+        "Q": -0.025,
+        "cpm_h": 22.81,
+        "class": "poor",
+        "above": "1/5",
+        "above_frac": 0.2,
+        "purity_mean": 0.88
+      },
+      {
+        "K": 6,
+        "Q": -0.027,
+        "cpm_h": 20.107,
+        "class": "poor",
+        "above": "1/6",
+        "above_frac": 0.17,
+        "purity_mean": 0.77
+      },
+      {
+        "K": 7,
+        "Q": -0.027,
+        "cpm_h": 19.107,
+        "class": "poor",
+        "above": "1/7",
+        "above_frac": 0.14,
+        "purity_mean": 0.8
+      },
+      {
+        "K": 8,
+        "Q": -0.029,
+        "cpm_h": 16.182,
+        "class": "poor",
+        "above": "1/8",
+        "above_frac": 0.12,
+        "purity_mean": 0.83
+      },
+      {
+        "K": 9,
+        "Q": -0.029,
+        "cpm_h": 13.864,
+        "class": "poor",
+        "above": "1/9",
+        "above_frac": 0.11,
+        "purity_mean": 0.83
+      },
+      {
+        "K": 10,
+        "Q": -0.034,
+        "cpm_h": 9.588,
+        "class": "poor",
+        "above": "1/10",
+        "above_frac": 0.1,
+        "purity_mean": 0.86
+      }
+    ]
+  },
+  {
+    "corpus": "same-domain 5 themes (all KDF)",
+    "embedder": "mpnet",
+    "method": "newman",
+    "expected_N": 5,
+    "K_optimal": 2,
+    "Q_at_optimal": 0.27,
+    "purity_at_optimal": 0.3,
+    "above_limit_at_optimal": "2/2",
+    "sweep": [
+      {
+        "K": 2,
+        "Q": 0.27,
+        "cpm_h": null,
+        "class": "poor",
+        "above": "2/2",
+        "above_frac": 1.0,
+        "purity_mean": 0.3
+      },
+      {
+        "K": 3,
+        "Q": 0.268,
+        "cpm_h": null,
+        "class": "poor",
+        "above": "2/3",
+        "above_frac": 0.67,
+        "purity_mean": 0.56
+      },
+      {
+        "K": 4,
+        "Q": 0.246,
+        "cpm_h": null,
+        "class": "poor",
+        "above": "2/4",
+        "above_frac": 0.5,
+        "purity_mean": 0.51
+      },
+      {
+        "K": 5,
+        "Q": 0.205,
+        "cpm_h": null,
+        "class": "poor",
+        "above": "1/5",
+        "above_frac": 0.2,
+        "purity_mean": 0.61
+      },
+      {
+        "K": 6,
+        "Q": 0.236,
+        "cpm_h": null,
+        "class": "poor",
+        "above": "3/6",
+        "above_frac": 0.5,
+        "purity_mean": 0.63
+      },
+      {
+        "K": 7,
+        "Q": 0.293,
+        "cpm_h": null,
+        "class": "poor",
+        "above": "2/7",
+        "above_frac": 0.29,
+        "purity_mean": 0.6
+      },
+      {
+        "K": 8,
+        "Q": 0.293,
+        "cpm_h": null,
+        "class": "poor",
+        "above": "2/8",
+        "above_frac": 0.25,
+        "purity_mean": 0.6
+      },
+      {
+        "K": 9,
+        "Q": 0.256,
+        "cpm_h": null,
+        "class": "poor",
+        "above": "2/9",
+        "above_frac": 0.22,
+        "purity_mean": 0.77
+      },
+      {
+        "K": 10,
+        "Q": 0.145,
+        "cpm_h": null,
+        "class": "poor",
+        "above": "1/10",
+        "above_frac": 0.1,
+        "purity_mean": 0.66
+      }
+    ]
+  },
+  {
+    "corpus": "same-domain 5 themes (all KDF)",
+    "embedder": "mpnet",
+    "method": "cpm",
+    "expected_N": 5,
+    "K_optimal": 2,
+    "Q_at_optimal": -0.002,
+    "purity_at_optimal": 0.6,
+    "above_limit_at_optimal": "1/2",
+    "sweep": [
+      {
+        "K": 2,
+        "Q": -0.002,
+        "cpm_h": 51.874,
+        "class": "poor",
+        "above": "1/2",
+        "above_frac": 0.5,
+        "purity_mean": 0.6
+      },
+      {
+        "K": 3,
+        "Q": -0.008,
+        "cpm_h": 37.78,
+        "class": "poor",
+        "above": "1/3",
+        "above_frac": 0.33,
+        "purity_mean": 0.74
+      },
+      {
+        "K": 4,
+        "Q": -0.008,
+        "cpm_h": 31.893,
+        "class": "poor",
+        "above": "1/4",
+        "above_frac": 0.25,
+        "purity_mean": 0.81
+      },
+      {
+        "K": 5,
+        "Q": -0.01,
+        "cpm_h": 20.589,
+        "class": "poor",
+        "above": "1/5",
+        "above_frac": 0.2,
+        "purity_mean": 0.85
+      },
+      {
+        "K": 6,
+        "Q": -0.014,
+        "cpm_h": 18.717,
+        "class": "poor",
+        "above": "1/6",
+        "above_frac": 0.17,
+        "purity_mean": 0.88
+      },
+      {
+        "K": 7,
+        "Q": -0.022,
+        "cpm_h": 14.248,
+        "class": "poor",
+        "above": "2/7",
+        "above_frac": 0.29,
+        "purity_mean": 0.82
+      },
+      {
+        "K": 8,
+        "Q": -0.026,
+        "cpm_h": 9.929,
+        "class": "poor",
+        "above": "2/8",
+        "above_frac": 0.25,
+        "purity_mean": 0.81
+      },
+      {
+        "K": 9,
+        "Q": -0.027,
+        "cpm_h": 7.144,
+        "class": "poor",
+        "above": "2/9",
+        "above_frac": 0.22,
+        "purity_mean": 0.82
+      },
+      {
+        "K": 10,
+        "Q": -0.028,
+        "cpm_h": 6.948,
+        "class": "poor",
+        "above": "2/10",
+        "above_frac": 0.2,
+        "purity_mean": 0.82
+      }
+    ]
+  },
+  {
+    "corpus": "cross-domain 4 themes (phil/explore/proof/blog)",
+    "embedder": "mpnet",
+    "method": "newman",
+    "expected_N": 4,
+    "K_optimal": 3,
+    "Q_at_optimal": 0.542,
+    "purity_at_optimal": 0.78,
+    "above_limit_at_optimal": "3/3",
+    "sweep": [
+      {
+        "K": 2,
+        "Q": 0.405,
+        "cpm_h": null,
+        "class": "acceptable",
+        "above": "2/2",
+        "above_frac": 1.0,
+        "purity_mean": 0.51
+      },
+      {
+        "K": 3,
+        "Q": 0.542,
+        "cpm_h": null,
+        "class": "acceptable",
+        "above": "3/3",
+        "above_frac": 1.0,
+        "purity_mean": 0.78
+      },
+      {
+        "K": 4,
+        "Q": 0.614,
+        "cpm_h": null,
+        "class": "acceptable",
+        "above": "3/4",
+        "above_frac": 0.75,
+        "purity_mean": 0.9
+      },
+      {
+        "K": 5,
+        "Q": 0.524,
+        "cpm_h": null,
+        "class": "acceptable",
+        "above": "2/5",
+        "above_frac": 0.4,
+        "purity_mean": 0.86
+      },
+      {
+        "K": 6,
+        "Q": 0.524,
+        "cpm_h": null,
+        "class": "acceptable",
+        "above": "2/6",
+        "above_frac": 0.33,
+        "purity_mean": 0.92
+      },
+      {
+        "K": 7,
+        "Q": 0.628,
+        "cpm_h": null,
+        "class": "acceptable",
+        "above": "2/7",
+        "above_frac": 0.29,
+        "purity_mean": 0.93
+      },
+      {
+        "K": 8,
+        "Q": 0.638,
+        "cpm_h": null,
+        "class": "acceptable",
+        "above": "1/8",
+        "above_frac": 0.12,
+        "purity_mean": 0.93
+      },
+      {
+        "K": 9,
+        "Q": 0.646,
+        "cpm_h": null,
+        "class": "acceptable",
+        "above": "1/9",
+        "above_frac": 0.11,
+        "purity_mean": 0.94
+      },
+      {
+        "K": 10,
+        "Q": 0.573,
+        "cpm_h": null,
+        "class": "acceptable",
+        "above": "1/10",
+        "above_frac": 0.1,
+        "purity_mean": 0.97
+      }
+    ]
+  },
+  {
+    "corpus": "cross-domain 4 themes (phil/explore/proof/blog)",
+    "embedder": "mpnet",
+    "method": "cpm",
+    "expected_N": 4,
+    "K_optimal": 3,
+    "Q_at_optimal": -0.027,
+    "purity_at_optimal": 0.78,
+    "above_limit_at_optimal": "3/3",
+    "sweep": [
+      {
+        "K": 2,
+        "Q": -0.003,
+        "cpm_h": 43.182,
+        "class": "poor",
+        "above": "1/2",
+        "above_frac": 0.5,
+        "purity_mean": 0.63
+      },
+      {
+        "K": 3,
+        "Q": -0.027,
+        "cpm_h": 22.233,
+        "class": "poor",
+        "above": "3/3",
+        "above_frac": 1.0,
+        "purity_mean": 0.78
+      },
+      {
+        "K": 4,
+        "Q": -0.03,
+        "cpm_h": 13.096,
+        "class": "poor",
+        "above": "3/4",
+        "above_frac": 0.75,
+        "purity_mean": 0.77
+      },
+      {
+        "K": 5,
+        "Q": -0.032,
+        "cpm_h": 11.936,
+        "class": "poor",
+        "above": "3/5",
+        "above_frac": 0.6,
+        "purity_mean": 0.8
+      },
+      {
+        "K": 6,
+        "Q": -0.033,
+        "cpm_h": 8.855,
+        "class": "poor",
+        "above": "2/6",
+        "above_frac": 0.33,
+        "purity_mean": 0.87
+      },
+      {
+        "K": 7,
+        "Q": -0.035,
+        "cpm_h": 6.575,
+        "class": "poor",
+        "above": "3/7",
+        "above_frac": 0.43,
+        "purity_mean": 0.95
+      },
+      {
+        "K": 8,
+        "Q": -0.036,
+        "cpm_h": 5.496,
+        "class": "poor",
+        "above": "2/8",
+        "above_frac": 0.25,
+        "purity_mean": 0.94
+      },
+      {
+        "K": 9,
+        "Q": -0.037,
+        "cpm_h": 3.93,
+        "class": "poor",
+        "above": "2/9",
+        "above_frac": 0.22,
+        "purity_mean": 0.98
+      },
+      {
+        "K": 10,
+        "Q": -0.038,
+        "cpm_h": 3.264,
+        "class": "poor",
+        "above": "1/10",
+        "above_frac": 0.1,
+        "purity_mean": 0.97
+      }
+    ]
+  }
+]

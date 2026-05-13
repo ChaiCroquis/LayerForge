@@ -1,0 +1,649 @@
+You will answer 12 questions. Each has its OWN passage subset.
+
+# RULES
+- Use ONLY information from THAT question's passage subset. Not other questions' subsets.
+- "Not in provided passages." when absent.
+- Brief answer + cite passage ID.
+- Corpus is fictional; do NOT use prior knowledge.
+
+=== q01 ===
+PASSAGES FOR THIS QUESTION:
+[z-I] King-I-Zelgar, ruler of the Zelgar Dynasty, reigned from 1430 to 1371. The seat of government during the reign was Iron-Reach, and the royal army numbered 900 mounted knights.
+
+[z-II] King-II-Zelgar, ruler of the Zelgar Dynasty, reigned from 1417 to 1469. The seat of government during the reign was Hollowcrest, and the royal army numbered 1400 mounted knights.
+
+[z-III] King-III-Zelgar, ruler of the Zelgar Dynasty, reigned from 1471 to 1453. The seat of government during the reign was Long-Winter-Vale, and the royal army numbered 1600 mounted knights.
+
+[z-IV] King-IV-Zelgar, ruler of the Zelgar Dynasty, reigned from 1144 to 1163. The seat of government during the reign was Long-Winter-Vale, and the royal army numbered 2200 mounted knights.
+
+[z-V] King-V-Zelgar, ruler of the Zelgar Dynasty, reigned from 1453 to 1472. The seat of government during the reign was Long-Winter-Vale, and the royal army numbered 2100 mounted knights.
+
+[z-VI] King-VI-Zelgar, ruler of the Zelgar Dynasty, reigned from 1215 to 1402. The seat of government during the reign was Thavn-Tower, and the royal army numbered 900 mounted knights.
+
+[z-VII] King-VII-Zelgar, ruler of the Zelgar Dynasty, reigned from 1472 to 1437. The seat of government during the reign was Long-Winter-Vale, and the royal army numbered 800 mounted knights.
+
+[z-VIII] King-VIII-Zelgar, ruler of the Zelgar Dynasty, reigned from 1279 to 1339. The seat of government during the reign was Druvic-Hall, and the royal army numbered 900 mounted knights.
+
+[z-IX] King-IX-Zelgar, ruler of the Zelgar Dynasty, reigned from 1382 to 1107. The seat of government during the reign was Korith, and the royal army numbered 500 mounted knights.
+
+[z-X] King-X-Zelgar, ruler of the Zelgar Dynasty, reigned from 1184 to 1418. The seat of government during the reign was Hollowcrest, and the royal army numbered 500 mounted knights.
+
+[z-XI] King-XI-Zelgar, ruler of the Zelgar Dynasty, reigned from 1457 to 1237. The seat of government during the reign was Druvic-Hall, and the royal army numbered 1800 mounted knights.
+
+[z-XII] King-XII-Zelgar, ruler of the Zelgar Dynasty, reigned from 1156 to 1145. The seat of government during the reign was Hollowcrest, and the royal army numbered 1300 mounted knights.
+
+[z-XIII] King-XIII-Zelgar, ruler of the Zelgar Dynasty, reigned from 1151 to 1483. The seat of government during the reign was Long-Winter-Vale, and the royal army numbered 2100 mounted knights.
+
+[z-XIV] King-XIV-Zelgar, ruler of the Zelgar Dynasty, reigned from 1241 to 1465. The seat of government during the reign was Brennhold, and the royal army numbered 2000 mounted knights.
+
+[z-XV] King-XV-Zelgar, ruler of the Zelgar Dynasty, reigned from 1239 to 1416. The seat of government during the reign was Falcon-Keep, and the royal army numbered 1500 mounted knights.
+
+[z-XVI] King-XVI-Zelgar, ruler of the Zelgar Dynasty, reigned from 1148 to 1297. The seat of government during the reign was Druvic-Hall, and the royal army numbered 1700 mounted knights.
+
+[z-XVII] King-XVII-Zelgar, ruler of the Zelgar Dynasty, reigned from 1480 to 1347. The seat of government during the reign was Korith, and the royal army numbered 500 mounted knights.
+
+[z-XVIII] King-XVIII-Zelgar, ruler of the Zelgar Dynasty, reigned from 1227 to 1295. The seat of government during the reign was Iron-Reach, and the royal army numbered 1100 mounted knights.
+
+[z-XIX] King-XIX-Zelgar, ruler of the Zelgar Dynasty, reigned from 1367 to 1195. The seat of government during the reign was Hollowcrest, and the royal army numbered 1600 mounted knights.
+
+[z-XX] King-XX-Zelgar, ruler of the Zelgar Dynasty, reigned from 1216 to 1292. The seat of government during the reign was Iron-Reach, and the royal army numbered 2300 mounted knights.
+
+[z-XXI] King-XXI-Zelgar, ruler of the Zelgar Dynasty, reigned from 1488 to 1322. The seat of government during the reign was Druvic-Hall, and the royal army numbered 2200 mounted knights.
+
+[z-XXII] King-XXII-Zelgar, ruler of the Zelgar Dynasty, reigned from 1223 to 1177. The seat of government during the reign was Korith, and the royal army numbered 2200 mounted knights.
+
+[z-XXIII] King-XXIII-Zelgar, ruler of the Zelgar Dynasty, reigned from 1251 to 1174. The seat of government during the reign was Long-Winter-Vale, and the royal army numbered 1500 mounted knights.
+
+[z-XXIV] King-XXIV-Zelgar, ruler of the Zelgar Dynasty, reigned from 1481 to 1226. The seat of government during the reign was Druvic-Hall, and the royal army numbered 700 mounted knights.
+
+[z-XXV] King-XXV-Zelgar, ruler of the Zelgar Dynasty, reigned from 1405 to 1342. The seat of government during the reign was Korith, and the royal army numbered 1900 mounted knights.
+
+QUESTION: In what year did the reign of King-XII-Zelgar end?
+=== q02 ===
+PASSAGES FOR THIS QUESTION:
+[z-I] King-I-Zelgar, ruler of the Zelgar Dynasty, reigned from 1430 to 1371. The seat of government during the reign was Iron-Reach, and the royal army numbered 900 mounted knights.
+
+[z-II] King-II-Zelgar, ruler of the Zelgar Dynasty, reigned from 1417 to 1469. The seat of government during the reign was Hollowcrest, and the royal army numbered 1400 mounted knights.
+
+[z-III] King-III-Zelgar, ruler of the Zelgar Dynasty, reigned from 1471 to 1453. The seat of government during the reign was Long-Winter-Vale, and the royal army numbered 1600 mounted knights.
+
+[z-IV] King-IV-Zelgar, ruler of the Zelgar Dynasty, reigned from 1144 to 1163. The seat of government during the reign was Long-Winter-Vale, and the royal army numbered 2200 mounted knights.
+
+[z-V] King-V-Zelgar, ruler of the Zelgar Dynasty, reigned from 1453 to 1472. The seat of government during the reign was Long-Winter-Vale, and the royal army numbered 2100 mounted knights.
+
+[z-VI] King-VI-Zelgar, ruler of the Zelgar Dynasty, reigned from 1215 to 1402. The seat of government during the reign was Thavn-Tower, and the royal army numbered 900 mounted knights.
+
+[z-VII] King-VII-Zelgar, ruler of the Zelgar Dynasty, reigned from 1472 to 1437. The seat of government during the reign was Long-Winter-Vale, and the royal army numbered 800 mounted knights.
+
+[z-VIII] King-VIII-Zelgar, ruler of the Zelgar Dynasty, reigned from 1279 to 1339. The seat of government during the reign was Druvic-Hall, and the royal army numbered 900 mounted knights.
+
+[z-IX] King-IX-Zelgar, ruler of the Zelgar Dynasty, reigned from 1382 to 1107. The seat of government during the reign was Korith, and the royal army numbered 500 mounted knights.
+
+[z-X] King-X-Zelgar, ruler of the Zelgar Dynasty, reigned from 1184 to 1418. The seat of government during the reign was Hollowcrest, and the royal army numbered 500 mounted knights.
+
+[z-XI] King-XI-Zelgar, ruler of the Zelgar Dynasty, reigned from 1457 to 1237. The seat of government during the reign was Druvic-Hall, and the royal army numbered 1800 mounted knights.
+
+[z-XII] King-XII-Zelgar, ruler of the Zelgar Dynasty, reigned from 1156 to 1145. The seat of government during the reign was Hollowcrest, and the royal army numbered 1300 mounted knights.
+
+[z-XIII] King-XIII-Zelgar, ruler of the Zelgar Dynasty, reigned from 1151 to 1483. The seat of government during the reign was Long-Winter-Vale, and the royal army numbered 2100 mounted knights.
+
+[z-XIV] King-XIV-Zelgar, ruler of the Zelgar Dynasty, reigned from 1241 to 1465. The seat of government during the reign was Brennhold, and the royal army numbered 2000 mounted knights.
+
+[z-XV] King-XV-Zelgar, ruler of the Zelgar Dynasty, reigned from 1239 to 1416. The seat of government during the reign was Falcon-Keep, and the royal army numbered 1500 mounted knights.
+
+[z-XVI] King-XVI-Zelgar, ruler of the Zelgar Dynasty, reigned from 1148 to 1297. The seat of government during the reign was Druvic-Hall, and the royal army numbered 1700 mounted knights.
+
+[z-XVII] King-XVII-Zelgar, ruler of the Zelgar Dynasty, reigned from 1480 to 1347. The seat of government during the reign was Korith, and the royal army numbered 500 mounted knights.
+
+[z-XVIII] King-XVIII-Zelgar, ruler of the Zelgar Dynasty, reigned from 1227 to 1295. The seat of government during the reign was Iron-Reach, and the royal army numbered 1100 mounted knights.
+
+[z-XIX] King-XIX-Zelgar, ruler of the Zelgar Dynasty, reigned from 1367 to 1195. The seat of government during the reign was Hollowcrest, and the royal army numbered 1600 mounted knights.
+
+[z-XX] King-XX-Zelgar, ruler of the Zelgar Dynasty, reigned from 1216 to 1292. The seat of government during the reign was Iron-Reach, and the royal army numbered 2300 mounted knights.
+
+[z-XXI] King-XXI-Zelgar, ruler of the Zelgar Dynasty, reigned from 1488 to 1322. The seat of government during the reign was Druvic-Hall, and the royal army numbered 2200 mounted knights.
+
+[z-XXII] King-XXII-Zelgar, ruler of the Zelgar Dynasty, reigned from 1223 to 1177. The seat of government during the reign was Korith, and the royal army numbered 2200 mounted knights.
+
+[z-XXIII] King-XXIII-Zelgar, ruler of the Zelgar Dynasty, reigned from 1251 to 1174. The seat of government during the reign was Long-Winter-Vale, and the royal army numbered 1500 mounted knights.
+
+[z-XXIV] King-XXIV-Zelgar, ruler of the Zelgar Dynasty, reigned from 1481 to 1226. The seat of government during the reign was Druvic-Hall, and the royal army numbered 700 mounted knights.
+
+[z-XXV] King-XXV-Zelgar, ruler of the Zelgar Dynasty, reigned from 1405 to 1342. The seat of government during the reign was Korith, and the royal army numbered 1900 mounted knights.
+
+QUESTION: How many mounted knights did King-VIII-Zelgar's army number?
+=== q03 ===
+PASSAGES FOR THIS QUESTION:
+[z-I] King-I-Zelgar, ruler of the Zelgar Dynasty, reigned from 1430 to 1371. The seat of government during the reign was Iron-Reach, and the royal army numbered 900 mounted knights.
+
+[z-II] King-II-Zelgar, ruler of the Zelgar Dynasty, reigned from 1417 to 1469. The seat of government during the reign was Hollowcrest, and the royal army numbered 1400 mounted knights.
+
+[z-III] King-III-Zelgar, ruler of the Zelgar Dynasty, reigned from 1471 to 1453. The seat of government during the reign was Long-Winter-Vale, and the royal army numbered 1600 mounted knights.
+
+[z-IV] King-IV-Zelgar, ruler of the Zelgar Dynasty, reigned from 1144 to 1163. The seat of government during the reign was Long-Winter-Vale, and the royal army numbered 2200 mounted knights.
+
+[z-V] King-V-Zelgar, ruler of the Zelgar Dynasty, reigned from 1453 to 1472. The seat of government during the reign was Long-Winter-Vale, and the royal army numbered 2100 mounted knights.
+
+[z-VI] King-VI-Zelgar, ruler of the Zelgar Dynasty, reigned from 1215 to 1402. The seat of government during the reign was Thavn-Tower, and the royal army numbered 900 mounted knights.
+
+[z-VII] King-VII-Zelgar, ruler of the Zelgar Dynasty, reigned from 1472 to 1437. The seat of government during the reign was Long-Winter-Vale, and the royal army numbered 800 mounted knights.
+
+[z-VIII] King-VIII-Zelgar, ruler of the Zelgar Dynasty, reigned from 1279 to 1339. The seat of government during the reign was Druvic-Hall, and the royal army numbered 900 mounted knights.
+
+[z-IX] King-IX-Zelgar, ruler of the Zelgar Dynasty, reigned from 1382 to 1107. The seat of government during the reign was Korith, and the royal army numbered 500 mounted knights.
+
+[z-X] King-X-Zelgar, ruler of the Zelgar Dynasty, reigned from 1184 to 1418. The seat of government during the reign was Hollowcrest, and the royal army numbered 500 mounted knights.
+
+[z-XI] King-XI-Zelgar, ruler of the Zelgar Dynasty, reigned from 1457 to 1237. The seat of government during the reign was Druvic-Hall, and the royal army numbered 1800 mounted knights.
+
+[z-XII] King-XII-Zelgar, ruler of the Zelgar Dynasty, reigned from 1156 to 1145. The seat of government during the reign was Hollowcrest, and the royal army numbered 1300 mounted knights.
+
+[z-XIII] King-XIII-Zelgar, ruler of the Zelgar Dynasty, reigned from 1151 to 1483. The seat of government during the reign was Long-Winter-Vale, and the royal army numbered 2100 mounted knights.
+
+[z-XIV] King-XIV-Zelgar, ruler of the Zelgar Dynasty, reigned from 1241 to 1465. The seat of government during the reign was Brennhold, and the royal army numbered 2000 mounted knights.
+
+[z-XV] King-XV-Zelgar, ruler of the Zelgar Dynasty, reigned from 1239 to 1416. The seat of government during the reign was Falcon-Keep, and the royal army numbered 1500 mounted knights.
+
+[z-XVI] King-XVI-Zelgar, ruler of the Zelgar Dynasty, reigned from 1148 to 1297. The seat of government during the reign was Druvic-Hall, and the royal army numbered 1700 mounted knights.
+
+[z-XVII] King-XVII-Zelgar, ruler of the Zelgar Dynasty, reigned from 1480 to 1347. The seat of government during the reign was Korith, and the royal army numbered 500 mounted knights.
+
+[z-XVIII] King-XVIII-Zelgar, ruler of the Zelgar Dynasty, reigned from 1227 to 1295. The seat of government during the reign was Iron-Reach, and the royal army numbered 1100 mounted knights.
+
+[z-XIX] King-XIX-Zelgar, ruler of the Zelgar Dynasty, reigned from 1367 to 1195. The seat of government during the reign was Hollowcrest, and the royal army numbered 1600 mounted knights.
+
+[z-XX] King-XX-Zelgar, ruler of the Zelgar Dynasty, reigned from 1216 to 1292. The seat of government during the reign was Iron-Reach, and the royal army numbered 2300 mounted knights.
+
+[z-XXI] King-XXI-Zelgar, ruler of the Zelgar Dynasty, reigned from 1488 to 1322. The seat of government during the reign was Druvic-Hall, and the royal army numbered 2200 mounted knights.
+
+[z-XXII] King-XXII-Zelgar, ruler of the Zelgar Dynasty, reigned from 1223 to 1177. The seat of government during the reign was Korith, and the royal army numbered 2200 mounted knights.
+
+[z-XXIII] King-XXIII-Zelgar, ruler of the Zelgar Dynasty, reigned from 1251 to 1174. The seat of government during the reign was Long-Winter-Vale, and the royal army numbered 1500 mounted knights.
+
+[z-XXIV] King-XXIV-Zelgar, ruler of the Zelgar Dynasty, reigned from 1481 to 1226. The seat of government during the reign was Druvic-Hall, and the royal army numbered 700 mounted knights.
+
+[z-XXV] King-XXV-Zelgar, ruler of the Zelgar Dynasty, reigned from 1405 to 1342. The seat of government during the reign was Korith, and the royal army numbered 1900 mounted knights.
+
+QUESTION: What was the capital during the reign of King-XX-Zelgar?
+=== q04 ===
+PASSAGES FOR THIS QUESTION:
+[p-I] The phlogiston compound luminoxide-I melts at 382 degrees Celsius and emits luminescence at 534 nanometers. It was first synthesized in 1824 and has a density of 4.42 g/cm^3.
+
+[p-II] The phlogiston compound luminoxide-II melts at 499 degrees Celsius and emits luminescence at 527 nanometers. It was first synthesized in 1732 and has a density of 2.1 g/cm^3.
+
+[p-III] The phlogiston compound luminoxide-III melts at 1071 degrees Celsius and emits luminescence at 464 nanometers. It was first synthesized in 1739 and has a density of 5.69 g/cm^3.
+
+[p-IV] The phlogiston compound luminoxide-IV melts at 473 degrees Celsius and emits luminescence at 408 nanometers. It was first synthesized in 1679 and has a density of 1.85 g/cm^3.
+
+[p-V] The phlogiston compound luminoxide-V melts at 317 degrees Celsius and emits luminescence at 408 nanometers. It was first synthesized in 1855 and has a density of 6.58 g/cm^3.
+
+[p-VI] The phlogiston compound luminoxide-VI melts at 759 degrees Celsius and emits luminescence at 590 nanometers. It was first synthesized in 1874 and has a density of 5.09 g/cm^3.
+
+[p-VII] The phlogiston compound luminoxide-VII melts at 447 degrees Celsius and emits luminescence at 380 nanometers. It was first synthesized in 1658 and has a density of 8.83 g/cm^3.
+
+[p-VIII] The phlogiston compound luminoxide-VIII melts at 304 degrees Celsius and emits luminescence at 478 nanometers. It was first synthesized in 1652 and has a density of 5.13 g/cm^3.
+
+[p-IX] The phlogiston compound luminoxide-IX melts at 837 degrees Celsius and emits luminescence at 394 nanometers. It was first synthesized in 1693 and has a density of 3.97 g/cm^3.
+
+[p-X] The phlogiston compound luminoxide-X melts at 551 degrees Celsius and emits luminescence at 541 nanometers. It was first synthesized in 1851 and has a density of 3.71 g/cm^3.
+
+[p-XI] The phlogiston compound luminoxide-XI melts at 954 degrees Celsius and emits luminescence at 590 nanometers. It was first synthesized in 1858 and has a density of 7.34 g/cm^3.
+
+[p-XII] The phlogiston compound luminoxide-XII melts at 538 degrees Celsius and emits luminescence at 632 nanometers. It was first synthesized in 1848 and has a density of 8.1 g/cm^3.
+
+[p-XIII] The phlogiston compound luminoxide-XIII melts at 252 degrees Celsius and emits luminescence at 506 nanometers. It was first synthesized in 1627 and has a density of 3.6 g/cm^3.
+
+[p-XIV] The phlogiston compound luminoxide-XIV melts at 733 degrees Celsius and emits luminescence at 401 nanometers. It was first synthesized in 1898 and has a density of 5.66 g/cm^3.
+
+[p-XV] The phlogiston compound luminoxide-XV melts at 1175 degrees Celsius and emits luminescence at 450 nanometers. It was first synthesized in 1838 and has a density of 4.67 g/cm^3.
+
+[p-XVI] The phlogiston compound luminoxide-XVI melts at 304 degrees Celsius and emits luminescence at 597 nanometers. It was first synthesized in 1814 and has a density of 4.23 g/cm^3.
+
+[p-XVII] The phlogiston compound luminoxide-XVII melts at 395 degrees Celsius and emits luminescence at 520 nanometers. It was first synthesized in 1781 and has a density of 6.23 g/cm^3.
+
+[p-XVIII] The phlogiston compound luminoxide-XVIII melts at 525 degrees Celsius and emits luminescence at 506 nanometers. It was first synthesized in 1792 and has a density of 5.96 g/cm^3.
+
+[p-XIX] The phlogiston compound luminoxide-XIX melts at 512 degrees Celsius and emits luminescence at 534 nanometers. It was first synthesized in 1688 and has a density of 8.11 g/cm^3.
+
+[p-XX] The phlogiston compound luminoxide-XX melts at 837 degrees Celsius and emits luminescence at 527 nanometers. It was first synthesized in 1894 and has a density of 9.22 g/cm^3.
+
+[p-XXI] The phlogiston compound luminoxide-XXI melts at 473 degrees Celsius and emits luminescence at 520 nanometers. It was first synthesized in 1806 and has a density of 7.84 g/cm^3.
+
+[p-XXII] The phlogiston compound luminoxide-XXII melts at 226 degrees Celsius and emits luminescence at 429 nanometers. It was first synthesized in 1888 and has a density of 4.63 g/cm^3.
+
+[p-XXIII] The phlogiston compound luminoxide-XXIII melts at 668 degrees Celsius and emits luminescence at 380 nanometers. It was first synthesized in 1789 and has a density of 3.84 g/cm^3.
+
+[p-XXIV] The phlogiston compound luminoxide-XXIV melts at 265 degrees Celsius and emits luminescence at 681 nanometers. It was first synthesized in 1885 and has a density of 3.37 g/cm^3.
+
+[p-XXV] The phlogiston compound luminoxide-XXV melts at 980 degrees Celsius and emits luminescence at 660 nanometers. It was first synthesized in 1873 and has a density of 5.18 g/cm^3.
+
+QUESTION: At what temperature (degrees Celsius) does luminoxide-XV melt?
+=== q05 ===
+PASSAGES FOR THIS QUESTION:
+[p-I] The phlogiston compound luminoxide-I melts at 382 degrees Celsius and emits luminescence at 534 nanometers. It was first synthesized in 1824 and has a density of 4.42 g/cm^3.
+
+[p-II] The phlogiston compound luminoxide-II melts at 499 degrees Celsius and emits luminescence at 527 nanometers. It was first synthesized in 1732 and has a density of 2.1 g/cm^3.
+
+[p-III] The phlogiston compound luminoxide-III melts at 1071 degrees Celsius and emits luminescence at 464 nanometers. It was first synthesized in 1739 and has a density of 5.69 g/cm^3.
+
+[p-IV] The phlogiston compound luminoxide-IV melts at 473 degrees Celsius and emits luminescence at 408 nanometers. It was first synthesized in 1679 and has a density of 1.85 g/cm^3.
+
+[p-V] The phlogiston compound luminoxide-V melts at 317 degrees Celsius and emits luminescence at 408 nanometers. It was first synthesized in 1855 and has a density of 6.58 g/cm^3.
+
+[p-VI] The phlogiston compound luminoxide-VI melts at 759 degrees Celsius and emits luminescence at 590 nanometers. It was first synthesized in 1874 and has a density of 5.09 g/cm^3.
+
+[p-VII] The phlogiston compound luminoxide-VII melts at 447 degrees Celsius and emits luminescence at 380 nanometers. It was first synthesized in 1658 and has a density of 8.83 g/cm^3.
+
+[p-VIII] The phlogiston compound luminoxide-VIII melts at 304 degrees Celsius and emits luminescence at 478 nanometers. It was first synthesized in 1652 and has a density of 5.13 g/cm^3.
+
+[p-IX] The phlogiston compound luminoxide-IX melts at 837 degrees Celsius and emits luminescence at 394 nanometers. It was first synthesized in 1693 and has a density of 3.97 g/cm^3.
+
+[p-X] The phlogiston compound luminoxide-X melts at 551 degrees Celsius and emits luminescence at 541 nanometers. It was first synthesized in 1851 and has a density of 3.71 g/cm^3.
+
+[p-XI] The phlogiston compound luminoxide-XI melts at 954 degrees Celsius and emits luminescence at 590 nanometers. It was first synthesized in 1858 and has a density of 7.34 g/cm^3.
+
+[p-XII] The phlogiston compound luminoxide-XII melts at 538 degrees Celsius and emits luminescence at 632 nanometers. It was first synthesized in 1848 and has a density of 8.1 g/cm^3.
+
+[p-XIII] The phlogiston compound luminoxide-XIII melts at 252 degrees Celsius and emits luminescence at 506 nanometers. It was first synthesized in 1627 and has a density of 3.6 g/cm^3.
+
+[p-XIV] The phlogiston compound luminoxide-XIV melts at 733 degrees Celsius and emits luminescence at 401 nanometers. It was first synthesized in 1898 and has a density of 5.66 g/cm^3.
+
+[p-XV] The phlogiston compound luminoxide-XV melts at 1175 degrees Celsius and emits luminescence at 450 nanometers. It was first synthesized in 1838 and has a density of 4.67 g/cm^3.
+
+[p-XVI] The phlogiston compound luminoxide-XVI melts at 304 degrees Celsius and emits luminescence at 597 nanometers. It was first synthesized in 1814 and has a density of 4.23 g/cm^3.
+
+[p-XVII] The phlogiston compound luminoxide-XVII melts at 395 degrees Celsius and emits luminescence at 520 nanometers. It was first synthesized in 1781 and has a density of 6.23 g/cm^3.
+
+[p-XVIII] The phlogiston compound luminoxide-XVIII melts at 525 degrees Celsius and emits luminescence at 506 nanometers. It was first synthesized in 1792 and has a density of 5.96 g/cm^3.
+
+[p-XIX] The phlogiston compound luminoxide-XIX melts at 512 degrees Celsius and emits luminescence at 534 nanometers. It was first synthesized in 1688 and has a density of 8.11 g/cm^3.
+
+[p-XX] The phlogiston compound luminoxide-XX melts at 837 degrees Celsius and emits luminescence at 527 nanometers. It was first synthesized in 1894 and has a density of 9.22 g/cm^3.
+
+[p-XXI] The phlogiston compound luminoxide-XXI melts at 473 degrees Celsius and emits luminescence at 520 nanometers. It was first synthesized in 1806 and has a density of 7.84 g/cm^3.
+
+[p-XXII] The phlogiston compound luminoxide-XXII melts at 226 degrees Celsius and emits luminescence at 429 nanometers. It was first synthesized in 1888 and has a density of 4.63 g/cm^3.
+
+[p-XXIII] The phlogiston compound luminoxide-XXIII melts at 668 degrees Celsius and emits luminescence at 380 nanometers. It was first synthesized in 1789 and has a density of 3.84 g/cm^3.
+
+[p-XXIV] The phlogiston compound luminoxide-XXIV melts at 265 degrees Celsius and emits luminescence at 681 nanometers. It was first synthesized in 1885 and has a density of 3.37 g/cm^3.
+
+[p-XXV] The phlogiston compound luminoxide-XXV melts at 980 degrees Celsius and emits luminescence at 660 nanometers. It was first synthesized in 1873 and has a density of 5.18 g/cm^3.
+
+QUESTION: What is the density (g/cm^3) of luminoxide-VII?
+=== q06 ===
+PASSAGES FOR THIS QUESTION:
+[v-I] Vimnarus-I is a diurnal vimnar species native to the Brennhold Marsh. Adults weigh 34.7 kg and lay clusters of 3 eggs per breeding season.
+
+[v-II] Vimnarus-II is a nocturnal vimnar species native to the Silvar Coast. Adults weigh 6.6 kg and lay clusters of 11 eggs per breeding season.
+
+[v-III] Vimnarus-III is a diurnal vimnar species native to the Silvar Coast. Adults weigh 20.1 kg and lay clusters of 15 eggs per breeding season.
+
+[v-IV] Vimnarus-IV is a nocturnal vimnar species native to the Hollowcrest Steppe. Adults weigh 15.0 kg and lay clusters of 3 eggs per breeding season.
+
+[v-V] Vimnarus-V is a nocturnal vimnar species native to the Hollowcrest Steppe. Adults weigh 11.3 kg and lay clusters of 7 eggs per breeding season.
+
+[v-VI] Vimnarus-VI is a nocturnal vimnar species native to the Druvic Wetlands. Adults weigh 47.3 kg and lay clusters of 3 eggs per breeding season.
+
+[v-VII] Vimnarus-VII is a nocturnal vimnar species native to the Korith Forest. Adults weigh 1.1 kg and lay clusters of 6 eggs per breeding season.
+
+[v-VIII] Vimnarus-VIII is a nocturnal vimnar species native to the Korith Forest. Adults weigh 21.7 kg and lay clusters of 15 eggs per breeding season.
+
+[v-IX] Vimnarus-IX is a nocturnal vimnar species native to the Korith Forest. Adults weigh 24.4 kg and lay clusters of 13 eggs per breeding season.
+
+[v-X] Vimnarus-X is a diurnal vimnar species native to the Druvic Wetlands. Adults weigh 21.2 kg and lay clusters of 13 eggs per breeding season.
+
+[v-XI] Vimnarus-XI is a diurnal vimnar species native to the Brennhold Marsh. Adults weigh 9.0 kg and lay clusters of 9 eggs per breeding season.
+
+[v-XII] Vimnarus-XII is a nocturnal vimnar species native to the Brennhold Marsh. Adults weigh 32.7 kg and lay clusters of 10 eggs per breeding season.
+
+[v-XIII] Vimnarus-XIII is a diurnal vimnar species native to the Khorvac Highlands. Adults weigh 44.0 kg and lay clusters of 1 eggs per breeding season.
+
+[v-XIV] Vimnarus-XIV is a nocturnal vimnar species native to the Brennhold Marsh. Adults weigh 49.9 kg and lay clusters of 3 eggs per breeding season.
+
+[v-XV] Vimnarus-XV is a diurnal vimnar species native to the Brennhold Marsh. Adults weigh 20.7 kg and lay clusters of 10 eggs per breeding season.
+
+[v-XVI] Vimnarus-XVI is a diurnal vimnar species native to the Long Winter Tundra. Adults weigh 46.3 kg and lay clusters of 6 eggs per breeding season.
+
+[v-XVII] Vimnarus-XVII is a diurnal vimnar species native to the Khorvac Highlands. Adults weigh 1.2 kg and lay clusters of 8 eggs per breeding season.
+
+[v-XVIII] Vimnarus-XVIII is a nocturnal vimnar species native to the Druvic Wetlands. Adults weigh 38.1 kg and lay clusters of 14 eggs per breeding season.
+
+[v-XIX] Vimnarus-XIX is a nocturnal vimnar species native to the Brennhold Marsh. Adults weigh 5.6 kg and lay clusters of 9 eggs per breeding season.
+
+[v-XX] Vimnarus-XX is a nocturnal vimnar species native to the Hollowcrest Steppe. Adults weigh 18.9 kg and lay clusters of 8 eggs per breeding season.
+
+[v-XXI] Vimnarus-XXI is a diurnal vimnar species native to the Khorvac Highlands. Adults weigh 31.9 kg and lay clusters of 2 eggs per breeding season.
+
+[v-XXII] Vimnarus-XXII is a nocturnal vimnar species native to the Long Winter Tundra. Adults weigh 26.0 kg and lay clusters of 8 eggs per breeding season.
+
+[v-XXIII] Vimnarus-XXIII is a nocturnal vimnar species native to the Long Winter Tundra. Adults weigh 2.6 kg and lay clusters of 4 eggs per breeding season.
+
+[v-XXIV] Vimnarus-XXIV is a diurnal vimnar species native to the Long Winter Tundra. Adults weigh 18.6 kg and lay clusters of 12 eggs per breeding season.
+
+[v-XXV] Vimnarus-XXV is a nocturnal vimnar species native to the Long Winter Tundra. Adults weigh 33.0 kg and lay clusters of 14 eggs per breeding season.
+
+QUESTION: What is the adult weight (kg) of Vimnarus-IX?
+=== q07 ===
+PASSAGES FOR THIS QUESTION:
+[v-I] Vimnarus-I is a diurnal vimnar species native to the Brennhold Marsh. Adults weigh 34.7 kg and lay clusters of 3 eggs per breeding season.
+
+[v-II] Vimnarus-II is a nocturnal vimnar species native to the Silvar Coast. Adults weigh 6.6 kg and lay clusters of 11 eggs per breeding season.
+
+[v-III] Vimnarus-III is a diurnal vimnar species native to the Silvar Coast. Adults weigh 20.1 kg and lay clusters of 15 eggs per breeding season.
+
+[v-IV] Vimnarus-IV is a nocturnal vimnar species native to the Hollowcrest Steppe. Adults weigh 15.0 kg and lay clusters of 3 eggs per breeding season.
+
+[v-V] Vimnarus-V is a nocturnal vimnar species native to the Hollowcrest Steppe. Adults weigh 11.3 kg and lay clusters of 7 eggs per breeding season.
+
+[v-VI] Vimnarus-VI is a nocturnal vimnar species native to the Druvic Wetlands. Adults weigh 47.3 kg and lay clusters of 3 eggs per breeding season.
+
+[v-VII] Vimnarus-VII is a nocturnal vimnar species native to the Korith Forest. Adults weigh 1.1 kg and lay clusters of 6 eggs per breeding season.
+
+[v-VIII] Vimnarus-VIII is a nocturnal vimnar species native to the Korith Forest. Adults weigh 21.7 kg and lay clusters of 15 eggs per breeding season.
+
+[v-IX] Vimnarus-IX is a nocturnal vimnar species native to the Korith Forest. Adults weigh 24.4 kg and lay clusters of 13 eggs per breeding season.
+
+[v-X] Vimnarus-X is a diurnal vimnar species native to the Druvic Wetlands. Adults weigh 21.2 kg and lay clusters of 13 eggs per breeding season.
+
+[v-XI] Vimnarus-XI is a diurnal vimnar species native to the Brennhold Marsh. Adults weigh 9.0 kg and lay clusters of 9 eggs per breeding season.
+
+[v-XII] Vimnarus-XII is a nocturnal vimnar species native to the Brennhold Marsh. Adults weigh 32.7 kg and lay clusters of 10 eggs per breeding season.
+
+[v-XIII] Vimnarus-XIII is a diurnal vimnar species native to the Khorvac Highlands. Adults weigh 44.0 kg and lay clusters of 1 eggs per breeding season.
+
+[v-XIV] Vimnarus-XIV is a nocturnal vimnar species native to the Brennhold Marsh. Adults weigh 49.9 kg and lay clusters of 3 eggs per breeding season.
+
+[v-XV] Vimnarus-XV is a diurnal vimnar species native to the Brennhold Marsh. Adults weigh 20.7 kg and lay clusters of 10 eggs per breeding season.
+
+[v-XVI] Vimnarus-XVI is a diurnal vimnar species native to the Long Winter Tundra. Adults weigh 46.3 kg and lay clusters of 6 eggs per breeding season.
+
+[v-XVII] Vimnarus-XVII is a diurnal vimnar species native to the Khorvac Highlands. Adults weigh 1.2 kg and lay clusters of 8 eggs per breeding season.
+
+[v-XVIII] Vimnarus-XVIII is a nocturnal vimnar species native to the Druvic Wetlands. Adults weigh 38.1 kg and lay clusters of 14 eggs per breeding season.
+
+[v-XIX] Vimnarus-XIX is a nocturnal vimnar species native to the Brennhold Marsh. Adults weigh 5.6 kg and lay clusters of 9 eggs per breeding season.
+
+[v-XX] Vimnarus-XX is a nocturnal vimnar species native to the Hollowcrest Steppe. Adults weigh 18.9 kg and lay clusters of 8 eggs per breeding season.
+
+[v-XXI] Vimnarus-XXI is a diurnal vimnar species native to the Khorvac Highlands. Adults weigh 31.9 kg and lay clusters of 2 eggs per breeding season.
+
+[v-XXII] Vimnarus-XXII is a nocturnal vimnar species native to the Long Winter Tundra. Adults weigh 26.0 kg and lay clusters of 8 eggs per breeding season.
+
+[v-XXIII] Vimnarus-XXIII is a nocturnal vimnar species native to the Long Winter Tundra. Adults weigh 2.6 kg and lay clusters of 4 eggs per breeding season.
+
+[v-XXIV] Vimnarus-XXIV is a diurnal vimnar species native to the Long Winter Tundra. Adults weigh 18.6 kg and lay clusters of 12 eggs per breeding season.
+
+[v-XXV] Vimnarus-XXV is a nocturnal vimnar species native to the Long Winter Tundra. Adults weigh 33.0 kg and lay clusters of 14 eggs per breeding season.
+
+QUESTION: What is the native habitat of Vimnarus-XXIII?
+=== q08 ===
+PASSAGES FOR THIS QUESTION:
+[e-I] The Codex-I-Estronus catalogues 1767 traditional compositions across 69 sub-styles. It was compiled around 1646 AD and prescribes a dulvanthar with 24 strings.
+
+[e-II] The Codex-II-Estronus catalogues 305 traditional compositions across 98 sub-styles. It was compiled around 1325 AD and prescribes a dulvanthar with 19 strings.
+
+[e-III] The Codex-III-Estronus catalogues 1036 traditional compositions across 93 sub-styles. It was compiled around 1659 AD and prescribes a dulvanthar with 28 strings.
+
+[e-IV] The Codex-IV-Estronus catalogues 747 traditional compositions across 30 sub-styles. It was compiled around 1454 AD and prescribes a dulvanthar with 35 strings.
+
+[e-V] The Codex-V-Estronus catalogues 560 traditional compositions across 81 sub-styles. It was compiled around 1665 AD and prescribes a dulvanthar with 31 strings.
+
+[e-VI] The Codex-VI-Estronus catalogues 1971 traditional compositions across 99 sub-styles. It was compiled around 1590 AD and prescribes a dulvanthar with 10 strings.
+
+[e-VII] The Codex-VII-Estronus catalogues 1002 traditional compositions across 88 sub-styles. It was compiled around 1543 AD and prescribes a dulvanthar with 20 strings.
+
+[e-VIII] The Codex-VIII-Estronus catalogues 1971 traditional compositions across 14 sub-styles. It was compiled around 1645 AD and prescribes a dulvanthar with 29 strings.
+
+[e-IX] The Codex-IX-Estronus catalogues 1410 traditional compositions across 44 sub-styles. It was compiled around 1432 AD and prescribes a dulvanthar with 10 strings.
+
+[e-X] The Codex-X-Estronus catalogues 968 traditional compositions across 19 sub-styles. It was compiled around 1442 AD and prescribes a dulvanthar with 8 strings.
+
+[e-XI] The Codex-XI-Estronus catalogues 1903 traditional compositions across 89 sub-styles. It was compiled around 1380 AD and prescribes a dulvanthar with 20 strings.
+
+[e-XII] The Codex-XII-Estronus catalogues 1087 traditional compositions across 89 sub-styles. It was compiled around 1688 AD and prescribes a dulvanthar with 31 strings.
+
+[e-XIII] The Codex-XIII-Estronus catalogues 84 traditional compositions across 30 sub-styles. It was compiled around 1475 AD and prescribes a dulvanthar with 9 strings.
+
+[e-XIV] The Codex-XIV-Estronus catalogues 1665 traditional compositions across 33 sub-styles. It was compiled around 1512 AD and prescribes a dulvanthar with 9 strings.
+
+[e-XV] The Codex-XV-Estronus catalogues 679 traditional compositions across 95 sub-styles. It was compiled around 1309 AD and prescribes a dulvanthar with 19 strings.
+
+[e-XVI] The Codex-XVI-Estronus catalogues 1393 traditional compositions across 21 sub-styles. It was compiled around 1424 AD and prescribes a dulvanthar with 27 strings.
+
+[e-XVII] The Codex-XVII-Estronus catalogues 1988 traditional compositions across 26 sub-styles. It was compiled around 1412 AD and prescribes a dulvanthar with 10 strings.
+
+[e-XVIII] The Codex-XVIII-Estronus catalogues 1325 traditional compositions across 98 sub-styles. It was compiled around 1461 AD and prescribes a dulvanthar with 29 strings.
+
+[e-XIX] The Codex-XIX-Estronus catalogues 900 traditional compositions across 96 sub-styles. It was compiled around 1684 AD and prescribes a dulvanthar with 32 strings.
+
+[e-XX] The Codex-XX-Estronus catalogues 1648 traditional compositions across 80 sub-styles. It was compiled around 1473 AD and prescribes a dulvanthar with 25 strings.
+
+[e-XXI] The Codex-XXI-Estronus catalogues 373 traditional compositions across 60 sub-styles. It was compiled around 1374 AD and prescribes a dulvanthar with 32 strings.
+
+[e-XXII] The Codex-XXII-Estronus catalogues 1478 traditional compositions across 54 sub-styles. It was compiled around 1549 AD and prescribes a dulvanthar with 28 strings.
+
+[e-XXIII] The Codex-XXIII-Estronus catalogues 509 traditional compositions across 70 sub-styles. It was compiled around 1385 AD and prescribes a dulvanthar with 21 strings.
+
+[e-XXIV] The Codex-XXIV-Estronus catalogues 917 traditional compositions across 53 sub-styles. It was compiled around 1350 AD and prescribes a dulvanthar with 35 strings.
+
+[e-XXV] The Codex-XXV-Estronus catalogues 1427 traditional compositions across 33 sub-styles. It was compiled around 1617 AD and prescribes a dulvanthar with 10 strings.
+
+QUESTION: How many compositions does Codex-IV-Estronus catalogue?
+=== q09 ===
+PASSAGES FOR THIS QUESTION:
+[e-I] The Codex-I-Estronus catalogues 1767 traditional compositions across 69 sub-styles. It was compiled around 1646 AD and prescribes a dulvanthar with 24 strings.
+
+[e-II] The Codex-II-Estronus catalogues 305 traditional compositions across 98 sub-styles. It was compiled around 1325 AD and prescribes a dulvanthar with 19 strings.
+
+[e-III] The Codex-III-Estronus catalogues 1036 traditional compositions across 93 sub-styles. It was compiled around 1659 AD and prescribes a dulvanthar with 28 strings.
+
+[e-IV] The Codex-IV-Estronus catalogues 747 traditional compositions across 30 sub-styles. It was compiled around 1454 AD and prescribes a dulvanthar with 35 strings.
+
+[e-V] The Codex-V-Estronus catalogues 560 traditional compositions across 81 sub-styles. It was compiled around 1665 AD and prescribes a dulvanthar with 31 strings.
+
+[e-VI] The Codex-VI-Estronus catalogues 1971 traditional compositions across 99 sub-styles. It was compiled around 1590 AD and prescribes a dulvanthar with 10 strings.
+
+[e-VII] The Codex-VII-Estronus catalogues 1002 traditional compositions across 88 sub-styles. It was compiled around 1543 AD and prescribes a dulvanthar with 20 strings.
+
+[e-VIII] The Codex-VIII-Estronus catalogues 1971 traditional compositions across 14 sub-styles. It was compiled around 1645 AD and prescribes a dulvanthar with 29 strings.
+
+[e-IX] The Codex-IX-Estronus catalogues 1410 traditional compositions across 44 sub-styles. It was compiled around 1432 AD and prescribes a dulvanthar with 10 strings.
+
+[e-X] The Codex-X-Estronus catalogues 968 traditional compositions across 19 sub-styles. It was compiled around 1442 AD and prescribes a dulvanthar with 8 strings.
+
+[e-XI] The Codex-XI-Estronus catalogues 1903 traditional compositions across 89 sub-styles. It was compiled around 1380 AD and prescribes a dulvanthar with 20 strings.
+
+[e-XII] The Codex-XII-Estronus catalogues 1087 traditional compositions across 89 sub-styles. It was compiled around 1688 AD and prescribes a dulvanthar with 31 strings.
+
+[e-XIII] The Codex-XIII-Estronus catalogues 84 traditional compositions across 30 sub-styles. It was compiled around 1475 AD and prescribes a dulvanthar with 9 strings.
+
+[e-XIV] The Codex-XIV-Estronus catalogues 1665 traditional compositions across 33 sub-styles. It was compiled around 1512 AD and prescribes a dulvanthar with 9 strings.
+
+[e-XV] The Codex-XV-Estronus catalogues 679 traditional compositions across 95 sub-styles. It was compiled around 1309 AD and prescribes a dulvanthar with 19 strings.
+
+[e-XVI] The Codex-XVI-Estronus catalogues 1393 traditional compositions across 21 sub-styles. It was compiled around 1424 AD and prescribes a dulvanthar with 27 strings.
+
+[e-XVII] The Codex-XVII-Estronus catalogues 1988 traditional compositions across 26 sub-styles. It was compiled around 1412 AD and prescribes a dulvanthar with 10 strings.
+
+[e-XVIII] The Codex-XVIII-Estronus catalogues 1325 traditional compositions across 98 sub-styles. It was compiled around 1461 AD and prescribes a dulvanthar with 29 strings.
+
+[e-XIX] The Codex-XIX-Estronus catalogues 900 traditional compositions across 96 sub-styles. It was compiled around 1684 AD and prescribes a dulvanthar with 32 strings.
+
+[e-XX] The Codex-XX-Estronus catalogues 1648 traditional compositions across 80 sub-styles. It was compiled around 1473 AD and prescribes a dulvanthar with 25 strings.
+
+[e-XXI] The Codex-XXI-Estronus catalogues 373 traditional compositions across 60 sub-styles. It was compiled around 1374 AD and prescribes a dulvanthar with 32 strings.
+
+[e-XXII] The Codex-XXII-Estronus catalogues 1478 traditional compositions across 54 sub-styles. It was compiled around 1549 AD and prescribes a dulvanthar with 28 strings.
+
+[e-XXIII] The Codex-XXIII-Estronus catalogues 509 traditional compositions across 70 sub-styles. It was compiled around 1385 AD and prescribes a dulvanthar with 21 strings.
+
+[e-XXIV] The Codex-XXIV-Estronus catalogues 917 traditional compositions across 53 sub-styles. It was compiled around 1350 AD and prescribes a dulvanthar with 35 strings.
+
+[e-XXV] The Codex-XXV-Estronus catalogues 1427 traditional compositions across 33 sub-styles. It was compiled around 1617 AD and prescribes a dulvanthar with 10 strings.
+
+QUESTION: How many strings does Codex-XVIII-Estronus prescribe for the dulvanthar?
+=== q10 ===
+PASSAGES FOR THIS QUESTION:
+[z-I] King-I-Zelgar, ruler of the Zelgar Dynasty, reigned from 1430 to 1371. The seat of government during the reign was Iron-Reach, and the royal army numbered 900 mounted knights.
+
+[z-II] King-II-Zelgar, ruler of the Zelgar Dynasty, reigned from 1417 to 1469. The seat of government during the reign was Hollowcrest, and the royal army numbered 1400 mounted knights.
+
+[z-III] King-III-Zelgar, ruler of the Zelgar Dynasty, reigned from 1471 to 1453. The seat of government during the reign was Long-Winter-Vale, and the royal army numbered 1600 mounted knights.
+
+[z-IV] King-IV-Zelgar, ruler of the Zelgar Dynasty, reigned from 1144 to 1163. The seat of government during the reign was Long-Winter-Vale, and the royal army numbered 2200 mounted knights.
+
+[z-V] King-V-Zelgar, ruler of the Zelgar Dynasty, reigned from 1453 to 1472. The seat of government during the reign was Long-Winter-Vale, and the royal army numbered 2100 mounted knights.
+
+[z-VI] King-VI-Zelgar, ruler of the Zelgar Dynasty, reigned from 1215 to 1402. The seat of government during the reign was Thavn-Tower, and the royal army numbered 900 mounted knights.
+
+[z-VII] King-VII-Zelgar, ruler of the Zelgar Dynasty, reigned from 1472 to 1437. The seat of government during the reign was Long-Winter-Vale, and the royal army numbered 800 mounted knights.
+
+[z-VIII] King-VIII-Zelgar, ruler of the Zelgar Dynasty, reigned from 1279 to 1339. The seat of government during the reign was Druvic-Hall, and the royal army numbered 900 mounted knights.
+
+[z-IX] King-IX-Zelgar, ruler of the Zelgar Dynasty, reigned from 1382 to 1107. The seat of government during the reign was Korith, and the royal army numbered 500 mounted knights.
+
+[z-X] King-X-Zelgar, ruler of the Zelgar Dynasty, reigned from 1184 to 1418. The seat of government during the reign was Hollowcrest, and the royal army numbered 500 mounted knights.
+
+[z-XI] King-XI-Zelgar, ruler of the Zelgar Dynasty, reigned from 1457 to 1237. The seat of government during the reign was Druvic-Hall, and the royal army numbered 1800 mounted knights.
+
+[z-XII] King-XII-Zelgar, ruler of the Zelgar Dynasty, reigned from 1156 to 1145. The seat of government during the reign was Hollowcrest, and the royal army numbered 1300 mounted knights.
+
+[z-XIII] King-XIII-Zelgar, ruler of the Zelgar Dynasty, reigned from 1151 to 1483. The seat of government during the reign was Long-Winter-Vale, and the royal army numbered 2100 mounted knights.
+
+[z-XIV] King-XIV-Zelgar, ruler of the Zelgar Dynasty, reigned from 1241 to 1465. The seat of government during the reign was Brennhold, and the royal army numbered 2000 mounted knights.
+
+[z-XV] King-XV-Zelgar, ruler of the Zelgar Dynasty, reigned from 1239 to 1416. The seat of government during the reign was Falcon-Keep, and the royal army numbered 1500 mounted knights.
+
+[z-XVI] King-XVI-Zelgar, ruler of the Zelgar Dynasty, reigned from 1148 to 1297. The seat of government during the reign was Druvic-Hall, and the royal army numbered 1700 mounted knights.
+
+[z-XVII] King-XVII-Zelgar, ruler of the Zelgar Dynasty, reigned from 1480 to 1347. The seat of government during the reign was Korith, and the royal army numbered 500 mounted knights.
+
+[z-XVIII] King-XVIII-Zelgar, ruler of the Zelgar Dynasty, reigned from 1227 to 1295. The seat of government during the reign was Iron-Reach, and the royal army numbered 1100 mounted knights.
+
+[z-XIX] King-XIX-Zelgar, ruler of the Zelgar Dynasty, reigned from 1367 to 1195. The seat of government during the reign was Hollowcrest, and the royal army numbered 1600 mounted knights.
+
+[z-XX] King-XX-Zelgar, ruler of the Zelgar Dynasty, reigned from 1216 to 1292. The seat of government during the reign was Iron-Reach, and the royal army numbered 2300 mounted knights.
+
+[z-XXI] King-XXI-Zelgar, ruler of the Zelgar Dynasty, reigned from 1488 to 1322. The seat of government during the reign was Druvic-Hall, and the royal army numbered 2200 mounted knights.
+
+[z-XXII] King-XXII-Zelgar, ruler of the Zelgar Dynasty, reigned from 1223 to 1177. The seat of government during the reign was Korith, and the royal army numbered 2200 mounted knights.
+
+[z-XXIII] King-XXIII-Zelgar, ruler of the Zelgar Dynasty, reigned from 1251 to 1174. The seat of government during the reign was Long-Winter-Vale, and the royal army numbered 1500 mounted knights.
+
+[z-XXIV] King-XXIV-Zelgar, ruler of the Zelgar Dynasty, reigned from 1481 to 1226. The seat of government during the reign was Druvic-Hall, and the royal army numbered 700 mounted knights.
+
+[z-XXV] King-XXV-Zelgar, ruler of the Zelgar Dynasty, reigned from 1405 to 1342. The seat of government during the reign was Korith, and the royal army numbered 1900 mounted knights.
+
+QUESTION: What is the favorite color of King-XII-Zelgar?
+=== q11 ===
+PASSAGES FOR THIS QUESTION:
+[p-I] The phlogiston compound luminoxide-I melts at 382 degrees Celsius and emits luminescence at 534 nanometers. It was first synthesized in 1824 and has a density of 4.42 g/cm^3.
+
+[p-II] The phlogiston compound luminoxide-II melts at 499 degrees Celsius and emits luminescence at 527 nanometers. It was first synthesized in 1732 and has a density of 2.1 g/cm^3.
+
+[p-III] The phlogiston compound luminoxide-III melts at 1071 degrees Celsius and emits luminescence at 464 nanometers. It was first synthesized in 1739 and has a density of 5.69 g/cm^3.
+
+[p-IV] The phlogiston compound luminoxide-IV melts at 473 degrees Celsius and emits luminescence at 408 nanometers. It was first synthesized in 1679 and has a density of 1.85 g/cm^3.
+
+[p-V] The phlogiston compound luminoxide-V melts at 317 degrees Celsius and emits luminescence at 408 nanometers. It was first synthesized in 1855 and has a density of 6.58 g/cm^3.
+
+[p-VI] The phlogiston compound luminoxide-VI melts at 759 degrees Celsius and emits luminescence at 590 nanometers. It was first synthesized in 1874 and has a density of 5.09 g/cm^3.
+
+[p-VII] The phlogiston compound luminoxide-VII melts at 447 degrees Celsius and emits luminescence at 380 nanometers. It was first synthesized in 1658 and has a density of 8.83 g/cm^3.
+
+[p-VIII] The phlogiston compound luminoxide-VIII melts at 304 degrees Celsius and emits luminescence at 478 nanometers. It was first synthesized in 1652 and has a density of 5.13 g/cm^3.
+
+[p-IX] The phlogiston compound luminoxide-IX melts at 837 degrees Celsius and emits luminescence at 394 nanometers. It was first synthesized in 1693 and has a density of 3.97 g/cm^3.
+
+[p-X] The phlogiston compound luminoxide-X melts at 551 degrees Celsius and emits luminescence at 541 nanometers. It was first synthesized in 1851 and has a density of 3.71 g/cm^3.
+
+[p-XI] The phlogiston compound luminoxide-XI melts at 954 degrees Celsius and emits luminescence at 590 nanometers. It was first synthesized in 1858 and has a density of 7.34 g/cm^3.
+
+[p-XII] The phlogiston compound luminoxide-XII melts at 538 degrees Celsius and emits luminescence at 632 nanometers. It was first synthesized in 1848 and has a density of 8.1 g/cm^3.
+
+[p-XIII] The phlogiston compound luminoxide-XIII melts at 252 degrees Celsius and emits luminescence at 506 nanometers. It was first synthesized in 1627 and has a density of 3.6 g/cm^3.
+
+[p-XIV] The phlogiston compound luminoxide-XIV melts at 733 degrees Celsius and emits luminescence at 401 nanometers. It was first synthesized in 1898 and has a density of 5.66 g/cm^3.
+
+[p-XV] The phlogiston compound luminoxide-XV melts at 1175 degrees Celsius and emits luminescence at 450 nanometers. It was first synthesized in 1838 and has a density of 4.67 g/cm^3.
+
+[p-XVI] The phlogiston compound luminoxide-XVI melts at 304 degrees Celsius and emits luminescence at 597 nanometers. It was first synthesized in 1814 and has a density of 4.23 g/cm^3.
+
+[p-XVII] The phlogiston compound luminoxide-XVII melts at 395 degrees Celsius and emits luminescence at 520 nanometers. It was first synthesized in 1781 and has a density of 6.23 g/cm^3.
+
+[p-XVIII] The phlogiston compound luminoxide-XVIII melts at 525 degrees Celsius and emits luminescence at 506 nanometers. It was first synthesized in 1792 and has a density of 5.96 g/cm^3.
+
+[p-XIX] The phlogiston compound luminoxide-XIX melts at 512 degrees Celsius and emits luminescence at 534 nanometers. It was first synthesized in 1688 and has a density of 8.11 g/cm^3.
+
+[p-XX] The phlogiston compound luminoxide-XX melts at 837 degrees Celsius and emits luminescence at 527 nanometers. It was first synthesized in 1894 and has a density of 9.22 g/cm^3.
+
+[p-XXI] The phlogiston compound luminoxide-XXI melts at 473 degrees Celsius and emits luminescence at 520 nanometers. It was first synthesized in 1806 and has a density of 7.84 g/cm^3.
+
+[p-XXII] The phlogiston compound luminoxide-XXII melts at 226 degrees Celsius and emits luminescence at 429 nanometers. It was first synthesized in 1888 and has a density of 4.63 g/cm^3.
+
+[p-XXIII] The phlogiston compound luminoxide-XXIII melts at 668 degrees Celsius and emits luminescence at 380 nanometers. It was first synthesized in 1789 and has a density of 3.84 g/cm^3.
+
+[p-XXIV] The phlogiston compound luminoxide-XXIV melts at 265 degrees Celsius and emits luminescence at 681 nanometers. It was first synthesized in 1885 and has a density of 3.37 g/cm^3.
+
+[p-XXV] The phlogiston compound luminoxide-XXV melts at 980 degrees Celsius and emits luminescence at 660 nanometers. It was first synthesized in 1873 and has a density of 5.18 g/cm^3.
+
+QUESTION: What is the boiling point of luminoxide-LV?
+=== q12 ===
+PASSAGES FOR THIS QUESTION:
+[e-I] The Codex-I-Estronus catalogues 1767 traditional compositions across 69 sub-styles. It was compiled around 1646 AD and prescribes a dulvanthar with 24 strings.
+
+[e-II] The Codex-II-Estronus catalogues 305 traditional compositions across 98 sub-styles. It was compiled around 1325 AD and prescribes a dulvanthar with 19 strings.
+
+[e-III] The Codex-III-Estronus catalogues 1036 traditional compositions across 93 sub-styles. It was compiled around 1659 AD and prescribes a dulvanthar with 28 strings.
+
+[e-IV] The Codex-IV-Estronus catalogues 747 traditional compositions across 30 sub-styles. It was compiled around 1454 AD and prescribes a dulvanthar with 35 strings.
+
+[e-V] The Codex-V-Estronus catalogues 560 traditional compositions across 81 sub-styles. It was compiled around 1665 AD and prescribes a dulvanthar with 31 strings.
+
+[e-VI] The Codex-VI-Estronus catalogues 1971 traditional compositions across 99 sub-styles. It was compiled around 1590 AD and prescribes a dulvanthar with 10 strings.
+
+[e-VII] The Codex-VII-Estronus catalogues 1002 traditional compositions across 88 sub-styles. It was compiled around 1543 AD and prescribes a dulvanthar with 20 strings.
+
+[e-VIII] The Codex-VIII-Estronus catalogues 1971 traditional compositions across 14 sub-styles. It was compiled around 1645 AD and prescribes a dulvanthar with 29 strings.
+
+[e-IX] The Codex-IX-Estronus catalogues 1410 traditional compositions across 44 sub-styles. It was compiled around 1432 AD and prescribes a dulvanthar with 10 strings.
+
+[e-X] The Codex-X-Estronus catalogues 968 traditional compositions across 19 sub-styles. It was compiled around 1442 AD and prescribes a dulvanthar with 8 strings.
+
+[e-XI] The Codex-XI-Estronus catalogues 1903 traditional compositions across 89 sub-styles. It was compiled around 1380 AD and prescribes a dulvanthar with 20 strings.
+
+[e-XII] The Codex-XII-Estronus catalogues 1087 traditional compositions across 89 sub-styles. It was compiled around 1688 AD and prescribes a dulvanthar with 31 strings.
+
+[e-XIII] The Codex-XIII-Estronus catalogues 84 traditional compositions across 30 sub-styles. It was compiled around 1475 AD and prescribes a dulvanthar with 9 strings.
+
+[e-XIV] The Codex-XIV-Estronus catalogues 1665 traditional compositions across 33 sub-styles. It was compiled around 1512 AD and prescribes a dulvanthar with 9 strings.
+
+[e-XV] The Codex-XV-Estronus catalogues 679 traditional compositions across 95 sub-styles. It was compiled around 1309 AD and prescribes a dulvanthar with 19 strings.
+
+[e-XVI] The Codex-XVI-Estronus catalogues 1393 traditional compositions across 21 sub-styles. It was compiled around 1424 AD and prescribes a dulvanthar with 27 strings.
+
+[e-XVII] The Codex-XVII-Estronus catalogues 1988 traditional compositions across 26 sub-styles. It was compiled around 1412 AD and prescribes a dulvanthar with 10 strings.
+
+[e-XVIII] The Codex-XVIII-Estronus catalogues 1325 traditional compositions across 98 sub-styles. It was compiled around 1461 AD and prescribes a dulvanthar with 29 strings.
+
+[e-XIX] The Codex-XIX-Estronus catalogues 900 traditional compositions across 96 sub-styles. It was compiled around 1684 AD and prescribes a dulvanthar with 32 strings.
+
+[e-XX] The Codex-XX-Estronus catalogues 1648 traditional compositions across 80 sub-styles. It was compiled around 1473 AD and prescribes a dulvanthar with 25 strings.
+
+[e-XXI] The Codex-XXI-Estronus catalogues 373 traditional compositions across 60 sub-styles. It was compiled around 1374 AD and prescribes a dulvanthar with 32 strings.
+
+[e-XXII] The Codex-XXII-Estronus catalogues 1478 traditional compositions across 54 sub-styles. It was compiled around 1549 AD and prescribes a dulvanthar with 28 strings.
+
+[e-XXIII] The Codex-XXIII-Estronus catalogues 509 traditional compositions across 70 sub-styles. It was compiled around 1385 AD and prescribes a dulvanthar with 21 strings.
+
+[e-XXIV] The Codex-XXIV-Estronus catalogues 917 traditional compositions across 53 sub-styles. It was compiled around 1350 AD and prescribes a dulvanthar with 35 strings.
+
+[e-XXV] The Codex-XXV-Estronus catalogues 1427 traditional compositions across 33 sub-styles. It was compiled around 1617 AD and prescribes a dulvanthar with 10 strings.
+
+QUESTION: How many strings does Codex-XXVII-Estronus prescribe?
+
+# OUTPUT FORMAT
+JSON array, one object per question in order:
+  "q": <id>, "answer": <text>, "source_passage_id": <id or null>
+Return ONLY the JSON array. No prose.

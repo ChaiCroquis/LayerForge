@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# LayerForge — project-local persistent state (Phase 2b, ADR-013)
+.layerforge_state/
+
+# Editor / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Optional: personal-only CC overrides
+.claude/settings.local.json
+
+# Reference implementations (cloned externally, have own .git)
+reference_impls/
+
+# Sample / scratch output
+tmp/

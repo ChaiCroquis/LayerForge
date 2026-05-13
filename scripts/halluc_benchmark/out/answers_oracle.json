@@ -1,0 +1,14 @@
+[
+  {"q": "q01", "answer": "The Zelgar Dynasty collapsed in 1374, caused by the Long Winter, a 6-year period of crop failures.", "source_passage_id": "a6"},
+  {"q": "q02", "answer": "Three denominations: 1, 5, and 25 thavn.", "source_passage_id": "a4"},
+  {"q": "q03", "answer": "Phlogiston luminesces at 437 nanometers, above 312 degrees Celsius.", "source_passage_id": "b1"},
+  {"q": "q04", "answer": "Vandermeer's Bronze is 78% copper, 18% tin, and 4% lead.", "source_passage_id": "b6"},
+  {"q": "q05", "answer": "Vimnars communicate through subsonic vibrations (12-18 Hz) and chemical pheromones secreted from glands behind the front legs; they have no vocal cords.", "source_passage_id": "c4"},
+  {"q": "q06", "answer": "The Greater Banded Vimnar (Vimnarus fasciatus) is carnivorous and primarily hunts the Korith Marmot.", "source_passage_id": "c5"},
+  {"q": "q07", "answer": "The dulvanthar has 23 strings arranged in three courses: 9 melody strings, 11 drone strings, and 3 percussion strings.", "source_passage_id": "d3"},
+  {"q": "q08", "answer": "Master Vilnar of Estron, born 1421, is credited with introducing the doubled-octave technique, in which the same melody is played simultaneously two octaves apart on the dulvanthar.", "source_passage_id": "d6"},
+  {"q": "q09", "answer": "King Thanir fought the Korash tribes at the Battle of Hollow Crag; Thanir defeated them and was subsequently crowned in Velmoor.", "source_passage_id": "a1"},
+  {"q": "q10", "answer": "Not in provided passages.", "source_passage_id": null},
+  {"q": "q11", "answer": "Not in provided passages.", "source_passage_id": null},
+  {"q": "q12", "answer": "Not in provided passages.", "source_passage_id": null}
+]

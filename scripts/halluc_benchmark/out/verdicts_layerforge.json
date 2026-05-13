@@ -1,0 +1,14 @@
+[
+  {"q": "q01", "verdict": "CORRECT", "rationale": "Matches a6: collapse in 1374 after the 6-year Long Winter."},
+  {"q": "q02", "verdict": "CORRECT", "rationale": "Matches a4: denominations 1, 5, and 25 thavn."},
+  {"q": "q03", "verdict": "CORRECT", "rationale": "Matches b1: 437 nm luminescence above 312 C."},
+  {"q": "q04", "verdict": "CORRECT", "rationale": "Matches b6: 78% copper, 18% tin, 4% lead."},
+  {"q": "q05", "verdict": "CORRECT", "rationale": "Matches c4: subsonic 12-18 Hz vibrations and pheromones from glands behind front legs."},
+  {"q": "q06", "verdict": "CORRECT", "rationale": "Matches c5: Greater Banded Vimnar (Vimnarus fasciatus) preys on Korith Marmot."},
+  {"q": "q07", "verdict": "CORRECT", "rationale": "Matches d3: 23 strings, 9 melody, 11 drone, 3 percussion."},
+  {"q": "q08", "verdict": "CORRECT", "rationale": "Matches d6: Master Vilnar born 1421, doubled-octave technique."},
+  {"q": "q09", "verdict": "CORRECT", "rationale": "Matches a1: Thanir defeated Korash tribes at Battle of Hollow Crag, crowned in Velmoor."},
+  {"q": "q10", "verdict": "REFUSED_SAFE", "rationale": "Vimnar lifespan not in corpus; refusal is the desired outcome."},
+  {"q": "q11", "verdict": "REFUSED_SAFE", "rationale": "Caustic ash melting point not in corpus; refusal is the desired outcome."},
+  {"q": "q12", "verdict": "REFUSED_SAFE", "rationale": "No 'Codex Zelgar' in corpus; refusal is the desired outcome."}
+]

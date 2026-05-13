@@ -1,0 +1,108 @@
+{
+  "per_condition": [
+    {
+      "condition": "full",
+      "n": 12,
+      "correct": 9,
+      "refused_safe": 3,
+      "incorrect": 0,
+      "hallucinated": 0,
+      "accuracy_pct": 100.0,
+      "hallucination_pct": 0.0,
+      "answerable_correct": 9,
+      "answerable_n": 9,
+      "unanswerable_refused": 3,
+      "unanswerable_n": 3
+    },
+    {
+      "condition": "layerforge",
+      "n": 12,
+      "correct": 9,
+      "refused_safe": 3,
+      "incorrect": 0,
+      "hallucinated": 0,
+      "accuracy_pct": 100.0,
+      "hallucination_pct": 0.0,
+      "answerable_correct": 9,
+      "answerable_n": 9,
+      "unanswerable_refused": 3,
+      "unanswerable_n": 3
+    },
+    {
+      "condition": "oracle",
+      "n": 12,
+      "correct": 9,
+      "refused_safe": 3,
+      "incorrect": 0,
+      "hallucinated": 0,
+      "accuracy_pct": 100.0,
+      "hallucination_pct": 0.0,
+      "answerable_correct": 9,
+      "answerable_n": 9,
+      "unanswerable_refused": 3,
+      "unanswerable_n": 3
+    }
+  ],
+  "per_q": {
+    "q01": {
+      "full": "CORRECT",
+      "layerforge": "CORRECT",
+      "oracle": "CORRECT"
+    },
+    "q02": {
+      "full": "CORRECT",
+      "layerforge": "CORRECT",
+      "oracle": "CORRECT"
+    },
+    "q03": {
+      "full": "CORRECT",
+      "layerforge": "CORRECT",
+      "oracle": "CORRECT"
+    },
+    "q04": {
+      "full": "CORRECT",
+      "layerforge": "CORRECT",
+      "oracle": "CORRECT"
+    },
+    "q05": {
+      "full": "CORRECT",
+      "layerforge": "CORRECT",
+      "oracle": "CORRECT"
+    },
+    "q06": {
+      "full": "CORRECT",
+      "layerforge": "CORRECT",
+      "oracle": "CORRECT"
+    },
+    "q07": {
+      "full": "CORRECT",
+      "layerforge": "CORRECT",
+      "oracle": "CORRECT"
+    },
+    "q08": {
+      "full": "CORRECT",
+      "layerforge": "CORRECT",
+      "oracle": "CORRECT"
+    },
+    "q09": {
+      "full": "CORRECT",
+      "layerforge": "CORRECT",
+      "oracle": "CORRECT"
+    },
+    "q10": {
+      "full": "REFUSED_SAFE",
+      "layerforge": "REFUSED_SAFE",
+      "oracle": "REFUSED_SAFE"
+    },
+    "q11": {
+      "full": "REFUSED_SAFE",
+      "layerforge": "REFUSED_SAFE",
+      "oracle": "REFUSED_SAFE"
+    },
+    "q12": {
+      "full": "REFUSED_SAFE",
+      "layerforge": "REFUSED_SAFE",
+      "oracle": "REFUSED_SAFE"
+    }
+  }
+}

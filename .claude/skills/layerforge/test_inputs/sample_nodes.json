@@ -1,0 +1,21 @@
+{
+  "nodes": [
+    {"id": "n00", "text": "cat alpha purrs sunbeam windowsill"},
+    {"id": "n01", "text": "cat alpha naps couch evening"},
+    {"id": "n02", "text": "cat alpha chases laser kitchen"},
+    {"id": "n03", "text": "cat alpha grooms whiskers morning"},
+    {"id": "n04", "text": "train beta glides rails dawn"},
+    {"id": "n05", "text": "train beta whistles tunnel midnight"},
+    {"id": "n06", "text": "train beta rumbles station evening"},
+    {"id": "n07", "text": "train beta carries passengers city"},
+    {"id": "n08", "text": "piano gamma resonates concert hall"},
+    {"id": "n09", "text": "piano gamma accompanies jazz singer"},
+    {"id": "n10", "text": "piano gamma teaches rhythm child"},
+    {"id": "n11", "text": "piano gamma echoes empty cathedral"},
+    {"id": "n12", "text": "volcano delta erupts molten fury"},
+    {"id": "n13", "text": "volcano delta shapes ocean floor"},
+    {"id": "n14", "text": "volcano delta feeds thermal spring"},
+    {"id": "n15", "text": "volcano delta records ancient climate"}
+  ],
+  "options": {"embedding_backend": "hash", "random_seed": 42}
+}

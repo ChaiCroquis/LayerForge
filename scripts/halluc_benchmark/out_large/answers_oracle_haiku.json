@@ -1,0 +1,62 @@
+[
+  {
+    "q": "q01",
+    "answer": "1145",
+    "source_passage_id": "z-XII"
+  },
+  {
+    "q": "q02",
+    "answer": "900 mounted knights",
+    "source_passage_id": "z-VIII"
+  },
+  {
+    "q": "q03",
+    "answer": "Iron-Reach",
+    "source_passage_id": "z-XX"
+  },
+  {
+    "q": "q04",
+    "answer": "1175 degrees Celsius",
+    "source_passage_id": "p-XV"
+  },
+  {
+    "q": "q05",
+    "answer": "8.83 g/cm^3",
+    "source_passage_id": "p-VII"
+  },
+  {
+    "q": "q06",
+    "answer": "24.4 kg",
+    "source_passage_id": "v-IX"
+  },
+  {
+    "q": "q07",
+    "answer": "Long Winter Tundra",
+    "source_passage_id": "v-XXIII"
+  },
+  {
+    "q": "q08",
+    "answer": "747 traditional compositions",
+    "source_passage_id": "e-IV"
+  },
+  {
+    "q": "q09",
+    "answer": "29 strings",
+    "source_passage_id": "e-XVIII"
+  },
+  {
+    "q": "q10",
+    "answer": "Not in provided passages.",
+    "source_passage_id": null
+  },
+  {
+    "q": "q11",
+    "answer": "Not in provided passages.",
+    "source_passage_id": null
+  },
+  {
+    "q": "q12",
+    "answer": "Not in provided passages.",
+    "source_passage_id": null
+  }
+]

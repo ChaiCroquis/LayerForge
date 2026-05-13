@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "_comment": "LayerForge project-local settings (v5 test-verification mode). Hooks are scaffolded but commented out — uncomment after SKILL.md smoke-tests pass. See docs/05b_skill_design.md §Hooks integration.",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python -m layerforge.cli.validate_output",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}
