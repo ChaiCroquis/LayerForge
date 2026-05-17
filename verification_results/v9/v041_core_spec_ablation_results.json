@@ -1,0 +1,334 @@
+{
+  "scope": "V-041 core spec post-process variation (= representation_summary / token_representations / bridge_nodes 出力構造 inspect + ablation)",
+  "n_sample": 5,
+  "modes": [
+    "baseline",
+    "rs_only_top1",
+    "rs_only_top3",
+    "rs_only_all",
+    "tr_only"
+  ],
+  "summary": {
+    "baseline": {
+      "comp_mean": 174.6,
+      "substr_rate": 0.0,
+      "tok_recall_mean": 0.06666666666666667
+    },
+    "rs_only_top1": {
+      "comp_mean": 9.2,
+      "substr_rate": 0.0,
+      "tok_recall_mean": 0.0
+    },
+    "rs_only_top3": {
+      "comp_mean": 33.6,
+      "substr_rate": 0.0,
+      "tok_recall_mean": 0.0
+    },
+    "rs_only_all": {
+      "comp_mean": 109.8,
+      "substr_rate": 0.0,
+      "tok_recall_mean": 0.06666666666666667
+    },
+    "tr_only": {
+      "comp_mean": 169.4,
+      "substr_rate": 0.0,
+      "tok_recall_mean": 0.06666666666666667
+    }
+  },
+  "per_mode": {
+    "baseline": [
+      {
+        "i": 0,
+        "comp_chars": 128,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 1,
+        "comp_chars": 112,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 2,
+        "comp_chars": 95,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 3,
+        "comp_chars": 191,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 4,
+        "comp_chars": 347,
+        "substr": false,
+        "tok_recall": 0.3333333333333333
+      }
+    ],
+    "rs_only_top1": [
+      {
+        "i": 0,
+        "comp_chars": 3,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 1,
+        "comp_chars": 1,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 2,
+        "comp_chars": 9,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 3,
+        "comp_chars": 3,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 4,
+        "comp_chars": 30,
+        "substr": false,
+        "tok_recall": 0.0
+      }
+    ],
+    "rs_only_top3": [
+      {
+        "i": 0,
+        "comp_chars": 16,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 1,
+        "comp_chars": 17,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 2,
+        "comp_chars": 27,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 3,
+        "comp_chars": 36,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 4,
+        "comp_chars": 72,
+        "substr": false,
+        "tok_recall": 0.0
+      }
+    ],
+    "rs_only_all": [
+      {
+        "i": 0,
+        "comp_chars": 74,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 1,
+        "comp_chars": 71,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 2,
+        "comp_chars": 95,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 3,
+        "comp_chars": 130,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 4,
+        "comp_chars": 179,
+        "substr": false,
+        "tok_recall": 0.3333333333333333
+      }
+    ],
+    "tr_only": [
+      {
+        "i": 0,
+        "comp_chars": 128,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 1,
+        "comp_chars": 112,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 2,
+        "comp_chars": 87,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 3,
+        "comp_chars": 191,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 4,
+        "comp_chars": 329,
+        "substr": false,
+        "tok_recall": 0.3333333333333333
+      }
+    ]
+  },
+  "bridge_inspect": [
+    {
+      "sample_i": 0,
+      "bridge_info": [
+        {
+          "layer_id": 0,
+          "bridge_count": 0,
+          "bridge_ids": []
+        },
+        {
+          "layer_id": 1,
+          "bridge_count": 0,
+          "bridge_ids": []
+        },
+        {
+          "layer_id": 2,
+          "bridge_count": 0,
+          "bridge_ids": []
+        },
+        {
+          "layer_id": 3,
+          "bridge_count": 0,
+          "bridge_ids": []
+        }
+      ]
+    },
+    {
+      "sample_i": 1,
+      "bridge_info": [
+        {
+          "layer_id": 0,
+          "bridge_count": 0,
+          "bridge_ids": []
+        },
+        {
+          "layer_id": 1,
+          "bridge_count": 0,
+          "bridge_ids": []
+        },
+        {
+          "layer_id": 2,
+          "bridge_count": 0,
+          "bridge_ids": []
+        },
+        {
+          "layer_id": 3,
+          "bridge_count": 0,
+          "bridge_ids": []
+        }
+      ]
+    },
+    {
+      "sample_i": 2,
+      "bridge_info": [
+        {
+          "layer_id": 0,
+          "bridge_count": 0,
+          "bridge_ids": []
+        },
+        {
+          "layer_id": 1,
+          "bridge_count": 0,
+          "bridge_ids": []
+        },
+        {
+          "layer_id": 2,
+          "bridge_count": 0,
+          "bridge_ids": []
+        },
+        {
+          "layer_id": 3,
+          "bridge_count": 0,
+          "bridge_ids": []
+        }
+      ]
+    },
+    {
+      "sample_i": 3,
+      "bridge_info": [
+        {
+          "layer_id": 0,
+          "bridge_count": 0,
+          "bridge_ids": []
+        },
+        {
+          "layer_id": 1,
+          "bridge_count": 0,
+          "bridge_ids": []
+        },
+        {
+          "layer_id": 2,
+          "bridge_count": 0,
+          "bridge_ids": []
+        },
+        {
+          "layer_id": 3,
+          "bridge_count": 0,
+          "bridge_ids": []
+        }
+      ]
+    },
+    {
+      "sample_i": 4,
+      "bridge_info": [
+        {
+          "layer_id": 0,
+          "bridge_count": 0,
+          "bridge_ids": []
+        },
+        {
+          "layer_id": 1,
+          "bridge_count": 0,
+          "bridge_ids": []
+        },
+        {
+          "layer_id": 2,
+          "bridge_count": 0,
+          "bridge_ids": []
+        },
+        {
+          "layer_id": 3,
+          "bridge_count": 0,
+          "bridge_ids": []
+        },
+        {
+          "layer_id": 4,
+          "bridge_count": 0,
+          "bridge_ids": []
+        }
+      ]
+    }
+  ],
+  "bridge_total_across_samples": 0,
+  "phase2_thresholds_note": "ADR-019 thresholds は driver-level、V-024-tri/quad で既 sweep 実施 (TOP_MEMBERS/SNIPPET_CHARS)、本 record では re-articulate"
+}

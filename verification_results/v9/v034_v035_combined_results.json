@@ -1,0 +1,205 @@
+{
+  "scope": "V-034 (newman vs cpm) + V-035 (K 4±1 vs K 自由化) combined sweep、N=5 hotpotqa",
+  "conditions": [
+    {
+      "name": "baseline_newman_4pm1",
+      "method": "newman",
+      "min": 3,
+      "max": 5
+    },
+    {
+      "name": "newman_K_free",
+      "method": "newman",
+      "min": 3,
+      "max": 10
+    },
+    {
+      "name": "cpm_4pm1",
+      "method": "cpm",
+      "min": 3,
+      "max": 5
+    },
+    {
+      "name": "cpm_K_free",
+      "method": "cpm",
+      "min": 3,
+      "max": 10
+    }
+  ],
+  "summary": {
+    "baseline_newman_4pm1": {
+      "K_mean": 4.2,
+      "comp_mean": 174.6,
+      "substr_rate": 0.0,
+      "tok_recall_mean": 0.06666666666666667
+    },
+    "newman_K_free": {
+      "K_mean": 5.8,
+      "comp_mean": 181.2,
+      "substr_rate": 0.0,
+      "tok_recall_mean": 0.06666666666666667
+    },
+    "cpm_4pm1": {
+      "K_mean": 3.0,
+      "comp_mean": 183.0,
+      "substr_rate": 0.0,
+      "tok_recall_mean": 0.06666666666666667
+    },
+    "cpm_K_free": {
+      "K_mean": 3.0,
+      "comp_mean": 183.0,
+      "substr_rate": 0.0,
+      "tok_recall_mean": 0.06666666666666667
+    }
+  },
+  "per_condition": {
+    "baseline_newman_4pm1": [
+      {
+        "i": 0,
+        "K": 4,
+        "comp_chars": 128,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 1,
+        "K": 4,
+        "comp_chars": 112,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 2,
+        "K": 4,
+        "comp_chars": 95,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 3,
+        "K": 4,
+        "comp_chars": 191,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 4,
+        "K": 5,
+        "comp_chars": 347,
+        "substr": false,
+        "tok_recall": 0.3333333333333333
+      }
+    ],
+    "newman_K_free": [
+      {
+        "i": 0,
+        "K": 10,
+        "comp_chars": 182,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 1,
+        "K": 4,
+        "comp_chars": 112,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 2,
+        "K": 4,
+        "comp_chars": 95,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 3,
+        "K": 4,
+        "comp_chars": 191,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 4,
+        "K": 7,
+        "comp_chars": 326,
+        "substr": false,
+        "tok_recall": 0.3333333333333333
+      }
+    ],
+    "cpm_4pm1": [
+      {
+        "i": 0,
+        "K": 3,
+        "comp_chars": 130,
+        "substr": false,
+        "tok_recall": 0.3333333333333333
+      },
+      {
+        "i": 1,
+        "K": 3,
+        "comp_chars": 194,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 2,
+        "K": 3,
+        "comp_chars": 152,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 3,
+        "K": 3,
+        "comp_chars": 126,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 4,
+        "K": 3,
+        "comp_chars": 313,
+        "substr": false,
+        "tok_recall": 0.0
+      }
+    ],
+    "cpm_K_free": [
+      {
+        "i": 0,
+        "K": 3,
+        "comp_chars": 130,
+        "substr": false,
+        "tok_recall": 0.3333333333333333
+      },
+      {
+        "i": 1,
+        "K": 3,
+        "comp_chars": 194,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 2,
+        "K": 3,
+        "comp_chars": 152,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 3,
+        "K": 3,
+        "comp_chars": 126,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 4,
+        "K": 3,
+        "comp_chars": 313,
+        "substr": false,
+        "tok_recall": 0.0
+      }
+    ]
+  }
+}

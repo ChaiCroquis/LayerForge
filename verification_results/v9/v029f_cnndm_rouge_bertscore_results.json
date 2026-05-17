@@ -1,0 +1,113 @@
+{
+  "scope": "CNN/DailyMail test head 10 article、EN formal summary corpus、V-022 JA → EN 拡張、V-029-d lexical/semantic subdivision EN confirm",
+  "n_sample": 10,
+  "rouge_l": {
+    "baseline_mean": 0.11230097306296753,
+    "decomposed_mean": 0.1258882290815638,
+    "delta": -0.01358725601859627
+  },
+  "rouge_1": {
+    "baseline_mean": 0.1572053170616677,
+    "decomposed_mean": 0.2458471045187824,
+    "delta": -0.08864178745711468
+  },
+  "bertscore_f1": {
+    "baseline_mean": 0.8502638399600982,
+    "decomposed_mean": 0.8013016402721405,
+    "delta": 0.048962199687957786
+  },
+  "verdict_lexical": "LEXICAL-FAIL (decomposed 0.126 < 0.15)",
+  "verdict_semantic": "SEMANTIC-PASS",
+  "per_sample": [
+    {
+      "i": 0,
+      "article_chars": 3612,
+      "comp_chars": 445,
+      "rouge_l_base": 0.0915032679738562,
+      "rouge_l_dec": 0.13333333333333333,
+      "bertscore_base": 0.848835825920105,
+      "bertscore_dec": 0.792371928691864
+    },
+    {
+      "i": 1,
+      "article_chars": 2331,
+      "comp_chars": 103,
+      "rouge_l_base": 0.13276231263383298,
+      "rouge_l_dec": 0.12121212121212122,
+      "bertscore_base": 0.861926257610321,
+      "bertscore_dec": 0.7912070751190186
+    },
+    {
+      "i": 2,
+      "article_chars": 4128,
+      "comp_chars": 422,
+      "rouge_l_base": 0.06133333333333333,
+      "rouge_l_dec": 0.09615384615384616,
+      "bertscore_base": 0.8223414421081543,
+      "bertscore_dec": 0.7996668815612793
+    },
+    {
+      "i": 3,
+      "article_chars": 1191,
+      "comp_chars": 100,
+      "rouge_l_base": 0.20883534136546184,
+      "rouge_l_dec": 0.15384615384615383,
+      "bertscore_base": 0.8672131299972534,
+      "bertscore_dec": 0.8057008981704712
+    },
+    {
+      "i": 4,
+      "article_chars": 2129,
+      "comp_chars": 296,
+      "rouge_l_base": 0.13075060532687652,
+      "rouge_l_dec": 0.11111111111111112,
+      "bertscore_base": 0.861163854598999,
+      "bertscore_dec": 0.8247551918029785
+    },
+    {
+      "i": 5,
+      "article_chars": 2564,
+      "comp_chars": 192,
+      "rouge_l_base": 0.06896551724137931,
+      "rouge_l_dec": 0.15625,
+      "bertscore_base": 0.8408293724060059,
+      "bertscore_dec": 0.8026373386383057
+    },
+    {
+      "i": 6,
+      "article_chars": 4804,
+      "comp_chars": 174,
+      "rouge_l_base": 0.0738095238095238,
+      "rouge_l_dec": 0.11494252873563218,
+      "bertscore_base": 0.8513279557228088,
+      "bertscore_dec": 0.8086438179016113
+    },
+    {
+      "i": 7,
+      "article_chars": 2119,
+      "comp_chars": 463,
+      "rouge_l_base": 0.12048192771084337,
+      "rouge_l_dec": 0.11382113821138211,
+      "bertscore_base": 0.8410289287567139,
+      "bertscore_dec": 0.7880405187606812
+    },
+    {
+      "i": 8,
+      "article_chars": 1683,
+      "comp_chars": 232,
+      "rouge_l_base": 0.08641975308641975,
+      "rouge_l_dec": 0.13513513513513514,
+      "bertscore_base": 0.8432022929191589,
+      "bertscore_dec": 0.8147645592689514
+    },
+    {
+      "i": 9,
+      "article_chars": 630,
+      "comp_chars": 240,
+      "rouge_l_base": 0.14814814814814817,
+      "rouge_l_dec": 0.12307692307692308,
+      "bertscore_base": 0.8647693395614624,
+      "bertscore_dec": 0.7852281928062439
+    }
+  ]
+}

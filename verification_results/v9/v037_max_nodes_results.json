@@ -1,0 +1,211 @@
+{
+  "scope": "V-021 driver の MAX_NODES (50) を {25,50,100,200} で sweep",
+  "n_sample": 5,
+  "max_nodes_values": [
+    25,
+    50,
+    100,
+    200
+  ],
+  "summary": {
+    "25": {
+      "n_chunks_mean": 25.0,
+      "K_mean": 3.4,
+      "comp_chars_mean": 157.2,
+      "substr_rate": 0.0,
+      "tok_recall_mean": 0.06666666666666667
+    },
+    "50": {
+      "n_chunks_mean": 48.2,
+      "K_mean": 4.2,
+      "comp_chars_mean": 174.6,
+      "substr_rate": 0.0,
+      "tok_recall_mean": 0.06666666666666667
+    },
+    "100": {
+      "n_chunks_mean": 60.2,
+      "K_mean": 4.4,
+      "comp_chars_mean": 202.8,
+      "substr_rate": 0.0,
+      "tok_recall_mean": 0.06666666666666667
+    },
+    "200": {
+      "n_chunks_mean": 60.2,
+      "K_mean": 4.4,
+      "comp_chars_mean": 202.8,
+      "substr_rate": 0.0,
+      "tok_recall_mean": 0.06666666666666667
+    }
+  },
+  "verdict": "INVARIANT (MAX_NODES change does not affect metrics)",
+  "per_max_nodes": {
+    "25": [
+      {
+        "i": 0,
+        "n_chunks": 25,
+        "K": 4,
+        "comp_chars": 126,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 1,
+        "n_chunks": 25,
+        "K": 4,
+        "comp_chars": 71,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 2,
+        "n_chunks": 25,
+        "K": 3,
+        "comp_chars": 112,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 3,
+        "n_chunks": 25,
+        "K": 3,
+        "comp_chars": 147,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 4,
+        "n_chunks": 25,
+        "K": 3,
+        "comp_chars": 330,
+        "substr": false,
+        "tok_recall": 0.3333333333333333
+      }
+    ],
+    "50": [
+      {
+        "i": 0,
+        "n_chunks": 47,
+        "K": 4,
+        "comp_chars": 128,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 1,
+        "n_chunks": 50,
+        "K": 4,
+        "comp_chars": 112,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 2,
+        "n_chunks": 50,
+        "K": 4,
+        "comp_chars": 95,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 3,
+        "n_chunks": 50,
+        "K": 4,
+        "comp_chars": 191,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 4,
+        "n_chunks": 44,
+        "K": 5,
+        "comp_chars": 347,
+        "substr": false,
+        "tok_recall": 0.3333333333333333
+      }
+    ],
+    "100": [
+      {
+        "i": 0,
+        "n_chunks": 47,
+        "K": 4,
+        "comp_chars": 128,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 1,
+        "n_chunks": 60,
+        "K": 5,
+        "comp_chars": 203,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 2,
+        "n_chunks": 68,
+        "K": 4,
+        "comp_chars": 103,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 3,
+        "n_chunks": 82,
+        "K": 4,
+        "comp_chars": 233,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 4,
+        "n_chunks": 44,
+        "K": 5,
+        "comp_chars": 347,
+        "substr": false,
+        "tok_recall": 0.3333333333333333
+      }
+    ],
+    "200": [
+      {
+        "i": 0,
+        "n_chunks": 47,
+        "K": 4,
+        "comp_chars": 128,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 1,
+        "n_chunks": 60,
+        "K": 5,
+        "comp_chars": 203,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 2,
+        "n_chunks": 68,
+        "K": 4,
+        "comp_chars": 103,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 3,
+        "n_chunks": 82,
+        "K": 4,
+        "comp_chars": 233,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 4,
+        "n_chunks": 44,
+        "K": 5,
+        "comp_chars": 347,
+        "substr": false,
+        "tok_recall": 0.3333333333333333
+      }
+    ]
+  }
+}

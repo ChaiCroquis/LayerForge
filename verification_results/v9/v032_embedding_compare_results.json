@@ -1,0 +1,97 @@
+{
+  "scope": "V-032 embedding model comparison: mpnet baseline vs MiniLM-L6 simplified (= 大 cost sweep の minimum subset)",
+  "models": [
+    "sentence-transformers/paraphrase-multilingual-mpnet-base-v2",
+    "sentence-transformers/paraphrase-MiniLM-L6-v2"
+  ],
+  "summary": {
+    "paraphrase-multilingual-mpnet-base-v2": {
+      "K_mean": 4.2,
+      "comp_mean": 174.6,
+      "substr_rate": 0.0,
+      "tok_recall_mean": 0.06666666666666667
+    },
+    "paraphrase-MiniLM-L6-v2": {
+      "K_mean": 4.0,
+      "comp_mean": 184.6,
+      "substr_rate": 0.0,
+      "tok_recall_mean": 0.13333333333333333
+    }
+  },
+  "per_model": {
+    "paraphrase-multilingual-mpnet-base-v2": [
+      {
+        "i": 0,
+        "K": 4,
+        "comp_chars": 128,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 1,
+        "K": 4,
+        "comp_chars": 112,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 2,
+        "K": 4,
+        "comp_chars": 95,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 3,
+        "K": 4,
+        "comp_chars": 191,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 4,
+        "K": 5,
+        "comp_chars": 347,
+        "substr": false,
+        "tok_recall": 0.3333333333333333
+      }
+    ],
+    "paraphrase-MiniLM-L6-v2": [
+      {
+        "i": 0,
+        "K": 5,
+        "comp_chars": 182,
+        "substr": false,
+        "tok_recall": 0.3333333333333333
+      },
+      {
+        "i": 1,
+        "K": 3,
+        "comp_chars": 126,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 2,
+        "K": 5,
+        "comp_chars": 94,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 3,
+        "K": 4,
+        "comp_chars": 257,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 4,
+        "K": 3,
+        "comp_chars": 264,
+        "substr": false,
+        "tok_recall": 0.3333333333333333
+      }
+    ]
+  }
+}

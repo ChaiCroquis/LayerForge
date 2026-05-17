@@ -1,0 +1,132 @@
+{
+  "scope": "V-036 improvement Path 2: LayerForge + K-means ensemble hybrid (= capability_matrix bucket B instantiation)",
+  "n_sample": 5,
+  "summary": {
+    "layerforge": {
+      "substr_rate": 0.0,
+      "tok_recall_mean": 0.06666666666666667,
+      "comp_mean": 174.6
+    },
+    "kmeans": {
+      "substr_rate": 0.0,
+      "tok_recall_mean": 0.13333333333333333,
+      "comp_mean": 157.2
+    },
+    "ensemble": {
+      "substr_rate": 0.0,
+      "tok_recall_mean": 0.13333333333333333,
+      "comp_mean": 264.0
+    }
+  },
+  "delta": {
+    "ensemble_vs_layerforge": {
+      "substr": 0.0,
+      "tok_recall": 0.06666666666666667,
+      "comp": 89.4
+    },
+    "ensemble_vs_kmeans": {
+      "substr": 0.0,
+      "tok_recall": 0.0,
+      "comp": 106.80000000000001
+    }
+  },
+  "verdict": "ENSEMBLE-EQUAL-OR-MARGINAL (両者単独の max と同等 or 微増)",
+  "per_condition": {
+    "layerforge": [
+      {
+        "i": 0,
+        "comp_chars": 128,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 1,
+        "comp_chars": 112,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 2,
+        "comp_chars": 95,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 3,
+        "comp_chars": 191,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 4,
+        "comp_chars": 347,
+        "substr": false,
+        "tok_recall": 0.3333333333333333
+      }
+    ],
+    "kmeans": [
+      {
+        "i": 0,
+        "comp_chars": 155,
+        "substr": false,
+        "tok_recall": 0.3333333333333333
+      },
+      {
+        "i": 1,
+        "comp_chars": 122,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 2,
+        "comp_chars": 140,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 3,
+        "comp_chars": 206,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 4,
+        "comp_chars": 163,
+        "substr": false,
+        "tok_recall": 0.3333333333333333
+      }
+    ],
+    "ensemble": [
+      {
+        "i": 0,
+        "comp_chars": 249,
+        "substr": false,
+        "tok_recall": 0.3333333333333333
+      },
+      {
+        "i": 1,
+        "comp_chars": 170,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 2,
+        "comp_chars": 176,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 3,
+        "comp_chars": 310,
+        "substr": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 4,
+        "comp_chars": 415,
+        "substr": false,
+        "tok_recall": 0.3333333333333333
+      }
+    ]
+  }
+}

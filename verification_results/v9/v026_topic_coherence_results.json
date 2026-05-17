@@ -1,0 +1,1244 @@
+{
+  "dataset": {
+    "sharegpt": "C:\\work\\dataset-vault\\readonly\\sharegpt\\ShareGPT_V3_unfiltered_cleaned_split.json",
+    "longbench": "C:\\work\\dataset-vault\\readonly\\longbench_v1_data\\data\\hotpotqa.jsonl"
+  },
+  "n_samples": {
+    "sharegpt": 1,
+    "hotpot": 5
+  },
+  "seed": 42,
+  "summary": {
+    "LayerForge": {
+      "u_mass": {
+        "mean": -1.084474750965726,
+        "min": -3.8129180697983176,
+        "max": -0.2163427650138676,
+        "n": 6
+      },
+      "c_npmi": {
+        "mean": 0.004948028509839675,
+        "min": -0.11331282781782802,
+        "max": 0.1006451952996908,
+        "n": 6
+      }
+    },
+    "LDA": {
+      "u_mass": {
+        "mean": -2.3142646946943275,
+        "min": -4.185430783656295,
+        "max": -0.664644612698325,
+        "n": 6
+      },
+      "c_npmi": {
+        "mean": -0.0393218161940854,
+        "min": -0.12347139146878758,
+        "max": 0.012310530189807265,
+        "n": 6
+      }
+    },
+    "NMF": {
+      "u_mass": {
+        "mean": -1.861348496740758,
+        "min": -3.45147017940664,
+        "max": -1.0039287746936125,
+        "n": 6
+      },
+      "c_npmi": {
+        "mean": 0.03174141185334419,
+        "min": -0.05783327396879001,
+        "max": 0.10260710061962712,
+        "n": 6
+      }
+    },
+    "BERTopic": {
+      "u_mass": {
+        "mean": null,
+        "n": 0
+      },
+      "c_npmi": {
+        "mean": null,
+        "n": 0
+      }
+    }
+  },
+  "verdict_mechanical": "LF-COMPETITIVE (NPMI 差 ≤ 0.05 vs LDA/NMF)",
+  "per_sample": [
+    {
+      "sample_id": "sharegpt/0",
+      "n_docs": 12,
+      "LayerForge": {
+        "K": 5,
+        "topic_tokens": [
+          [
+            "a",
+            "and",
+            "create",
+            "for",
+            "launch",
+            "of",
+            "product",
+            "the",
+            "to",
+            "use"
+          ],
+          [
+            "\"launch\"",
+            "and",
+            "are",
+            "book?",
+            "formula",
+            "in",
+            "jeff",
+            "launch",
+            "mental",
+            "product"
+          ],
+          [
+            "8",
+            "a",
+            "and",
+            "are",
+            "been",
+            "behind",
+            "best",
+            "campaigns",
+            "of",
+            "the"
+          ],
+          [
+            "brunson's",
+            "perfect",
+            "russell",
+            "script...",
+            "summarize",
+            "webinar",
+            "a",
+            "and",
+            "audience.",
+            "of"
+          ],
+          [
+            "6",
+            "as",
+            "explains...",
+            "human",
+            "needs",
+            "robbins",
+            "summarize",
+            "the",
+            "tony",
+            "a"
+          ]
+        ],
+        "coherence": {
+          "n_topics_in_dict": 5,
+          "u_mass": -0.5890472204566842,
+          "c_npmi": 0.1006451952996908
+        }
+      },
+      "LDA": {
+        "K": 5,
+        "topic_tokens": [
+          [
+            "the",
+            "and",
+            "summarize",
+            "bullet",
+            "tactics",
+            "pertains",
+            "implementing",
+            "points",
+            "into",
+            "strategies"
+          ],
+          [
+            "and",
+            "your",
+            "the",
+            "launch",
+            "that",
+            "create",
+            "expertise",
+            "build",
+            "product",
+            "audience"
+          ],
+          [
+            "the",
+            "and",
+            "audience",
+            "product",
+            "with",
+            "presenter",
+            "service",
+            "creating",
+            "offer",
+            "webinar"
+          ],
+          [
+            "and",
+            "the",
+            "need",
+            "for",
+            "this",
+            "urgency",
+            "are",
+            "these",
+            "can",
+            "includes"
+          ],
+          [
+            "summarize",
+            "explains",
+            "mental",
+            "triggers",
+            "what",
+            "russell",
+            "brunson",
+            "perfect",
+            "script",
+            "webinar"
+          ]
+        ],
+        "coherence": {
+          "n_topics_in_dict": 5,
+          "u_mass": -4.185430783656295,
+          "c_npmi": -0.023144831906418188
+        }
+      },
+      "NMF": {
+        "K": 5,
+        "topic_tokens": [
+          [
+            "and",
+            "the",
+            "have",
+            "urgency",
+            "campaigns",
+            "triggers",
+            "scarcity",
+            "been",
+            "need",
+            "mental"
+          ],
+          [
+            "bullet",
+            "pertains",
+            "implementing",
+            "tactics",
+            "points",
+            "strategies",
+            "into",
+            "ideas",
+            "main",
+            "agency"
+          ],
+          [
+            "summarize",
+            "webinar",
+            "explains",
+            "perfect",
+            "script",
+            "russell",
+            "brunson",
+            "tony",
+            "robbins",
+            "human"
+          ],
+          [
+            "the",
+            "launch",
+            "and",
+            "product",
+            "audience",
+            "creating",
+            "with",
+            "formula",
+            "jeff",
+            "walker"
+          ],
+          [
+            "your",
+            "expertise",
+            "and",
+            "develop",
+            "that",
+            "build",
+            "products",
+            "audience",
+            "clients",
+            "the"
+          ]
+        ],
+        "coherence": {
+          "n_topics_in_dict": 5,
+          "u_mass": -3.45147017940664,
+          "c_npmi": 0.10260710061962712
+        }
+      },
+      "BERTopic": {
+        "K": 0,
+        "topic_tokens": [],
+        "coherence": {
+          "u_mass": null,
+          "c_npmi": null,
+          "error": "no topics"
+        }
+      }
+    },
+    {
+      "sample_id": "hotpot/0",
+      "n_docs": 47,
+      "LayerForge": {
+        "K": 4,
+        "topic_tokens": [
+          [
+            "a",
+            "and",
+            "by",
+            "in",
+            "inmates",
+            "of",
+            "the",
+            "to",
+            "trusty",
+            "was"
+          ],
+          [
+            ".",
+            "a",
+            "and",
+            "in",
+            "of",
+            "or",
+            "that",
+            "the",
+            "to",
+            "u.s."
+          ],
+          [
+            "a",
+            "and",
+            "be",
+            "court",
+            "for",
+            "in",
+            "of",
+            "that",
+            "the",
+            "to"
+          ],
+          [
+            "a",
+            "and",
+            "as",
+            "court",
+            "in",
+            "is",
+            "of",
+            "that",
+            "the",
+            "to"
+          ]
+        ],
+        "coherence": {
+          "n_topics_in_dict": 4,
+          "u_mass": -0.2163427650138676,
+          "c_npmi": -0.03026909301253399
+        }
+      },
+      "LDA": {
+        "K": 4,
+        "topic_tokens": [
+          [
+            "united",
+            "states",
+            "see",
+            "inc",
+            "corp",
+            "but",
+            "replacement",
+            "film",
+            "machine",
+            "list"
+          ],
+          [
+            "the",
+            "and",
+            "holland",
+            "were",
+            "was",
+            "maremont",
+            "that",
+            "for",
+            "inmates",
+            "cheff"
+          ],
+          [
+            "the",
+            "court",
+            "and",
+            "that",
+            "first",
+            "was",
+            "for",
+            "which",
+            "not",
+            "case"
+          ],
+          [
+            "the",
+            "and",
+            "that",
+            "was",
+            "for",
+            "system",
+            "trusty",
+            "state",
+            "inmates",
+            "which"
+          ]
+        ],
+        "coherence": {
+          "n_topics_in_dict": 4,
+          "u_mass": -2.0490582631592154,
+          "c_npmi": -0.04997582536219124
+        }
+      },
+      "NMF": {
+        "K": 4,
+        "topic_tokens": [
+          [
+            "the",
+            "court",
+            "jurisdiction",
+            "that",
+            "and",
+            "first",
+            "supreme",
+            "seised",
+            "use",
+            "brussels"
+          ],
+          [
+            "the",
+            "and",
+            "inmates",
+            "trusty",
+            "system",
+            "prison",
+            "were",
+            "parchman",
+            "inmate",
+            "was"
+          ],
+          [
+            "holland",
+            "maremont",
+            "the",
+            "judgment",
+            "business",
+            "cheff",
+            "furnace",
+            "board",
+            "rule",
+            "that"
+          ],
+          [
+            "the",
+            "miller",
+            "obscenity",
+            "court",
+            "california",
+            "that",
+            "and",
+            "obscene",
+            "material",
+            "value"
+          ]
+        ],
+        "coherence": {
+          "n_topics_in_dict": 4,
+          "u_mass": -1.3114166216536993,
+          "c_npmi": -0.00934662595294201
+        }
+      },
+      "BERTopic": {
+        "K": 0,
+        "topic_tokens": [],
+        "coherence": {
+          "u_mass": null,
+          "c_npmi": null,
+          "error": "no topics"
+        }
+      }
+    },
+    {
+      "sample_id": "hotpot/1",
+      "n_docs": 50,
+      "LayerForge": {
+        "K": 4,
+        "topic_tokens": [
+          [
+            "a",
+            "and",
+            "as",
+            "he",
+            "in",
+            "of",
+            "on",
+            "the",
+            "to",
+            "was"
+          ],
+          [
+            "a",
+            "and",
+            "he",
+            "his",
+            "in",
+            "niven",
+            "of",
+            "the",
+            "to",
+            "was"
+          ],
+          [
+            "a",
+            "and",
+            "by",
+            "fogg",
+            "he",
+            "his",
+            "in",
+            "of",
+            "the",
+            "to"
+          ],
+          [
+            "a",
+            "and",
+            "in",
+            "is",
+            "jules",
+            "of",
+            "the",
+            "to",
+            "trophy",
+            "world"
+          ]
+        ],
+        "coherence": {
+          "n_topics_in_dict": 4,
+          "u_mass": -0.4171103237084609,
+          "c_npmi": -0.001883849640942438
+        }
+      },
+      "LDA": {
+        "K": 4,
+        "topic_tokens": [
+          [
+            "the",
+            "record",
+            "min",
+            "miles",
+            "days",
+            "peyron",
+            "during",
+            "for",
+            "trophy",
+            "and"
+          ],
+          [
+            "the",
+            "and",
+            "fogg",
+            "world",
+            "his",
+            "that",
+            "was",
+            "with",
+            "but",
+            "are"
+          ],
+          [
+            "the",
+            "and",
+            "niven",
+            "was",
+            "his",
+            "that",
+            "had",
+            "david",
+            "with",
+            "for"
+          ],
+          [
+            "the",
+            "and",
+            "was",
+            "niven",
+            "with",
+            "for",
+            "his",
+            "film",
+            "goldwyn",
+            "role"
+          ]
+        ],
+        "coherence": {
+          "n_topics_in_dict": 4,
+          "u_mass": -0.664644612698325,
+          "c_npmi": 0.012310530189807265
+        }
+      },
+      "NMF": {
+        "K": 4,
+        "topic_tokens": [
+          [
+            "the",
+            "niven",
+            "and",
+            "was",
+            "his",
+            "with",
+            "for",
+            "goldwyn",
+            "had",
+            "that"
+          ],
+          [
+            "the",
+            "and",
+            "trophy",
+            "world",
+            "fogg",
+            "around",
+            "verne",
+            "jules",
+            "film",
+            "phileas"
+          ],
+          [
+            "miles",
+            "record",
+            "min",
+            "peyron",
+            "over",
+            "days",
+            "during",
+            "records",
+            "knots",
+            "the"
+          ],
+          [
+            "isbn",
+            "david",
+            "niven",
+            "the",
+            "hamish",
+            "hamilton",
+            "graham",
+            "london",
+            "september",
+            "moon"
+          ]
+        ],
+        "coherence": {
+          "n_topics_in_dict": 4,
+          "u_mass": -1.2961754645228016,
+          "c_npmi": 0.07991489976244087
+        }
+      },
+      "BERTopic": {
+        "K": 0,
+        "topic_tokens": [],
+        "coherence": {
+          "u_mass": null,
+          "c_npmi": null,
+          "error": "no topics"
+        }
+      }
+    },
+    {
+      "sample_id": "hotpot/2",
+      "n_docs": 50,
+      "LayerForge": {
+        "K": 4,
+        "topic_tokens": [
+          [
+            "a",
+            "and",
+            "at",
+            "he",
+            "in",
+            "macklin",
+            "of",
+            "the",
+            "to",
+            "was"
+          ],
+          [
+            "a",
+            "and",
+            "coleman",
+            "in",
+            "michigan",
+            "of",
+            "state",
+            "the",
+            "to",
+            "was"
+          ],
+          [
+            "a",
+            "and",
+            "in",
+            "national",
+            "of",
+            "ou",
+            "sooners",
+            "the",
+            "to",
+            "women's"
+          ],
+          [
+            "layer 3"
+          ]
+        ],
+        "coherence": {
+          "n_topics_in_dict": 3,
+          "u_mass": -0.4266710493007402,
+          "c_npmi": 0.03773096777635976
+        }
+      },
+      "LDA": {
+        "K": 4,
+        "topic_tokens": [
+          [
+            "the",
+            "and",
+            "oklahoma",
+            "university",
+            "was",
+            "with",
+            "sports",
+            "team",
+            "basketball",
+            "for"
+          ],
+          [
+            "and",
+            "the",
+            "coach",
+            "ncaa",
+            "national",
+            "sooners",
+            "championships",
+            "won",
+            "program",
+            "time"
+          ],
+          [
+            "the",
+            "and",
+            "law",
+            "was",
+            "college",
+            "michigan",
+            "university",
+            "for",
+            "nichol",
+            "school"
+          ],
+          [
+            "the",
+            "michigan",
+            "and",
+            "coleman",
+            "state",
+            "was",
+            "football",
+            "for",
+            "with",
+            "his"
+          ]
+        ],
+        "coherence": {
+          "n_topics_in_dict": 4,
+          "u_mass": -0.7656510021107106,
+          "c_npmi": 0.006467295694291658
+        }
+      },
+      "NMF": {
+        "K": 4,
+        "topic_tokens": [
+          [
+            "the",
+            "and",
+            "oklahoma",
+            "sooners",
+            "national",
+            "championships",
+            "women",
+            "conference",
+            "university",
+            "coach"
+          ],
+          [
+            "coleman",
+            "michigan",
+            "the",
+            "state",
+            "football",
+            "was",
+            "american",
+            "his",
+            "macklin",
+            "flint"
+          ],
+          [
+            "law",
+            "the",
+            "detroit",
+            "michigan",
+            "college",
+            "university",
+            "msu",
+            "was",
+            "and",
+            "state"
+          ],
+          [
+            "the",
+            "nichol",
+            "yards",
+            "for",
+            "passes",
+            "season",
+            "against",
+            "career",
+            "quarterback",
+            "and"
+          ]
+        ],
+        "coherence": {
+          "n_topics_in_dict": 4,
+          "u_mass": -1.0039287746936125,
+          "c_npmi": 0.07077881697786274
+        }
+      },
+      "BERTopic": {
+        "K": 0,
+        "topic_tokens": [],
+        "coherence": {
+          "u_mass": null,
+          "c_npmi": null,
+          "error": "no topics"
+        }
+      }
+    },
+    {
+      "sample_id": "hotpot/3",
+      "n_docs": 50,
+      "LayerForge": {
+        "K": 4,
+        "topic_tokens": [
+          [
+            "a",
+            "and",
+            "bennett",
+            "has",
+            "is",
+            "isbn",
+            "of",
+            "on",
+            "power",
+            "space"
+          ],
+          [
+            "a",
+            "and",
+            "category",
+            "for",
+            "in",
+            "is",
+            "of",
+            "that",
+            "the",
+            "to"
+          ],
+          [
+            "0",
+            "1",
+            "=",
+            "be",
+            "crashlanding.",
+            "environment",
+            "of",
+            "on",
+            "the",
+            "to"
+          ],
+          [
+            "a",
+            "and",
+            "appears",
+            "as",
+            "from",
+            "in",
+            "is",
+            "of",
+            "the",
+            "transit"
+          ]
+        ],
+        "coherence": {
+          "n_topics_in_dict": 4,
+          "u_mass": -1.044759077516285,
+          "c_npmi": 0.036777778454291934
+        }
+      },
+      "LDA": {
+        "K": 4,
+        "topic_tokens": [
+          [
+            "the",
+            "and",
+            "mars",
+            "contamination",
+            "cospar",
+            "protection",
+            "for",
+            "earth",
+            "planetary",
+            "transfer"
+          ],
+          [
+            "the",
+            "and",
+            "for",
+            "that",
+            "mars",
+            "category",
+            "this",
+            "from",
+            "contamination",
+            "missions"
+          ],
+          [
+            "places",
+            "chance",
+            "where",
+            "could",
+            "because",
+            "category",
+            "subsurface",
+            "likelihood",
+            "define",
+            "carried"
+          ],
+          [
+            "the",
+            "and",
+            "microorganisms",
+            "this",
+            "spore",
+            "number",
+            "some",
+            "are",
+            "assay",
+            "dormant"
+          ]
+        ],
+        "coherence": {
+          "n_topics_in_dict": 4,
+          "u_mass": -2.128363996780763,
+          "c_npmi": -0.05811667431121434
+        }
+      },
+      "NMF": {
+        "K": 4,
+        "topic_tokens": [
+          [
+            "the",
+            "and",
+            "that",
+            "mars",
+            "for",
+            "category",
+            "protection",
+            "contamination",
+            "planetary",
+            "this"
+          ],
+          [
+            "bennett",
+            "and",
+            "power",
+            "isbn",
+            "propulsion",
+            "space",
+            "science",
+            "the",
+            "star",
+            "systems"
+          ],
+          [
+            "the",
+            "probability",
+            "microorganisms",
+            "spacecraft",
+            "number",
+            "planet",
+            "surface",
+            "for",
+            "that",
+            "sagan"
+          ],
+          [
+            "the",
+            "transit",
+            "planet",
+            "earth",
+            "from",
+            "sun",
+            "appears",
+            "observed",
+            "mercury",
+            "star"
+          ]
+        ],
+        "coherence": {
+          "n_topics_in_dict": 4,
+          "u_mass": -1.573689744285806,
+          "c_npmi": 0.004327553681866414
+        }
+      },
+      "BERTopic": {
+        "K": 0,
+        "topic_tokens": [],
+        "coherence": {
+          "u_mass": null,
+          "c_npmi": null,
+          "error": "no topics"
+        }
+      }
+    },
+    {
+      "sample_id": "hotpot/4",
+      "n_docs": 44,
+      "LayerForge": {
+        "K": 5,
+        "topic_tokens": [
+          [
+            "additional",
+            "assistance",
+            "backing",
+            "engineer",
+            "engineering",
+            "gary",
+            "signifies",
+            "vocals",
+            "–",
+            "vocals,"
+          ],
+          [
+            "a",
+            "and",
+            "at",
+            "egoyan",
+            "film",
+            "he",
+            "his",
+            "in",
+            "of",
+            "the"
+          ],
+          [
+            "(artwork)",
+            "(cyproterone",
+            "a",
+            "an",
+            "chloe",
+            "for",
+            "name",
+            "other",
+            "the",
+            "(artwork),"
+          ],
+          [
+            "layer 3"
+          ],
+          [
+            "a",
+            "and",
+            "he",
+            "his",
+            "in",
+            "khan",
+            "of",
+            "the",
+            "to",
+            "was"
+          ]
+        ],
+        "coherence": {
+          "n_topics_in_dict": 4,
+          "u_mass": -3.8129180697983176,
+          "c_npmi": -0.11331282781782802
+        }
+      },
+      "LDA": {
+        "K": 5,
+        "topic_tokens": [
+          [
+            "vocals",
+            "segment",
+            "producer",
+            "engineer",
+            "cin",
+            "community",
+            "listing",
+            "david",
+            "lead",
+            "make"
+          ],
+          [
+            "the",
+            "and",
+            "was",
+            "film",
+            "for",
+            "which",
+            "she",
+            "her",
+            "cin",
+            "pix"
+          ],
+          [
+            "the",
+            "and",
+            "for",
+            "she",
+            "with",
+            "khan",
+            "concert",
+            "later",
+            "drama",
+            "award"
+          ],
+          [
+            "the",
+            "and",
+            "khan",
+            "his",
+            "film",
+            "was",
+            "for",
+            "with",
+            "that",
+            "million"
+          ],
+          [
+            "the",
+            "chloe",
+            "egoyan",
+            "film",
+            "and",
+            "his",
+            "with",
+            "for",
+            "canadian",
+            "dunning"
+          ]
+        ],
+        "coherence": {
+          "n_topics_in_dict": 5,
+          "u_mass": -4.092439509760656,
+          "c_npmi": -0.12347139146878758
+        }
+      },
+      "NMF": {
+        "K": 5,
+        "topic_tokens": [
+          [
+            "the",
+            "khan",
+            "and",
+            "his",
+            "for",
+            "was",
+            "film",
+            "with",
+            "that",
+            "best"
+          ],
+          [
+            "chloe",
+            "chlo",
+            "the",
+            "name",
+            "american",
+            "film",
+            "singer",
+            "song",
+            "other",
+            "hurricane"
+          ],
+          [
+            "cin",
+            "dunning",
+            "pix",
+            "canadian",
+            "the",
+            "montreal",
+            "john",
+            "film",
+            "and",
+            "reitman"
+          ],
+          [
+            "films",
+            "filmography",
+            "last",
+            "this",
+            "feature",
+            "television",
+            "nominations",
+            "awards",
+            "and",
+            "film"
+          ],
+          [
+            "the",
+            "egoyan",
+            "and",
+            "she",
+            "was",
+            "for",
+            "her",
+            "film",
+            "toronto",
+            "his"
+          ]
+        ],
+        "coherence": {
+          "n_topics_in_dict": 5,
+          "u_mass": -2.5314101958819886,
+          "c_npmi": -0.05783327396879001
+        }
+      },
+      "BERTopic": {
+        "K": 0,
+        "topic_tokens": [],
+        "coherence": {
+          "u_mass": null,
+          "c_npmi": null,
+          "error": "no topics"
+        }
+      }
+    }
+  ]
+}

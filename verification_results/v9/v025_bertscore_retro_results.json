@@ -1,0 +1,28 @@
+{
+  "scope": "retroactive bert_score on V-007 N=6, formal N=30 expansion deferred to chai paper trigger",
+  "source": "C:\\work\\LayerForge\\scripts\\context_eval\\claim2_F4_hybrid_responses.json",
+  "n_pair": 3,
+  "buckets": [
+    "short",
+    "medium",
+    "long"
+  ],
+  "v007_mpnet_cosine": {
+    "short": 0.986,
+    "medium": 0.85,
+    "long": 0.98
+  },
+  "bertscore_roberta_large_f1": {
+    "short": 0.9391868114471436,
+    "medium": 0.9180545210838318,
+    "long": 0.9239078760147095
+  },
+  "bertscore_mbert_f1": {
+    "short": 0.8602923154830933,
+    "medium": 0.8127549290657043,
+    "long": 0.8400824666023254
+  },
+  "roberta_mean": 0.9270497361818949,
+  "mbert_mean": 0.837709903717041,
+  "verdict_mechanical": "BERT-SCORE-MID (mbert F1 0.70-0.85)"
+}

@@ -1,0 +1,256 @@
+{
+  "scope": "V-021 driver を seed 5 種で再走、metric variance 測定",
+  "n_sample": 5,
+  "seeds": [
+    42,
+    0,
+    1,
+    7,
+    123
+  ],
+  "per_seed_summary": {
+    "42": {
+      "substr_rate": 0.0,
+      "tok_recall_mean": 0.06666666666666667,
+      "K_mean": 4.2
+    },
+    "0": {
+      "substr_rate": 0.0,
+      "tok_recall_mean": 0.13333333333333333,
+      "K_mean": 4.2
+    },
+    "1": {
+      "substr_rate": 0.0,
+      "tok_recall_mean": 0.13333333333333333,
+      "K_mean": 4.2
+    },
+    "7": {
+      "substr_rate": 0.0,
+      "tok_recall_mean": 0.13333333333333333,
+      "K_mean": 4.2
+    },
+    "123": {
+      "substr_rate": 0.0,
+      "tok_recall_mean": 0.06666666666666667,
+      "K_mean": 4.2
+    }
+  },
+  "variance": {
+    "substr_rate_stdev": 0.0,
+    "tok_recall_stdev": 0.03651483716701107,
+    "K_stdev": 0.0
+  },
+  "verdict": "ROBUST-STRONG (= 全 metric variance 小、seed sensitivity 低)",
+  "per_seed_per_sample": {
+    "42": [
+      {
+        "i": 0,
+        "answer": "Miller v. California",
+        "K": 4,
+        "comp_chars": 128,
+        "substring": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 1,
+        "answer": "Charles L. Clifford",
+        "K": 4,
+        "comp_chars": 112,
+        "substring": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 2,
+        "answer": "Norman",
+        "K": 4,
+        "comp_chars": 95,
+        "substring": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 3,
+        "answer": "Sun",
+        "K": 4,
+        "comp_chars": 191,
+        "substring": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 4,
+        "answer": "erotic thriller film",
+        "K": 5,
+        "comp_chars": 347,
+        "substring": false,
+        "tok_recall": 0.3333333333333333
+      }
+    ],
+    "0": [
+      {
+        "i": 0,
+        "answer": "Miller v. California",
+        "K": 4,
+        "comp_chars": 77,
+        "substring": false,
+        "tok_recall": 0.3333333333333333
+      },
+      {
+        "i": 1,
+        "answer": "Charles L. Clifford",
+        "K": 4,
+        "comp_chars": 158,
+        "substring": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 2,
+        "answer": "Norman",
+        "K": 4,
+        "comp_chars": 210,
+        "substring": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 3,
+        "answer": "Sun",
+        "K": 4,
+        "comp_chars": 233,
+        "substring": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 4,
+        "answer": "erotic thriller film",
+        "K": 5,
+        "comp_chars": 465,
+        "substring": false,
+        "tok_recall": 0.3333333333333333
+      }
+    ],
+    "1": [
+      {
+        "i": 0,
+        "answer": "Miller v. California",
+        "K": 4,
+        "comp_chars": 148,
+        "substring": false,
+        "tok_recall": 0.3333333333333333
+      },
+      {
+        "i": 1,
+        "answer": "Charles L. Clifford",
+        "K": 4,
+        "comp_chars": 124,
+        "substring": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 2,
+        "answer": "Norman",
+        "K": 4,
+        "comp_chars": 148,
+        "substring": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 3,
+        "answer": "Sun",
+        "K": 4,
+        "comp_chars": 258,
+        "substring": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 4,
+        "answer": "erotic thriller film",
+        "K": 5,
+        "comp_chars": 458,
+        "substring": false,
+        "tok_recall": 0.3333333333333333
+      }
+    ],
+    "7": [
+      {
+        "i": 0,
+        "answer": "Miller v. California",
+        "K": 4,
+        "comp_chars": 86,
+        "substring": false,
+        "tok_recall": 0.3333333333333333
+      },
+      {
+        "i": 1,
+        "answer": "Charles L. Clifford",
+        "K": 4,
+        "comp_chars": 168,
+        "substring": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 2,
+        "answer": "Norman",
+        "K": 4,
+        "comp_chars": 158,
+        "substring": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 3,
+        "answer": "Sun",
+        "K": 4,
+        "comp_chars": 159,
+        "substring": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 4,
+        "answer": "erotic thriller film",
+        "K": 5,
+        "comp_chars": 397,
+        "substring": false,
+        "tok_recall": 0.3333333333333333
+      }
+    ],
+    "123": [
+      {
+        "i": 0,
+        "answer": "Miller v. California",
+        "K": 4,
+        "comp_chars": 203,
+        "substring": false,
+        "tok_recall": 0.3333333333333333
+      },
+      {
+        "i": 1,
+        "answer": "Charles L. Clifford",
+        "K": 4,
+        "comp_chars": 149,
+        "substring": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 2,
+        "answer": "Norman",
+        "K": 4,
+        "comp_chars": 241,
+        "substring": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 3,
+        "answer": "Sun",
+        "K": 4,
+        "comp_chars": 199,
+        "substring": false,
+        "tok_recall": 0.0
+      },
+      {
+        "i": 4,
+        "answer": "erotic thriller film",
+        "K": 5,
+        "comp_chars": 263,
+        "substring": false,
+        "tok_recall": 0.0
+      }
+    ]
+  }
+}

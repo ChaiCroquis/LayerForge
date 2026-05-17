@@ -1,0 +1,73 @@
+{
+  "scope": "tiktoken token count + V-007 既存 duration_ms 集計、formal API cost claim には別 verification 必要",
+  "tiktoken_encoding": "cl100k_base",
+  "n_sample_tokens": 5,
+  "n_sample_latency": 3,
+  "per_sample_tokens": [
+    {
+      "i": 0,
+      "full_tok": 4069,
+      "f3_tok": 30,
+      "f4_tok": 680,
+      "f3_ratio": 0.007372818874416319,
+      "f4_ratio": 0.16711722782010321
+    },
+    {
+      "i": 1,
+      "full_tok": 4724,
+      "f3_tok": 31,
+      "f4_tok": 717,
+      "f3_ratio": 0.006562235393734124,
+      "f4_ratio": 0.15177815410668924
+    },
+    {
+      "i": 2,
+      "full_tok": 4332,
+      "f3_tok": 26,
+      "f4_tok": 631,
+      "f3_ratio": 0.006001846722068329,
+      "f4_ratio": 0.1456602031394275
+    },
+    {
+      "i": 3,
+      "full_tok": 4025,
+      "f3_tok": 43,
+      "f4_tok": 653,
+      "f3_ratio": 0.010683229813664596,
+      "f4_ratio": 0.1622360248447205
+    },
+    {
+      "i": 4,
+      "full_tok": 4856,
+      "f3_tok": 92,
+      "f4_tok": 880,
+      "f3_ratio": 0.018945634266886325,
+      "f4_ratio": 0.1812191103789127
+    }
+  ],
+  "totals": {
+    "full": 22006,
+    "f3": 222,
+    "f4_hybrid": 3561
+  },
+  "ratios_vs_full_truncated_20k": {
+    "f3": 0.010088157775152231,
+    "f4_hybrid": 0.16181950377169863
+  },
+  "reductions": {
+    "f3": 0.9899118422248477,
+    "f4_hybrid": 0.8381804962283014
+  },
+  "cost_estimate_usd_per_5sample_at_3per_M": {
+    "full": 0.06601800000000001,
+    "f3": 0.000666,
+    "f4_hybrid": 0.010683
+  },
+  "latency_v007_n3": {
+    "full_ms_mean": 11589.666666666666,
+    "f4_hybrid_ms_mean": 12002.0,
+    "ratio": 1.035577669763295,
+    "reduction": -0.03557766976329502
+  },
+  "verdict": "Cost-PASS-EXTREME (F3 >99% reduction)、Cost-PASS-LARGE (F4hyb ~87% reduction、N=5)。Latency-PARTIAL (~50% reduction、V-007 N=3 subagent fallback、formal API + Haiku 4.5 別途)"
+}

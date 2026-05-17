@@ -1,0 +1,77 @@
+{
+  "scope": "ShareGPT head N conv、前半/後半 split、intra-conv vs inter-conv Jaccard で theme baton-pass 効果測定",
+  "n_conv": 10,
+  "n_pairs": {
+    "intra": 10,
+    "inter": 90
+  },
+  "jaccard_mean": {
+    "intra": 0.2677766459558807,
+    "inter": 0.13447654874309978
+  },
+  "delta": 0.1333000972127809,
+  "ratio": 1.991251623117081,
+  "verdict": "BATON-PASS-STRONG (intra > inter by ≥ 0.05)",
+  "per_conv_intra": [
+    {
+      "conv_id": "QWJhYvA_0",
+      "first_themes": 37,
+      "second_themes": 38,
+      "jaccard": 0.15384615384615385
+    },
+    {
+      "conv_id": "hRPPgZT_0",
+      "first_themes": 6,
+      "second_themes": 15,
+      "jaccard": 0.10526315789473684
+    },
+    {
+      "conv_id": "hRPPgZT_11",
+      "first_themes": 16,
+      "second_themes": 19,
+      "jaccard": 0.5217391304347826
+    },
+    {
+      "conv_id": "yn2eWCt_0",
+      "first_themes": 29,
+      "second_themes": 27,
+      "jaccard": 0.24444444444444444
+    },
+    {
+      "conv_id": "DhelrJT_0",
+      "first_themes": 23,
+      "second_themes": 11,
+      "jaccard": 0.21428571428571427
+    },
+    {
+      "conv_id": "VY7cMKG_0",
+      "first_themes": 28,
+      "second_themes": 34,
+      "jaccard": 0.24
+    },
+    {
+      "conv_id": "wNBG8Gp_0",
+      "first_themes": 27,
+      "second_themes": 31,
+      "jaccard": 0.3488372093023256
+    },
+    {
+      "conv_id": "wNBG8Gp_15",
+      "first_themes": 28,
+      "second_themes": 36,
+      "jaccard": 0.16363636363636364
+    },
+    {
+      "conv_id": "wNBG8Gp_23",
+      "first_themes": 39,
+      "second_themes": 42,
+      "jaccard": 0.2857142857142857
+    },
+    {
+      "conv_id": "wNBG8Gp_33",
+      "first_themes": 14,
+      "second_themes": 28,
+      "jaccard": 0.4
+    }
+  ]
+}

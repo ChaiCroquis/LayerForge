@@ -1,0 +1,50 @@
+{
+  "scope": "V-036 scale_finder vs K-means baseline (K=4 fixed) on hotpotqa N=5",
+  "n_sample": 5,
+  "k_means": {
+    "substr_rate": 0.0,
+    "tok_recall_mean": 0.13333333333333333,
+    "comp_chars_mean": 157.2
+  },
+  "layerforge_baseline_v021": {
+    "substr_rate": 0.0,
+    "tok_recall_mean": 0.0667
+  },
+  "per_sample": [
+    {
+      "i": 0,
+      "K": 4,
+      "comp_chars": 155,
+      "substr": false,
+      "tok_recall": 0.3333333333333333
+    },
+    {
+      "i": 1,
+      "K": 4,
+      "comp_chars": 122,
+      "substr": false,
+      "tok_recall": 0.0
+    },
+    {
+      "i": 2,
+      "K": 4,
+      "comp_chars": 140,
+      "substr": false,
+      "tok_recall": 0.0
+    },
+    {
+      "i": 3,
+      "K": 4,
+      "comp_chars": 206,
+      "substr": false,
+      "tok_recall": 0.0
+    },
+    {
+      "i": 4,
+      "K": 4,
+      "comp_chars": 163,
+      "substr": false,
+      "tok_recall": 0.3333333333333333
+    }
+  ]
+}

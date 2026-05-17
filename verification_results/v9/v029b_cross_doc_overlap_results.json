@@ -1,0 +1,26 @@
+{
+  "scope": "livedoor 9 cat × 3 = 27 doc theme overlap、Jaccard on per-doc theme tokens、intra vs inter mean comparison",
+  "n_docs": 27,
+  "n_pairs": {
+    "intra": 27,
+    "inter": 324
+  },
+  "jaccard_mean": {
+    "intra": 0.2616308947363296,
+    "inter": 0.1989898723668546
+  },
+  "delta": 0.06264102236947502,
+  "ratio": 1.3147950276282958,
+  "verdict": "DISCRIMINATIVE-STRONG (intra > inter by ≥ 0.05)",
+  "per_category_intra_mean": {
+    "dokujo-tsushin": 0.34069769566726976,
+    "it-life-hack": 0.20462870462870464,
+    "kaden-channel": 0.2216396990987155,
+    "livedoor-homme": 0.4189189189189189,
+    "movie-enter": 0.2214061519146265,
+    "peachy": 0.1983922913095424,
+    "smax": 0.2536263736263736,
+    "sports-watch": 0.2592362834298318,
+    "topic-news": 0.2361319340329835
+  }
+}

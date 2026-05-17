@@ -1,0 +1,229 @@
+{
+  "scope": "livedoor title-as-ground-truth で AI 単独 + 既存 dataset 検証、人間 triage proxy formal 化、前 turn 私の honest skip 訂正",
+  "n_sample": 27,
+  "metric": "BERTScore F1 (bert-base-multilingual-cased、num_layers=9)",
+  "summary": {
+    "baseline_body_vs_title_mean": 0.6325697920940541,
+    "decomposed_layerforge_vs_title_mean": 0.5865283674663968,
+    "delta_base_minus_dec": 0.04604142462765726
+  },
+  "verdict": "TRIAGE-PROXY-RELATIVE (delta ≤ 0.05 = baseline と近い、absolute は body も title も low 一致 = body 性質依存)",
+  "per_sample": [
+    {
+      "cat": "dokujo-tsushin",
+      "file": "dokujo-tsushin-4778030.txt",
+      "title": "友人代表のスピーチ、独女はどうこなしている？",
+      "base_f1": 0.6257219314575195,
+      "dec_f1": 0.5433043241500854,
+      "delta": 0.08241760730743408
+    },
+    {
+      "cat": "dokujo-tsushin",
+      "file": "dokujo-tsushin-4778031.txt",
+      "title": "ネットで断ち切れない元カレとの縁",
+      "base_f1": 0.6076910495758057,
+      "dec_f1": 0.5490463376045227,
+      "delta": 0.05864471197128296
+    },
+    {
+      "cat": "dokujo-tsushin",
+      "file": "dokujo-tsushin-4782522.txt",
+      "title": "相次ぐ芸能人の“すっぴん”披露　その時、独女の心境は？",
+      "base_f1": 0.6296526789665222,
+      "dec_f1": 0.600037693977356,
+      "delta": 0.02961498498916626
+    },
+    {
+      "cat": "it-life-hack",
+      "file": "it-life-hack-6292880.txt",
+      "title": "旧式Macで禁断のパワーアップ！最新PCやソフトを一挙にチェック【ITフラッシュバック】",
+      "base_f1": 0.6262010931968689,
+      "dec_f1": 0.5810906291007996,
+      "delta": 0.045110464096069336
+    },
+    {
+      "cat": "it-life-hack",
+      "file": "it-life-hack-6294340.txt",
+      "title": "アップル、デベロッパプレビューをリリース！次期Mac OS X「Mountain Lion」が明らかに",
+      "base_f1": 0.6553857922554016,
+      "dec_f1": 0.6093394756317139,
+      "delta": 0.046046316623687744
+    },
+    {
+      "cat": "it-life-hack",
+      "file": "it-life-hack-6294574.txt",
+      "title": "サービス終了後はどうなる！電子書籍は永遠に読めるのか【デジ通】",
+      "base_f1": 0.6276489496231079,
+      "dec_f1": 0.5856112241744995,
+      "delta": 0.0420377254486084
+    },
+    {
+      "cat": "kaden-channel",
+      "file": "kaden-channel-5774093.txt",
+      "title": "【ニュース】電力使用量９日が８社管内で今夏最高",
+      "base_f1": 0.6422765254974365,
+      "dec_f1": 0.5417746305465698,
+      "delta": 0.1005018949508667
+    },
+    {
+      "cat": "kaden-channel",
+      "file": "kaden-channel-5774562.txt",
+      "title": "スマートフォンを選ぶときの注意【デジ通】",
+      "base_f1": 0.60773766040802,
+      "dec_f1": 0.582899808883667,
+      "delta": 0.024837851524353027
+    },
+    {
+      "cat": "kaden-channel",
+      "file": "kaden-channel-5775172.txt",
+      "title": "静かにお掃除！パナソニックから運転音53ｄBのサイクロン掃除機登場",
+      "base_f1": 0.6194744110107422,
+      "dec_f1": 0.5831459760665894,
+      "delta": 0.03632843494415283
+    },
+    {
+      "cat": "livedoor-homme",
+      "file": "livedoor-homme-4568088.txt",
+      "title": "フォーエバー２１旗艦店が銀座に進出",
+      "base_f1": 0.6307298541069031,
+      "dec_f1": 0.630219578742981,
+      "delta": 0.0005102753639221191
+    },
+    {
+      "cat": "livedoor-homme",
+      "file": "livedoor-homme-4583815.txt",
+      "title": "フォーエバー２１来店者数が４００万人突破",
+      "base_f1": 0.6332400441169739,
+      "dec_f1": 0.6069639921188354,
+      "delta": 0.026276051998138428
+    },
+    {
+      "cat": "livedoor-homme",
+      "file": "livedoor-homme-4587524.txt",
+      "title": "スポーツ＆フィットネスユーザ必見の人気アイテムがパワーアップ／リバーサル",
+      "base_f1": 0.6546862721443176,
+      "dec_f1": 0.563213586807251,
+      "delta": 0.09147268533706665
+    },
+    {
+      "cat": "movie-enter",
+      "file": "movie-enter-5840081.txt",
+      "title": "インタビュー：宮崎あおい＆堺雅人「一緒にいるのが当たり前」",
+      "base_f1": 0.5962913036346436,
+      "dec_f1": 0.5779546499252319,
+      "delta": 0.01833665370941162
+    },
+    {
+      "cat": "movie-enter",
+      "file": "movie-enter-5840350.txt",
+      "title": "「さわお」×「わさお」が奇跡の対面",
+      "base_f1": 0.6309152245521545,
+      "dec_f1": 0.6335858702659607,
+      "delta": -0.0026706457138061523
+    },
+    {
+      "cat": "movie-enter",
+      "file": "movie-enter-5840524.txt",
+      "title": "上島竜兵が「出川には負けない！」と極秘実験でイケメンマッチョに変身",
+      "base_f1": 0.6546171307563782,
+      "dec_f1": 0.5964162945747375,
+      "delta": 0.058200836181640625
+    },
+    {
+      "cat": "peachy",
+      "file": "peachy-4289213.txt",
+      "title": "韓国の伝統菓子を食べてみませんか？",
+      "base_f1": 0.6249323487281799,
+      "dec_f1": 0.5926536321640015,
+      "delta": 0.03227871656417847
+    },
+    {
+      "cat": "peachy",
+      "file": "peachy-4301698.txt",
+      "title": "映画「ココ・シャネル」とのタイアップで生まれた極上スイーツが期間限定発売",
+      "base_f1": 0.6478173732757568,
+      "dec_f1": 0.5734753012657166,
+      "delta": 0.07434207201004028
+    },
+    {
+      "cat": "peachy",
+      "file": "peachy-4304647.txt",
+      "title": "“バレバレ”では男性も幻滅　つけまつ毛専用マスカラ「つけまマスカラ」誕生　",
+      "base_f1": 0.6836094856262207,
+      "dec_f1": 0.6070317625999451,
+      "delta": 0.07657772302627563
+    },
+    {
+      "cat": "smax",
+      "file": "smax-6507397.txt",
+      "title": "あのアプリもこのアプリも欲しい！そんなよくばりさんにオススメ！沢山のアプリがギュッと入った「200+ in 1 : AppBundle!」【iPhoneアプリ】",
+      "base_f1": 0.6598025560379028,
+      "dec_f1": 0.5746512413024902,
+      "delta": 0.0851513147354126
+    },
+    {
+      "cat": "smax",
+      "file": "smax-6507563.txt",
+      "title": "花椿がついにAndroidアプリに！資生堂の美意識に触れる「花椿 for Android」",
+      "base_f1": 0.6587995886802673,
+      "dec_f1": 0.595302402973175,
+      "delta": 0.06349718570709229
+    },
+    {
+      "cat": "smax",
+      "file": "smax-6507564.txt",
+      "title": "Samsung、クアッドコアプロセッサ「Exynos 4 Quad」を発表！GALAXY S3に搭載することも明らかに",
+      "base_f1": 0.6615443825721741,
+      "dec_f1": 0.5986163020133972,
+      "delta": 0.06292808055877686
+    },
+    {
+      "cat": "sports-watch",
+      "file": "sports-watch-4597641.txt",
+      "title": "【Sports Watch】秋山成勲、メールで吉田に対戦迫った!?",
+      "base_f1": 0.6244556307792664,
+      "dec_f1": 0.5963855385780334,
+      "delta": 0.02807009220123291
+    },
+    {
+      "cat": "sports-watch",
+      "file": "sports-watch-4601248.txt",
+      "title": "【Sports Watch／競馬】 皇成以上の″大物″!?　ついに騎手デビューへ",
+      "base_f1": 0.5998665690422058,
+      "dec_f1": 0.5344520807266235,
+      "delta": 0.06541448831558228
+    },
+    {
+      "cat": "sports-watch",
+      "file": "sports-watch-4604621.txt",
+      "title": "【Sports Watch】国母の服装問題に、山本KID「くだらん」",
+      "base_f1": 0.6521356701850891,
+      "dec_f1": 0.5812976956367493,
+      "delta": 0.07083797454833984
+    },
+    {
+      "cat": "topic-news",
+      "file": "topic-news-5903225.txt",
+      "title": "悪評が次から次へと溢れ出る川越シェフ",
+      "base_f1": 0.6032859683036804,
+      "dec_f1": 0.6082797050476074,
+      "delta": -0.004993736743927002
+    },
+    {
+      "cat": "topic-news",
+      "file": "topic-news-5903373.txt",
+      "title": "写真が流出し“堕ちていった”アイドルたち",
+      "base_f1": 0.6145817041397095,
+      "dec_f1": 0.628868579864502,
+      "delta": -0.01428687572479248
+    },
+    {
+      "cat": "topic-news",
+      "file": "topic-news-5907376.txt",
+      "title": "紳助とたけしの明暗を分けたものとは",
+      "base_f1": 0.6062831878662109,
+      "dec_f1": 0.5606476068496704,
+      "delta": 0.04563558101654053
+    }
+  ]
+}
