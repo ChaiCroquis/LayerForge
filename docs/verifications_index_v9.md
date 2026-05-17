@@ -1,6 +1,6 @@
 # LayerForge v9 — Verification Index (Public)
 
-> Public-facing subset of the full verification index. This document is referenced by **LayerForge v9: Phase 2b Verification Update** (paper at `paper/v9/`) as References [11].
+> Public-facing subset of the full verification index. This document is referenced by **LayerForge v9: Phase 2b Verification Update** (paper at `docs/paper/v9/`) as References [11].
 
 ## Scope
 
@@ -64,7 +64,7 @@ Per paper §6 Limitations, these verifications used Claude Code subagent as LLM-
 
 ## V-040 Pareto plots and cross-corpus V-IDs
 
-- **V-040**: 5 Pareto plots consolidating 38 evidence points. PNG sources at `paper/v9/figures/v040_plot{1..5}_*_en.png`, referenced by paper Figures 1-4 and Appendix D.
+- **V-040**: 5 Pareto plots consolidating 38 evidence points. PNG sources at `docs/paper/v9/figures/v040_plot{1..5}_*_en.png`, referenced by paper Figures 1-4 and Appendix D.
 - **cross-corpus (V-027 / V-037 / V-033) on livedoor**: replication results, summarized in paper Appendix B Table B2 last row; raw aggregates folded into the parent V-IDs' JSON output files.
 
 ## Self-preference bias disclosure (Anthropic LLM-as-judge guidance)
@@ -75,6 +75,6 @@ The v9 paper was drafted with Claude Code assistance, and the peer review loop w
 
 If you cite the verification artifacts in this directory, please cite the paper:
 
-> chai (2026). LayerForge v9: Phase 2b Verification Update. Manuscript at `paper/v9/layerforge_v9_main.pdf`.
+> chai (2026). LayerForge v9: Phase 2b Verification Update. Manuscript at `docs/paper/v9/layerforge_v9_main.pdf`.
 
 The Zenodo DOI for the camera-ready verification artifact deposit will be appended here when issued.

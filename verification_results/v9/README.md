@@ -1,12 +1,12 @@
 # LayerForge v9 — Raw Verification Results
 
-This directory contains the raw JSON output of the per-verification driver scripts cited in **LayerForge v9: Phase 2b Verification Update** (paper at `paper/v9/`).
+This directory contains the raw JSON output of the per-verification driver scripts cited in **LayerForge v9: Phase 2b Verification Update** (paper at `docs/paper/v9/`).
 
 ## Purpose
 
 Reviewers and readers of the v9 paper can **independently re-verify** the numeric claims (p-values, mean / std, comp_mean, accuracy, etc.) by decoding these JSON files and recomputing aggregates, without re-running the original experiments.
 
-This satisfies the "verifiable numbers" portion of reproducibility. The driver scripts that produced these JSON files (and the per-record verification narratives in the ADR-022 Section 1-8 format) are maintained in a separate author repository (currently private during pre-publication review) and are available to peer reviewers on request — see `paper/v9/layerforge_v9_main.pdf` References [11]-[15] for access notes. A persistent Zenodo DOI deposit of the full verification artifact set will be created at camera-ready stage.
+This satisfies the "verifiable numbers" portion of reproducibility. The driver scripts that produced these JSON files (and the per-record verification narratives in the ADR-022 Section 1-8 format) are maintained in a separate author repository (currently private during pre-publication review) and are available to peer reviewers on request — see `docs/paper/v9/layerforge_v9_main.pdf` References [11]-[15] for access notes. A persistent Zenodo DOI deposit of the full verification artifact set will be created at camera-ready stage.
 
 ## File listing (22 files, 1 per cited verification)
 
@@ -66,8 +66,8 @@ These files are honestly articulated in the paper as `n/a*` in Table 1:
 
 ## Cross-reference
 
-- Main paper: `paper/v9/layerforge_v9_main.pdf`
-- Appendix (full per-record table): `paper/v9/layerforge_v9_appendix.pdf` Appendix B Table B2
+- Main paper: `docs/paper/v9/layerforge_v9_main.pdf`
+- Appendix (full per-record table): `docs/paper/v9/layerforge_v9_appendix.pdf` Appendix B Table B2
 - Verification index (subset): `docs/verifications_index_v9.md`
 
 ## Versioning

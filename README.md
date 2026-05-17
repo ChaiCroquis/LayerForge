@@ -17,7 +17,7 @@ Phase 2 (skill + CLI). 147 passing tests across `tests/axioms`, `tests/cli`,
 - **v9 (2026-05): Phase 2b Verification Update** — two-layer fidelity
   structure (theme-level PASS / fact-level FAIL) + Hybrid ensemble path
   (LayerForge + K-means, hotpotqa N=100 p=2.7e-05, livedoor N=27 p=5.1e-08)
-  + explicit extrapolation boundaries. See [`paper/v9/`](paper/v9/) for the
+  + explicit extrapolation boundaries. See [`docs/paper/v9/`](docs/paper/v9/) for the
   full manuscript and review history. Core algorithm is unchanged from
   v8.1; v9 adds verification depth and an evidence-grounded improvement
   direction without modifying the v8.1 core spec.
@@ -59,7 +59,7 @@ but the skill path doesn't exercise it).
 
 ## Paper (v9 — Phase 2b Verification Update)
 
-The v9 paper (PDF at [`paper/v9/layerforge_v9_main.pdf`](paper/v9/layerforge_v9_main.pdf)
+The v9 paper (PDF at [`docs/paper/v9/layerforge_v9_main.pdf`](docs/paper/v9/layerforge_v9_main.pdf)
 + companion appendix) reports the following over the v8.1 baseline:
 
 1. **Two-layer fidelity structure** (theme-level semantic PASS / fact-level
@@ -83,8 +83,8 @@ the v8.1 spec.
 
 | Layer | Public | Private (reviewer access on request) |
 |---|---|---|
-| Paper PDF + LaTeX-equivalent docx + figures | ✓ [`paper/v9/`](paper/v9/) | — |
-| Peer review history (3-round Reviewer/Author Agent loop, Accept) | ✓ [`paper/v9/round{1,2,3}/`](paper/v9/) | — |
+| Paper PDF + LaTeX-equivalent docx + figures | ✓ [`docs/paper/v9/`](docs/paper/v9/) | — |
+| Peer review history (3-round Reviewer/Author Agent loop, Accept) | ✓ [`docs/paper/v9/round{1,2,3}/`](docs/paper/v9/) | — |
 | Raw JSON output (22 files, sufficient for numeric re-verification) | ✓ [`verification_results/v9/`](verification_results/v9/) | — |
 | Public verification index | ✓ [`docs/verifications_index_v9.md`](docs/verifications_index_v9.md) | — |
 | Driver scripts that produced the raw JSON | — | author-maintained `LayerForge-dev` (private during pre-publication review) |
@@ -121,9 +121,9 @@ articulated scope.
 | [`docs/08_empirical_findings.md`](docs/08_empirical_findings.md) | Reproducible measurements (K sweep / N×K heatmap / Pareto / 3-axis separation) |
 | [`docs/REFERENCES.md`](docs/REFERENCES.md) | Primary literature citations (URL form, no PDFs) |
 | [`docs/verifications_index_v9.md`](docs/verifications_index_v9.md) | **v9 verification index (public subset)** — V-001 through V-042-quad, with per-V-ID pointers to raw JSON output |
-| [`paper/v9/layerforge_v9_main.pdf`](paper/v9/layerforge_v9_main.pdf) | **v9 main paper** (Phase 2b Verification Update) |
-| [`paper/v9/layerforge_v9_appendix.pdf`](paper/v9/layerforge_v9_appendix.pdf) | **v9 appendix** — dataset catalog, per-record verdicts, parameter ablation full details, Pareto plots |
-| [`paper/v9/round{1,2,3}/`](paper/v9/) | v9 paper review history (3-round Reviewer/Author loop, Accept) |
+| [`docs/paper/v9/layerforge_v9_main.pdf`](docs/paper/v9/layerforge_v9_main.pdf) | **v9 main paper** (Phase 2b Verification Update) |
+| [`docs/paper/v9/layerforge_v9_appendix.pdf`](docs/paper/v9/layerforge_v9_appendix.pdf) | **v9 appendix** — dataset catalog, per-record verdicts, parameter ablation full details, Pareto plots |
+| [`docs/paper/v9/round{1,2,3}/`](docs/paper/v9/) | v9 paper review history (3-round Reviewer/Author loop, Accept) |
 | [`verification_results/v9/`](verification_results/v9/) | **22 raw JSON output files** for v9 paper's numeric claims (p-values, comp_mean, accuracy) — sufficient for third-party independent re-verification |
 
 ## Key empirical results
@@ -166,7 +166,7 @@ For the v9 paper (Phase 2b Verification Update):
 
 > chai (2026). LayerForge v9: Phase 2b Verification Update — Two-Layer
 > Fidelity Structure and Hybrid Ensemble Path. Manuscript at
-> [`paper/v9/layerforge_v9_main.pdf`](paper/v9/layerforge_v9_main.pdf).
+> [`docs/paper/v9/layerforge_v9_main.pdf`](docs/paper/v9/layerforge_v9_main.pdf).
 > Zenodo DOI deposit pending for camera-ready.
 
 For the v8.1 core (algorithm + design) and earlier work, see the prior
